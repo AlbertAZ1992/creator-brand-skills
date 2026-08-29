@@ -1,0 +1,56 @@
+name: Verify Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: ${{ matrix.skill }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - skill: feature-to-icons
+            imagemagick: false
+          - skill: image-to-sticker
+            imagemagick: true
+          - skill: logo-to-clay
+            imagemagick: false
+          - skill: product-to-mascot
+            imagemagick: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.skill }}/package-lock.json
+      - name: Install artifact tools
+        if: matrix.imagemagick
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install --yes imagemagick jq
+          if ! command -v magick >/dev/null 2>&1; then
+            sudo tee /usr/local/bin/magick >/dev/null <<'MAGICK_WRAPPER'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          if [[ ${1:-} == identify ]]; then
+            shift
+            exec identify "$@"
+          fi
+          exec convert "$@"
+          MAGICK_WRAPPER
+            sudo chmod +x /usr/local/bin/magick
+          fi
+      - run: npm ci
+        working-directory: ${{ matrix.skill }}
+      - run: npm run verify
+        working-directory: ${{ matrix.skill }}

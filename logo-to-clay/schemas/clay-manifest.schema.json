@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Logo to Clay Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "source",
+    "spec",
+    "backing",
+    "cavities",
+    "rounding",
+    "artifacts",
+    "validation"
+  ],
+  "properties": {
+    "contractVersion": { "const": "1.0" },
+    "source": { "type": "object", "required": ["logoPath"] },
+    "spec": { "type": "object", "required": ["output", "shape", "depth"] },
+    "backing": { "type": "object", "required": ["enabled", "depth"] },
+    "cavities": { "type": "object" },
+    "rounding": { "type": "object" },
+    "artifacts": {
+      "type": "object",
+      "required": ["meshPath", "materialPath", "bumpPath", "previewPath"]
+    },
+    "validation": { "type": "object", "required": ["passed", "checks"] }
+  }
+}

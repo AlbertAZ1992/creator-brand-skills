@@ -1,0 +1,123 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 5,
+  "designSystem": {
+    "style": "outline",
+    "gridSize": 24,
+    "strokeWidth": 1.75,
+    "cornerRadius": "rounded",
+    "visualWeight": "light",
+    "geometryPolicy": "library-native",
+    "sourceWeight": "light"
+  },
+  "source": {
+    "strategy": "library-first",
+    "library": "Phosphor",
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "license": "MIT",
+    "weight": "light"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "icons": [
+      "dashboard.svg",
+      "analytics.svg",
+      "reports.svg",
+      "trends.svg",
+      "export-data.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Dashboard",
+        "bounds": {
+          "x": 3.938,
+          "y": 3.938,
+          "width": 16.125,
+          "height": 16.125
+        },
+        "centerOffset": {
+          "x": -0.001,
+          "y": 0
+        },
+        "inkRatio": 0.177,
+        "occupiedAreaRatio": 0.451
+      },
+      {
+        "feature": "Analytics",
+        "bounds": {
+          "x": 2.438,
+          "y": 2.438,
+          "width": 19.125,
+          "height": 19.125
+        },
+        "centerOffset": {
+          "x": -0.77,
+          "y": -0.446
+        },
+        "inkRatio": 0.159,
+        "occupiedAreaRatio": 0.635
+      },
+      {
+        "feature": "Reports",
+        "bounds": {
+          "x": 2.438,
+          "y": 1.688,
+          "width": 19.125,
+          "height": 19.875
+        },
+        "centerOffset": {
+          "x": 0.105,
+          "y": -0.304
+        },
+        "inkRatio": 0.167,
+        "occupiedAreaRatio": 0.66
+      },
+      {
+        "feature": "Trends",
+        "bounds": {
+          "x": 2.438,
+          "y": 3.938,
+          "width": 19.125,
+          "height": 16.125
+        },
+        "centerOffset": {
+          "x": -1.792,
+          "y": 1.55
+        },
+        "inkRatio": 0.121,
+        "occupiedAreaRatio": 0.535
+      },
+      {
+        "feature": "Export Data",
+        "bounds": {
+          "x": 3.188,
+          "y": 2.438,
+          "width": 17.625,
+          "height": 19.125
+        },
+        "centerOffset": {
+          "x": 0,
+          "y": 0.491
+        },
+        "inkRatio": 0.183,
+        "occupiedAreaRatio": 0.585
+      }
+    ],
+    "warnings": []
+  }
+}

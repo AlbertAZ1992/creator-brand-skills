@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Feature to Icons Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion",
+    "featureCount",
+    "designSystem",
+    "source",
+    "files",
+    "validation"
+  ],
+  "properties": {
+    "contractVersion": { "const": "1.0" },
+    "featureCount": { "type": "integer", "minimum": 3, "maximum": 20 },
+    "designSystem": { "type": "object" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "license"],
+      "properties": {
+        "strategy": { "enum": ["library-first", "custom"] },
+        "library": { "const": "Phosphor" },
+        "package": { "const": "@phosphor-icons/core" },
+        "version": { "const": "2.1.1" },
+        "license": { "enum": ["MIT", "user-provided"] },
+        "weight": { "enum": ["light", "regular", "bold", "fill", "duotone"] }
+      }
+    },
+    "files": {
+      "type": "object",
+      "required": ["spec", "metadata", "previewSvg", "previewPng", "icons"]
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["passed", "checks", "opticalMetrics", "warnings"],
+      "properties": {
+        "passed": { "const": true },
+        "checks": { "type": "array", "items": { "type": "string" } },
+        "opticalMetrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["feature", "bounds", "centerOffset", "inkRatio", "occupiedAreaRatio"]
+          }
+        },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

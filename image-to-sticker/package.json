@@ -1,0 +1,49 @@
+{
+  "name": "@creator-brand-skills/image-to-sticker",
+  "version": "0.4.0",
+  "description": "Turn flat artwork into one source-faithful sticker with optional finishes",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "main": "./dist/src/index.js",
+  "exports": {
+    ".": "./dist/src/index.js"
+  },
+  "files": [
+    "dist/src",
+    "SKILL.md",
+    "THIRD_PARTY_NOTICES.md",
+    "agents",
+    "docs",
+    "examples",
+    "schemas",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "examples": "npm run build && bash examples/generate-showcase.sh",
+    "prepack": "npm run build",
+    "eval": "tsx eval/run.ts",
+    "format:check": "oxfmt --check src tests eval",
+    "render": "node dist/src/render-cli.js",
+    "verify": "npm run lint && npm run format:check && npm run typecheck && npm run build && npm test && npm run eval && npm run verify:deliverables",
+    "verify:deliverables": "bash scripts/eval-sticker.sh",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint src tests eval",
+    "format": "oxfmt"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "oxfmt": "^0.15.0",
+    "oxlint": "^0.15.0",
+    "tsx": "^4.23.12",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "sharp": "^0.35.4"
+  }
+}

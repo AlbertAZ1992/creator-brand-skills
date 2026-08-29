@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Verified mascot reference-set manifest",
+  "type": "object",
+  "required": ["version", "characterBible", "references", "contactSheet", "passed"],
+  "properties": {
+    "version": { "const": 1 },
+    "characterBible": { "const": "character-bible.json" },
+    "references": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": { "type": "string", "pattern": "^mascot-[a-z]+\\.png$" }
+    },
+    "contactSheet": { "const": "mascot-contact-sheet.png" },
+    "passed": { "const": true }
+  },
+  "additionalProperties": false
+}

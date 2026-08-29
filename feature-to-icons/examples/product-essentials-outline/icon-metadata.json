@@ -1,0 +1,68 @@
+{
+  "icons": [
+    {
+      "feature": "Search",
+      "semanticConcept": "Magnifying Glass",
+      "visualDescription": "Phosphor regular icon “magnifying-glass” selected for Search",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "magnifying-glass",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Filters",
+      "semanticConcept": "Funnel",
+      "visualDescription": "Phosphor regular icon “funnel” selected for Filters",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "funnel",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Team Sharing",
+      "semanticConcept": "Users Three",
+      "visualDescription": "Phosphor regular icon “users-three” selected for Team Sharing",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "users-three",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Cloud Sync",
+      "semanticConcept": "Cloud Arrow Up",
+      "visualDescription": "Phosphor regular icon “cloud-arrow-up” selected for Cloud Sync",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "cloud-arrow-up",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

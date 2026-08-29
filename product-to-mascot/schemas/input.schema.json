@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Product to Mascot input",
+  "type": "object",
+  "required": ["productName", "productDescription"],
+  "properties": {
+    "productName": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "productDescription": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "targetAudience": { "type": "string" },
+    "personality": {
+      "enum": ["friendly", "professional", "playful", "technical", "approachable"]
+    },
+    "mascotType": { "enum": ["animal", "character", "abstract", "robot"] },
+    "visualStyle": { "type": "string" },
+    "variationCount": { "type": "integer", "minimum": 3, "maximum": 8 }
+  },
+  "additionalProperties": false
+}

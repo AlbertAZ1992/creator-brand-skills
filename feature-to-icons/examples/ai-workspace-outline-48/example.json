@@ -1,0 +1,23 @@
+{
+  "title": "AI workspace · 48 px outline",
+  "summary": "A large-grid family that exercises semantic resolution without overrides.",
+  "request": "Outline icons for AI Copilot, Knowledge Search, Automation, and Version History. Use a 48 px grid, regular weight, and #0F172A.",
+  "input": {
+    "features": [
+      "AI Copilot",
+      "Knowledge Search",
+      "Automation",
+      "Version History"
+    ],
+    "style": "outline",
+    "colors": {
+      "primary": "#0F172A"
+    },
+    "gridSize": 48,
+    "strokeWidth": 2,
+    "cornerRadius": "rounded",
+    "visualWeight": "regular",
+    "productContext": "An AI workspace for research and recurring workflows"
+  },
+  "overrides": {}
+}

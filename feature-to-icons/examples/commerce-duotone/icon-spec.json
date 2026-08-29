@@ -1,0 +1,19 @@
+{
+  "designSystem": {
+    "style": "duotone",
+    "gridSize": 24,
+    "strokeWidth": 2,
+    "cornerRadius": "round",
+    "visualWeight": "regular",
+    "geometryPolicy": "library-native",
+    "sourceWeight": "duotone"
+  },
+  "source": {
+    "strategy": "library-first",
+    "library": "Phosphor",
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "license": "MIT",
+    "weight": "duotone"
+  }
+}

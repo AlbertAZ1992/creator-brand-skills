@@ -1,0 +1,123 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 5,
+  "designSystem": {
+    "style": "outline",
+    "gridSize": 32,
+    "strokeWidth": 3,
+    "cornerRadius": "rounded",
+    "visualWeight": "bold",
+    "geometryPolicy": "library-native",
+    "sourceWeight": "bold"
+  },
+  "source": {
+    "strategy": "library-first",
+    "library": "Phosphor",
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "license": "MIT",
+    "weight": "bold"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "icons": [
+      "authentication.svg",
+      "encryption.svg",
+      "access-control.svg",
+      "audit-log.svg",
+      "alerts.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Authentication",
+        "bounds": {
+          "x": 3.5,
+          "y": 4.5,
+          "width": 25,
+          "height": 26
+        },
+        "centerOffset": {
+          "x": 0.003,
+          "y": -0.282
+        },
+        "inkRatio": 0.273,
+        "occupiedAreaRatio": 0.635
+      },
+      {
+        "feature": "Encryption",
+        "bounds": {
+          "x": 3.5,
+          "y": 0.5,
+          "width": 25,
+          "height": 28
+        },
+        "centerOffset": {
+          "x": 0,
+          "y": 0.308
+        },
+        "inkRatio": 0.329,
+        "occupiedAreaRatio": 0.684
+      },
+      {
+        "feature": "Access Control",
+        "bounds": {
+          "x": 2.5,
+          "y": 1.5,
+          "width": 28,
+          "height": 28
+        },
+        "centerOffset": {
+          "x": 0.296,
+          "y": -0.302
+        },
+        "inkRatio": 0.255,
+        "occupiedAreaRatio": 0.766
+      },
+      {
+        "feature": "Audit Log",
+        "bounds": {
+          "x": 4.5,
+          "y": 1.5,
+          "width": 23,
+          "height": 28
+        },
+        "centerOffset": {
+          "x": 0,
+          "y": -0.414
+        },
+        "inkRatio": 0.354,
+        "occupiedAreaRatio": 0.629
+      },
+      {
+        "feature": "Alerts",
+        "bounds": {
+          "x": 1.5,
+          "y": 2.5,
+          "width": 29,
+          "height": 26
+        },
+        "centerOffset": {
+          "x": -0.001,
+          "y": 2.55
+        },
+        "inkRatio": 0.261,
+        "occupiedAreaRatio": 0.736
+      }
+    ],
+    "warnings": []
+  }
+}

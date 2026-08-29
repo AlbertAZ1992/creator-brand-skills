@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mascot character bible",
+  "type": "object",
+  "required": [
+    "version", "productName", "mascotName", "brandEssence", "personality",
+    "mascotType", "silhouette", "faceRule", "palette", "signatureFeature",
+    "renderingRule", "avoids"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "productName": { "type": "string", "minLength": 1 },
+    "mascotName": { "type": "string", "minLength": 1 },
+    "brandEssence": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "type": "string" } },
+    "personality": { "enum": ["friendly", "professional", "playful", "technical", "approachable"] },
+    "mascotType": { "enum": ["animal", "character", "abstract", "robot"] },
+    "silhouette": { "type": "string", "minLength": 1 },
+    "faceRule": { "type": "string", "minLength": 1 },
+    "palette": {
+      "type": "array", "minItems": 3, "maxItems": 5,
+      "items": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+    },
+    "signatureFeature": { "type": "string", "minLength": 1 },
+    "renderingRule": { "type": "string", "minLength": 1 },
+    "avoids": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

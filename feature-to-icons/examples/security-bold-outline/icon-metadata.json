@@ -1,0 +1,84 @@
+{
+  "icons": [
+    {
+      "feature": "Authentication",
+      "semanticConcept": "Shield Check",
+      "visualDescription": "Phosphor bold icon “shield-check” selected for Authentication",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "shield-check",
+        "weight": "bold",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Encryption",
+      "semanticConcept": "Lock Key",
+      "visualDescription": "Phosphor bold icon “lock-key” selected for Encryption",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "lock-key",
+        "weight": "bold",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Access Control",
+      "semanticConcept": "Key",
+      "visualDescription": "Phosphor bold icon “key” selected for Access Control",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "key",
+        "weight": "bold",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Audit Log",
+      "semanticConcept": "Clipboard Text",
+      "visualDescription": "Phosphor bold icon “clipboard-text” selected for Audit Log",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "clipboard-text",
+        "weight": "bold",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Alerts",
+      "semanticConcept": "Warning",
+      "visualDescription": "Phosphor bold icon “warning” selected for Alerts",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "warning",
+        "weight": "bold",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

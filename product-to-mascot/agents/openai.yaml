@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product to Mascot"
+  short_description: "Create a reusable mascot and character bible"
+  default_prompt: "Use $product-to-mascot to create a verified mascot reference set for this product."

@@ -1,0 +1,24 @@
+{
+  "title": "Analytics · Light outline",
+  "summary": "A quiet data-product family sourced from Phosphor light.",
+  "request": "Icons for Dashboard, Analytics, Reports, Trends, and Export Data. Use a light 24 px outline family in #2563EB.",
+  "input": {
+    "features": [
+      "Dashboard",
+      "Analytics",
+      "Reports",
+      "Trends",
+      "Export Data"
+    ],
+    "style": "outline",
+    "colors": {
+      "primary": "#2563EB"
+    },
+    "gridSize": 24,
+    "strokeWidth": 1.75,
+    "cornerRadius": "rounded",
+    "visualWeight": "light",
+    "productContext": "A calm analytics workspace for product teams"
+  },
+  "overrides": {}
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image to Sticker"
+  short_description: "Make a source-faithful sticker with optional finishes"
+  default_prompt: "Use $image-to-sticker to keep this complete flat artwork as one transparent sticker, preserve its internal holes, and show the available front finishes."

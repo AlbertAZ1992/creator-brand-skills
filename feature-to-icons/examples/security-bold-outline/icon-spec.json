@@ -1,0 +1,19 @@
+{
+  "designSystem": {
+    "style": "outline",
+    "gridSize": 32,
+    "strokeWidth": 3,
+    "cornerRadius": "rounded",
+    "visualWeight": "bold",
+    "geometryPolicy": "library-native",
+    "sourceWeight": "bold"
+  },
+  "source": {
+    "strategy": "library-first",
+    "library": "Phosphor",
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "license": "MIT",
+    "weight": "bold"
+  }
+}

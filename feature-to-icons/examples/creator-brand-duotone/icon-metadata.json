@@ -1,0 +1,84 @@
+{
+  "icons": [
+    {
+      "feature": "Image Generation",
+      "semanticConcept": "Image",
+      "visualDescription": "Phosphor duotone icon “image” selected for Image Generation",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "image",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Background Removal",
+      "semanticConcept": "Selection Background",
+      "visualDescription": "Phosphor duotone icon “selection-background” selected for Background Removal",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "selection-background",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Brand Kit",
+      "semanticConcept": "Briefcase",
+      "visualDescription": "Phosphor duotone icon “briefcase” selected for Brand Kit",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "briefcase",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Export Assets",
+      "semanticConcept": "Folder Simple Plus",
+      "visualDescription": "Phosphor duotone icon “folder-simple-plus” selected for Export Assets",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "folder-simple-plus",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Templates",
+      "semanticConcept": "Stack",
+      "visualDescription": "Phosphor duotone icon “stack” selected for Templates",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "stack",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

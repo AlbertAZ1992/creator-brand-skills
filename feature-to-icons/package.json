@@ -1,0 +1,46 @@
+{
+  "name": "@creator-brand-skills/feature-to-icons",
+  "version": "0.1.0",
+  "description": "Resolve product features to one verified, library-backed SVG icon family",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "SKILL.md",
+    "THIRD_PARTY_NOTICES.md",
+    "agents",
+    "docs",
+    "examples",
+    "schemas"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "examples": "tsx scripts/generate-examples.ts",
+    "prepack": "npm run build",
+    "eval": "tsx eval/run.ts",
+    "format:check": "oxfmt --check src tests eval scripts",
+    "verify": "npm run lint && npm run format:check && npm run typecheck && npm run build && npm test && npm run eval && npm run verify:deliverables && npm run verify:examples",
+    "verify:deliverables": "tsx scripts/eval-deliverables.ts",
+    "verify:examples": "tsx scripts/verify-examples.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint src tests eval scripts",
+    "format": "oxfmt"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "oxfmt": "^0.15.0",
+    "oxlint": "^0.15.0",
+    "tsx": "^4.23.12",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "@phosphor-icons/core": "2.1.1",
+    "@resvg/resvg-js": "2.6.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Image to Sticker input",
+  "type": "object",
+  "required": ["imagePath"],
+  "properties": {
+    "imagePath": { "type": "string", "minLength": 1 },
+    "backgroundMode": { "enum": ["auto", "alpha", "flat"] },
+    "outlineWidth": { "type": "number", "minimum": 0, "maximum": 44 },
+    "outlineColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "material": { "enum": ["original", "holographic", "glitter", "reflective"] },
+    "tilt": { "type": "number", "minimum": -12, "maximum": 12 },
+    "size": { "enum": [512, 1024] }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,84 @@
+{
+  "icons": [
+    {
+      "feature": "Shopping Cart",
+      "semanticConcept": "Shopping Cart",
+      "visualDescription": "Phosphor duotone icon “shopping-cart” selected for Shopping Cart",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "shopping-cart",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Wishlist",
+      "semanticConcept": "Heart",
+      "visualDescription": "Phosphor duotone icon “heart” selected for Wishlist",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "heart",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Orders",
+      "semanticConcept": "Package",
+      "visualDescription": "Phosphor duotone icon “package” selected for Orders",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "package",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Payment",
+      "semanticConcept": "Credit Card",
+      "visualDescription": "Phosphor duotone icon “credit-card” selected for Payment",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "credit-card",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Delivery",
+      "semanticConcept": "Truck",
+      "visualDescription": "Phosphor duotone icon “truck” selected for Delivery",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "truck",
+        "weight": "duotone",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

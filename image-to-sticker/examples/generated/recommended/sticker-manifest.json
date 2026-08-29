@@ -1,0 +1,30 @@
+{
+  "version": 4,
+  "sourceCard": "source-card.json",
+  "asset": {
+    "file": "sticker.png",
+    "width": 1024,
+    "height": 1024,
+    "rgba": true
+  },
+  "pipeline": {
+    "backgroundMask": "flat",
+    "outlineWidth": 4,
+    "outlineRadius": 9.4,
+    "outlineColor": "#ffffff",
+    "material": "original",
+    "tilt": -3,
+    "rgbOperation": "source-over-outline-then-material",
+    "sourceRgbSha256": "638bbd289e99495b08816320880d1366dfbb82866ed616e6c3b439ed09b2919b"
+  },
+  "verification": {
+    "alphaProof": "sticker-alpha-proof.png",
+    "alphaMinimum": 0,
+    "alphaMaximum": 255,
+    "cornerAlpha": 0,
+    "visibleCoverage": 0.08117832857019758,
+    "softAlphaCoverage": 0.013547897338867188,
+    "interiorTransparentPixels": 12818,
+    "passed": true
+  }
+}

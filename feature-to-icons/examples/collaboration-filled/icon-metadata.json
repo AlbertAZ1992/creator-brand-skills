@@ -1,0 +1,84 @@
+{
+  "icons": [
+    {
+      "feature": "Team Chat",
+      "semanticConcept": "Chats Circle",
+      "visualDescription": "Phosphor fill icon “chats-circle” selected for Team Chat",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "chats-circle",
+        "weight": "fill",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "File Sharing",
+      "semanticConcept": "File Arrow Up",
+      "visualDescription": "Phosphor fill icon “file-arrow-up” selected for File Sharing",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "file-arrow-up",
+        "weight": "fill",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Video Calls",
+      "semanticConcept": "Video Camera",
+      "visualDescription": "Phosphor fill icon “video-camera” selected for Video Calls",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "video-camera",
+        "weight": "fill",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Task Board",
+      "semanticConcept": "Kanban",
+      "visualDescription": "Phosphor fill icon “kanban” selected for Task Board",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "kanban",
+        "weight": "fill",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Calendar",
+      "semanticConcept": "Calendar Blank",
+      "visualDescription": "Phosphor fill icon “calendar-blank” selected for Calendar",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "calendar-blank",
+        "weight": "fill",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

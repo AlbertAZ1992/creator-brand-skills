@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Verified Image to Sticker manifest",
+  "type": "object",
+  "required": ["version", "sourceCard", "asset", "pipeline", "verification"],
+  "properties": {
+    "version": { "const": 4 },
+    "sourceCard": { "const": "source-card.json" },
+    "asset": {
+      "type": "object",
+      "required": ["file", "width", "height", "rgba"],
+      "properties": {
+        "file": { "const": "sticker.png" },
+        "width": { "enum": [512, 1024] },
+        "height": { "enum": [512, 1024] },
+        "rgba": { "const": true }
+      },
+      "oneOf": [
+        { "properties": { "width": { "const": 512 }, "height": { "const": 512 } } },
+        { "properties": { "width": { "const": 1024 }, "height": { "const": 1024 } } }
+      ],
+      "additionalProperties": false
+    },
+    "pipeline": {
+      "type": "object",
+      "required": [
+        "backgroundMask",
+        "outlineWidth",
+        "outlineRadius",
+        "outlineColor",
+        "material",
+        "tilt",
+        "rgbOperation",
+        "sourceRgbSha256"
+      ],
+      "properties": {
+        "backgroundMask": { "enum": ["alpha", "flat"] },
+        "outlineWidth": { "type": "number", "minimum": 0, "maximum": 44 },
+        "outlineRadius": { "type": "number", "minimum": 0, "maximum": 112 },
+        "outlineColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "material": {
+          "enum": ["original", "holographic", "glitter", "reflective"]
+        },
+        "tilt": { "type": "number", "minimum": -12, "maximum": 12 },
+        "rgbOperation": { "const": "source-over-outline-then-material" },
+        "sourceRgbSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "alphaProof",
+        "alphaMinimum",
+        "alphaMaximum",
+        "cornerAlpha",
+        "visibleCoverage",
+        "softAlphaCoverage",
+        "interiorTransparentPixels",
+        "passed"
+      ],
+      "properties": {
+        "alphaProof": { "const": "sticker-alpha-proof.png" },
+        "alphaMinimum": { "const": 0 },
+        "alphaMaximum": { "const": 255 },
+        "cornerAlpha": { "const": 0 },
+        "visibleCoverage": {
+          "type": "number",
+          "exclusiveMinimum": 0.01,
+          "exclusiveMaximum": 0.95
+        },
+        "softAlphaCoverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "interiorTransparentPixels": { "type": "integer", "minimum": 0 },
+        "passed": { "const": true }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

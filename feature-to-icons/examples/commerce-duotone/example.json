@@ -1,0 +1,25 @@
+{
+  "title": "Commerce · Duotone",
+  "summary": "Commerce metaphors sourced from one Phosphor duotone family.",
+  "request": "Duotone icons for Shopping Cart, Wishlist, Orders, Payment, and Delivery. Use #FF6B35 primary and #004E89 secondary.",
+  "input": {
+    "features": [
+      "Shopping Cart",
+      "Wishlist",
+      "Orders",
+      "Payment",
+      "Delivery"
+    ],
+    "style": "duotone",
+    "colors": {
+      "primary": "#FF6B35",
+      "secondary": "#004E89"
+    },
+    "gridSize": 24,
+    "strokeWidth": 2,
+    "cornerRadius": "round",
+    "visualWeight": "regular",
+    "productContext": "A friendly direct-to-consumer commerce platform"
+  },
+  "overrides": {}
+}

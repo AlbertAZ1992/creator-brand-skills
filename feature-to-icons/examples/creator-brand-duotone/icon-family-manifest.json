@@ -1,0 +1,123 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 5,
+  "designSystem": {
+    "style": "duotone",
+    "gridSize": 32,
+    "strokeWidth": 2,
+    "cornerRadius": "round",
+    "visualWeight": "regular",
+    "geometryPolicy": "library-native",
+    "sourceWeight": "duotone"
+  },
+  "source": {
+    "strategy": "library-first",
+    "library": "Phosphor",
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "license": "MIT",
+    "weight": "duotone"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "icons": [
+      "image-generation.svg",
+      "background-removal.svg",
+      "brand-kit.svg",
+      "export-assets.svg",
+      "templates.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Image Generation",
+        "bounds": {
+          "x": 3,
+          "y": 5,
+          "width": 26,
+          "height": 22
+        },
+        "centerOffset": {
+          "x": 0.338,
+          "y": -0.242
+        },
+        "inkRatio": 0.299,
+        "occupiedAreaRatio": 0.559
+      },
+      {
+        "feature": "Background Removal",
+        "bounds": {
+          "x": 4,
+          "y": 4,
+          "width": 24,
+          "height": 24
+        },
+        "centerOffset": {
+          "x": 0.286,
+          "y": -0.287
+        },
+        "inkRatio": 0.197,
+        "occupiedAreaRatio": 0.563
+      },
+      {
+        "feature": "Brand Kit",
+        "bounds": {
+          "x": 3,
+          "y": 3,
+          "width": 26,
+          "height": 24
+        },
+        "centerOffset": {
+          "x": 0,
+          "y": 0.34
+        },
+        "inkRatio": 0.285,
+        "occupiedAreaRatio": 0.609
+      },
+      {
+        "feature": "Export Assets",
+        "bounds": {
+          "x": 3,
+          "y": 6,
+          "width": 26,
+          "height": 21
+        },
+        "centerOffset": {
+          "x": -0.443,
+          "y": 1.303
+        },
+        "inkRatio": 0.27,
+        "occupiedAreaRatio": 0.533
+      },
+      {
+        "feature": "Templates",
+        "bounds": {
+          "x": 3,
+          "y": 2,
+          "width": 26,
+          "height": 28
+        },
+        "centerOffset": {
+          "x": 0.01,
+          "y": -0.439
+        },
+        "inkRatio": 0.253,
+        "occupiedAreaRatio": 0.711
+      }
+    ],
+    "warnings": []
+  }
+}

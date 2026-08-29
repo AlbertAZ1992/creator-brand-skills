@@ -1,0 +1,57 @@
+{
+  "contractVersion": "1.0",
+  "source": {
+    "logoPath": "../../assets/clay-mark.svg"
+  },
+  "spec": {
+    "output": "mesh",
+    "shape": "relief",
+    "depth": 2,
+    "clayColor": "#7B68A6",
+    "background": "studio"
+  },
+  "backing": {
+    "enabled": true,
+    "depth": 1.2
+  },
+  "cavities": {
+    "mode": "through",
+    "depth": 2,
+    "count": 1
+  },
+  "rounding": {
+    "bevelThickness": 0.48,
+    "bevelSize": 0.4,
+    "bevelOffset": 0,
+    "bevelSegments": 14
+  },
+  "artifacts": {
+    "meshPath": "clay-mark-clay-mesh.obj",
+    "materialPath": "clay-mark-clay-clay.mtl",
+    "bumpPath": "clay-mark-clay-bump.png",
+    "previewPath": "clay-mark-clay-preview.png"
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "OBJ geometry and material link",
+      "MTL clay material and bump texture",
+      "1024px PNG preview",
+      "manifest artifact paths"
+    ],
+    "geometry": {
+      "vertices": 5748,
+      "faces": 1916
+    },
+    "preview": {
+      "width": 1024,
+      "height": 1024,
+      "format": "png"
+    },
+    "materialTexture": {
+      "width": 512,
+      "height": 512,
+      "format": "png"
+    }
+  }
+}

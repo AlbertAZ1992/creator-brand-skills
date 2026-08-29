@@ -1,0 +1,4 @@
+interface:
+  display_name: "Logo to Clay"
+  short_description: "Turn a logo into a clay render or verified mesh"
+  default_prompt: "Use $logo-to-clay to turn this logo into a clay object with a verified OBJ asset."
