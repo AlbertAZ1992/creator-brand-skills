@@ -5,10 +5,23 @@ transparent sticker. The skill keeps the supplied artwork intact, removes a
 transparent or flat background, adds a contour, and can apply a deterministic
 front finish.
 
+The callable Skill name is `image-to-sticker`.
+
 | **Balanced result** | **Supported style system** |
 | :---: | :---: |
 | <img src="examples/generated/recommended-preview.png" alt="Balanced Threads contour sticker" width="560"> | <img src="examples/generated/style-overview.png" alt="Threads sticker style system" width="560"> |
 | Source-faithful transparent output | Contours and deterministic front materials |
+
+## At a glance
+
+| Capability | Contract |
+| --- | --- |
+| **Best for** | One already-composed logo, wordmark, icon, badge, or flat illustration |
+| **Supported sources** | SVG or raster artwork with existing transparency or one uniform removable background color |
+| **Styles** | Borderless or contoured; original, holographic, glitter, or reflective front finish |
+| **Controls** | 0–44 contour width, custom contour color, −12° to 12° whole-sticker tilt, 512 or 1024 px output |
+| **Output formats** | Transparent RGBA PNG, grayscale alpha-proof PNG, reproducible source-card JSON, and verification manifest JSON |
+| **Core guarantee** | The renderer preserves the complete source composition and applies every finish without changing alpha geometry |
 
 ## What it does
 
@@ -74,11 +87,11 @@ will not silently guess which object to keep.
 | Control | Values | Default | Meaning |
 | --- | --- | --- | --- |
 | `backgroundMode` | `alpha`, `flat` | inferred | Keep existing alpha or remove one flat background |
-| `outlineWidth` | `0`–`64` | `18` | Contour control; `0` is borderless |
+| `outlineWidth` | `0`–`44` | `18` | Contour control; `0` is borderless |
 | `outlineColor` | CSS hex | `#ffffff` | Contour color |
 | `material` | `original`, `holographic`, `glitter`, `reflective` | `original` | Deterministic front finish |
-| `tilt` | `-15`–`15` | `-3` | Whole-sticker rotation in degrees |
-| `size` | `512`, `1024`, `2048` | `1024` | Square PNG output size |
+| `tilt` | `-12`–`12` | `-3` | Whole-sticker rotation in degrees |
+| `size` | `512`, `1024` | `1024` | Square PNG output size |
 
 The Euclidean outline expansion is `outlineWidth × 2.35`, matching Sticker
 Forge. Flat-background removal also handles enclosed background regions and
@@ -153,7 +166,7 @@ and [`schemas/`](schemas/).
 ## Limitations
 
 - Busy photographic backgrounds require a dedicated subject-isolation step.
-- Very small inputs cannot gain real detail by exporting at 1024 or 2048 px.
+- Very small inputs cannot gain real detail by exporting at 1024 px.
 - A wide contour can intentionally close small holes; use a thinner contour
   when counters and gaps matter.
 - SVG text depends on fonts available to the rasterizer. Convert important type

@@ -79,7 +79,7 @@ npx skills use AlbertAZ1992/creator-brand-skills@logo-to-clay --agent codex
 | Skill | 支持的输入 | 风格与控制项 | 最终拿到的文件 |
 | --- | --- | --- | --- |
 | [`logo-to-clay`](logo-to-clay/) | 简单的 SVG 或 PNG Logo | 图片、Mesh 或两者；独立物体或浮雕；棚拍或透明背景；颜色与深度 | 生成图与 Prompt；OBJ、MTL、凹凸 PNG、1024 px 预览图、manifest JSON |
-| [`image-to-sticker`](image-to-sticker/) | 透明或纯色背景的 Logo、字标、图标、徽章、扁平插画 | 无边框或 0–64 px 轮廓；自定义颜色；原始、镭射、闪粉、反光材质；±15° 旋转；512/1024/2048 px | 透明 RGBA PNG、alpha-proof PNG、可复现的 source-card JSON、manifest JSON |
+| [`image-to-sticker`](image-to-sticker/) | 透明或纯色背景的 Logo、字标、图标、徽章、扁平插画 | 无边框或 0–44 px 轮廓；自定义颜色；原始、镭射、闪粉、反光材质；±12° 旋转；512/1024 px | 透明 RGBA PNG、alpha-proof PNG、可复现的 source-card JSON、manifest JSON |
 | [`feature-to-icons`](feature-to-icons/) | 3–20 个功能名与可选产品语境，支持非拉丁文字标签 | 线性 light/regular/bold、填充、双色；自定义颜色；24/32/48 px 网格 | 每个功能一份可编辑 SVG、spec 与来源 JSON、SVG/PNG 图标族预览、光学校验 manifest JSON |
 | [`product-to-mascot`](product-to-mascot/) | 产品事实，以及可选受众、性格、Mascot 类型、视觉媒介和品牌色 | 一套锁定的角色系统；主参考、欢迎、工作、思考、庆祝五个姿势 | 角色圣经 JSON、五张参考 PNG、contact-sheet PNG、校验 manifest JSON |
 

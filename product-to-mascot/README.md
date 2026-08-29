@@ -4,9 +4,22 @@ Turn product semantics into a reusable brand character. The skill first locks a
 character bible, then generates and reviews a primary reference plus four
 consistent poses.
 
+The callable Skill name is `product-to-mascot`.
+
 <p align="center">
   <img src="examples/generated/threads-mascot-contact-sheet.png" alt="Five-pose mascot contact sheet" width="900">
 </p>
+
+## At a glance
+
+| Capability | Contract |
+| --- | --- |
+| **Best for** | A long-lived product or brand character that must remain recognizable across product, marketing, and stickers |
+| **Required input** | Product name and factual product description |
+| **Optional direction** | Audience, personality, mascot type, visual medium, palette, and existing brand assets |
+| **Character types** | Animal, human-like character, abstract living form, or robot |
+| **Output formats** | Character-bible JSON, five full-size reference PNGs, contact-sheet PNG, and verification manifest JSON |
+| **Core guarantee** | Product facts are separated from creative choices, then silhouette, face, palette, signature feature, and medium are locked across every pose |
 
 ## The contract
 
@@ -18,7 +31,7 @@ Product facts → character bible → primary reference → four pose references
 The primary reference and every pose must retain the same silhouette, face rule,
 palette, signature feature, and illustration medium.
 
-## Supported directions
+## Inputs and style controls
 
 | Control | Supported choices |
 | --- | --- |
@@ -57,12 +70,21 @@ variant.
 
 ## Deliverables
 
-- `character-bible.json`
-- `mascot-primary.png`
-- `mascot-welcome.png`, `mascot-working.png`, `mascot-thinking.png`, and
-  `mascot-celebrate.png`
-- `mascot-contact-sheet.png`
-- `mascot-manifest.json`
+```text
+mascot-reference-set/
+├── character-bible.json       product connection and locked identity rules
+├── mascot-primary.png         accepted full-body master reference
+├── mascot-welcome.png         welcoming pose
+├── mascot-working.png         focused-work pose
+├── mascot-thinking.png        thinking/help pose
+├── mascot-celebrate.png       celebration pose
+├── mascot-contact-sheet.png   five-pose visual consistency proof
+└── mascot-manifest.json       source, palette, retries, files, and pass result
+```
+
+The final reference set always contains these five accepted poses. Concept
+exploration may vary before the character bible is approved; it does not change
+the fixed delivery contract.
 
 The contact-sheet helper needs ImageMagick:
 
@@ -84,6 +106,10 @@ deliverable check. `verify:deliverables` creates disposable reference fixtures
 and proves the validator rejects missing or undersized inputs before producing
 the contact sheet. The input, character-bible, and manifest contracts are in
 [`schemas/`](schemas/).
+
+The manifest only passes when all five PNG references exist, meet the minimum
+size contract, and produce the expected contact sheet. Human review still owns
+identity drift, unwanted text, and subjective visual quality.
 
 ## Scope
 

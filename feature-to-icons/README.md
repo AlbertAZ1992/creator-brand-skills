@@ -6,6 +6,21 @@ of asking a model to draw unrelated SVG paths from scratch.
 
 The callable Skill name is `feature-to-icons`.
 
+<p align="center">
+  <img src="examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="760">
+</p>
+
+## At a glance
+
+| Capability | Contract |
+| --- | --- |
+| **Best for** | Product navigation, feature lists, settings, dashboards, and marketing pages that need one coherent icon family |
+| **Input** | 3–20 unique feature names, with optional product context and explicit icon overrides |
+| **Native styles** | Outline in light, regular, or bold weight; filled; duotone |
+| **Presentation controls** | Primary/secondary colors and a 24, 32, or 48 px grid |
+| **Output formats** | Editable SVG per feature, SVG/PNG family previews, normalized spec JSON, provenance JSON, and verification manifest JSON |
+| **Core guarantee** | One pinned Phosphor version and one native weight per family; ambiguous metaphors are surfaced instead of silently guessed |
+
 ## What it does
 
 ```text
@@ -195,7 +210,7 @@ fallbacks and applies the same safety, raster, and optical delivery gates.
 ```
 
 The verification runs lint, formatting, type checking, build, 54 unit tests,
-nine prompt/input evals, a real deliverable test, and all 33 committed example
+nine prompt/input evals, a real deliverable test, and all 38 committed example
 SVGs. It also verifies package provenance and optical metrics.
 
 Regenerate the gallery from pinned library assets:
