@@ -82,7 +82,7 @@ npx skills use AlbertAZ1992/creator-brand-skills@logo-to-clay --agent codex
 | Skill | Supported input | Styles and controls | Files you receive |
 | --- | --- | --- | --- |
 | [`logo-to-clay`](logo-to-clay/) | Simple SVG or PNG logo | Image, mesh, or both; standalone object or relief; studio or transparent background; color and depth | Generated raster + prompt; OBJ, MTL, bump PNG, 1024 px preview, manifest JSON |
-| [`image-to-sticker`](image-to-sticker/) | Transparent or flat-background logo, wordmark, icon, badge, or flat illustration | Borderless or 0–64 px contour; custom color; original, holographic, glitter, or reflective finish; ±15° tilt; 512/1024/2048 px | Transparent RGBA PNG, alpha-proof PNG, reproducible source-card JSON, manifest JSON |
+| [`image-to-sticker`](image-to-sticker/) | Transparent or flat-background logo, wordmark, icon, badge, or flat illustration | Borderless or 0–44 px contour; custom color; original, holographic, glitter, or reflective finish; ±12° tilt; 512/1024 px | Transparent RGBA PNG, alpha-proof PNG, reproducible source-card JSON, manifest JSON |
 | [`feature-to-icons`](feature-to-icons/) | 3–20 feature names plus optional product context, including non-Latin labels | Outline light/regular/bold, filled, or duotone; custom colors; 24/32/48 px grid | One editable SVG per feature, spec and provenance JSON, SVG/PNG family preview, optical-check manifest JSON |
 | [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, visual medium, and palette | One locked character system; primary, welcome, working, thinking, and celebration poses | Character-bible JSON, five reference PNGs, contact-sheet PNG, verification manifest JSON |
 

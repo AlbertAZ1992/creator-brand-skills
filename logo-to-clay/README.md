@@ -10,6 +10,18 @@ The callable Skill name is `logo-to-clay`.
 | <img src="examples/generated/clay-render.png" alt="Generated clay Threads wordmark" width="560"> | <img src="examples/generated/mesh-forms.png" alt="Verified standalone and relief mesh previews" width="560"> |
 | Fast, model-generated visual | Real OBJ, MTL, bump map, preview, and manifest |
 
+## At a glance
+
+| Capability | Contract |
+| --- | --- |
+| **Best for** | Turning one simple logo or icon into a clay campaign visual, a usable 3D asset, or both |
+| **Supported sources** | SVG or PNG with transparency or a clearly contrasting flat background |
+| **Production routes** | `image`, `mesh`, or `both` |
+| **3D forms** | Standalone `object` or backed `relief`; both use the same refined matte clay material |
+| **Controls** | Extrusion depth, clay color, and studio or transparent render background |
+| **Output formats** | Generated raster + final prompt; OBJ, MTL, bump PNG, 1024 px preview PNG, and verification manifest JSON |
+| **Core guarantee** | Mesh mode traces the supplied visible silhouette, preserves enclosed holes, and validates real geometry and material linkage |
+
 ## What it does
 
 Logo to Clay has two independent production routes:
