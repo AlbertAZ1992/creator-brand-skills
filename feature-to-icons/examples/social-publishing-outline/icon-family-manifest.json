@@ -1,0 +1,123 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 5,
+  "designSystem": {
+    "style": "outline",
+    "gridSize": 32,
+    "strokeWidth": 2,
+    "cornerRadius": "round",
+    "visualWeight": "regular",
+    "geometryPolicy": "library-native",
+    "sourceWeight": "regular"
+  },
+  "source": {
+    "strategy": "library-first",
+    "library": "Phosphor",
+    "package": "@phosphor-icons/core",
+    "version": "2.1.1",
+    "license": "MIT",
+    "weight": "regular"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "icons": [
+      "home-feed.svg",
+      "search.svg",
+      "create-post.svg",
+      "activity.svg",
+      "profile.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Home Feed",
+        "bounds": {
+          "x": 4,
+          "y": 3,
+          "width": 24,
+          "height": 25
+        },
+        "centerOffset": {
+          "x": -0.009,
+          "y": 2.267
+        },
+        "inkRatio": 0.181,
+        "occupiedAreaRatio": 0.586
+      },
+      {
+        "feature": "Search",
+        "bounds": {
+          "x": 2.875,
+          "y": 2.875,
+          "width": 26.125,
+          "height": 26.125
+        },
+        "centerOffset": {
+          "x": -0.564,
+          "y": -0.553
+        },
+        "inkRatio": 0.142,
+        "occupiedAreaRatio": 0.667
+      },
+      {
+        "feature": "Create Post",
+        "bounds": {
+          "x": 4,
+          "y": 4,
+          "width": 24,
+          "height": 24
+        },
+        "centerOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "inkRatio": 0.21,
+        "occupiedAreaRatio": 0.563
+      },
+      {
+        "feature": "Activity",
+        "bounds": {
+          "x": 2,
+          "y": 5,
+          "width": 28,
+          "height": 24
+        },
+        "centerOffset": {
+          "x": 0.002,
+          "y": -0.908
+        },
+        "inkRatio": 0.153,
+        "occupiedAreaRatio": 0.656
+      },
+      {
+        "feature": "Profile",
+        "bounds": {
+          "x": 3,
+          "y": 3,
+          "width": 26,
+          "height": 26
+        },
+        "centerOffset": {
+          "x": -0.003,
+          "y": 0.374
+        },
+        "inkRatio": 0.234,
+        "occupiedAreaRatio": 0.66
+      }
+    ],
+    "warnings": []
+  }
+}

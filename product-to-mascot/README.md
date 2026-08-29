@@ -4,6 +4,10 @@ Turn product semantics into a reusable brand character. The skill first locks a
 character bible, then generates and reviews a primary reference plus four
 consistent poses.
 
+<p align="center">
+  <img src="examples/generated/threads-mascot-contact-sheet.png" alt="Five-pose mascot contact sheet" width="900">
+</p>
+
 ## The contract
 
 ```text
@@ -26,9 +30,9 @@ npx skills add AlbertAZ1992/creator-brand-skills \
 ## Use it
 
 ```text
-Use $product-to-mascot for Seedling, a plant-care app for new houseplant owners.
-Create a friendly character mascot in flat vector art. The watering can is a
-signature feature. Generate the verified reference set.
+Use $product-to-mascot for Threads, a text-first social product built around
+public conversation. Create a friendly loop-shaped mascot in soft felt with a
+small coral thread tail. Generate the verified reference set.
 ```
 
 Expected result: a `character-bible.json`, primary reference image, four named
@@ -61,12 +65,17 @@ From the repository root:
 ```
 
 `verify` runs lint, formatting, types, units, offline evals, and the real
-deliverable check. `verify:deliverables` creates disposable reference fixtures and proves the
-validator rejects missing or undersized inputs before producing the contact
-sheet. The input, character-bible, and manifest contracts are in
+deliverable check. `verify:deliverables` creates disposable reference fixtures
+and proves the validator rejects missing or undersized inputs before producing
+the contact sheet. The input, character-bible, and manifest contracts are in
 [`schemas/`](schemas/).
 
 ## Scope
 
 Use this skill when a product needs a consistent long-lived character. Use a
 general image-generation request for an isolated character illustration.
+
+The README contact sheet is an unofficial transformation example inspired by
+the Threads product identity. Threads is a trademark of Meta Platforms, Inc.;
+this project is not affiliated with or endorsed by Meta. See
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

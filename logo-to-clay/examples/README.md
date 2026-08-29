@@ -1,9 +1,9 @@
 # Logo to Clay examples
 
-These examples use the real local mesh pipeline, not a hand-drawn mockup. Both
-previews originate from [`assets/clay-mark.svg`](assets/clay-mark.svg), and every
-output folder contains an OBJ, MTL, bump map, 1024 px preview, and passing
-manifest.
+These examples use the same supplied Threads wordmark across both supported
+routes. The mesh previews come from the real local pipeline, not a hand-drawn
+mockup. Every output folder contains an OBJ, MTL, bump map, 1024 px preview,
+and passing manifest.
 
 Regenerate them with:
 
@@ -11,24 +11,18 @@ Regenerate them with:
 npm run examples
 ```
 
-## The two supported mesh forms
+## Image and mesh routes
 
-`object` is a standalone softly beveled extrusion. `relief` adds real backing
-geometry behind a shallower mark.
+| **Generated image route** | **Verified mesh route** |
+| :---: | :---: |
+| <img src="generated/clay-render.png" alt="Generated clay Threads wordmark" width="560"> | <img src="generated/mesh-forms.png" alt="Standalone and relief mesh previews" width="560"> |
+| Dark charcoal clay on a warm studio background | Standalone 5 mm object and 2 mm relief |
 
-![Standalone and relief mesh previews](generated/mesh-forms.png)
-
-The complete deliverables are in [`generated/object/`](generated/object/) and
+The image route is subjective and is not evidence for OBJ geometry. The mesh
+route is deterministic; complete deliverables are in
+[`generated/object/`](generated/object/) and
 [`generated/relief/`](generated/relief/).
 
-Image generation is a separate reference-image route. Its checked-in example
-is generated through the image model rather than being presented as evidence
-for the deterministic mesh renderer.
-
-## Reference-image render
-
-The same source logo was supplied to the image route with `object`, `5 mm`,
-purple clay, and a warm studio background. This output demonstrates the
-subjective image-model route; it is not used to validate OBJ geometry.
-
-![Generated clay render](generated/clay-render.png)
+Threads and its logo are trademarks of Meta Platforms, Inc. This repository is
+not affiliated with or endorsed by Meta. See
+[`THIRD_PARTY_NOTICES.md`](../THIRD_PARTY_NOTICES.md).

@@ -1,12 +1,20 @@
 # Third-party notices
 
+## Threads demonstration asset
+
+The checked-in Threads wordmark and transformed showcase images are provided
+solely to demonstrate input-preserving transformation behavior. Threads and
+its logo are trademarks of Meta Platforms, Inc. This project is not affiliated
+with or endorsed by Meta. These demonstration assets are excluded from this
+repository's MIT license.
+
+## Sticker Forge
+
 Portions of `src/alpha.ts`, `src/raster.ts`, and `src/material.ts` are adapted from
 [Sticker Forge](https://github.com/CatsJuice/sticker-forge), including its
 exterior-alpha flood fill, Euclidean distance transform, outline-radius mapping,
 source-over-outline composition order, and deterministic holographic, glitter,
 and reflective front-material algorithms.
-
-## Sticker Forge
 
 MIT License
 

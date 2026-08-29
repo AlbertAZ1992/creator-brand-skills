@@ -17,6 +17,7 @@ user can test one route at a time.
 | `feature-to-icons` | No source file required | [`feature-to-icons.md`](feature-to-icons.md) |
 | `logo-to-clay` | Attach an SVG or PNG logo | [`logo-to-clay.md`](logo-to-clay.md) |
 | `image-to-sticker` | Attach simple flat artwork | [`image-to-sticker.md`](image-to-sticker.md) |
+| `product-to-mascot` | Describe a product | [`product-to-mascot.md`](product-to-mascot.md) |
 
 These guides complement the embedded, checked-in visual galleries owned by
 each Skill package.
@@ -26,7 +27,7 @@ each Skill package.
 From the repository root:
 
 ```bash
-./scripts/verify.sh logo-to-clay image-to-sticker feature-to-icons
+./scripts/verify.sh
 ```
 
 Automated verification uses disposable fixtures and does not call a paid image

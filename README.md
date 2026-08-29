@@ -1,36 +1,34 @@
+<div align="center">
+
 # Creator Brand Skills
 
-**English** · [简体中文](README.zh-CN.md)
+### One brand input. Four reusable visual systems.
 
-Four standalone Codex skills for turning brand inputs into reusable visual
-assets. Each skill combines a focused workflow with reproducible evals and
-artifact-level verification.
+Turn a logo, image, feature list, or product idea into production-ready visual
+assets with Codex.
 
-## Skills
+**English** · [简体中文](README.zh-CN.md) · [Install](#install) ·
+[Verify](#verify-locally)
 
-| Skill | Input | Verified output |
-| --- | --- | --- |
-| [`logo-to-clay`](logo-to-clay/) | Logo or icon | Clay render prompt and/or OBJ, MTL, 1024 px preview, and manifest |
-| [`image-to-sticker`](image-to-sticker/) | Simple logo, icon, badge, or flat artwork | One 512/1024/2048 px transparent sticker, alpha proof, source card, and manifest |
-| [`feature-to-icons`](feature-to-icons/) | 3–20 product features | Phosphor-backed SVG family, previews, provenance, optical metrics, and manifest |
-| [`product-to-mascot`](product-to-mascot/) | Product facts | Character bible, primary reference, four poses, contact sheet, and manifest |
+</div>
 
-`logo-to-clay`, `image-to-sticker`, and `feature-to-icons` form the core
-visual-asset toolkit. `product-to-mascot` extends the suite into reusable brand
-character systems.
+## Four skills, one toolkit
 
-## Requirements
+| **01 · Logo to Clay** | **02 · Image to Sticker** |
+| :---: | :---: |
+| <img src="logo-to-clay/examples/generated/clay-render.png" alt="Threads wordmark transformed into dark clay" width="560"> | <img src="image-to-sticker/examples/generated/recommended-preview.png" alt="Threads wordmark transformed into a transparent contour sticker" width="560"> |
+| Logo or icon → clay render or real OBJ mesh | Flat image → transparent, source-faithful sticker |
+| [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
-- Codex or another compatible Skill runtime
-- Node.js 22 and npm
-- ImageMagick's `magick` command and `jq` for regenerating or fully verifying
-  `image-to-sticker` examples
+| **03 · Feature to Icons** | **04 · Product to Mascot** |
+| :---: | :---: |
+| <img src="feature-to-icons/examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="560"> | <img src="product-to-mascot/examples/generated/threads-mascot-contact-sheet.png" alt="Five-pose brand mascot contact sheet" width="560"> |
+| 3–20 features → one consistent, editable SVG family | Product facts → character bible and five reference poses |
+| [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-On macOS:
-
-```bash
-brew install imagemagick jq
-```
+The gallery uses one recognizable input to make each transformation easy to
+judge. Threads is a trademark of Meta Platforms, Inc.; these are unofficial
+demonstrations and this project is not affiliated with or endorsed by Meta.
 
 ## Install
 
@@ -40,140 +38,98 @@ Install from the published repository with the standard Skills CLI:
 npx skills add AlbertAZ1992/creator-brand-skills
 ```
 
-The interactive flow lets you select skills, supported agents, and installation
-scope. To install all four globally for Codex without prompts:
+The interactive flow lets you choose one or more Skills, supported agents, and
+installation scope. After installation, start a new Codex task and use a short
+request:
+
+```text
+Use $logo-to-clay to turn this logo into clay.
+```
+
+<details>
+<summary><strong>Install all four, install one, or use a Skill once</strong></summary>
+
+Install all four globally for Codex:
 
 ```bash
 npx skills add AlbertAZ1992/creator-brand-skills \
   --skill '*' --global --agent codex --yes
 ```
 
-List the available skills or install only one:
+List the available Skills or install only one:
 
 ```bash
 npx skills add AlbertAZ1992/creator-brand-skills --list
 npx skills add AlbertAZ1992/creator-brand-skills \
-  --skill logo-to-clay --global --agent codex
+  --skill image-to-sticker --global --agent codex
 ```
 
-For a one-off terminal session without keeping the Skill installed:
+Run one Skill without keeping it installed:
 
 ```bash
 npx skills use AlbertAZ1992/creator-brand-skills@logo-to-clay --agent codex
 ```
 
-Start a new Codex task, or restart Codex if an installed Skill does not appear
-immediately. Skills that use the local TypeScript runtime prepare their locked
-dependencies and build output on first use.
+</details>
 
-## Try the core skills
+## What each Skill delivers
 
-Users do not need to describe every option. Attach the required source and use
-one short request:
+| Skill | Input | Verified deliverables |
+| --- | --- | --- |
+| [`logo-to-clay`](logo-to-clay/) | Logo or icon | Clay render prompt and/or OBJ, MTL, 1024 px preview, manifest |
+| [`image-to-sticker`](image-to-sticker/) | Logo, wordmark, icon, badge | 512/1024/2048 px transparent sticker, alpha proof, source card, manifest |
+| [`feature-to-icons`](feature-to-icons/) | 3–20 product features | Phosphor-backed SVG family, preview, provenance, optical metrics, manifest |
+| [`product-to-mascot`](product-to-mascot/) | Product facts | Character bible, primary reference, four poses, contact sheet, manifest |
 
-```text
-Use $logo-to-clay to turn this logo into clay.
-```
-
-```text
-Use $image-to-sticker to turn this image into a sticker.
-```
+Each Skill locks source facts before generation, then applies task-specific
+finishing and artifact checks:
 
 ```text
-Use $feature-to-icons to make icons for Search, Filters, Team Sharing, and
-Cloud Sync.
+source truth → task spec → controlled generation
+             → deterministic finishing → hard checks → proof → manifest
 ```
 
-Each Skill infers documented defaults. Name a material, output mode, or
-design-system choice only when it matters. Read the individual Skill README
-for request modes and options; use [`examples/`](examples/) for copy-ready
-forward tests and acceptance checks.
-
-## Core output previews
-
-### Logo to Clay · generated image route
-
-![Generated clay logo render](logo-to-clay/examples/generated/clay-render.png)
-
-### Logo to Clay · verified mesh route
-
-![Verified object and relief mesh previews](logo-to-clay/examples/generated/mesh-forms.png)
-
-### Image to Sticker · styles
-
-![Sticker style overview](image-to-sticker/examples/generated/style-overview.png)
-
-### Image to Sticker · supported source types
-
-![Transparent and flat-background sticker inputs](image-to-sticker/examples/generated/source-types.png)
-
-## Feature to Icons preview
-
-The generated icon families are embedded here so you can judge consistency
-without opening a separate page.
-
-### Product essentials · outline
-
-![Product essentials outline icon family](feature-to-icons/examples/product-essentials-outline/icon-family-preview.png)
-
-### Collaboration · filled
-
-![Collaboration filled icon family](feature-to-icons/examples/collaboration-filled/icon-family-preview.png)
-
-### Commerce · duotone
-
-![Commerce duotone icon family](feature-to-icons/examples/commerce-duotone/icon-family-preview.png)
-
-## Verify
-
-Run all four release checks locally:
+## Verify locally
 
 ```bash
 ./scripts/verify.sh
 ```
 
-Each package runs lint, formatting checks, strict TypeScript checks, unit
-tests, prompt/behavior evals, and a real deliverable eval. The final evals
-inspect files rather than merely matching expected prose:
+This runs lint, formatting, strict TypeScript checks, unit tests, behavior
+evals, and real deliverable validation for all four Skills. GitHub Actions runs
+the same package-level checks on every push and pull request.
 
-- `logo-to-clay` checks OBJ geometry, MTL linkage, a 1024 px preview, and its
-  manifest.
-- `image-to-sticker` checks real RGBA transparency, corner alpha, visible
-  coverage, an alpha proof, and its manifest.
-- `feature-to-icons` checks exact feature coverage, pinned Phosphor provenance,
-  SVG safety, optical metrics, editable files, PNG rasterization, and its
-  manifest.
-- `product-to-mascot` checks the character bible, five required reference
-  images, a 1280 x 256 contact sheet, and its manifest.
+<details>
+<summary><strong>Requirements and repository structure</strong></summary>
 
-GitHub Actions runs the same package-level verification on every push and pull
-request.
+Requirements:
 
-## Reliability model
+- Codex or another compatible Skill runtime
+- Node.js 22 and npm
+- ImageMagick and `jq` when regenerating every visual example
 
-```text
-source truth → task-specific spec → controlled generation
-             → deterministic finishing → hard checks → proof → manifest
+```bash
+brew install imagemagick jq
 ```
-
-## Repository structure
 
 ```text
 creator-brand-skills/
-├── scripts/verify.sh        # reproduce verification for all or named skills
-├── examples/                # copy-ready requests and acceptance checks
-├── .github/workflows/       # package verification matrix
+├── scripts/verify.sh
+├── examples/
+├── .github/workflows/
 ├── feature-to-icons/
 ├── image-to-sticker/
 ├── logo-to-clay/
 └── product-to-mascot/
 ```
 
-Every skill folder owns its `SKILL.md`, UI metadata, implementation, evals,
-schemas, architecture notes, and package lock. There is intentionally no root
-Node package or shared `node_modules`; the four skills remain independently
-installable and testable.
+Every Skill folder owns its `SKILL.md`, UI metadata, implementation, evals,
+schemas, examples, and package lock. There is no shared root Node package, so
+the four Skills remain independently installable and testable.
+
+</details>
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+MIT. See [`LICENSE`](LICENSE). Third-party demonstration assets are documented
+in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

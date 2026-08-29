@@ -4,6 +4,10 @@ Use simple, already-composed artwork: a logo, icon, badge, or flat illustration.
 Save outputs outside the repository, for example under
 `/absolute/path/to/brand-tests/sticker-*`.
 
+The checked-in gallery uses the same Threads wordmark as the clay example and
+presents human-facing previews on warm neutral cards. Alpha proofs remain in
+the generated artifact folders for delivery review.
+
 The skill does not select subjects from busy photos or invent enamel, patch,
 ceramic, magnet, or scene-crop styles. Those are separate generation tasks.
 
@@ -88,5 +92,5 @@ mismatch fails instead of creating misleading provenance.
   holes may close naturally.
 - Corrupt alpha or remove an artifact: deliverable verification must fail.
 
-The checked-in source-type and style matrices are embedded in
+The checked-in polished result and style matrices are embedded in
 [`../image-to-sticker/README.md`](../image-to-sticker/README.md).

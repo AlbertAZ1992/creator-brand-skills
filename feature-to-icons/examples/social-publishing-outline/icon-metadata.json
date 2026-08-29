@@ -1,0 +1,84 @@
+{
+  "icons": [
+    {
+      "feature": "Home Feed",
+      "semanticConcept": "House",
+      "visualDescription": "Phosphor regular icon “house” selected for Home Feed",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "house",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Search",
+      "semanticConcept": "Magnifying Glass",
+      "visualDescription": "Phosphor regular icon “magnifying-glass” selected for Search",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "magnifying-glass",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Create Post",
+      "semanticConcept": "Plus Square",
+      "visualDescription": "Phosphor regular icon “plus-square” selected for Create Post",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "plus-square",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Activity",
+      "semanticConcept": "Heart",
+      "visualDescription": "Phosphor regular icon “heart” selected for Activity",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "heart",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Profile",
+      "semanticConcept": "User Circle",
+      "visualDescription": "Phosphor regular icon “user-circle” selected for Profile",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "user-circle",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

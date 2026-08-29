@@ -1,11 +1,12 @@
 # Feature to Icons Examples
 
-Seven generated families show the Skill across style, scale, weight, and color
+Eight generated families show the Skill across style, scale, weight, and color
 combinations. Every path comes from pinned Phosphor 2.1.1 geometry; the delivery
 pipeline applies presentation, provenance, raster, and optical checks.
 
 | Family | Design system | Features |
 | --- | --- | --- |
+| [Social publishing](social-publishing-outline/) | Phosphor regular · 32 px | Home Feed, Search, Create Post, Activity, Profile |
 | [Product essentials](product-essentials-outline/) | Phosphor regular · 24 px | Search, Filters, Team Sharing, Cloud Sync |
 | [Analytics](analytics-light-outline/) | Phosphor light · 24 px | Dashboard, Analytics, Reports, Trends, Export Data |
 | [Collaboration](collaboration-filled/) | Phosphor fill · 32 px | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
@@ -16,33 +17,21 @@ pipeline applies presentation, provenance, raster, and optical checks.
 
 ## Preview every family
 
-### Product essentials · outline · regular
+| **Social publishing · outline** | **Product essentials · outline** |
+| :---: | :---: |
+| <img src="social-publishing-outline/icon-family-preview.png" alt="Social publishing outline family" width="420"> | <img src="product-essentials-outline/icon-family-preview.png" alt="Product essentials outline family" width="420"> |
 
-![Product essentials outline icon family](product-essentials-outline/icon-family-preview.png)
+| **Analytics · light outline** | **Collaboration · filled** |
+| :---: | :---: |
+| <img src="analytics-light-outline/icon-family-preview.png" alt="Analytics light outline family" width="420"> | <img src="collaboration-filled/icon-family-preview.png" alt="Collaboration filled family" width="420"> |
 
-### Analytics · outline · light
+| **Commerce · duotone** | **Security · bold outline** |
+| :---: | :---: |
+| <img src="commerce-duotone/icon-family-preview.png" alt="Commerce duotone family" width="420"> | <img src="security-bold-outline/icon-family-preview.png" alt="Security bold outline family" width="420"> |
 
-![Analytics light outline icon family](analytics-light-outline/icon-family-preview.png)
-
-### Collaboration · filled
-
-![Collaboration filled icon family](collaboration-filled/icon-family-preview.png)
-
-### Commerce · duotone
-
-![Commerce duotone icon family](commerce-duotone/icon-family-preview.png)
-
-### Security · outline · bold
-
-![Security bold outline icon family](security-bold-outline/icon-family-preview.png)
-
-### Creator Brand · duotone · 32 px
-
-![Creator Brand duotone icon family](creator-brand-duotone/icon-family-preview.png)
-
-### AI workspace · outline · 48 px
-
-![AI workspace 48 px outline icon family](ai-workspace-outline-48/icon-family-preview.png)
+| **Creator Brand · duotone** | **AI workspace · 48 px outline** |
+| :---: | :---: |
+| <img src="creator-brand-duotone/icon-family-preview.png" alt="Creator Brand duotone family" width="420"> | <img src="ai-workspace-outline-48/icon-family-preview.png" alt="AI workspace outline family" width="420"> |
 
 ## What is in each directory
 
@@ -71,7 +60,7 @@ npm run examples
 npm run verify:examples
 ```
 
-`npm run examples` replaces only the seven named example-family directories.
+`npm run examples` replaces only the eight named example-family directories.
 `npm run verify:examples` checks the exact directory set, request validity,
 manifest coverage, pinned Phosphor provenance, SVG safety rules, PNG signature,
 preview dimensions, optical metric coverage, and zero unresolved optical

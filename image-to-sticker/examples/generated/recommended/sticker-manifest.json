@@ -8,23 +8,23 @@
     "rgba": true
   },
   "pipeline": {
-    "backgroundMask": "flat",
+    "backgroundMask": "alpha",
     "outlineWidth": 4,
     "outlineRadius": 9.4,
     "outlineColor": "#ffffff",
     "material": "original",
     "tilt": -3,
     "rgbOperation": "source-over-outline-then-material",
-    "sourceRgbSha256": "638bbd289e99495b08816320880d1366dfbb82866ed616e6c3b439ed09b2919b"
+    "sourceRgbSha256": "394e5ef4f8ee4a1e92554a92389430785e0bbe7cb8c8b291ba834f2bb7ef9524"
   },
   "verification": {
     "alphaProof": "sticker-alpha-proof.png",
     "alphaMinimum": 0,
     "alphaMaximum": 255,
     "cornerAlpha": 0,
-    "visibleCoverage": 0.08117832857019758,
-    "softAlphaCoverage": 0.013547897338867188,
-    "interiorTransparentPixels": 12818,
+    "visibleCoverage": 0.09282262465533185,
+    "softAlphaCoverage": 0.014174461364746094,
+    "interiorTransparentPixels": 2994,
     "passed": true
   }
 }

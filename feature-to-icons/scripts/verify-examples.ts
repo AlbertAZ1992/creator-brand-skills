@@ -8,6 +8,7 @@ import type { IconDesignSystem, IconSource } from "../src/types.js";
 const PACKAGE_ROOT = fileURLToPath(new URL("..", import.meta.url));
 const EXAMPLES_ROOT = join(PACKAGE_ROOT, "examples");
 const EXPECTED = [
+  { slug: "social-publishing-outline", count: 5 },
   { slug: "product-essentials-outline", count: 4 },
   { slug: "analytics-light-outline", count: 5 },
   { slug: "collaboration-filled", count: 5 },
