@@ -22,13 +22,22 @@ assets with Codex.
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="560"> | <img src="product-to-mascot/examples/generated/threads-mascot-contact-sheet.png" alt="Five-pose brand mascot contact sheet" width="560"> |
+| <img src="feature-to-icons/examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="560"> | <img src="product-to-mascot/examples/generated/threads-mascot-preview.png" alt="Two poses from a five-pose brand mascot system" width="560"> |
 | 3–20 features → one consistent, editable SVG family | Product facts → character bible and five reference poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
 The gallery uses one recognizable input to make each transformation easy to
 judge. Threads is a trademark of Meta Platforms, Inc.; these are unofficial
 demonstrations and this project is not affiliated with or endorsed by Meta.
+
+## Try a Skill
+
+| Goal | Copy this into Codex |
+| --- | --- |
+| Make a clay logo | `Use $logo-to-clay to turn this logo into a polished clay render.` |
+| Make a sticker | `Use $image-to-sticker to turn this image into a transparent contour sticker.` |
+| Build an icon family | `Use $feature-to-icons to make consistent SVG icons for these product features.` |
+| Design a mascot | `Use $product-to-mascot to turn these product facts into a reusable brand mascot.` |
 
 ## Install
 
@@ -39,12 +48,8 @@ npx skills add AlbertAZ1992/creator-brand-skills
 ```
 
 The interactive flow lets you choose one or more Skills, supported agents, and
-installation scope. After installation, start a new Codex task and use a short
-request:
-
-```text
-Use $logo-to-clay to turn this logo into clay.
-```
+installation scope. After installation, start a new Codex task and use one of
+the requests above.
 
 <details>
 <summary><strong>Install all four, install one, or use a Skill once</strong></summary>
@@ -72,17 +77,22 @@ npx skills use AlbertAZ1992/creator-brand-skills@logo-to-clay --agent codex
 
 </details>
 
-## What each Skill delivers
+## Production outputs, clearly specified
 
-| Skill | Input | Verified deliverables |
-| --- | --- | --- |
-| [`logo-to-clay`](logo-to-clay/) | Logo or icon | Clay render prompt and/or OBJ, MTL, 1024 px preview, manifest |
-| [`image-to-sticker`](image-to-sticker/) | Logo, wordmark, icon, badge | 512/1024/2048 px transparent sticker, alpha proof, source card, manifest |
-| [`feature-to-icons`](feature-to-icons/) | 3–20 product features | Phosphor-backed SVG family, preview, provenance, optical metrics, manifest |
-| [`product-to-mascot`](product-to-mascot/) | Product facts | Character bible, primary reference, four poses, contact sheet, manifest |
+| Skill | Supported input | Styles and controls | Files you receive |
+| --- | --- | --- | --- |
+| [`logo-to-clay`](logo-to-clay/) | Simple SVG or PNG logo | Image, mesh, or both; standalone object or relief; studio or transparent background; color and depth | Generated raster + prompt; OBJ, MTL, bump PNG, 1024 px preview, manifest JSON |
+| [`image-to-sticker`](image-to-sticker/) | Transparent or flat-background logo, wordmark, icon, badge, or flat illustration | Borderless or 0–64 px contour; custom color; original, holographic, glitter, or reflective finish; ±15° tilt; 512/1024/2048 px | Transparent RGBA PNG, alpha-proof PNG, reproducible source-card JSON, manifest JSON |
+| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names plus optional product context, including non-Latin labels | Outline light/regular/bold, filled, or duotone; custom colors; 24/32/48 px grid | One editable SVG per feature, spec and provenance JSON, SVG/PNG family preview, optical-check manifest JSON |
+| [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, visual medium, and palette | One locked character system; primary, welcome, working, thinking, and celebration poses | Character-bible JSON, five reference PNGs, contact-sheet PNG, verification manifest JSON |
 
-Each Skill locks source facts before generation, then applies task-specific
-finishing and artifact checks:
+## Why this toolkit is different
+
+| **Source-faithful** | **Production-ready** | **Verified** |
+| :---: | :---: | :---: |
+| Locks logo geometry, artwork, feature meaning, or character identity before transformation | Returns real RGBA, SVG, OBJ/MTL, PNG, and JSON assets—not just a prompt or mockup | Runs task-specific alpha, geometry, provenance, optical, or identity checks and records the result in a manifest |
+
+The shared delivery pattern is:
 
 ```text
 source truth → task spec → controlled generation

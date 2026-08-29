@@ -18,6 +18,21 @@ Product facts → character bible → primary reference → four pose references
 The primary reference and every pose must retain the same silhouette, face rule,
 palette, signature feature, and illustration medium.
 
+## Supported directions
+
+| Control | Supported choices |
+| --- | --- |
+| Mascot type | `animal`, `character`, `abstract`, or `robot` |
+| Personality | `friendly`, `professional`, `playful`, `technical`, or `approachable` |
+| Visual medium | One user-supplied or proposed medium, such as flat vector, felt, clay, or ink; the accepted medium is locked across the set |
+| Palette | Three to five exact colors recorded in the character bible |
+| Reference poses | Primary, welcome, focused work, thinking/help, and celebration |
+
+Product name and factual description are required. Audience, personality,
+mascot type, visual style, and existing brand assets are optional. When a
+direction is omitted, the Skill proposes it from product semantics and records
+the accepted choice before generating the pose set.
+
 ## Install
 
 Install the published Skill globally for Codex:

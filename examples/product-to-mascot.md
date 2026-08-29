@@ -3,6 +3,11 @@
 Describe the product facts, intended audience, and any identity constraints.
 Save outputs outside the repository.
 
+Supported mascot types are `animal`, `character`, `abstract`, and `robot`.
+Supported personality presets are `friendly`, `professional`, `playful`,
+`technical`, and `approachable`; the visual medium itself may be specified in
+natural language and is then locked across all five reference images.
+
 The checked-in gallery demonstrates a five-pose contact sheet derived from the
 Threads product identity. Use product facts and brand assets you are authorized
 to transform for your own forward tests.
