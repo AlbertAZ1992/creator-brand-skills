@@ -2,9 +2,26 @@
 set -euo pipefail
 
 root_dir=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
-source_path="$root_dir/examples/assets/contour-wordmark.svg"
+source_path="$root_dir/examples/assets/threads-wordmark.png"
 generated_dir="$root_dir/examples/generated"
 work_dir=$(mktemp -d "${TMPDIR:-/tmp}/image-to-sticker-showcase.XXXXXX")
+font_path=${STICKER_SHOWCASE_FONT:-}
+
+if [[ -z "$font_path" ]]; then
+	for candidate in \
+		'/System/Library/Fonts/Helvetica.ttc' \
+		'/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; do
+		if [[ -f "$candidate" ]]; then
+			font_path=$candidate
+			break
+		fi
+	done
+fi
+
+if [[ -z "$font_path" ]]; then
+	printf 'Set STICKER_SHOWCASE_FONT to a readable TTF or TTC font.\n' >&2
+	exit 1
+fi
 
 cleanup() {
 	find "$work_dir" -type f -delete
@@ -22,7 +39,7 @@ render_variant() {
 	local color=$3
 	local tilt=$4
 	local material=${5:-original}
-	render_asset_variant "$name" "$source_path" flat "$width" "$color" "$tilt" "$material"
+	render_asset_variant "$name" "$source_path" alpha "$width" "$color" "$tilt" "$material"
 }
 
 render_asset_variant() {
@@ -62,10 +79,10 @@ make_cell() {
 	local label=$2
 	local output=$3
 	magick "$work_dir/cell-background.png" \
-		\( "$source" -trim +repage -resize '420x180>' \) \
-		-gravity north -geometry +0+35 -composite \
-		-gravity center -fill '#ffffff' -pointsize 24 \
-		-annotate +0+125 "$label" "$output"
+		\( "$source" -trim +repage -resize '400x150>' \) \
+		-gravity north -geometry +0+42 -composite \
+		-gravity south -font "$font_path" -fill '#24211d' -pointsize 22 \
+		-annotate +0+16 "$label" "$output"
 }
 
 make_alpha_cell() {
@@ -75,13 +92,12 @@ make_alpha_cell() {
 	magick -size 480x300 xc:'#101114' \
 		\( "$source" -trim +repage -resize '420x180>' \) \
 		-gravity north -geometry +0+35 -composite \
-		-gravity south -fill '#ffffff' -pointsize 24 \
+		-gravity south -font "$font_path" -fill '#ffffff' -pointsize 24 \
 		-annotate +0+10 "$label" "$output"
 }
 
-magick -size 480x250 pattern:checkerboard \
-	+level-colors '#aeb3bb','#e1e4e8' \
-	-size 480x50 xc:'#292c32' -append "$work_dir/cell-background.png"
+magick -size 480x300 gradient:'#f7f3ec-#e9e2d8' \
+	"$work_dir/cell-background.png"
 
 for width in 1 4 8 18; do
 	name=$(printf 'width-%02d' "$width")
@@ -91,9 +107,11 @@ for width in 1 4 8 18; do
 		"$width px alpha" "$work_dir/$name-alpha.png"
 done
 
-magick montage "$work_dir"/width-??-cell.png -tile 4x1 -geometry +16+16 \
-	-background '#b8b8b8' "$generated_dir/outline-widths.png"
-magick montage "$work_dir"/width-??-alpha.png -tile 4x1 -geometry +16+16 \
+magick montage -font "$font_path" +label "$work_dir"/width-??-cell.png \
+	-tile 4x1 -geometry +16+16 \
+	-background '#ded7cc' "$generated_dir/outline-widths.png"
+magick montage -font "$font_path" +label "$work_dir"/width-??-alpha.png \
+	-tile 4x1 -geometry +16+16 \
 	-background '#606166' "$generated_dir/outline-alpha.png"
 
 for tilt in -12 0 12; do
@@ -102,11 +120,13 @@ for tilt in -12 0 12; do
 	make_cell "$work_dir/$name/sticker.png" "$tilt degrees" "$work_dir/$name-cell.png"
 done
 magick montage \
+	-font "$font_path" \
+	+label \
 	"$work_dir/tilt--12-cell.png" \
 	"$work_dir/tilt-+00-cell.png" \
 	"$work_dir/tilt-+12-cell.png" \
 	-tile 3x1 -geometry +16+16 \
-	-background '#b8b8b8' "$generated_dir/tilts.png"
+	-background '#ded7cc' "$generated_dir/tilts.png"
 
 for entry in white:#ffffff yellow:#ffe04b cyan:#00d4ff pink:#ff4db8; do
 	name="color-${entry%%:*}"
@@ -115,12 +135,14 @@ for entry in white:#ffffff yellow:#ffe04b cyan:#00d4ff pink:#ff4db8; do
 	make_cell "$work_dir/$name/sticker.png" "${entry%%:*}" "$work_dir/$name-cell.png"
 done
 magick montage \
+	-font "$font_path" \
+	+label \
 	"$work_dir/color-white-cell.png" \
 	"$work_dir/color-yellow-cell.png" \
 	"$work_dir/color-cyan-cell.png" \
 	"$work_dir/color-pink-cell.png" \
 	-tile 4x1 -geometry +16+16 \
-	-background '#b8b8b8' "$generated_dir/colors.png"
+	-background '#ded7cc' "$generated_dir/colors.png"
 
 for material in original holographic glitter reflective; do
 	name="material-$material"
@@ -128,11 +150,13 @@ for material in original holographic glitter reflective; do
 	make_cell "$work_dir/$name/sticker.png" "$material" "$work_dir/$name-cell.png"
 done
 magick montage \
+	-font "$font_path" \
+	+label \
 	"$work_dir/material-original-cell.png" \
 	"$work_dir/material-holographic-cell.png" \
 	"$work_dir/material-glitter-cell.png" \
 	"$work_dir/material-reflective-cell.png" \
-	-tile 4x1 -geometry +16+16 -background '#7a7d84' \
+	-tile 4x1 -geometry +16+16 -background '#ded7cc' \
 	"$generated_dir/materials.png"
 
 render_variant style-borderless 0 '#ffffff' 0 original
@@ -148,6 +172,8 @@ render_variant style-color 8 '#ff4db8' 0 original
 make_cell "$work_dir/style-color/sticker.png" 'color contour' \
 	"$work_dir/style-color-cell.png"
 magick montage \
+	-font "$font_path" \
+	+label \
 	"$work_dir/style-borderless-cell.png" \
 	"$work_dir/style-thin-cell.png" \
 	"$work_dir/style-classic-cell.png" \
@@ -156,7 +182,7 @@ magick montage \
 	"$work_dir/material-holographic-cell.png" \
 	"$work_dir/material-glitter-cell.png" \
 	"$work_dir/material-reflective-cell.png" \
-	-tile 4x2 -geometry +16+16 -background '#7a7d84' \
+	-tile 4x2 -geometry +16+16 -background '#ded7cc' \
 	"$generated_dir/style-overview.png"
 
 render_variant recommended 4 '#ffffff' -3
@@ -167,7 +193,7 @@ cp "$work_dir/recommended/source-card.json" "$generated_dir/recommended/source-c
 cp "$work_dir/recommended/sticker-manifest.json" \
 	"$generated_dir/recommended/sticker-manifest.json"
 make_cell "$work_dir/recommended/sticker.png" \
-	'4 px / -3 degrees' "$generated_dir/recommended-preview.png"
+	'classic white contour · -3 degrees' "$generated_dir/recommended-preview.png"
 
 mkdir -p "$generated_dir/source-types"
 render_asset_variant transparent-symbol \
@@ -179,6 +205,8 @@ make_cell "$work_dir/transparent-symbol/sticker.png" \
 make_cell "$work_dir/flat-badge/sticker.png" \
 	'flat background' "$work_dir/flat-badge-cell.png"
 magick montage \
+	-font "$font_path" \
+	+label \
 	"$work_dir/transparent-symbol-cell.png" \
 	"$work_dir/flat-badge-cell.png" \
 	-tile 2x1 -geometry +16+16 -background '#b8b8b8' \

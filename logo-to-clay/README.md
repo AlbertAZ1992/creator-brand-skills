@@ -5,7 +5,10 @@ asset, or both.
 
 The callable Skill name is `logo-to-clay`.
 
-![Generated clay render](examples/generated/clay-render.png)
+| **Image route** | **Mesh route** |
+| :---: | :---: |
+| <img src="examples/generated/clay-render.png" alt="Generated clay Threads wordmark" width="560"> | <img src="examples/generated/mesh-forms.png" alt="Verified standalone and relief mesh previews" width="560"> |
+| Fast, model-generated visual | Real OBJ, MTL, bump map, preview, and manifest |
 
 ## What it does
 
@@ -152,8 +155,6 @@ clay-output/
   validation result.
 
 Both mode returns the image route plus the complete mesh package.
-
-![Verified standalone and relief mesh previews](examples/generated/mesh-forms.png)
 
 ## How to test
 

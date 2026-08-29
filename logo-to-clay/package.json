@@ -4,6 +4,7 @@
   "description": "Transform a logo into a claymation-style 3D render with procedural mesh generation",
   "license": "MIT",
   "files": [
+    "THIRD_PARTY_NOTICES.md",
     "dist/src",
     "SKILL.md",
     "agents",

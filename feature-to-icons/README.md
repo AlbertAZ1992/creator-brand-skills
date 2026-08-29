@@ -107,47 +107,25 @@ individually.
 All examples below are generated from pinned Phosphor 2.1.1 assets by the same
 delivery path used by the Skill.
 
-### Product essentials · outline · regular
+| **Social publishing · outline** | **Product essentials · outline** |
+| :---: | :---: |
+| <img src="examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline family" width="420"> | <img src="examples/product-essentials-outline/icon-family-preview.png" alt="Product essentials outline family" width="420"> |
+| Home Feed, Search, Create Post, Activity, Profile | Search, Filters, Team Sharing, Cloud Sync |
 
-![Product essentials outline icon family](examples/product-essentials-outline/icon-family-preview.png)
+| **Analytics · light outline** | **Collaboration · filled** |
+| :---: | :---: |
+| <img src="examples/analytics-light-outline/icon-family-preview.png" alt="Analytics light outline family" width="420"> | <img src="examples/collaboration-filled/icon-family-preview.png" alt="Collaboration filled family" width="420"> |
+| Dashboard, Analytics, Reports, Trends, Export Data | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
 
-Search, Filters, Team Sharing, Cloud Sync
+| **Commerce · duotone** | **Security · bold outline** |
+| :---: | :---: |
+| <img src="examples/commerce-duotone/icon-family-preview.png" alt="Commerce duotone family" width="420"> | <img src="examples/security-bold-outline/icon-family-preview.png" alt="Security bold outline family" width="420"> |
+| Shopping Cart, Wishlist, Orders, Payment, Delivery | Authentication, Encryption, Access Control, Audit Log, Alerts |
 
-### Analytics · outline · light
-
-![Analytics light outline icon family](examples/analytics-light-outline/icon-family-preview.png)
-
-Dashboard, Analytics, Reports, Trends, Export Data
-
-### Collaboration · filled
-
-![Collaboration filled icon family](examples/collaboration-filled/icon-family-preview.png)
-
-Team Chat, File Sharing, Video Calls, Task Board, Calendar
-
-### Commerce · duotone
-
-![Commerce duotone icon family](examples/commerce-duotone/icon-family-preview.png)
-
-Shopping Cart, Wishlist, Orders, Payment, Delivery
-
-### Security · outline · bold
-
-![Security bold outline icon family](examples/security-bold-outline/icon-family-preview.png)
-
-Authentication, Encryption, Access Control, Audit Log, Alerts
-
-### Creator Brand · duotone · 32 px
-
-![Creator Brand duotone icon family](examples/creator-brand-duotone/icon-family-preview.png)
-
-Image Generation, Background Removal, Brand Kit, Export Assets, Templates
-
-### AI workspace · outline · 48 px
-
-![AI workspace 48 px outline icon family](examples/ai-workspace-outline-48/icon-family-preview.png)
-
-AI Copilot, Knowledge Search, Automation, Version History
+| **Creator Brand · duotone** | **AI workspace · 48 px outline** |
+| :---: | :---: |
+| <img src="examples/creator-brand-duotone/icon-family-preview.png" alt="Creator Brand duotone family" width="420"> | <img src="examples/ai-workspace-outline-48/icon-family-preview.png" alt="AI workspace outline family" width="420"> |
+| Image Generation, Background Removal, Brand Kit, Export Assets, Templates | AI Copilot, Knowledge Search, Automation, Version History |
 
 See the [example index](examples/README.md) for exact requests, icon overrides,
 source metadata, and regeneration instructions.

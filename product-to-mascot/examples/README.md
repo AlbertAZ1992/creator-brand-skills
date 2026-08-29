@@ -1,9 +1,14 @@
 # Product to Mascot example
 
+<p align="center">
+  <img src="generated/threads-mascot-contact-sheet.png" alt="Five-pose mascot contact sheet" width="900">
+</p>
+
 ```text
-Use $product-to-mascot for Seedling, a plant-care app for new houseplant owners.
-Make a friendly character mascot. Use flat vector art and keep a tiny watering can
-as its signature feature. Create the verified reference set.
+Use $product-to-mascot for Threads, a text-first social product built around
+public conversation. Create one friendly loop-shaped character in soft felt,
+with a small coral thread tail as its signature feature. Generate the verified
+five-pose reference set.
 ```
 
 The accepted output directory contains:
@@ -18,3 +23,7 @@ mascot-manifest.json
 
 Run `npm run verify:deliverables` to exercise the deterministic reference-set
 validator.
+
+Threads is a trademark of Meta Platforms, Inc. This unofficial transformation
+example is not affiliated with or endorsed by Meta. See
+[`THIRD_PARTY_NOTICES.md`](../THIRD_PARTY_NOTICES.md).

@@ -6,7 +6,7 @@ Ks 0.05 0.05 0.05
 Ns 10
 d 1.0
 illum 2
-map_Bump -bm 0.1 clay-mark-clay-bump.png
+map_Bump -bm 0.1 threads-wordmark-clay-bump.png
 
 newmtl backing
 Kd 0.663 0.612 0.565

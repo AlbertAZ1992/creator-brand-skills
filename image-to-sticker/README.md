@@ -5,7 +5,10 @@ transparent sticker. The skill keeps the supplied artwork intact, removes a
 transparent or flat background, adds a contour, and can apply a deterministic
 front finish.
 
-![Supported sticker styles](examples/generated/style-overview.png)
+| **Balanced result** | **Supported style system** |
+| :---: | :---: |
+| <img src="examples/generated/recommended-preview.png" alt="Balanced Threads contour sticker" width="560"> | <img src="examples/generated/style-overview.png" alt="Threads sticker style system" width="560"> |
+| Source-faithful transparent output | Contours and deterministic front materials |
 
 ## What it does
 
@@ -81,7 +84,14 @@ The Euclidean outline expansion is `outlineWidth × 2.35`, matching Sticker
 Forge. Flat-background removal also handles enclosed background regions and
 unmattes antialiased edges, which avoids a pale fringe around the result.
 
-![Transparent and flat-background inputs](examples/generated/source-types.png)
+<details>
+<summary><strong>Transparent and flat-background input comparison</strong></summary>
+
+<p align="center">
+  <img src="examples/generated/source-types.png" alt="Transparent and flat-background inputs" width="760">
+</p>
+
+</details>
 
 ## Direct renderer usage
 
@@ -124,8 +134,6 @@ output/
 The manifest passes only when the PNG is RGBA, corners are transparent,
 coverage is plausible, and visible alpha exists. Material effects may alter
 visible RGB, but never the alpha geometry.
-
-![Recommended balanced output](examples/generated/recommended-preview.png)
 
 ## Examples and verification
 

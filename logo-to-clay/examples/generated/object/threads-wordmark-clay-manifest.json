@@ -1,7 +1,7 @@
 {
   "contractVersion": "1.0",
   "source": {
-    "logoPath": "../../assets/clay-mark.svg"
+    "logoPath": "../../assets/threads-wordmark.png"
   },
   "spec": {
     "output": "mesh",
@@ -17,7 +17,7 @@
   "cavities": {
     "mode": "through",
     "depth": 5,
-    "count": 1
+    "count": 4
   },
   "rounding": {
     "bevelThickness": 1.2,
@@ -26,10 +26,10 @@
     "bevelSegments": 14
   },
   "artifacts": {
-    "meshPath": "clay-mark-clay-mesh.obj",
-    "materialPath": "clay-mark-clay-clay.mtl",
-    "bumpPath": "clay-mark-clay-bump.png",
-    "previewPath": "clay-mark-clay-preview.png"
+    "meshPath": "threads-wordmark-clay-mesh.obj",
+    "materialPath": "threads-wordmark-clay-clay.mtl",
+    "bumpPath": "threads-wordmark-clay-bump.png",
+    "previewPath": "threads-wordmark-clay-preview.png"
   },
   "validation": {
     "passed": true,
@@ -40,8 +40,8 @@
       "manifest artifact paths"
     ],
     "geometry": {
-      "vertices": 4320,
-      "faces": 1440
+      "vertices": 31452,
+      "faces": 10484
     },
     "preview": {
       "width": 1024,

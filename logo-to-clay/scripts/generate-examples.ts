@@ -5,7 +5,7 @@ import sharp from "sharp";
 import { buildMesh, validate } from "../src/index.js";
 
 const projectDir = dirname(dirname(fileURLToPath(import.meta.url)));
-const sourcePath = join(projectDir, "examples", "assets", "clay-mark.svg");
+const sourcePath = join(projectDir, "examples", "assets", "threads-wordmark.png");
 const generatedDir = join(projectDir, "examples", "generated");
 
 async function makeManifestPortable(manifestPath: string): Promise<void> {
@@ -13,7 +13,7 @@ async function makeManifestPortable(manifestPath: string): Promise<void> {
     source: { logoPath: string };
     artifacts: Record<string, string | null>;
   };
-  manifest.source.logoPath = "../../assets/clay-mark.svg";
+  manifest.source.logoPath = "../../assets/threads-wordmark.png";
   for (const [key, value] of Object.entries(manifest.artifacts)) {
     manifest.artifacts[key] = value === null ? null : basename(value);
   }
@@ -56,7 +56,10 @@ async function main(): Promise<void> {
   const objectPreview = await buildExample("object", "#C98E68");
   const reliefPreview = await buildExample("relief", "#7B68A6");
   const sourcePreview = join(generatedDir, "source.png");
-  await sharp(sourcePath).resize(768, 768).png().toFile(sourcePreview);
+  await sharp(sourcePath)
+    .resize({ width: 1200, height: 400, fit: "contain", background: "transparent" })
+    .png()
+    .toFile(sourcePreview);
 
   const objectCell = await sharp(objectPreview).resize(960, 960).toBuffer();
   const reliefCell = await sharp(reliefPreview).resize(960, 960).toBuffer();

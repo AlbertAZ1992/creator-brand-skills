@@ -9,6 +9,7 @@
     ".": "./dist/src/index.js"
   },
   "files": [
+    "THIRD_PARTY_NOTICES.md",
     "dist/src",
     "SKILL.md",
     "agents",
