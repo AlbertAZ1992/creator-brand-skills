@@ -17,7 +17,7 @@ user can test one route at a time.
 | `logo-to-clay` | [Flat Vite/JS logos → clay renders + verified OBJ previews](../logo-to-clay/examples/generated/source-to-clay.png) | [`logo-to-clay.md`](logo-to-clay.md) |
 | `image-to-sticker` | [Six flat logos → six transparent PNG sticker treatments](../image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png) | [`image-to-sticker.md`](image-to-sticker.md) |
 | `feature-to-icons` | [20 feature names → 20 hand-drawn animated SVGs](../feature-to-icons/examples/creator-doodle-animated/showcase-preview.png) | [`feature-to-icons.md`](feature-to-icons.md) |
-| `product-to-mascot` | [OpenPatch product facts → five-pose Pip system](../product-to-mascot/examples/generated/openpatch-pip/source-brief.svg) | [`product-to-mascot.md`](product-to-mascot.md) |
+| `product-to-mascot` | [OpenPatch product facts → five-pose Pip system](../product-to-mascot/examples/generated/openpatch-pip/source-to-mascot.png) | [`product-to-mascot.md`](product-to-mascot.md) |
 
 These guides complement the embedded, checked-in visual galleries owned by
 each Skill package.

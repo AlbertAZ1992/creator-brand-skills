@@ -20,14 +20,14 @@ icon families · reusable product mascots
 
 | **01 · Logo to Clay · clay render + 3D mesh** | **02 · Image to Sticker · transparent PNG** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into six transparent sticker styles" width="560"> |
+| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="560"><br><br><img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript letter mark rendered as thick yellow clay" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into six transparent sticker styles" width="560"> |
 | Vite + JavaScript flat logos → clay renders + real verified OBJ meshes | Six flat logos → six transparent sticker styles + alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons · animated SVG set** | **04 · Product to Mascot · character system** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
-| 20 feature names → 20 hand-drawn animated SVGs + optical proof | OpenPatch product facts → Pip character bible → five locked poses |
+| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch product facts transformed into the five-pose Pip mascot system" width="560"><br><br><img src="product-to-mascot/examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ product facts transformed into the five-pose Azi mascot system" width="560"> |
+| 20 feature names → 20 hand-drawn animated SVGs + optical proof | OpenPatch and ALBERTAZ product facts → locked character systems → five poses each |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
 These current images show the input and the production-route result rather than
@@ -35,13 +35,6 @@ isolated beauty shots. Pip and Azi are repository-owned concepts.
 Third-party technology marks appear only as clearly attributed transformation
 fixtures; their names and marks remain the property of their respective owners,
 with no affiliation implied.
-
-### More approved runs
-
-| **JavaScript · Logo to Clay** | **ALBERTAZ · Product to Mascot** |
-| :---: | :---: |
-| <img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript letter mark rendered as thick yellow clay" width="560"> | <img src="product-to-mascot/examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi, the ALBERTAZ folded swift mascot, across five locked poses" width="560"> |
-| Yellow campaign render + standalone object + relief | Folded-paper swift + locked five-pose identity system |
 
 Marketing boards remain separate from clean deliverables and machine-checkable
 proof. Every board is built from outputs produced by the route its Skill

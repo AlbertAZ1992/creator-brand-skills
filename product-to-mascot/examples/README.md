@@ -7,12 +7,17 @@ oversized mint hook-tail, visible repair patch, and coral stitches make product
 meaning part of the silhouette while the oversized head and tiny paws create
 the appeal hook.
 
+<p align="center">
+  <img src="generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch product facts transformed into the five-pose Pip mascot system" width="900">
+</p>
+
 | **Source product facts** | **Generated five-pose system** |
 | :---: | :---: |
 | <img src="generated/openpatch-pip/source-brief.svg" alt="OpenPatch facts locked before generation" width="420"> | <img src="generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose OpenPatch mascot contact sheet" width="420"> |
 
-[`generated/openpatch-pip/`](generated/openpatch-pip/) contains the V2 character
-bible, five full-size pose PNGs, contact sheet, and passing manifest.
+[`generated/openpatch-pip/`](generated/openpatch-pip/) contains the source-to-output
+board, V2 character bible, five full-size pose PNGs, contact sheet, and passing
+manifest.
 
 ## Second approved system: ALBERTAZ → Azi
 
