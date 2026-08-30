@@ -3,6 +3,8 @@ set -euo pipefail
 
 root_dir=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 
+node "$root_dir/examples/build-source-briefs.mjs"
+
 for slug in openpatch-pip albertaz-azi mora-mori; do
 	sh "$root_dir/scripts/verify-mascot-reference-set.sh" \
 		"$root_dir/examples/generated/$slug"

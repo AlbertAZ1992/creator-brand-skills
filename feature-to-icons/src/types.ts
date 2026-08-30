@@ -1,4 +1,5 @@
 export type IconStyle = "outline" | "filled" | "duotone";
+export type IconPurpose = "brand" | "system";
 export type PhosphorWeight = "light" | "regular" | "bold" | "fill" | "duotone";
 
 export interface FeatureIconInput {
@@ -6,6 +7,8 @@ export interface FeatureIconInput {
   features: string[];
   /** Visual style of the icons */
   style?: IconStyle;
+  /** Brand feature art or compact system/UI glyphs */
+  purpose?: IconPurpose;
   /** Color palette: hex colors for the icon set */
   colors?: { primary: string; secondary?: string };
   /** Icon grid size in pixels (square) */
@@ -53,6 +56,7 @@ export interface IconArtifact extends IconMetadata {
 }
 
 export interface IconDesignSystem {
+  purpose: IconPurpose;
   style: IconStyle;
   gridSize: number;
   strokeWidth: number;

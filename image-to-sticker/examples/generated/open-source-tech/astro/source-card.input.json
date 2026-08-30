@@ -2,9 +2,9 @@
   "version": 4,
   "sourceImage": "astro.svg",
   "backgroundMode": "alpha",
-  "outlineWidth": 16,
-  "outlineColor": "#ffffff",
-  "material": "original",
-  "tilt": -8,
+  "outlineWidth": 24,
+  "outlineColor": "#FFF0D8",
+  "material": "glitter",
+  "tilt": 7,
   "size": 1024
 }

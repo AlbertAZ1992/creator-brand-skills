@@ -1,0 +1,135 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 6,
+  "designSystem": {
+    "purpose": "brand",
+    "style": "duotone",
+    "gridSize": 48,
+    "strokeWidth": 2.5,
+    "cornerRadius": "round",
+    "visualWeight": "bold",
+    "geometryPolicy": "custom-exact"
+  },
+  "source": {
+    "strategy": "custom",
+    "license": "user-provided"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "icons": [
+      "instant-preview.svg",
+      "typed-confidence.svg",
+      "component-canvas.svg",
+      "tiny-bundles.svg",
+      "living-docs.svg",
+      "edge-release.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Instant Preview",
+        "bounds": {
+          "x": 5.625,
+          "y": 6.75,
+          "width": 36.75,
+          "height": 31.5
+        },
+        "centerOffset": {
+          "x": 0,
+          "y": -1.5
+        },
+        "inkRatio": 0.49,
+        "occupiedAreaRatio": 0.502
+      },
+      {
+        "feature": "Typed Confidence",
+        "bounds": {
+          "x": 7.688,
+          "y": 8.25,
+          "width": 32.625,
+          "height": 30
+        },
+        "centerOffset": {
+          "x": 0.184,
+          "y": -1.273
+        },
+        "inkRatio": 0.244,
+        "occupiedAreaRatio": 0.425
+      },
+      {
+        "feature": "Component Canvas",
+        "bounds": {
+          "x": 5.625,
+          "y": 7.688,
+          "width": 36.75,
+          "height": 35.625
+        },
+        "centerOffset": {
+          "x": -1.349,
+          "y": -0.608
+        },
+        "inkRatio": 0.399,
+        "occupiedAreaRatio": 0.568
+      },
+      {
+        "feature": "Tiny Bundles",
+        "bounds": {
+          "x": 4.125,
+          "y": 5.625,
+          "width": 39.75,
+          "height": 35.625
+        },
+        "centerOffset": {
+          "x": -0.001,
+          "y": -0.433
+        },
+        "inkRatio": 0.39,
+        "occupiedAreaRatio": 0.615
+      },
+      {
+        "feature": "Living Docs",
+        "bounds": {
+          "x": 5.625,
+          "y": 7.875,
+          "width": 36.75,
+          "height": 33.375
+        },
+        "centerOffset": {
+          "x": 0.017,
+          "y": -0.332
+        },
+        "inkRatio": 0.424,
+        "occupiedAreaRatio": 0.532
+      },
+      {
+        "feature": "Edge Release",
+        "bounds": {
+          "x": 3.75,
+          "y": 8.625,
+          "width": 40.5,
+          "height": 34.688
+        },
+        "centerOffset": {
+          "x": 2.706,
+          "y": 2.479
+        },
+        "inkRatio": 0.227,
+        "occupiedAreaRatio": 0.61
+      }
+    ],
+    "warnings": []
+  }
+}

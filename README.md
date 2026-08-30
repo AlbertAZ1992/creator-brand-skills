@@ -20,19 +20,18 @@ icon families · reusable product mascots
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/vite-bolt/clay-render.png" alt="Vite bolt rendered as a dimensional purple and blue clay campaign object" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/sticker-wall.png" alt="Open-source technology marks rendered as a varied transparent sticker wall" width="560"> |
-| Vite bolt → campaign render + verified 5,388-vertex OBJ | 11 varied sources → crisp transparent PNG stickers with alpha proof |
+| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into six transparent sticker styles" width="560"> |
+| Two locked sources → clay renders + real verified OBJ meshes | Six sources → six styles of transparent PNG sticker + alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| **Visual candidate stays in local review until approved.**<br><br>Brand benefits → original custom SVGs<br>System controls → native Phosphor | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
-| No previous Orbit / Signal / Die-cut result is promoted here | OpenPatch facts → three directions → Pip character bible → five locked poses |
+| <img src="feature-to-icons/examples/creator-studio-duotone/showcase-preview.png" alt="Creator Studio feature brief transformed into six original SVG icons" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
+| Feature brief → six original SVGs + optical proof | OpenPatch facts → Pip character bible → five locked poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-These approved images are production-route evidence, not isolated beauty
-shots; the Feature to Icons position remains intentionally unfilled until its
-new visual candidate is approved. Pip and Azi are repository-owned concepts.
+These current images show the input and the production-route result rather than
+isolated beauty shots. Pip and Azi are repository-owned concepts.
 Third-party technology marks appear only as clearly attributed transformation
 fixtures; their names and marks remain the property of their respective owners,
 with no affiliation implied.
@@ -90,8 +89,8 @@ contract is locked.
 | Skill | Portfolio view | Verification view |
 | --- | --- | --- |
 | Logo to Clay | [Vite bolt and JavaScript clay renders with verified 3D assets](logo-to-clay/examples/) | OBJ faces, material linkage, 1024 px preview, passing manifest |
-| Image to Sticker | [Open-source technology wall and focused Vite + React pair](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
-| Feature to Icons | [Technical contract fixtures; marketing visual pending approval](feature-to-icons/examples/) | One SVG per feature, source boundary, optical metrics, zero hidden fallback |
+| Image to Sticker | [Six source-to-sticker styles: classic, holographic, reflective, glitter, colour contour, and borderless](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
+| Feature to Icons | [Two original brand families plus one native developer-platform system family](feature-to-icons/examples/) | One SVG per feature, source boundary, optical metrics, zero hidden fallback |
 | Product to Mascot | [Pip, Azi, and Mori verified five-pose systems](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
 
 ## Install

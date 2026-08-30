@@ -2,9 +2,9 @@
   "version": 4,
   "sourceImage": "typescript.svg",
   "backgroundMode": "alpha",
-  "outlineWidth": 16,
-  "outlineColor": "#ffffff",
-  "material": "original",
-  "tilt": 7,
+  "outlineWidth": 20,
+  "outlineColor": "#DCE7FF",
+  "material": "reflective",
+  "tilt": -5,
   "size": 1024
 }

@@ -7,8 +7,13 @@ a deterministic geometry route for production-ready brand assets.
 The callable Codex Skill name is `logo-to-clay`.
 
 <p align="center">
-  <img src="examples/generated/vite-bolt/clay-render.png" alt="Vite bolt rendered as a dimensional purple and blue clay campaign object" width="900">
+  <img src="examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="900">
 </p>
+
+The board shows both delivery routes against the same locked source: an
+expressive campaign render and a procedural OBJ/MTL mesh with a verified
+preview. The Vite object contains 5,388 vertices and 1,796 faces; the
+JavaScript example also includes a separate 2 mm relief.
 
 | **Vite bolt · image route** | **Vite bolt · verified mesh route** |
 | :---: | :---: |

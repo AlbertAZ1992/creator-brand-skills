@@ -1,11 +1,17 @@
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { Resvg } from "@resvg/resvg-js";
 
-import { deliverPhosphorIconFamily, validate } from "../src/index.js";
+import { deliverIconFamily, deliverPhosphorIconFamily, validate } from "../src/index.js";
 import type { FeatureIconInput, IconOverrides } from "../src/types.js";
+import { customBrandInput, customBrandRaw, customBrandRequest } from "./custom-brand-example.js";
+import {
+  creatorStudioInput,
+  creatorStudioRaw,
+  creatorStudioRequest,
+} from "./custom-creator-example.js";
 
 interface ExampleFamily {
   slug: string;
@@ -14,280 +20,195 @@ interface ExampleFamily {
   request: string;
   input: FeatureIconInput;
   overrides: IconOverrides;
+  raw?: () => string;
+  kicker: string;
+  headline: readonly [string, string];
+  accent: string;
+  highlight: string;
 }
 
 const families: ExampleFamily[] = [
   {
-    slug: "creative-workflow-duotone",
-    title: "Creative workflow · Duotone",
-    summary: "A vivid launch-ready family for an independent creator workspace.",
+    slug: "release-workflow-duotone",
+    title: "Release workflow · Custom duotone",
+    summary: "Original brand feature art for an open-source JavaScript release studio.",
+    request: customBrandRequest,
+    input: customBrandInput,
+    overrides: {},
+    raw: customBrandRaw,
+    kicker: "RELEASE WORKFLOW",
+    headline: ["FROM SPARK", "TO SHIP."],
+    accent: "#5B4BDB",
+    highlight: "#FF7665",
+  },
+  {
+    slug: "creator-studio-duotone",
+    title: "Creator studio · Custom duotone",
+    summary: "Warm editorial feature art for an independent maker studio.",
+    request: creatorStudioRequest,
+    input: creatorStudioInput,
+    overrides: {},
+    raw: creatorStudioRaw,
+    kicker: "CREATOR STUDIO",
+    headline: ["MAKE IT", "MEMORABLE."],
+    accent: "#17142C",
+    highlight: "#FF6B57",
+  },
+  {
+    slug: "developer-platform-outline",
+    title: "Developer platform · System outline",
+    summary: "Familiar developer-platform actions from one native Phosphor family.",
     request:
-      "Duotone icons for Capture Ideas, Shape Story, Build Palette, Brand Library, " +
-      "Publish Kit, and Measure Reach. Use #5B4BDB primary and #FF7665 secondary.",
+      "System icons for Source Code, Pull Requests, Issue Tracking, CI Workflows, " +
+      "Packages, and Releases. Use a 32 px regular outline family in #172A46.",
     input: {
+      purpose: "system",
       features: [
-        "Capture Ideas",
-        "Shape Story",
-        "Build Palette",
-        "Brand Library",
-        "Publish Kit",
-        "Measure Reach",
+        "Source Code",
+        "Pull Requests",
+        "Issue Tracking",
+        "CI Workflows",
+        "Packages",
+        "Releases",
       ],
-      style: "duotone",
-      colors: { primary: "#5B4BDB", secondary: "#FF7665" },
+      style: "outline",
+      colors: { primary: "#172A46" },
       gridSize: 32,
       strokeWidth: 2,
       cornerRadius: "round",
       visualWeight: "regular",
-      productContext: "A creator workspace for turning ideas into launch-ready brand kits",
+      productContext: "A focused open-source code hosting and release platform",
     },
     overrides: {
-      "Capture Ideas": "lightbulb",
-      "Shape Story": "pencil-ruler",
-      "Build Palette": "palette",
-      "Brand Library": "stack",
-      "Publish Kit": "paper-plane-tilt",
-      "Measure Reach": "chart-line-up",
+      "Source Code": "code",
+      "Pull Requests": "git-pull-request",
+      "Issue Tracking": "bug",
+      "CI Workflows": "arrows-clockwise",
+      Packages: "package",
+      Releases: "rocket-launch",
     },
-  },
-  {
-    slug: "social-publishing-outline",
-    title: "Social publishing · Outline",
-    summary: "A monochrome social-product family sourced from Phosphor regular.",
-    request:
-      "Icons for Home Feed, Search, Create Post, Activity, and Profile. " +
-      "Use a 32 px regular outline family in black.",
-    input: {
-      features: ["Home Feed", "Search", "Create Post", "Activity", "Profile"],
-      style: "outline",
-      colors: { primary: "#111111" },
-      gridSize: 32,
-      strokeWidth: 2,
-      cornerRadius: "round",
-      visualWeight: "regular",
-      productContext: "A minimal text-first social publishing product",
-    },
-    overrides: {
-      "Home Feed": "house",
-      Search: "magnifying-glass",
-      "Create Post": "plus-square",
-      Activity: "heart",
-      Profile: "user-circle",
-    },
-  },
-  {
-    slug: "product-essentials-outline",
-    title: "Product essentials · Outline",
-    summary: "A compact Phosphor regular family for common product actions.",
-    request:
-      "Icons for Search, Filters, Team Sharing, and Cloud Sync. " +
-      "Use a 24 px outline family in #4F46E5.",
-    input: {
-      features: ["Search", "Filters", "Team Sharing", "Cloud Sync"],
-      style: "outline",
-      colors: { primary: "#4F46E5" },
-      gridSize: 24,
-      strokeWidth: 2,
-      cornerRadius: "rounded",
-      visualWeight: "regular",
-    },
-    overrides: {},
-  },
-  {
-    slug: "analytics-light-outline",
-    title: "Analytics · Light outline",
-    summary: "A quiet data-product family sourced from Phosphor light.",
-    request:
-      "Icons for Dashboard, Analytics, Reports, Trends, and Export Data. " +
-      "Use a light 24 px outline family in #2563EB.",
-    input: {
-      features: ["Dashboard", "Analytics", "Reports", "Trends", "Export Data"],
-      style: "outline",
-      colors: { primary: "#2563EB" },
-      gridSize: 24,
-      strokeWidth: 1.75,
-      cornerRadius: "rounded",
-      visualWeight: "light",
-      productContext: "A calm analytics workspace for product teams",
-    },
-    overrides: {},
-  },
-  {
-    slug: "collaboration-filled",
-    title: "Collaboration · Filled",
-    summary: "Solid collaboration symbols sourced from Phosphor fill.",
-    request:
-      "Filled icons for Team Chat, File Sharing, Video Calls, Task Board, " +
-      "and Calendar. Use a 32 px grid and #6366F1.",
-    input: {
-      features: ["Team Chat", "File Sharing", "Video Calls", "Task Board", "Calendar"],
-      style: "filled",
-      colors: { primary: "#6366F1" },
-      gridSize: 32,
-      cornerRadius: "round",
-      visualWeight: "bold",
-      productContext: "A real-time workspace for distributed creative teams",
-    },
-    overrides: {},
-  },
-  {
-    slug: "commerce-duotone",
-    title: "Commerce · Duotone",
-    summary: "Commerce metaphors sourced from one Phosphor duotone family.",
-    request:
-      "Duotone icons for Shopping Cart, Wishlist, Orders, Payment, and Delivery. " +
-      "Use #FF6B35 primary and #004E89 secondary.",
-    input: {
-      features: ["Shopping Cart", "Wishlist", "Orders", "Payment", "Delivery"],
-      style: "duotone",
-      colors: { primary: "#FF6B35", secondary: "#004E89" },
-      gridSize: 24,
-      strokeWidth: 2,
-      cornerRadius: "round",
-      visualWeight: "regular",
-      productContext: "A friendly direct-to-consumer commerce platform",
-    },
-    overrides: {},
-  },
-  {
-    slug: "security-bold-outline",
-    title: "Security · Bold outline",
-    summary: "High-emphasis security symbols sourced from Phosphor bold.",
-    request:
-      "Bold outline icons for Authentication, Encryption, Access Control, " +
-      "Audit Log, and Alerts. Use a 32 px grid and #0F766E.",
-    input: {
-      features: ["Authentication", "Encryption", "Access Control", "Audit Log", "Alerts"],
-      style: "outline",
-      colors: { primary: "#0F766E" },
-      gridSize: 32,
-      strokeWidth: 3,
-      cornerRadius: "rounded",
-      visualWeight: "bold",
-      productContext: "An enterprise identity and access management platform",
-    },
-    overrides: {},
-  },
-  {
-    slug: "creator-brand-duotone",
-    title: "Creator Brand · Duotone",
-    summary: "Creator-tool concepts sourced from Phosphor duotone.",
-    request:
-      "Duotone icons for Image Generation, Background Removal, Brand Kit, " +
-      "Export Assets, and Templates. Use a 32 px grid with purple and pink.",
-    input: {
-      features: [
-        "Image Generation",
-        "Background Removal",
-        "Brand Kit",
-        "Export Assets",
-        "Templates",
-      ],
-      style: "duotone",
-      colors: { primary: "#7C3AED", secondary: "#EC4899" },
-      gridSize: 32,
-      strokeWidth: 2,
-      cornerRadius: "round",
-      visualWeight: "regular",
-      productContext: "An AI-assisted visual creation suite",
-    },
-    overrides: {},
-  },
-  {
-    slug: "ai-workspace-outline-48",
-    title: "AI workspace · 48 px outline",
-    summary: "A large-grid family that exercises semantic resolution without overrides.",
-    request:
-      "Outline icons for AI Copilot, Knowledge Search, Automation, and Version History. " +
-      "Use a 48 px grid, regular weight, and #0F172A.",
-    input: {
-      features: ["AI Copilot", "Knowledge Search", "Automation", "Version History"],
-      style: "outline",
-      colors: { primary: "#0F172A" },
-      gridSize: 48,
-      strokeWidth: 2,
-      cornerRadius: "rounded",
-      visualWeight: "regular",
-      productContext: "An AI workspace for research and recurring workflows",
-    },
-    overrides: {},
+    kicker: "DEVELOPER PLATFORM",
+    headline: ["BUILD.", "REVIEW. SHIP."],
+    accent: "#172A46",
+    highlight: "#F7DF1E",
   },
 ];
 
 const packageRoot = dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
 const examplesRoot = join(packageRoot, "examples");
 
-async function main(): Promise<void> {
+async function cleanExampleDirectories(): Promise<void> {
   await mkdir(examplesRoot, { recursive: true });
-  for (const family of families) {
-    const validation = validate(family.input);
-    if (!validation.data) {
-      throw new Error(`${family.slug}: ${JSON.stringify(validation.errors)}`);
-    }
-    const outputDir = join(examplesRoot, family.slug);
-    await rm(outputDir, { recursive: true, force: true });
-    const delivery = await deliverPhosphorIconFamily(validation.data, outputDir, family.overrides);
-    if (family.slug === "creative-workflow-duotone") {
-      await writeShowcasePreview(outputDir, delivery.iconPaths, validation.data.features);
-    }
-    await writeFile(
-      join(outputDir, "example.json"),
-      `${JSON.stringify(
-        {
-          title: family.title,
-          summary: family.summary,
-          request: family.request,
-          input: validation.data,
-          overrides: family.overrides,
-        },
-        null,
-        2,
-      )}\n`,
-      "utf8",
-    );
-    console.log(`PASS ${family.slug}: ${delivery.iconPaths.length} Phosphor icons`);
+  const entries = await readdir(examplesRoot, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.isDirectory()) await rm(join(examplesRoot, entry.name), { recursive: true });
   }
-  console.log(`Generated ${families.length} library-backed icon families.`);
+}
+
+async function generateFamily(family: ExampleFamily): Promise<void> {
+  const validation = validate(family.input);
+  if (!validation.data) throw new Error(`${family.slug}: ${JSON.stringify(validation.errors)}`);
+  const outputDir = join(examplesRoot, family.slug);
+  const delivery = family.raw
+    ? await deliverIconFamily(validation.data, family.raw(), outputDir)
+    : await deliverPhosphorIconFamily(validation.data, outputDir, family.overrides);
+  await writeShowcasePreview(outputDir, delivery.iconPaths, family);
+  await writeFile(
+    join(outputDir, "example.json"),
+    `${JSON.stringify(
+      {
+        title: family.title,
+        summary: family.summary,
+        request: family.request,
+        input: validation.data,
+        overrides: family.overrides,
+      },
+      null,
+      2,
+    )}\n`,
+    "utf8",
+  );
+  console.log(`PASS ${family.slug}: ${delivery.iconPaths.length} icons`);
+}
+
+async function main(): Promise<void> {
+  await cleanExampleDirectories();
+  for (const family of families) await generateFamily(family);
+  console.log(`Generated ${families.length} current icon families.`);
+}
+
+function escapeXml(value: string): string {
+  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+}
+
+async function buildCards(iconPaths: string[], features: string[], highlight: string) {
+  return Promise.all(
+    iconPaths.map(async (iconPath, index) => {
+      const feature = features[index];
+      if (!feature) throw new Error(`Missing feature label for icon ${index + 1}`);
+      const x = 500 + (index % 3) * 220;
+      const y = 72 + Math.floor(index / 3) * 286;
+      const source = await readFile(iconPath, "utf8");
+      const icon = source.trim().replace(/<svg\b([^>]*)>/i, (_match, attributes: string) => {
+        const clean = attributes.replace(/\s(?:x|y|width|height)=["'][^"']*["']/gi, "");
+        return `<svg${clean} x="${x + 43}" y="${y + 34}" width="98" height="98">`;
+      });
+      return [
+        `<rect x="${x}" y="${y}" width="184" height="238" rx="26" fill="#FFFDF8" ` +
+          `stroke="#DDD6CB"/>`,
+        `<text x="${x + 20}" y="${y + 24}" font-family="Arial, sans-serif" ` +
+          `font-size="10" font-weight="700" fill="#9A92A5">0${index + 1}</text>`,
+        icon,
+        `<text x="${x + 92}" y="${y + 198}" text-anchor="middle" ` +
+          `font-family="Arial, sans-serif" font-size="14" font-weight="700" ` +
+          `fill="#242038">${escapeXml(feature)}</text>`,
+        `<circle cx="${x + 92}" cy="${y + 218}" r="3" fill="${highlight}"/>`,
+      ].join("\n");
+    }),
+  );
+}
+
+function buildBrief(features: string[], accent: string): string[] {
+  return features.map((feature, index) => {
+    const x = 72 + (index % 2) * 174;
+    const y = 390 + Math.floor(index / 2) * 42;
+    return [
+      `<circle cx="${x + 5}" cy="${y - 5}" r="5" fill="${accent}"/>`,
+      `<text x="${x + 18}" y="${y}" font-family="Arial, sans-serif" ` +
+        `font-size="14" font-weight="700" fill="#615B6A">${escapeXml(feature)}</text>`,
+    ].join("\n");
+  });
 }
 
 async function writeShowcasePreview(
   outputDir: string,
   iconPaths: string[],
-  features: string[],
+  family: ExampleFamily,
 ): Promise<void> {
-  const cards = await Promise.all(
-    iconPaths.map(async (iconPath, index) => {
-      const feature = features[index];
-      if (!feature) {
-        throw new Error(`Missing feature label for showcase icon ${index + 1}`);
-      }
-      const column = index % 3;
-      const row = Math.floor(index / 3);
-      const x = 178 + column * 300;
-      const y = 105 + row * 278;
-      const source = await readFile(iconPath, "utf8");
-      const icon = source.trim().replace(/<svg\b([^>]*)>/i, (_match, attributes: string) => {
-        const clean = attributes.replace(/\s(?:x|y|width|height)=["'][^"']*["']/gi, "");
-        return `<svg${clean} x="${x + 55}" y="${y + 38}" width="112" height="112">`;
-      });
-      return [
-        `<rect x="${x}" y="${y}" width="222" height="218" rx="34" fill="#fffaf4"/>`,
-        `<circle cx="${x + 190}" cy="${y + 30}" r="8" fill="#ffd166"/>`,
-        icon,
-        `<text x="${x + 111}" y="${y + 190}" text-anchor="middle" ` +
-          `font-family="Arial, sans-serif" font-size="15" font-weight="600" ` +
-          `fill="#242038">${feature}</text>`,
-      ].join("\n");
-    }),
-  );
+  const features = family.input.features;
+  const cards = await buildCards(iconPaths, features, family.highlight);
+  const brief = buildBrief(features, family.accent);
   const svg = [
     '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">',
-    '<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">',
-    '<stop stop-color="#17142c"/><stop offset="1" stop-color="#403370"/>',
-    "</linearGradient></defs>",
-    '<rect width="1200" height="720" rx="48" fill="url(#bg)"/>',
-    '<circle cx="1080" cy="80" r="150" fill="#ff7665" opacity=".9"/>',
-    '<circle cx="80" cy="670" r="120" fill="#ffd166" opacity=".9"/>',
+    '<rect width="1200" height="720" rx="42" fill="#F3EFE7"/>',
+    `<path d="M0 0h18v720H0z" fill="${family.accent}"/>`,
+    `<circle cx="425" cy="92" r="38" fill="${family.highlight}"/>`,
+    `<text x="72" y="92" font-family="Arial, sans-serif" font-size="13" font-weight="700" ` +
+      `letter-spacing="2.3" fill="${family.accent}">${escapeXml(family.kicker)}</text>`,
+    `<text x="72" y="166" font-family="Arial, sans-serif" font-size="56" font-weight="800" ` +
+      `letter-spacing="-3" fill="#17142C">${escapeXml(family.headline[0])}</text>`,
+    `<text x="72" y="225" font-family="Arial, sans-serif" font-size="56" font-weight="800" ` +
+      `letter-spacing="-3" fill="#17142C">${escapeXml(family.headline[1])}</text>`,
+    '<text x="72" y="284" font-family="Arial, sans-serif" font-size="13" font-weight="700" ' +
+      'letter-spacing="1.4" fill="#81798A">INPUT FEATURE BRIEF</text>',
+    '<text x="72" y="314" font-family="Arial, sans-serif" font-size="16" fill="#615B6A">' +
+      "One context. Six named benefits.</text>",
+    ...brief,
+    '<path d="M72 540h312" stroke="#D2C9BC" stroke-width="2"/>',
+    '<text x="72" y="580" font-family="Arial, sans-serif" font-size="13" font-weight="700" ' +
+      'letter-spacing="1.4" fill="#81798A">ACTUAL VERIFIED OUTPUTS →</text>',
+    `<circle cx="83" cy="652" r="11" fill="${family.accent}"/>`,
+    `<circle cx="115" cy="652" r="11" fill="${family.highlight}"/>`,
     ...cards,
     "</svg>",
     "",

@@ -1,0 +1,100 @@
+{
+  "icons": [
+    {
+      "feature": "Source Code",
+      "semanticConcept": "Code",
+      "visualDescription": "Phosphor regular icon “code” selected for Source Code",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "code",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Pull Requests",
+      "semanticConcept": "Git Pull Request",
+      "visualDescription": "Phosphor regular icon “git-pull-request” selected for Pull Requests",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "git-pull-request",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Issue Tracking",
+      "semanticConcept": "Bug",
+      "visualDescription": "Phosphor regular icon “bug” selected for Issue Tracking",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "bug",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "CI Workflows",
+      "semanticConcept": "Arrows Clockwise",
+      "visualDescription": "Phosphor regular icon “arrows-clockwise” selected for CI Workflows",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "arrows-clockwise",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Packages",
+      "semanticConcept": "Package",
+      "visualDescription": "Phosphor regular icon “package” selected for Packages",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "package",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    },
+    {
+      "feature": "Releases",
+      "semanticConcept": "Rocket Launch",
+      "visualDescription": "Phosphor regular icon “rocket-launch” selected for Releases",
+      "source": {
+        "type": "library",
+        "library": "Phosphor",
+        "package": "@phosphor-icons/core",
+        "version": "2.1.1",
+        "iconName": "rocket-launch",
+        "weight": "regular",
+        "license": "MIT",
+        "geometryModified": false,
+        "presentationModified": true
+      }
+    }
+  ]
+}

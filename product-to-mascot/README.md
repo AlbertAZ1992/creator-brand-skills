@@ -10,6 +10,14 @@ The callable Codex Skill name is `product-to-mascot`.
   <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="900">
 </p>
 
+| **Locked product facts** | **Generated mascot system** |
+| :---: | :---: |
+| <img src="examples/generated/openpatch-pip/source-brief.svg" alt="OpenPatch product facts locked before mascot generation" width="420"> | <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose mascot system" width="420"> |
+
+The source brief is generated from the checked-in V2 character bible, so the
+product connection, personality, silhouette rules, and brand essence remain
+visible beside the result.
+
 ## At a glance
 
 | Capability | Contract |

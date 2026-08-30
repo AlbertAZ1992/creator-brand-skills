@@ -1,0 +1,135 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 6,
+  "designSystem": {
+    "purpose": "brand",
+    "style": "duotone",
+    "gridSize": 48,
+    "strokeWidth": 2.5,
+    "cornerRadius": "round",
+    "visualWeight": "bold",
+    "geometryPolicy": "custom-exact"
+  },
+  "source": {
+    "strategy": "custom",
+    "license": "user-provided"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "icons": [
+      "idea-spark.svg",
+      "visual-compose.svg",
+      "brand-system.svg",
+      "smart-export.svg",
+      "asset-library.svg",
+      "launch-story.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Idea Spark",
+        "bounds": {
+          "x": 2.625,
+          "y": 0,
+          "width": 42.75,
+          "height": 39.375
+        },
+        "centerOffset": {
+          "x": -0.001,
+          "y": -4.072
+        },
+        "inkRatio": 0.388,
+        "occupiedAreaRatio": 0.731
+      },
+      {
+        "feature": "Visual Compose",
+        "bounds": {
+          "x": 4.688,
+          "y": 6.75,
+          "width": 38.625,
+          "height": 35.625
+        },
+        "centerOffset": {
+          "x": -2.307,
+          "y": -0.701
+        },
+        "inkRatio": 0.429,
+        "occupiedAreaRatio": 0.597
+      },
+      {
+        "feature": "Brand System",
+        "bounds": {
+          "x": 5.625,
+          "y": 5.625,
+          "width": 36.75,
+          "height": 34.688
+        },
+        "centerOffset": {
+          "x": 0.227,
+          "y": -1.918
+        },
+        "inkRatio": 0.413,
+        "occupiedAreaRatio": 0.553
+      },
+      {
+        "feature": "Smart Export",
+        "bounds": {
+          "x": 6.75,
+          "y": 6.938,
+          "width": 33.563,
+          "height": 34.313
+        },
+        "centerOffset": {
+          "x": -1.565,
+          "y": 1.643
+        },
+        "inkRatio": 0.402,
+        "occupiedAreaRatio": 0.5
+      },
+      {
+        "feature": "Asset Library",
+        "bounds": {
+          "x": 4.688,
+          "y": 11.625,
+          "width": 38.625,
+          "height": 30.75
+        },
+        "centerOffset": {
+          "x": -0.855,
+          "y": 4.167
+        },
+        "inkRatio": 0.466,
+        "occupiedAreaRatio": 0.516
+      },
+      {
+        "feature": "Launch Story",
+        "bounds": {
+          "x": 0,
+          "y": 1.688,
+          "width": 42.375,
+          "height": 41.625
+        },
+        "centerOffset": {
+          "x": 0.784,
+          "y": 0.005
+        },
+        "inkRatio": 0.269,
+        "occupiedAreaRatio": 0.766
+      }
+    ],
+    "warnings": []
+  }
+}

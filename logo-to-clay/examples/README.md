@@ -1,5 +1,13 @@
 # Logo to Clay examples
 
+<p align="center">
+  <img src="generated/source-to-clay.png" alt="Vite and JavaScript source logos shown beside their clay render and verified OBJ preview" width="900">
+</p>
+
+Every row makes the input/output boundary explicit: the source logo stays
+visible beside the expressive clay render and the independently generated mesh
+preview.
+
 ## Featured: Vite bolt clay
 
 <p align="center">

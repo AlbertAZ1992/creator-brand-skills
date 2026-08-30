@@ -1,0 +1,27 @@
+{
+  "title": "Creator studio · Custom duotone",
+  "summary": "Warm editorial feature art for an independent maker studio.",
+  "request": "Original brand feature art for Idea Spark, Visual Compose, Brand System, Smart Export, Asset Library, and Launch Story. Use editorial ink and coral on a 48 px grid.",
+  "input": {
+    "features": [
+      "Idea Spark",
+      "Visual Compose",
+      "Brand System",
+      "Smart Export",
+      "Asset Library",
+      "Launch Story"
+    ],
+    "purpose": "brand",
+    "style": "duotone",
+    "colors": {
+      "primary": "#17142C",
+      "secondary": "#FF6B57"
+    },
+    "gridSize": 48,
+    "strokeWidth": 2.5,
+    "cornerRadius": "round",
+    "visualWeight": "bold",
+    "productContext": "A warm editorial creation studio for independent makers"
+  },
+  "overrides": {}
+}

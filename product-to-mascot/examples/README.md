@@ -7,9 +7,9 @@ oversized mint hook-tail, visible repair patch, and coral stitches make product
 meaning part of the silhouette while the oversized head and tiny paws create
 the appeal hook.
 
-<p align="center">
-  <img src="generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose OpenPatch mascot contact sheet" width="900">
-</p>
+| **Source product facts** | **Generated five-pose system** |
+| :---: | :---: |
+| <img src="generated/openpatch-pip/source-brief.svg" alt="OpenPatch facts locked before generation" width="420"> | <img src="generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose OpenPatch mascot contact sheet" width="420"> |
 
 [`generated/openpatch-pip/`](generated/openpatch-pip/) contains the V2 character
 bible, five full-size pose PNGs, contact sheet, and passing manifest.
@@ -20,9 +20,9 @@ Azi is a folded-paper swift built from ALBERTAZ's real personal-brand facts.
 The A-shaped wing opening, Z-fold tail, and page-turn wing tip encode software,
 visual work, and writing without pasting a wordmark onto the character.
 
-<p align="center">
-  <img src="generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose ALBERTAZ mascot contact sheet" width="900">
-</p>
+| **Source product facts** | **Generated five-pose system** |
+| :---: | :---: |
+| <img src="generated/albertaz-azi/source-brief.svg" alt="ALBERTAZ facts locked before generation" width="420"> | <img src="generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose ALBERTAZ mascot contact sheet" width="420"> |
 
 [`generated/albertaz-azi/`](generated/albertaz-azi/) contains the input facts,
 three directions, V2 character bible, five full-size pose PNGs, 64 px checks,
@@ -44,9 +44,9 @@ the verified five-pose reference set.
 
 ## Verified reference set
 
-<p align="center">
-  <img src="generated/mora-mori/mascot-contact-sheet.png" alt="Mori five-pose contact sheet" width="900">
-</p>
+| **Source product facts** | **Generated five-pose system** |
+| :---: | :---: |
+| <img src="generated/mora-mori/source-brief.svg" alt="Mora facts locked before generation" width="420"> | <img src="generated/mora-mori/mascot-contact-sheet.png" alt="Mori five-pose contact sheet" width="420"> |
 
 [`generated/mora-mori/`](generated/mora-mori/) contains the complete delivery:
 
@@ -63,6 +63,6 @@ face rule, coral antenna tips, lime bookmark ribbon, and tactile cut-paper
 medium. The five poses cover neutral, welcome, focused work, thinking/help, and
 celebration rather than five cosmetic arm variations.
 
-Run `npm run examples` to rebuild and verify the checked-in Pip, Azi, and Mori
-contact sheets from their five full-size pose images. It does not generate an
-unreviewed replacement character.
+Run `npm run examples` to rebuild the three source briefs and verify the
+checked-in Pip, Azi, and Mori contact sheets from their five full-size pose
+images. It does not generate an unreviewed replacement character.

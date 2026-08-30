@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<rect width="1200" height="720" rx="42" fill="#F3EFE7"/>
+<path d="M0 0h18v720H0z" fill="#5B4BDB"/>
+<circle cx="425" cy="92" r="38" fill="#FF7665"/>
+<text x="72" y="92" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.3" fill="#5B4BDB">RELEASE WORKFLOW</text>
+<text x="72" y="166" font-family="Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-3" fill="#17142C">FROM SPARK</text>
+<text x="72" y="225" font-family="Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-3" fill="#17142C">TO SHIP.</text>
+<text x="72" y="284" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#81798A">INPUT FEATURE BRIEF</text>
+<text x="72" y="314" font-family="Arial, sans-serif" font-size="16" fill="#615B6A">One context. Six named benefits.</text>
+<circle cx="77" cy="385" r="5" fill="#5B4BDB"/>
+<text x="90" y="390" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#615B6A">Instant Preview</text>
+<circle cx="251" cy="385" r="5" fill="#5B4BDB"/>
+<text x="264" y="390" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#615B6A">Typed Confidence</text>
+<circle cx="77" cy="427" r="5" fill="#5B4BDB"/>
+<text x="90" y="432" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#615B6A">Component Canvas</text>
+<circle cx="251" cy="427" r="5" fill="#5B4BDB"/>
+<text x="264" y="432" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#615B6A">Tiny Bundles</text>
+<circle cx="77" cy="469" r="5" fill="#5B4BDB"/>
+<text x="90" y="474" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#615B6A">Living Docs</text>
+<circle cx="251" cy="469" r="5" fill="#5B4BDB"/>
+<text x="264" y="474" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#615B6A">Edge Release</text>
+<path d="M72 540h312" stroke="#D2C9BC" stroke-width="2"/>
+<text x="72" y="580" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#81798A">ACTUAL VERIFIED OUTPUTS →</text>
+<circle cx="83" cy="652" r="11" fill="#5B4BDB"/>
+<circle cx="115" cy="652" r="11" fill="#FF7665"/>
+<rect x="500" y="72" width="184" height="238" rx="26" fill="#FFFDF8" stroke="#DDD6CB"/>
+<text x="520" y="96" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9A92A5">01</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#172A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x="543" y="106" width="98" height="98"><path d="M7 11.5C7 9.57 8.57 8 10.5 8h27C39.43 8 41 9.57 41 11.5v22C41 35.43 39.43 37 37.5 37h-27A3.5 3.5 0 0 1 7 33.5z" fill="#FFF8E8"/>
+    <path d="M7 15h34M12 11.5h.01M16 11.5h.01"/>
+    <path d="M25.5 18 18 28h6l-1.5 8L31 25h-6z" fill="#F7DF1E" stroke="#172A46"/></svg>
+<text x="592" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#242038">Instant Preview</text>
+<circle cx="592" cy="290" r="3" fill="#FF7665"/>
+<rect x="720" y="72" width="184" height="238" rx="26" fill="#FFFDF8" stroke="#DDD6CB"/>
+<text x="740" y="96" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9A92A5">02</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#172A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x="763" y="106" width="98" height="98"><path d="m18 11-9 13 9 13M30 11l9 13-9 13"/>
+    <path d="M24 9.5 31.5 13v9c0 7-3.1 11.6-7.5 14-4.4-2.4-7.5-7-7.5-14v-9z" fill="#FFF8E8"/>
+    <path d="m20 23.5 3 3 6-7"/>
+    <path d="M24 9.5 31.5 13v9c0 7-3.1 11.6-7.5 14-4.4-2.4-7.5-7-7.5-14v-9z" fill="none"/>
+    <circle cx="31.5" cy="13" r="3.5" fill="#F7DF1E" stroke="none"/></svg>
+<text x="812" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#242038">Typed Confidence</text>
+<circle cx="812" cy="290" r="3" fill="#FF7665"/>
+<rect x="940" y="72" width="184" height="238" rx="26" fill="#FFFDF8" stroke="#DDD6CB"/>
+<text x="960" y="96" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9A92A5">03</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#172A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x="983" y="106" width="98" height="98"><rect x="7" y="9" width="15" height="13" rx="3" fill="#FFF8E8"/>
+    <rect x="26" y="9" width="15" height="13" rx="3" fill="#F7DF1E"/>
+    <rect x="7" y="26" width="15" height="13" rx="3" fill="#F7DF1E"/>
+    <path d="M27 27v12l4-3 3 6 3-1.5-3-6 5-.5z" fill="#FFF8E8"/></svg>
+<text x="1032" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#242038">Component Canvas</text>
+<circle cx="1032" cy="290" r="3" fill="#FF7665"/>
+<rect x="500" y="358" width="184" height="238" rx="26" fill="#FFFDF8" stroke="#DDD6CB"/>
+<text x="520" y="382" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9A92A5">04</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#172A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x="543" y="392" width="98" height="98"><path d="m24 7 14 7.5v17L24 40 10 31.5v-17z" fill="#FFF8E8"/>
+    <path d="m10 14.5 14 8 14-8M24 22.5V40"/>
+    <path d="m16 10 8 4.5 8-4.5"/>
+    <path d="m5.5 24 6 4-6 4M42.5 24l-6 4 6 4" fill="#F7DF1E"/></svg>
+<text x="592" y="556" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#242038">Tiny Bundles</text>
+<circle cx="592" cy="576" r="3" fill="#FF7665"/>
+<rect x="720" y="358" width="184" height="238" rx="26" fill="#FFFDF8" stroke="#DDD6CB"/>
+<text x="740" y="382" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9A92A5">05</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#172A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x="763" y="392" width="98" height="98"><path d="M7 11c7-2 12 .4 17 5v24c-5-4.6-10-7-17-5z" fill="#FFF8E8"/>
+    <path d="M41 11c-7-2-12 .4-17 5v24c5-4.6 10-7 17-5z" fill="#FFF8E8"/>
+    <path d="M12 19h6M12 24h7M30 19h6M29 24h7"/>
+    <path d="m31 8 2 3.5L37 13l-4 1.5L31 18l-2-3.5L25 13l4-1.5z" fill="#F7DF1E" stroke="none"/></svg>
+<text x="812" y="556" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#242038">Living Docs</text>
+<circle cx="812" cy="576" r="3" fill="#FF7665"/>
+<rect x="940" y="358" width="184" height="238" rx="26" fill="#FFFDF8" stroke="#DDD6CB"/>
+<text x="960" y="382" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#9A92A5">06</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#172A46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x="983" y="392" width="98" height="98"><path d="M7 34c7-15 17-21 33-20"/>
+    <circle cx="9" cy="34" r="4" fill="#F7DF1E"/>
+    <circle cx="22" cy="19" r="3" fill="#FFF8E8"/>
+    <circle cx="39" cy="14" r="4" fill="#F7DF1E"/>
+    <path d="m17 34 24-12-8 20-5-8z" fill="#FFF8E8"/>
+    <path d="m28 34 13-12"/></svg>
+<text x="1032" y="556" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#242038">Edge Release</text>
+<circle cx="1032" cy="576" r="3" fill="#FF7665"/>
+</svg>

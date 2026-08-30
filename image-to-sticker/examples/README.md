@@ -1,33 +1,34 @@
-# Image to Sticker visual examples
-
-## Featured: open-source technology sticker wall
+# Image to Sticker examples
 
 <p align="center">
-  <img src="generated/open-source-tech/sticker-wall.png" alt="Open-source technology transparent die-cut sticker wall" width="900">
+  <img src="generated/open-source-tech/source-to-sticker.png" alt="Six source logos shown beside six verified transparent sticker outputs" width="900">
 </p>
 
-[`generated/open-source-tech/`](generated/open-source-tech/) contains 11
-independent 1024 px RGBA deliveries, not one composited mockup: each source has
-its own clean sticker, alpha proof, source card, and passing manifest. The
-source registry records exact URLs and SHA-256 hashes; `Ship it` and `Merge
-ready` are repository-owned demonstration artwork.
+The current gallery keeps the original artwork visible beside the generated
+result. All six `sticker.png` files are independent 1024 px RGBA deliveries,
+not crops from the presentation board.
 
-## Focused pair: Vite + React
+| Source | Demonstrated controls | Delivery directory |
+| --- | --- | --- |
+| Vite Bolt | Original material, classic white contour, −6° tilt | [`vite-bolt/`](generated/open-source-tech/vite-bolt/) |
+| React | Holographic material, pale-blue contour, +5° tilt | [`react/`](generated/open-source-tech/react/) |
+| TypeScript | Reflective material, cool contour, −5° tilt | [`typescript/`](generated/open-source-tech/typescript/) |
+| Astro | Glitter material, warm contour, +7° tilt | [`astro/`](generated/open-source-tech/astro/) |
+| Vue | Original material, orange colour contour, +3° tilt | [`vue/`](generated/open-source-tech/vue/) |
+| Deno | Original material, borderless, no tilt | [`deno/`](generated/open-source-tech/deno/) |
 
-<p align="center">
-  <img src="generated/vite-react/sticker-wall.png" alt="Vite and React transparent die-cut sticker wall" width="900">
-</p>
+Every directory contains the actual transparent `sticker.png`, grayscale
+`sticker-alpha-proof.png`, resolved `source-card.json`, and passing
+`sticker-manifest.json`. The source registry records exact URLs and SHA-256
+hashes. Third-party names and marks belong to their respective owners; no
+affiliation is implied.
 
-[`generated/vite-react/`](generated/vite-react/) contains both source SVGs and
-two independent 1024 px RGBA deliveries, each with its own alpha proof, source
-card, and passing manifest. The internal React gaps and Vite diagonals remain
-crisp because small-viewBox SVGs are decoded near delivery density.
+## Regenerate the current examples
 
-All third-party names and marks belong to their respective owners. They are used
-only as attributed transformation fixtures; no affiliation is implied.
+```bash
+npm run examples
+npm run verify:examples
+```
 
-## Regenerate the approved examples
-
-Run `npm run examples` to send all 11 checked source SVGs through the actual
-renderer again and rebuild the sticker wall from those transparent outputs.
-The script does not contain or regenerate any retired fixture.
+The command sends all six source SVGs through the real renderer and rebuilds
+the source-to-output board from those accepted transparent assets.

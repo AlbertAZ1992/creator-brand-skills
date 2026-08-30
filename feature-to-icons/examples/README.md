@@ -1,43 +1,42 @@
 # Feature to Icons examples
 
-Nine generated families exercise product context, native style, weight, colour,
-and grid size. Every icon comes from pinned Phosphor 2.1.1 geometry and passes
-the same provenance, raster, safety, and optical checks as a user delivery.
+The public gallery contains exactly three current families. Every showcase
+places the input feature brief on the left and the actual verified SVG outputs
+on the right.
 
-## Featured family
-
-<p align="center">
-  <img src="creative-workflow-duotone/showcase-preview.png" alt="Creative workflow duotone icon showcase" width="760">
-</p>
-
-The styled card above contains the same six verified SVGs as the clean family
-preview below. It is an optional presentation asset, not a replacement for the
-deliverables.
+## Creator Studio · original brand geometry
 
 <p align="center">
-  <img src="creative-workflow-duotone/icon-family-preview.png" alt="Clean creative workflow icon family preview" width="560">
+  <img src="creator-studio-duotone/showcase-preview.png" alt="Creator Studio input brief and six original duotone SVG icons" width="900">
 </p>
 
-## Complete generated set
+## Release Workflow · original brand geometry
 
-| Family | Native system | Features |
+<p align="center">
+  <img src="release-workflow-duotone/showcase-preview.png" alt="Release Workflow input brief and six original duotone SVG icons" width="900">
+</p>
+
+## Developer Platform · native system geometry
+
+<p align="center">
+  <img src="developer-platform-outline/showcase-preview.png" alt="Developer Platform input brief and six native Phosphor outline icons" width="900">
+</p>
+
+| Family | Route | Deliverables |
 | --- | --- | --- |
-| [Creative workflow](creative-workflow-duotone/) | Phosphor duotone · 32 px | Capture Ideas, Shape Story, Build Palette, Brand Library, Publish Kit, Measure Reach |
-| [Social publishing](social-publishing-outline/) | Phosphor regular · 32 px | Home Feed, Search, Create Post, Activity, Profile |
-| [Product essentials](product-essentials-outline/) | Phosphor regular · 24 px | Search, Filters, Team Sharing, Cloud Sync |
-| [Analytics](analytics-light-outline/) | Phosphor light · 24 px | Dashboard, Analytics, Reports, Trends, Export Data |
-| [Collaboration](collaboration-filled/) | Phosphor fill · 32 px | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
-| [Commerce](commerce-duotone/) | Phosphor duotone · 24 px | Shopping Cart, Wishlist, Orders, Payment, Delivery |
-| [Security](security-bold-outline/) | Phosphor bold · 32 px | Authentication, Encryption, Access Control, Audit Log, Alerts |
-| [Creator Brand](creator-brand-duotone/) | Phosphor duotone · 32 px | Image Generation, Background Removal, Brand Kit, Export Assets, Templates |
-| [AI workspace](ai-workspace-outline-48/) | Phosphor regular · 48 px | AI Copilot, Knowledge Search, Automation, Version History |
+| [`creator-studio-duotone/`](creator-studio-duotone/) | Original custom duotone · 48 px | 6 SVGs, input request, previews, spec, metadata, manifest |
+| [`release-workflow-duotone/`](release-workflow-duotone/) | Original custom duotone · 48 px | 6 SVGs, input request, previews, spec, metadata, manifest |
+| [`developer-platform-outline/`](developer-platform-outline/) | Phosphor regular · 32 px | 6 SVGs, explicit semantic overrides, previews, provenance, manifest |
 
-Every directory contains the request, normalized input, icon SVGs, spec,
-provenance metadata, SVG/PNG clean previews, and a passing manifest.
+The branded families use distinct custom silhouettes. The system family keeps
+the pinned `@phosphor-icons/core@2.1.1` geometry undecorated. All three pass
+SVG safety, exact feature coverage, visible-pixel, optical-volume, center, and
+provenance checks with no warnings.
 
 ```bash
 npm run examples
 npm run verify:examples
 ```
 
-These commands regenerate and verify exactly nine families and 44 SVG icons.
+Regeneration first removes every retired example directory, then rebuilds
+exactly these three families and 18 SVG icons.

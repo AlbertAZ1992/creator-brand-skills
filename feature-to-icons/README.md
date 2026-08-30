@@ -1,45 +1,53 @@
 # Feature to Icons
 
 Turn 3–20 product features into one consistent, editable, and validated SVG
-icon family. This open-source Agent Skill gives Codex a pinned Phosphor icon
-catalog instead of asking a model to draw unrelated SVG paths from scratch.
+icon family. The Skill deliberately uses two different routes: branded feature
+art is original custom geometry, while compact system/UI controls use pinned
+Phosphor icons. Stock glyphs are never decorated and presented as brand art.
 
 The callable Codex Skill name is `feature-to-icons`.
 
 <p align="center">
-  <img src="examples/creative-workflow-duotone/showcase-preview.png" alt="Creative workflow duotone icon family" width="760">
+  <img src="examples/creator-studio-duotone/showcase-preview.png" alt="Creator Studio feature brief transformed into six original SVG icons" width="900">
 </p>
+
+The current gallery shows the source feature brief beside the actual verified
+SVG outputs. It contains two original custom brand families and one undecorated
+native Phosphor system family; retired auditions are not retained.
 
 ## At a glance
 
 | Capability | Contract |
 | --- | --- |
-| **Best for** | Product navigation, feature lists, settings, dashboards, and marketing pages that need one coherent icon family |
+| **Best for** | Branded product-feature families and compact system/UI families that must not be confused with each other |
 | **Input** | 3–20 unique feature names, with optional product context and explicit icon overrides |
-| **Native styles** | Outline in light, regular, or bold weight; filled; duotone |
+| **Styles** | Custom outline, filled, or duotone brand art; native Phosphor light, regular, bold, fill, or duotone system glyphs |
+| **Brand route** | Three original visual systems are auditioned on representative benefits before custom SVG geometry expands to the full family |
 | **Presentation controls** | Primary/secondary colors and a 24, 32, or 48 px grid |
 | **Output formats** | Editable SVG per feature, SVG/PNG family previews, normalized spec JSON, provenance JSON, and verification manifest JSON |
-| **Core guarantee** | One pinned Phosphor version and one native weight per family; ambiguous metaphors are surfaced instead of silently guessed |
+| **Core guarantee** | UI concepts stay clean and native; branded features get distinct silhouettes and original geometry instead of library glyphs with repeated decoration |
 
 ## What it does
 
 ```text
-feature names → semantic search in pinned Phosphor catalog
-              → one shared native weight → color/grid adaptation
-              → SVG safety + optical checks → previews + provenance manifest
+feature names → infer brand or system purpose
+              → system: pinned Phosphor semantic search + one native weight
+              → brand: three original custom auditions + selected visual system
+              → SVG safety + optical checks
+              → previews + provenance manifest
 ```
 
-This library-first approach preserves geometry reviewed by an established icon
-community. The Skill uses custom generation only when the catalog has no
-credible metaphor and the user accepts that fallback.
+System icons preserve geometry reviewed by an established icon community.
+Brand icons use custom geometry across the complete family: one material and
+construction grammar, one restrained accent behavior, and a different
+silhouette for every product benefit.
 
 ## Visual quality bar
 
 The family must tell one product story, not merely collect individually valid
 symbols. Prefer context-specific features, distinct silhouettes, comparable
-visual volume, and metaphors that remain legible without labels. The styled
-hero above arranges the same six verified SVGs used in the clean deliverable
-preview; it does not redraw them.
+visual volume, and metaphors that remain legible without labels. Do not promote
+a technically passing family as a README visual before human approval.
 
 ## Requirements
 
@@ -47,8 +55,8 @@ preview; it does not redraw them.
 - Node.js 22 and npm
 - A request containing 3–20 unique feature names
 
-No image-generation model, browser request, or system SVG renderer is required.
 The pinned `@phosphor-icons/core` and resvg packages work offline after install.
+Only the explicitly selected custom-geometry route needs a capable model.
 
 ## Installation
 
@@ -70,8 +78,27 @@ Use $feature-to-icons to make icons for Search, Filters, Team Sharing, and
 Cloud Sync.
 ```
 
-The default is a 24 px, regular, outline-style Phosphor family using
-`currentColor`. The user does not need to provide icon names or SVG syntax.
+These common UI concepts are inferred as `system`: a 24 px, regular,
+outline-style Phosphor family using `currentColor`, with no decorative tile.
+
+### Create branded product-feature icons
+
+```text
+Use $feature-to-icons for Instant Build, Visual Diff, Bundle Health, Edge Ship,
+and Team Handoff. The product is a playful web release workspace.
+```
+
+These story-like feature names are inferred as `brand`. Before expanding the
+family, the Skill compares three original custom visual systems on
+representative features at full size and 24 px. Say `purpose: system` or
+`purpose: brand` to override inference.
+
+### Brand and system are different products
+
+| Route | Geometry source | Non-negotiable rule |
+| --- | --- | --- |
+| `brand` | Original SVG geometry for the complete family | Distinct silhouettes; no stock glyph, repeated circle, repeated card, or app-tile wrapper |
+| `system` | Pinned `@phosphor-icons/core@2.1.1` | Preserve native geometry and one weight; add no marketing decoration |
 
 ### Add product context
 
@@ -111,7 +138,7 @@ labels, translates each concept for catalog search, and records the selected
 Phosphor icon as an explicit override. Unsupported terms fail with candidates
 instead of silently receiving an unrelated alphabetical icon.
 
-## Native style mapping
+## Native system style mapping
 
 | Request | Phosphor source weight | Geometry behavior |
 | --- | --- | --- |
@@ -125,39 +152,29 @@ One output family never mixes source libraries or weights. Colors and the
 export viewBox may change; source paths are not stretched, centered, or redrawn
 individually.
 
-## Curated example gallery
+## Example contracts
 
-All examples use pinned Phosphor 2.1.1 geometry and the same delivery path as
-the Skill. The README keeps only three visually distinct families up front;
-the [example index](examples/README.md) contains all nine requests, exact
-overrides, source metadata, and manifests.
-
-| **Creative workflow · duotone** |
-| :---: |
-| <img src="examples/creative-workflow-duotone/showcase-preview.png" alt="Six creative workflow duotone icons" width="760"> |
-| Capture Ideas, Shape Story, Build Palette, Brand Library, Publish Kit, Measure Reach |
-
-| **Commerce · duotone** | **Collaboration · filled** |
-| :---: | :---: |
-| <img src="examples/commerce-duotone/icon-family-preview.png" alt="Commerce duotone family" width="420"> | <img src="examples/collaboration-filled/icon-family-preview.png" alt="Collaboration filled family" width="420"> |
-| Shopping Cart, Wishlist, Orders, Payment, Delivery | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
+The [example index](examples/README.md) contains two original brand families
+and one native Phosphor system family with exact input briefs, source metadata,
+showcase boards, and passing manifests.
 
 ## Options
 
 | Option | Values | Default | Library-first behavior |
 | --- | --- | --- | --- |
 | `features` | 3–20 unique names | Required | One SVG per feature |
-| `style` | `outline`, `filled`, `duotone` | `outline` | Selects a native Phosphor family |
-| `colors.primary` | Hex color | `currentColor` | Main presentation color |
-| `colors.secondary` | Hex color | Primary at low opacity | Duotone subordinate color |
-| `gridSize` | `24`, `32`, `48` | `24` | Output viewBox; source geometry scales uniformly |
-| `strokeWidth` | Positive number | `2` | Helps map outline requests to light/regular/bold |
-| `visualWeight` | `light`, `regular`, `bold` | `regular` | Selects the native outline weight |
-| `cornerRadius` | `rounded`, `round`, `sharp` | `rounded` | Native geometry is preserved; `sharp` requires custom fallback |
+| `purpose` | `brand`, `system` | Semantic inference | Original branded geometry or undecorated native glyph |
+| `style` | `outline`, `filled`, `duotone` | `outline` | Controls custom style or native Phosphor system weight |
+| `colors.primary` | Hex color | `currentColor` system; `#6C4CF6` brand | Main color |
+| `colors.secondary` | Hex color | Style-dependent; `#F7DF1E` brand | Duotone or restrained brand accent |
+| `gridSize` | `24`, `32`, `48` | `24` | Shared output viewBox |
+| `strokeWidth` | Positive number | `2` | Exact custom stroke or native system-weight hint |
+| `visualWeight` | `light`, `regular`, `bold` | `regular` | Custom visual weight or native outline weight |
+| `cornerRadius` | `rounded`, `round`, `sharp` | `rounded` | Exact custom geometry; Phosphor preserves native corners |
 | `productContext` | Product description | None | Improves semantic selection |
 
-In library-first mode, stroke width and corner radius do not mutate individual
-paths. Exact bespoke geometry belongs to the custom fallback.
+In system mode, stroke width and corner radius do not mutate individual
+Phosphor paths. In brand mode they are exact family constraints.
 
 ## Output
 
@@ -183,6 +200,8 @@ icon-output/
 
 ```typescript
 import {
+  buildPrompt,
+  deliverIconFamily,
   deliverPhosphorIconFamily,
   searchPhosphorIcons,
   validate,
@@ -197,8 +216,24 @@ await deliverPhosphorIconFamily(result.data, "/absolute/path/to/icon-output");
 const candidates = searchPhosphorIcons("Discovery");
 ```
 
-`deliverIconFamily()` remains available for explicitly approved custom SVG
-fallbacks and applies the same safety, raster, and optical delivery gates.
+For an explicit branded route, obtain the model response using the returned
+prompt, then pass the SVG JSON through the same delivery gates:
+
+```typescript
+const branded = validate({
+  purpose: "brand",
+  features: ["Instant Preview", "Typed Confidence", "Tiny Bundles", "Edge Release"],
+  colors: { primary: "#172A46", secondary: "#F7DF1E" },
+  gridSize: 48,
+});
+if (!branded.data) throw new Error(JSON.stringify(branded.errors));
+const prompt = buildPrompt(branded.data);
+const rawSvgJson = await runCapableModel(prompt);
+await deliverIconFamily(branded.data, rawSvgJson, "/absolute/path/to/release-icons");
+```
+
+`deliverPhosphorIconFamily()` rejects `purpose: brand` so library glyphs cannot
+accidentally re-enter the branded route.
 
 ## How to test
 
@@ -210,7 +245,8 @@ The verification runs lint, formatting, type checking, build, unit tests,
 prompt/input evals, a real deliverable test, and all 44 committed example SVGs.
 It also verifies package provenance and optical metrics.
 
-Regenerate the gallery from pinned library assets:
+Regenerate the gallery from the checked custom example and pinned library
+assets:
 
 ```bash
 cd feature-to-icons
@@ -223,7 +259,10 @@ npm run verify:examples
 - The Skill requires at least three features; it is not a single-icon exporter.
 - Semantic retrieval can be ambiguous for private product vocabulary; those
   cases require a candidate choice or explicit override.
-- Exact sharp corners or novel branded metaphors require the custom fallback.
+- Custom brand art requires a capable SVG-authoring model and human contact-sheet review.
+- Purpose inference is conservative and can be overridden explicitly.
+- Optical checks catch placement errors but cannot judge whether a metaphor is
+  attractive or ownable; the brand contact sheet remains a human approval gate.
 - It produces static SVGs and does not install them into an application.
 
 Feature to Icons is MIT licensed. Library-backed artifacts use Phosphor Icons

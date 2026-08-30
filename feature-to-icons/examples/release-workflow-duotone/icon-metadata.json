@@ -1,0 +1,70 @@
+{
+  "icons": [
+    {
+      "feature": "Instant Preview",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Instant Preview\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Typed Confidence",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Typed Confidence\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Component Canvas",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Component Canvas\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Tiny Bundles",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Tiny Bundles\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Living Docs",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Living Docs\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Edge Release",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Edge Release\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    }
+  ]
+}

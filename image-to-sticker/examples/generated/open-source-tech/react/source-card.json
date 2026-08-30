@@ -2,9 +2,9 @@
   "version": 4,
   "sourceImage": "react.svg",
   "backgroundMode": "alpha",
-  "outlineWidth": 16,
-  "outlineColor": "#ffffff",
-  "material": "original",
-  "tilt": -3,
+  "outlineWidth": 22,
+  "outlineColor": "#E8F8FF",
+  "material": "holographic",
+  "tilt": 5,
   "size": 1024
 }

@@ -4,9 +4,10 @@ Use simple, already-composed artwork: a logo, icon, badge, or flat illustration.
 Save outputs outside the repository, for example under
 `/absolute/path/to/brand-tests/sticker-*`.
 
-The checked-in gallery uses varied open-source technology artwork and keeps
-each transparent result, alpha proof, source card, and manifest in its own
-artifact folder for delivery review.
+The checked-in gallery shows six source SVGs beside six current outputs:
+classic contour, holographic, reflective, glitter, colour contour, and
+borderless. Each transparent result, alpha proof, source card, and manifest
+stays in its own artifact folder for delivery review.
 
 The skill does not select subjects from busy photos or invent enamel, patch,
 ceramic, magnet, or scene-crop styles. Those are separate generation tasks.

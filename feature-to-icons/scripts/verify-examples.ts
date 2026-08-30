@@ -8,15 +8,9 @@ import type { IconDesignSystem, IconSource } from "../src/types.js";
 const PACKAGE_ROOT = fileURLToPath(new URL("..", import.meta.url));
 const EXAMPLES_ROOT = join(PACKAGE_ROOT, "examples");
 const EXPECTED = [
-  { slug: "creative-workflow-duotone", count: 6 },
-  { slug: "social-publishing-outline", count: 5 },
-  { slug: "product-essentials-outline", count: 4 },
-  { slug: "analytics-light-outline", count: 5 },
-  { slug: "collaboration-filled", count: 5 },
-  { slug: "commerce-duotone", count: 5 },
-  { slug: "security-bold-outline", count: 5 },
-  { slug: "creator-brand-duotone", count: 5 },
-  { slug: "ai-workspace-outline-48", count: 4 },
+  { slug: "release-workflow-duotone", count: 6, source: "custom" },
+  { slug: "creator-studio-duotone", count: 6, source: "custom" },
+  { slug: "developer-platform-outline", count: 6, source: "library-first" },
 ] as const;
 
 interface ExampleFile {
@@ -52,7 +46,7 @@ async function main(): Promise<void> {
   await verifyExactDirectorySet();
   let iconTotal = 0;
   for (const expected of EXPECTED) {
-    await verifyExample(expected.slug, expected.count);
+    await verifyExample(expected.slug, expected.count, expected.source);
     iconTotal += expected.count;
     console.log(`PASS ${expected.slug}: ${expected.count} icons`);
   }
@@ -71,7 +65,11 @@ async function verifyExactDirectorySet(): Promise<void> {
   }
 }
 
-async function verifyExample(slug: string, expectedCount: number): Promise<void> {
+async function verifyExample(
+  slug: string,
+  expectedCount: number,
+  expectedSource: "custom" | "library-first",
+): Promise<void> {
   const directory = join(EXAMPLES_ROOT, slug);
   const example = await readJson<ExampleFile>(join(directory, "example.json"));
   if (!example.title.trim() || !example.request.trim()) {
@@ -83,7 +81,7 @@ async function verifyExample(slug: string, expectedCount: number): Promise<void>
   }
 
   const manifest = await readJson<ManifestFile>(join(directory, "icon-family-manifest.json"));
-  verifyManifest(slug, manifest, expectedCount);
+  verifyManifest(slug, manifest, expectedCount, expectedSource);
   await verifyListedFiles(directory, manifest);
   const metadata = await readJson<MetadataFile>(join(directory, manifest.files.metadata));
   for (const [index, iconFile] of manifest.files.icons.entries()) {
@@ -95,22 +93,45 @@ async function verifyExample(slug: string, expectedCount: number): Promise<void>
     }
   }
   await verifyPng(directory, manifest.files.previewPng, expectedCount);
+  await verifyShowcase(directory);
 }
 
-function verifyManifest(slug: string, manifest: ManifestFile, expectedCount: number): void {
+async function verifyShowcase(directory: string): Promise<void> {
+  const png = await readFile(join(directory, "showcase-preview.png"));
+  if (
+    png.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a" ||
+    png.readUInt32BE(16) !== 1200 ||
+    png.readUInt32BE(20) !== 720
+  ) {
+    throw new Error(`${directory}: source-to-output showcase is invalid`);
+  }
+}
+
+function verifyManifest(
+  slug: string,
+  manifest: ManifestFile,
+  expectedCount: number,
+  expectedSource: "custom" | "library-first",
+): void {
   if (manifest.featureCount !== expectedCount || manifest.files.icons.length !== expectedCount) {
     throw new Error(`${slug}: manifest must list exactly ${expectedCount} icons`);
   }
   if (!manifest.validation.passed) {
     throw new Error(`${slug}: manifest validation must pass`);
   }
+  if (manifest.source.strategy !== expectedSource) {
+    throw new Error(`${slug}: manifest source must be ${expectedSource}`);
+  }
+  if (expectedSource === "custom" && manifest.source.license !== "user-provided") {
+    throw new Error(`${slug}: custom example must record user-provided geometry`);
+  }
   if (
-    manifest.source.strategy !== "library-first" ||
-    manifest.source.library !== "Phosphor" ||
-    manifest.source.version !== "2.1.1" ||
-    manifest.source.license !== "MIT"
+    expectedSource === "library-first" &&
+    (manifest.source.library !== "Phosphor" ||
+      manifest.source.version !== "2.1.1" ||
+      manifest.source.license !== "MIT")
   ) {
-    throw new Error(`${slug}: manifest must record pinned Phosphor provenance`);
+    throw new Error(`${slug}: library example must record pinned Phosphor provenance`);
   }
   if (manifest.validation.opticalMetrics.length !== expectedCount) {
     throw new Error(`${slug}: manifest must record one optical metric per icon`);

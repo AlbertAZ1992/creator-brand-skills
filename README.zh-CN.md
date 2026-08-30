@@ -20,18 +20,18 @@
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/vite-bolt/clay-render.png" alt="Vite 闪电转成紫蓝色立体黏土主视觉" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/sticker-wall.png" alt="多种开源技术标志转成透明刀模贴纸墙" width="560"> |
-| Vite 闪电 → 主视觉渲染 + 5,388 顶点验证 OBJ | 11 种不同源图 → 清晰透明 PNG 贴纸与 alpha proof |
+| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite 与 JavaScript 原图转成黏土主视觉和验证过的 OBJ 预览" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="六张原图转成六种透明贴纸效果" width="560"> |
+| 两张锁定原图 → 黏土主视觉 + 真实验证 OBJ | 六张原图 → 六种透明 PNG 贴纸 + alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| **视觉候选仍在本地评审，确认前不进入正式宣传位。**<br><br>品牌收益 → 原创定制 SVG<br>系统控件 → 原生 Phosphor | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="OpenPatch 补丁小狐狸 Pip 的五个锁定姿势" width="560"> |
-| 前三轮 Orbit / Signal / Die-cut 结果全部不在这里推广 | OpenPatch 事实 → 三个方向 → Pip 角色圣经 → 五个锁定姿势 |
+| <img src="feature-to-icons/examples/creator-studio-duotone/showcase-preview.png" alt="Creator Studio 功能 brief 转成六枚原创 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="OpenPatch 补丁小狐狸 Pip 的五个锁定姿势" width="560"> |
+| 功能 brief → 六枚原创 SVG + 光学校验 | OpenPatch 事实 → Pip 角色圣经 → 五个锁定姿势 |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-这些已确认图片展示的是真实生产链路，不是互不相关的单张美图；Feature to Icons
-的新视觉候选仍等待确认，因此宣传位有意留空。Pip 与 Azi 都是本仓库原创概念；
+这些当前图片都同时交代输入和真实生产链路结果，不是互不相关的单张美图。
+Pip 与 Azi 都是本仓库原创概念；
 第三方技术标志仅作为有明确来源的转换测试素材，相关名称与标志归各自权利人
 所有，本项目不暗示任何合作或背书。
 
@@ -84,8 +84,8 @@ Mascot 会先比较三个方向，再锁定 V2 角色身份并生成不同姿势
 | Skill | 作品视图 | 验收视图 |
 | --- | --- | --- |
 | Logo to Clay | [Vite 闪电、JavaScript 黏土主视觉与验证过的 3D 资产](logo-to-clay/examples/) | OBJ 面、材质链接、1024 px 预览、通过的 manifest |
-| Image to Sticker | [开源技术贴纸墙与 Vite + React 双案例](image-to-sticker/examples/) | 透明资源、灰度 alpha 证明、拓扑与来源 manifest |
-| Feature to Icons | [技术验收夹具；宣传视觉等待确认](feature-to-icons/examples/) | 每功能独立 SVG、来源边界、光学指标、无隐藏 fallback |
+| Image to Sticker | [经典、全息、反光、闪粉、彩色轮廓和无边框六种原图到贴纸案例](image-to-sticker/examples/) | 透明资源、灰度 alpha 证明、拓扑与来源 manifest |
+| Feature to Icons | [两组原创品牌图标与一组开发者平台系统图标](feature-to-icons/examples/) | 每功能独立 SVG、来源边界、光学指标、无隐藏 fallback |
 | Product to Mascot | [Pip、Azi 与 Mori 三套验证过的五姿势角色](product-to-mascot/examples/) | 角色圣经、五张全尺寸参考图、contact sheet、通过的 manifest |
 
 ## 安装

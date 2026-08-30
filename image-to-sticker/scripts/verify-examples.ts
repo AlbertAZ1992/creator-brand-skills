@@ -21,8 +21,7 @@ interface Manifest {
 }
 
 async function main(): Promise<void> {
-  await verifyCollection("vite-react", "Vite and React", 1200, 600);
-  await verifyCollection("open-source-tech", "open-source technology", 1400, 900);
+  await verifyCollection("open-source-tech", "source-to-sticker styles", 1600, 960);
 }
 
 async function verifyCollection(
@@ -39,7 +38,7 @@ async function verifyCollection(
     await verifySource(exampleRoot, source);
     await verifySticker(exampleRoot, source.slug ?? source.name.toLowerCase());
   }
-  const board = await sharp(join(exampleRoot, "sticker-wall.png")).metadata();
+  const board = await sharp(join(exampleRoot, "source-to-sticker.png")).metadata();
   if ((board.width ?? 0) < minimumBoardWidth || (board.height ?? 0) < minimumBoardHeight) {
     throw new Error(`${label} sticker board is too small`);
   }

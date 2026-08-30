@@ -22,6 +22,7 @@ interface SourceRecord {
 }
 
 async function main(): Promise<void> {
+  await verifyImage(join(generatedRoot, "source-to-clay.png"), 1600, 1000);
   const javascriptRoot = join(generatedRoot, "javascript");
   await verifyImage(join(javascriptRoot, "clay-render.png"), 1024, 1024);
   await verifyImage(join(javascriptRoot, "source.png"), 256, 128);

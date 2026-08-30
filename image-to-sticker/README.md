@@ -8,15 +8,15 @@ contour, and can apply a deterministic front finish in Codex.
 The callable Codex Skill name is `image-to-sticker`.
 
 <p align="center">
-  <img src="examples/generated/open-source-tech/sticker-wall.png" alt="Open-source technology marks rendered as a varied transparent die-cut sticker wall" width="900">
+  <img src="examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into classic, holographic, reflective, glitter, colour-contour, and borderless stickers" width="900">
 </p>
 
-The featured board uses 11 varied sources—including Vite, Vue, React,
-TypeScript, Git, Astro, Deno, and Node.js—to expose contour and small-viewBox
-quality across genuinely different silhouettes. Clean transparent PNGs, alpha
-proofs, source cards, source hashes, and passing manifests are checked in under
-`examples/generated/open-source-tech/`; the board is presentation only. Names
-and marks belong to their respective owners and are used only as attributed
+The featured board shows every input beside its actual `sticker.png`. Vite,
+React, TypeScript, Astro, Vue, and Deno exercise classic contour,
+holographic, reflective, glitter, colour-contour, and borderless controls.
+Each 1024 px RGBA sticker has its own alpha proof, source card, source hash,
+and passing manifest under `examples/generated/open-source-tech/`. Names and
+marks belong to their respective owners and are used only as attributed
 transformation fixtures.
 
 ## At a glance
@@ -163,8 +163,8 @@ visible RGB, but never the alpha geometry.
 
 ## Examples and verification
 
-See [`examples/README.md`](examples/README.md) for the approved open-source
-technology wall, the focused Vite + React pair, and every clean delivery file.
+See [`examples/README.md`](examples/README.md) for the six source-to-output
+styles and every clean delivery file.
 
 ```bash
 npm run examples

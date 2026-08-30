@@ -1,6 +1,7 @@
 import type {
   FeatureIconInput,
   FeatureIconOutput,
+  IconPurpose,
   IconMetadata,
   ValidationError,
 } from "./types.js";
@@ -16,13 +17,45 @@ import type {
 
 const HEX_COLOR_RE = /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
 const VALID_STYLES: IconStyle[] = ["outline", "filled", "duotone"];
+const VALID_PURPOSES: IconPurpose[] = ["brand", "system"];
 const VALID_GRID_SIZES = [24, 32, 48] as const;
 const VALID_CORNER_RADII = ["sharp", "rounded", "round"] as const;
 const VALID_WEIGHTS = ["light", "regular", "bold"] as const;
 const MIN_FEATURES = 3;
 const MAX_FEATURES = 20;
+const SYSTEM_FEATURES = new Set([
+  "alerts",
+  "analytics",
+  "api",
+  "billing",
+  "calendar",
+  "cloud sync",
+  "dashboard",
+  "errors",
+  "file sharing",
+  "filters",
+  "home",
+  "integrations",
+  "invoice",
+  "lock",
+  "notifications",
+  "profile",
+  "reports",
+  "search",
+  "security",
+  "settings",
+  "shield",
+  "task board",
+  "team chat",
+  "team sharing",
+  "teams",
+  "users",
+  "video calls",
+  "warnings",
+]);
 
 const DEFAULTS = {
+  purpose: "brand" as IconPurpose,
   style: "outline" as IconStyle,
   gridSize: 24 as const,
   strokeWidth: 2,
@@ -74,6 +107,22 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
       .map((feature) => feature.trim().toLocaleLowerCase());
     if (new Set(normalizedFeatures).size !== normalizedFeatures.length) {
       errors.push({ field: "features", message: "feature names must be unique" });
+    }
+  }
+
+  // purpose
+  let purpose: IconPurpose = inferPurpose(obj["features"]);
+  if (obj["purpose"] !== undefined) {
+    if (
+      typeof obj["purpose"] !== "string" ||
+      !(VALID_PURPOSES as readonly string[]).includes(obj["purpose"])
+    ) {
+      errors.push({
+        field: "purpose",
+        message: `purpose must be one of: ${VALID_PURPOSES.join(", ")}`,
+      });
+    } else {
+      purpose = obj["purpose"] as IconPurpose;
     }
   }
 
@@ -197,9 +246,14 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
 
   const features = (obj["features"] as string[]).map((f: string) => f.trim());
 
+  if (!colors && purpose === "brand") {
+    colors = { primary: "#6C4CF6", secondary: "#F7DF1E" };
+  }
+
   return {
     data: {
       features,
+      purpose,
       style,
       ...(colors !== undefined ? { colors } : {}),
       gridSize,
@@ -620,6 +674,7 @@ function analyzeFeatureSemantics(feature: string): IconMetadata {
 }
 
 function buildDesignSystemSection(input: FeatureIconInput): string {
+  const purpose = input.purpose ?? DEFAULTS.purpose;
   const strokeNote = input.style === "filled" ? "" : `- Stroke width: ${input.strokeWidth}px`;
   const secondaryColor =
     input.colors?.secondary ?? input.colors?.primary ?? "a slightly muted shade";
@@ -643,6 +698,20 @@ function buildDesignSystemSection(input: FeatureIconInput): string {
     rounded: "2px (slightly rounded)",
     round: "9999px (fully rounded/round caps on strokes)",
   };
+  const purposeRules =
+    purpose === "brand"
+      ? [
+          "- Purpose: branded product-feature art, not generic navigation glyphs",
+          "- Draw original geometry for the complete family; do not use an icon library",
+          "- Build each icon from one product-specific metaphor and 2–4 large shapes",
+          "- Share material, stroke, corner, layer, and accent behavior across the family",
+          "- Give every feature a distinct silhouette instead of repeating one container",
+          "- No stock glyph plus decoration, repeated badge, repeated circle, or generic app tile",
+        ]
+      : [
+          "- Purpose: compact system/UI glyphs",
+          "- Do not add decorative containers, badges, sparks, or marketing embellishment",
+        ];
 
   return [
     "## Design System (NON-NEGOTIABLE)",
@@ -655,6 +724,7 @@ function buildDesignSystemSection(input: FeatureIconInput): string {
     `- Visual weight: ${input.visualWeight} (${weightDescription})`,
     `- Style: ${input.style}`,
     fillNote,
+    ...purposeRules,
     "- Consistent detail level across all icons",
     "- No icon should look more complex or simpler than others in the set",
     "- Each icon should use roughly the same number of path elements",
@@ -681,7 +751,29 @@ function buildColorsSection(input: FeatureIconInput): string {
     .join("\n");
 }
 
-/** Build the AI prompt used only for an explicitly approved custom fallback. */
+/** Compare three original brand-art concepts on the same representative features. */
+export function buildBrandAuditionPrompt(input: FeatureIconInput): string {
+  const middle = input.features[Math.floor(input.features.length / 2)];
+  const representatives = [input.features[0], middle, input.features.at(-1)].filter(
+    (feature): feature is string => Boolean(feature),
+  );
+  const uniqueRepresentatives = [...new Set(representatives)];
+  return [
+    "Create a custom brand-feature-art audition before drawing the full family.",
+    input.productContext ? `Product context: ${input.productContext}` : "",
+    `Representative features: ${uniqueRepresentatives.join(", ")}.`,
+    "Create three genuinely different custom visual systems for these same features.",
+    "Keep the semantic metaphors constant so construction, material, and gesture can be compared.",
+    "Each system must use original SVG geometry, 2–4 large shapes per icon, and distinct silhouettes.",
+    "Share a stroke, corner logic, layer count, palette, and one restrained accent behavior.",
+    "Reject stock glyphs, repeated circles, repeated cards, app tiles, and decorative wrappers.",
+    "Return three labeled SVG contact sheets at full size and 24 px; stop before the full family.",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+/** Build the AI prompt used for the selected custom brand route or custom system fallback. */
 export function buildPrompt(input: FeatureIconInput): string {
   const designSystem = buildDesignSystemSection(input);
   const colors = buildColorsSection(input);
@@ -703,7 +795,9 @@ export function buildPrompt(input: FeatureIconInput): string {
     : "";
 
   return [
-    "# Task: Generate a Custom Fallback Icon Family",
+    (input.purpose ?? DEFAULTS.purpose) === "brand"
+      ? "# Task: Generate a Branded Product Feature Icon Family"
+      : "# Task: Generate a System Icon Family",
     "",
     `Generate ${input.features.length} SVG icons as a single cohesive icon set.`,
     "",
@@ -740,6 +834,9 @@ export function buildPrompt(input: FeatureIconInput): string {
     "3. If any icon is unrecognizable at 16x16px, the output is FAILED.",
     "4. All icons must feel like they belong to the same family — " +
       "consistent personality and construction.",
+    (input.purpose ?? DEFAULTS.purpose) === "brand"
+      ? "5. A set of unrelated stock glyphs without a shared branded construction is FAILED."
+      : "",
   ].join("\n");
 }
 
@@ -807,6 +904,11 @@ export async function buildPhosphorIconFamily(
   input: FeatureIconInput,
   overrides: IconOverrides = {},
 ): Promise<FeatureIconOutput> {
+  if ((input.purpose ?? DEFAULTS.purpose) !== "system") {
+    throw new Error(
+      "Phosphor is only available for purpose=system; brand feature art requires custom SVG",
+    );
+  }
   return buildLibraryFamily(input, getDesignSystem(input), overrides);
 }
 
@@ -820,7 +922,9 @@ export async function deliverPhosphorIconFamily(
 }
 
 function getDesignSystem(input?: FeatureIconInput): IconDesignSystem {
+  const purpose = input?.purpose ?? DEFAULTS.purpose;
   return {
+    purpose,
     style: input?.style ?? DEFAULTS.style,
     gridSize: input?.gridSize ?? DEFAULTS.gridSize,
     strokeWidth: input?.strokeWidth ?? DEFAULTS.strokeWidth,
@@ -828,6 +932,16 @@ function getDesignSystem(input?: FeatureIconInput): IconDesignSystem {
     visualWeight: input?.visualWeight ?? DEFAULTS.visualWeight,
     geometryPolicy: "custom-exact",
   };
+}
+
+function inferPurpose(rawFeatures: unknown): IconPurpose {
+  if (!Array.isArray(rawFeatures) || rawFeatures.length === 0) return DEFAULTS.purpose;
+  const features = rawFeatures.filter((feature): feature is string => typeof feature === "string");
+  if (features.length === 0) return DEFAULTS.purpose;
+  const matches = features.filter((feature) =>
+    SYSTEM_FEATURES.has(feature.trim().toLocaleLowerCase()),
+  ).length;
+  return matches / features.length >= 0.5 ? "system" : "brand";
 }
 
 function buildArtifacts(

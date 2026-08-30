@@ -8,9 +8,9 @@ Supported personality presets are `friendly`, `professional`, `playful`,
 `technical`, and `approachable`; the visual medium itself may be specified in
 natural language and is then locked across all five reference images.
 
-The checked-in gallery demonstrates Mori, an original paper-moth archivist for
-the fictional Mora research workspace. Open-book wings and a bookmark ribbon
-encode the product connection without relying on surrounding text.
+The checked-in gallery shows the source product-facts card beside each current
+five-pose result for Pip, Azi, and Mori. Open-book wings and a bookmark ribbon
+encode Mori's product connection without relying on surrounding text.
 
 ## 1. Verified reference set
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validate, buildPrompt, parseOutput } from "../src/index.js";
+import { buildBrandAuditionPrompt, buildPrompt, parseOutput, validate } from "../src/index.js";
 import type { FeatureIconInput, FeatureIconOutput } from "../src/types.js";
 
 describe("validate", () => {
@@ -8,11 +8,44 @@ describe("validate", () => {
     expect(result.errors).toBeUndefined();
     expect(result.data).toBeDefined();
     expect(result.data!.features).toEqual(["Dashboard", "Reports", "Users"]);
+    expect(result.data!.purpose).toBe("system");
+    expect(result.data!.colors).toBeUndefined();
     expect(result.data!.style).toBe("outline");
     expect(result.data!.gridSize).toBe(24);
     expect(result.data!.strokeWidth).toBe(2);
     expect(result.data!.cornerRadius).toBe("rounded");
     expect(result.data!.visualWeight).toBe("regular");
+  });
+
+  it("keeps system icons undecorated unless colors are requested", () => {
+    const result = validate({
+      features: ["Dashboard", "Reports", "Users"],
+      purpose: "system",
+    });
+
+    expect(result.errors).toBeUndefined();
+    expect(result.data?.purpose).toBe("system");
+    expect(result.data?.colors).toBeUndefined();
+  });
+
+  it("infers a branded family for product feature stories", () => {
+    const result = validate({
+      features: ["Instant Build", "Visual Diff", "Edge Ship"],
+    });
+
+    expect(result.errors).toBeUndefined();
+    expect(result.data?.purpose).toBe("brand");
+    expect(result.data?.colors).toEqual({ primary: "#6C4CF6", secondary: "#F7DF1E" });
+  });
+
+  it("rejects an unknown icon purpose", () => {
+    const result = validate({
+      features: ["Dashboard", "Reports", "Users"],
+      purpose: "marketing-poster",
+    });
+
+    expect(result.data).toBeUndefined();
+    expect(result.errors?.some((error) => error.field === "purpose")).toBe(true);
   });
 
   it("validates all fields with custom values", () => {
@@ -187,6 +220,31 @@ describe("buildPrompt", () => {
     expect(prompt).toContain("Stroke width: 2px");
     expect(prompt).toContain("rounded");
     expect(prompt).toContain("regular");
+    expect(prompt).toContain("branded product-feature art");
+    expect(prompt).toContain("Draw original geometry");
+    expect(prompt).toContain("No stock glyph plus decoration");
+    expect(prompt).toContain("distinct silhouette");
+  });
+
+  it("builds a three-system custom audition before a branded family", () => {
+    const prompt = buildBrandAuditionPrompt({
+      features: ["Capture Ideas", "Build Palette", "Publish Kit"],
+      purpose: "brand",
+      productContext: "A creator workspace",
+    });
+
+    expect(prompt).toContain("three genuinely different custom visual systems");
+    expect(prompt).toContain("original SVG geometry");
+    expect(prompt).toContain("distinct silhouettes");
+    expect(prompt).toContain("Reject stock glyphs, repeated circles");
+  });
+
+  it("removes brand decoration for a system icon request", () => {
+    const prompt = buildPrompt({ ...basicInput, purpose: "system" });
+
+    expect(prompt).toContain("compact system/UI glyphs");
+    expect(prompt).toContain("Do not add decorative containers");
+    expect(prompt).not.toContain("unrelated stock glyphs");
   });
 
   it("contains icon specifications for each feature", () => {

@@ -5,7 +5,7 @@ root_dir=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
 example_dir="$root_dir/examples/generated/open-source-tech"
 source_dir="$example_dir/sources"
 
-for slug in vite vite-bolt vue react typescript nodejs git astro deno ship-it merge-ready; do
+for slug in vite-bolt react typescript astro vue deno; do
 	output_dir="$example_dir/$slug"
 	bash "$root_dir/scripts/render-sticker.sh" \
 		"$source_dir/$slug.svg" \
@@ -14,4 +14,4 @@ for slug in vite vite-bolt vue react typescript nodejs git astro deno ship-it me
 done
 
 node "$root_dir/examples/build-showcase.mjs"
-printf 'Regenerated the approved open-source technology sticker examples.\n'
+printf 'Regenerated six source-to-sticker style examples.\n'

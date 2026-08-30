@@ -2,9 +2,9 @@
   "version": 4,
   "sourceImage": "vue.svg",
   "backgroundMode": "alpha",
-  "outlineWidth": 16,
-  "outlineColor": "#ffffff",
+  "outlineWidth": 18,
+  "outlineColor": "#FFB14A",
   "material": "original",
-  "tilt": 4,
+  "tilt": 3,
   "size": 1024
 }

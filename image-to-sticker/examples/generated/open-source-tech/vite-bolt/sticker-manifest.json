@@ -9,11 +9,11 @@
   },
   "pipeline": {
     "backgroundMask": "alpha",
-    "outlineWidth": 16,
-    "outlineRadius": 37.6,
+    "outlineWidth": 20,
+    "outlineRadius": 47,
     "outlineColor": "#ffffff",
     "material": "original",
-    "tilt": -7,
+    "tilt": -6,
     "rgbOperation": "source-over-outline-then-material",
     "sourceRgbSha256": "ddb4e657b1fc7bbe022cd534d12d799ca24e3be85e5671bb93e6d4901d1b220f"
   },
@@ -22,8 +22,8 @@
     "alphaMinimum": 0,
     "alphaMaximum": 255,
     "cornerAlpha": 0,
-    "visibleCoverage": 0.3650930105471145,
-    "softAlphaCoverage": 0.010242462158203125,
+    "visibleCoverage": 0.38709044362984557,
+    "softAlphaCoverage": 0.010747909545898438,
     "interiorTransparentPixels": 0,
     "passed": true
   }

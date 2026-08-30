@@ -1,31 +1,35 @@
 # Feature to Icons Architecture
 
-Feature to Icons uses a library-first resolver. Semantic choice remains a
-reasoning task; source geometry, provenance, optical measurement, rendering,
-and delivery are deterministic.
+Feature to Icons has a hard source boundary. System/UI icons use a library-first
+resolver. Branded product-feature art uses original custom geometry. Safety,
+provenance, optical measurement, rendering, and delivery are deterministic for
+both routes.
 
 ```text
 feature names + options
           |
        validate()
           |
-  search pinned Phosphor catalog
+ infer brand feature art or system/UI purpose
           |
- one native source weight for the family
-          |
- uniform color/viewBox adaptation
+  +-------+-----------------------+
+  |                               |
+system: pinned Phosphor       brand: three custom auditions
+  |                               |
+one native source weight      selected original visual system
+  +---------------+---------------+
           |
  SVG safety + provenance + optical gates
           |
  SVGs + metadata + previews + manifest
 ```
 
-## Why library first
+## Why the routes are separate
 
 A shared viewBox and stroke declaration do not guarantee visual consistency.
-Independent drawings can still have different apparent centers, occupied
-areas, curve logic, and detail density. Pinned community-reviewed geometry
-removes most of that variance before validation starts.
+Pinned community-reviewed geometry removes most variance for small UI controls.
+That same advantage becomes a liability for brand art: decorating generic
+glyphs does not create product-specific or ownable feature illustrations.
 
 `@phosphor-icons/core@2.1.1` is the only default source. It provides raw SVGs,
 catalog names, tags, categories, and native light, regular, bold, fill, and
@@ -45,6 +49,18 @@ loads the exported SVG asset, preserves its path geometry, and applies only:
 - primary presentation color;
 - optional secondary color on the native duotone background layer;
 - source-identifying data attributes.
+
+That is the complete `system` presentation. `buildPhosphorIconFamily()` rejects
+`purpose: brand`.
+
+The brand route selects representative features, auditions three original
+custom visual systems, and expands only the approved system. Every icon uses
+2–4 large shapes, one product-specific metaphor, a distinct silhouette, and
+shared material/stroke/corner/accent behavior. Repeated circles, app tiles,
+cards, and stock glyphs with decoration are rejection conditions.
+
+Validation infers `system` when at least half of the names are established UI
+concepts; callers may override the purpose explicitly.
 
 ## Provenance
 
@@ -78,8 +94,8 @@ inspection. The generated PNG remains the final human-readable proof.
 
 ## Custom fallback
 
-`deliverIconFamily()` retains the earlier JSON/SVG path for user-approved
-custom work. It applies the same output, safety, raster, and optical gates, plus
+`deliverIconFamily()` owns every branded feature family and any novel system
+fallback. It applies the same output, safety, raster, and optical gates, plus
 exact stroke-width checks for outline and duotone SVGs. Custom artifacts are
 marked `user-provided`; they are never presented as Phosphor assets.
 
@@ -101,5 +117,6 @@ warnings.
 ## Verification
 
 `npm run verify` runs static checks, build, unit tests, input/prompt evals, a
-real custom deliverable, and the committed Phosphor gallery. Example validation
-rechecks provenance, SVG rules, PNG dimensions, and one optical metric per icon.
+real custom deliverable, one committed custom brand family, and eight Phosphor
+system families. Example validation rechecks provenance, SVG rules, PNG
+dimensions, and one optical metric per icon.

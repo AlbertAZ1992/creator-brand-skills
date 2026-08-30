@@ -33,6 +33,7 @@ const OUTPUT: FeatureIconOutput = {
     },
   ],
   designSystem: {
+    purpose: "system",
     style: "outline",
     gridSize: 24,
     strokeWidth: 2,
