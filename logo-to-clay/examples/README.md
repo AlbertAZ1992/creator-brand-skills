@@ -1,47 +1,45 @@
 # Logo to Clay examples
 
 <p align="center">
-  <img src="generated/source-to-clay.png" alt="Vite and JavaScript source logos shown beside their clay render and verified OBJ preview" width="900">
+  <img src="generated/albertaz-wordmark/source-to-clay.png" alt="ALBERTAZ wordmark shown beside its clay render and verified OBJ preview" width="1000">
 </p>
 
 Every row makes the input/output boundary explicit: the source logo stays
 visible beside the expressive clay render and the independently generated mesh
 preview.
 
-## Featured: Vite bolt clay
+## Featured: ALBERTAZ wordmark
 
 <p align="center">
-  <img src="generated/vite-bolt/clay-render.png" alt="Vite bolt rendered as a dimensional purple and blue clay campaign object" width="900">
+  <img src="generated/albertaz-wordmark/clay-render.png" alt="ALBERTAZ wordmark rendered as a dimensional violet clay campaign object" width="900">
 </p>
 
 | **Source** | **Verified mesh preview** |
 | :---: | :---: |
-| <img src="generated/vite-bolt/source.png" alt="Flat Vite bolt source" width="420"> | <img src="generated/vite-bolt/object/vite-bolt-clay-preview.png" alt="Preview rendered from the Vite bolt OBJ mesh" width="420"> |
-| Gradient bolt input | 6 mm standalone object; 5,388 vertices, 1,796 faces |
+| <img src="generated/albertaz-wordmark/source.png" alt="Flat ALBERTAZ wordmark source" width="420"> | <img src="generated/albertaz-wordmark/object/albertaz-wordmark-clay-preview.png" alt="Preview rendered from the ALBERTAZ wordmark OBJ mesh" width="420"> |
+| Locked wordmark input | 4 mm standalone object; 15,402 vertices, 5,134 faces, three cavities |
 
-[`generated/vite-bolt/`](generated/vite-bolt/) contains the campaign render,
-source SVG/PNG, OBJ, linked MTL, bump map, 1024 px preview, and passing manifest.
+[`generated/albertaz-wordmark/`](generated/albertaz-wordmark/) contains the
+campaign render, source SVG/PNG, OBJ, linked MTL, bump map, 1024 px preview,
+and passing manifest.
 
-## Second approved run: JavaScript clay
+## Additional approved runs
 
-<p align="center">
-  <img src="generated/javascript/clay-render.png" alt="JavaScript letter mark rendered as thick yellow clay" width="900">
-</p>
-
-| **Source** | **Verified mesh preview** |
+| **Vite bolt** | **JavaScript** |
 | :---: | :---: |
-| <img src="generated/javascript/source.png" alt="Flat JavaScript source mark" width="420"> | <img src="generated/javascript/mesh-preview.png" alt="Preview rendered from the JavaScript OBJ mesh" width="420"> |
-| Flat yellow-and-black input | 5 mm standalone object; OBJ, MTL, bump map, preview, and manifest |
+| <img src="generated/vite-bolt/clay-render.png" alt="Vite bolt rendered as a dimensional purple and blue clay campaign object" width="420"> | <img src="generated/javascript/clay-render.png" alt="JavaScript letter mark rendered as thick yellow clay" width="420"> |
+| Multi-colour campaign render + standalone object | Campaign render + standalone object + 2 mm relief |
 
-[`generated/javascript/`](generated/javascript/) contains its campaign render,
-source image, 5 mm standalone object, 2 mm relief, both OBJ/MTL packages, and
-passing manifests. The render and geometry routes are intentionally independent.
+[`generated/vite-bolt/`](generated/vite-bolt/) and
+[`generated/javascript/`](generated/javascript/) contain their source files,
+campaign renders, verified mesh packages, and passing manifests. The render
+and geometry routes remain intentionally independent.
 
 ## Regenerate the approved examples
 
-The two accepted campaign renders are checked visual references. The command
-below re-copies their pinned sources and rebuilds all three deterministic mesh
-packages: Vite object, JavaScript object, and JavaScript relief.
+The three accepted campaign renders are checked visual references. The command
+below re-copies their pinned sources and rebuilds all deterministic mesh
+packages: ALBERTAZ object, Vite object, JavaScript object, and JavaScript relief.
 
 ```bash
 npm run examples

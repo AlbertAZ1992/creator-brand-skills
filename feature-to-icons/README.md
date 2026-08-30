@@ -7,8 +7,12 @@ reduced-motion fallback.
 The callable Codex Skill name is `feature-to-icons`.
 
 <p align="center">
-  <img src="examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="1000">
+  <img src="examples/creator-doodle-animated/showcase-animated.svg" alt="Twenty ALBERTAZ creator features moving as one hand-drawn animated SVG icon set" width="1000">
 </p>
+
+**[Open the live playground →](https://albertaz1992.github.io/creator-brand-skills/)**
+Play, pause, change motion and accent colour, inspect the actual SVG source, or
+download one icon or the complete set.
 
 ## At a glance
 

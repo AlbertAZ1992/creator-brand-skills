@@ -2,6 +2,20 @@
   "name": "@creator-brand-skills/product-to-mascot",
   "version": "0.1.0",
   "description": "Generate a brand mascot concept from product semantics",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "brand-mascot",
+    "character-design",
+    "mascot-generator",
+    "brand-identity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertAZ1992/creator-brand-skills.git",
+    "directory": "product-to-mascot"
+  },
+  "homepage": "https://github.com/AlbertAZ1992/creator-brand-skills/tree/main/product-to-mascot",
   "type": "module",
   "license": "MIT",
   "main": "./dist/src/index.js",

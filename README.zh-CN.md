@@ -12,31 +12,39 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-4-5b4bdb.svg)](#四个-skill一套生产工具组)
 
 [English](README.md) · **简体中文** · [安装](#安装) ·
-[产物](#输入--结果--生产文件) · [验证](#本地验证)
+[产物](#输入--结果--生产文件) ·
+[图标 Playground](https://albertaz1992.github.io/creator-brand-skills/) ·
+[验证](#本地验证)
 
 </div>
 
-## 四个 Skill，一套生产工具组
+## 一个品牌，四条生产链路
+
+四个 Skill 都围绕同一套 ALBERTAZ 品牌输入展开。每张图都把锁定的输入与该
+链路真实生成的文件放在一起，不是为了 README 另外拼出来的 Mockup。
 
 | **01 · Logo to Clay · 黏土渲染 + 3D Mesh** | **02 · Image to Sticker · 透明 PNG** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite 与 JavaScript 原图转成黏土主视觉和验证过的 OBJ 预览" width="560"><br><br><img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript 字母标志转成有明显厚度的黄色黏土" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="六张原图转成六种透明贴纸效果" width="560"> |
-| Vite + JavaScript 平面 Logo → 黏土渲染 + 真实验证 OBJ | 六张平面 Logo → 六种透明贴纸 + alpha proof |
+| <img src="logo-to-clay/examples/generated/albertaz-wordmark/source-to-clay.png" alt="ALBERTAZ 字标转成黏土主视觉和验证过的 OBJ Mesh" width="560"> | <img src="image-to-sticker/examples/generated/albertaz-brand/source-to-sticker.png" alt="ALBERTAZ 字标转成四种透明贴纸效果" width="560"> |
+| 锁定字标 → 黏土主视觉 + 真实验证 OBJ Mesh | 同一字标 → 经典、全息、闪粉、反光四种 RGBA 贴纸 |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons · 动画 SVG 图标组** | **04 · Product to Mascot · 角色系统** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="二十个创作者功能转成一套原创手绘动画 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch 产品事实转成补丁小狐狸 Pip 的五姿势角色系统" width="560"><br><br><img src="product-to-mascot/examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ 产品事实转成折纸燕 Azi 的五姿势角色系统" width="560"> |
-| 20 条功能名称 → 20 枚手绘动画 SVG + 光学校验 | OpenPatch 与 ALBERTAZ 产品事实 → 锁定角色系统 → 每个角色五个姿势 |
+| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-animated.svg" alt="二十个 ALBERTAZ 创作者功能转成一套原创手绘动画 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ 产品事实转成折纸燕 Azi 的五姿势角色系统" width="560"> |
+| 20 条创作者功能 → 20 枚内置动画、可编辑的 SVG | 产品事实 → 折纸燕身份 → 五个一致姿势 |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-这些当前图片都同时交代输入和真实生产链路结果，不是互不相关的单张美图。
-Pip 与 Azi 都是本仓库原创概念；
-第三方技术标志仅作为有明确来源的转换测试素材，相关名称与标志归各自权利人
-所有，本项目不暗示任何合作或背书。
+ALBERTAZ 与 Azi 是本仓库自有品牌资产。Vite、JavaScript、React、Vue、Astro、
+TypeScript、Deno、Pip 与 Mori 继续作为次级压力测试和独立创作案例保留在各自
+图库中。第三方名称与标志归各自权利人所有，本项目不暗示任何合作或背书。
 
 用于展示的能力板仍与干净交付物、机器校验证据彼此分离；每块能力板都由对应
 Skill 所描述的真实生产链路产物组成。
+
+**[打开动画图标 Playground →](https://albertaz1992.github.io/creator-brand-skills/)**
+可以直接播放、换色、查看、复制或下载上面这 20 枚真实 SVG 产物。站点只服务
+Feature to Icons，不会扩成四个 Skill 的宣传站；四个 Skill 仍以本仓库为准。
 
 ## 一句话就能开始
 
@@ -76,10 +84,10 @@ Mascot 会先比较三个方向，再锁定 V2 角色身份并生成不同姿势
 
 | Skill | 作品视图 | 验收视图 |
 | --- | --- | --- |
-| Logo to Clay | [Vite 闪电、JavaScript 黏土主视觉与验证过的 3D 资产](logo-to-clay/examples/) | OBJ 面、材质链接、1024 px 预览、通过的 manifest |
-| Image to Sticker | [经典、全息、反光、闪粉、彩色轮廓和无边框六种原图到贴纸案例](image-to-sticker/examples/) | 透明资源、灰度 alpha 证明、拓扑与来源 manifest |
-| Feature to Icons | [二十枚动画手绘创作者图标](feature-to-icons/examples/) | 输入 brief 与真实 SVG、内置轻微抖动、减少动态降级、光学指标 |
-| Product to Mascot | [Pip、Azi 与 Mori 三套验证过的五姿势角色](product-to-mascot/examples/) | 角色圣经、五张全尺寸参考图、contact sheet、通过的 manifest |
+| Logo to Clay | [ALBERTAZ、Vite 与 JavaScript 黏土案例及验证过的 3D 资产](logo-to-clay/examples/) | OBJ 面、材质链接、1024 px 预览、通过的 manifest |
+| Image to Sticker | [ALBERTAZ 与六组开源技术 Logo 的原图到贴纸案例](image-to-sticker/examples/) | 透明资源、灰度 alpha 证明、拓扑与来源 manifest |
+| Feature to Icons | [二十枚 ALBERTAZ 动画手绘创作者图标](feature-to-icons/examples/) | 输入 brief 与真实 SVG、内置轻微抖动、减少动态降级、光学指标 |
+| Product to Mascot | [Azi、Pip 与 Mori 三套验证过的五姿势角色](product-to-mascot/examples/) | 角色圣经、五张全尺寸参考图、contact sheet、通过的 manifest |
 
 ## 安装
 
@@ -123,6 +131,18 @@ npx skills use AlbertAZ1992/creator-brand-skills@logo-to-clay --agent codex
 环境要求是 Node.js 22 与 npm。重建全部视觉示例还需要 ImageMagick 和 `jq`
 （`brew install imagemagick jq`）。每个 Skill 目录自己维护 `SKILL.md`、UI metadata、
 实现、schema、eval 与示例，因此四个包可以独立安装。
+
+## 版本与项目维护
+
+| Skill | 包版本 | 公开交付物 |
+| --- | ---: | --- |
+| `logo-to-clay` | 0.4.0 | 图片渲染；OBJ、MTL、凹凸图、预览、manifest |
+| `image-to-sticker` | 0.4.0 | RGBA 贴纸、alpha proof、source card、manifest |
+| `feature-to-icons` | 0.1.0 | 动画 SVG 组、预览、可播放 HTML、manifest |
+| `product-to-mascot` | 0.1.0 | 角色圣经、五张参考 PNG、contact sheet、manifest |
+
+版本记录、贡献规则和私密漏洞报告方式分别见 [CHANGELOG](CHANGELOG.md)、
+[贡献指南](CONTRIBUTING.md) 与 [安全策略](SECURITY.md)。
 
 ## License
 

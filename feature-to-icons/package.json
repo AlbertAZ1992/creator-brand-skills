@@ -2,6 +2,20 @@
   "name": "@creator-brand-skills/feature-to-icons",
   "version": "0.1.0",
   "description": "Create verified hand-drawn animated SVG icon families",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "feature-icons",
+    "animated-svg",
+    "hand-drawn-icons",
+    "icon-set"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertAZ1992/creator-brand-skills.git",
+    "directory": "feature-to-icons"
+  },
+  "homepage": "https://albertaz1992.github.io/creator-brand-skills/",
   "license": "MIT",
   "files": [
     "dist",

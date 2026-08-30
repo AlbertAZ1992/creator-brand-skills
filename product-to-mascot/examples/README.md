@@ -1,6 +1,24 @@
 # Product to Mascot examples
 
-## Featured: OpenPatch → Pip
+## Featured: ALBERTAZ → Azi
+
+Azi is a folded-paper swift built from ALBERTAZ's real personal-brand facts.
+The A-shaped wing opening, Z-fold tail, and page-turn wing tip encode software,
+visual work, and writing without pasting a wordmark onto the character.
+
+<p align="center">
+  <img src="generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ product facts transformed into the five-pose Azi mascot system" width="1000">
+</p>
+
+| **Source product facts** | **Generated five-pose system** |
+| :---: | :---: |
+| <img src="generated/albertaz-azi/source-brief.svg" alt="ALBERTAZ facts locked before generation" width="420"> | <img src="generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose ALBERTAZ mascot contact sheet" width="420"> |
+
+[`generated/albertaz-azi/`](generated/albertaz-azi/) contains the input facts,
+three directions, V2 character bible, five full-size pose PNGs, 64 px checks,
+contact sheet, and passing manifest.
+
+## Additional approved system: OpenPatch → Pip
 
 Pip is a tiny patch fox for a fictional open-source maintenance product. Its
 oversized mint hook-tail, visible repair patch, and coral stitches make product
@@ -18,20 +36,6 @@ the appeal hook.
 [`generated/openpatch-pip/`](generated/openpatch-pip/) contains the source-to-output
 board, V2 character bible, five full-size pose PNGs, contact sheet, and passing
 manifest.
-
-## Second approved system: ALBERTAZ → Azi
-
-Azi is a folded-paper swift built from ALBERTAZ's real personal-brand facts.
-The A-shaped wing opening, Z-fold tail, and page-turn wing tip encode software,
-visual work, and writing without pasting a wordmark onto the character.
-
-| **Source product facts** | **Generated five-pose system** |
-| :---: | :---: |
-| <img src="generated/albertaz-azi/source-brief.svg" alt="ALBERTAZ facts locked before generation" width="420"> | <img src="generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose ALBERTAZ mascot contact sheet" width="420"> |
-
-[`generated/albertaz-azi/`](generated/albertaz-azi/) contains the input facts,
-three directions, V2 character bible, five full-size pose PNGs, 64 px checks,
-contact sheet, and passing manifest.
 
 ## Third verified system: Mora → Mori
 

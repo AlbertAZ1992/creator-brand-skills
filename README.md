@@ -12,33 +12,44 @@ icon families · reusable product mascots
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-4-5b4bdb.svg)](#four-skills-one-production-toolkit)
 
 **English** · [简体中文](README.zh-CN.md) · [Install](#install) ·
-[Outputs](#input--result--production-files) · [Verify](#verify-locally)
+[Outputs](#input--result--production-files) ·
+[Icons Playground](https://albertaz1992.github.io/creator-brand-skills/) ·
+[Verify](#verify-locally)
 
 </div>
 
-## Four Skills, one production toolkit
+## One brand, four production routes
+
+The same ALBERTAZ brand brief is carried through all four Skills. Each panel
+shows the locked input beside the actual files produced by that route—not a
+separate mockup made only for the README.
 
 | **01 · Logo to Clay · clay render + 3D mesh** | **02 · Image to Sticker · transparent PNG** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="560"><br><br><img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript letter mark rendered as thick yellow clay" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into six transparent sticker styles" width="560"> |
-| Vite + JavaScript flat logos → clay renders + real verified OBJ meshes | Six flat logos → six transparent sticker styles + alpha proof |
+| <img src="logo-to-clay/examples/generated/albertaz-wordmark/source-to-clay.png" alt="ALBERTAZ wordmark transformed into a clay campaign render and verified OBJ mesh" width="560"> | <img src="image-to-sticker/examples/generated/albertaz-brand/source-to-sticker.png" alt="ALBERTAZ wordmark transformed into four transparent sticker finishes" width="560"> |
+| Locked wordmark → clay campaign render + real verified OBJ mesh | The same wordmark → classic, holographic, glitter, and reflective RGBA stickers |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons · animated SVG set** | **04 · Product to Mascot · character system** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch product facts transformed into the five-pose Pip mascot system" width="560"><br><br><img src="product-to-mascot/examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ product facts transformed into the five-pose Azi mascot system" width="560"> |
-| 20 feature names → 20 hand-drawn animated SVGs + optical proof | OpenPatch and ALBERTAZ product facts → locked character systems → five poses each |
+| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-animated.svg" alt="Twenty ALBERTAZ creator features moving as one hand-drawn animated SVG icon set" width="560"> | <img src="product-to-mascot/examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ product facts transformed into the five-pose Azi mascot system" width="560"> |
+| 20 creator features → 20 editable SVGs with built-in motion | Product facts → folded-paper swift identity → five consistent poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-These current images show the input and the production-route result rather than
-isolated beauty shots. Pip and Azi are repository-owned concepts.
-Third-party technology marks appear only as clearly attributed transformation
-fixtures; their names and marks remain the property of their respective owners,
-with no affiliation implied.
+ALBERTAZ and Azi are repository-owned brand assets. Vite, JavaScript, React,
+Vue, Astro, TypeScript, Deno, Pip, and Mori remain in the deeper galleries as
+secondary stress tests and independent creative runs. Third-party names and
+marks remain the property of their respective owners, with no affiliation
+implied.
 
 Marketing boards remain separate from clean deliverables and machine-checkable
 proof. Every board is built from outputs produced by the route its Skill
 documents.
+
+**[Open the live animated-icons playground →](https://albertaz1992.github.io/creator-brand-skills/)**
+Play, recolour, inspect, copy, or download the 20 real SVG deliverables shown
+above. The site is intentionally limited to Feature to Icons; the repository
+remains the home of all four Skills.
 
 ## Start with one sentence
 
@@ -81,10 +92,10 @@ contract is locked.
 
 | Skill | Portfolio view | Verification view |
 | --- | --- | --- |
-| Logo to Clay | [Vite bolt and JavaScript clay renders with verified 3D assets](logo-to-clay/examples/) | OBJ faces, material linkage, 1024 px preview, passing manifest |
-| Image to Sticker | [Six source-to-sticker styles: classic, holographic, reflective, glitter, colour contour, and borderless](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
-| Feature to Icons | [Twenty-icon animated hand-drawn creator set](feature-to-icons/examples/) | Input brief plus actual SVGs, built-in wiggle motion, reduced-motion fallback, optical metrics |
-| Product to Mascot | [Pip, Azi, and Mori verified five-pose systems](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
+| Logo to Clay | [ALBERTAZ, Vite, and JavaScript clay runs with verified 3D assets](logo-to-clay/examples/) | OBJ faces, material linkage, 1024 px preview, passing manifest |
+| Image to Sticker | [ALBERTAZ plus six open-source-tech source-to-sticker runs](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
+| Feature to Icons | [Twenty-icon ALBERTAZ animated hand-drawn creator set](feature-to-icons/examples/) | Input brief plus actual SVGs, built-in wiggle motion, reduced-motion fallback, optical metrics |
+| Product to Mascot | [Azi, Pip, and Mori verified five-pose systems](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
 
 ## Install
 
@@ -130,6 +141,19 @@ Requirements: Node.js 22 and npm. Regenerating every visual example also needs
 ImageMagick and `jq` (`brew install imagemagick jq`). Each Skill folder owns its
 `SKILL.md`, UI metadata, implementation, schemas, evals, and examples, so the
 four packages remain independently installable.
+
+## Versions and project health
+
+| Skill | Package version | Public deliverables |
+| --- | ---: | --- |
+| `logo-to-clay` | 0.4.0 | Raster render; OBJ, MTL, bump map, preview, manifest |
+| `image-to-sticker` | 0.4.0 | RGBA sticker, alpha proof, source card, manifest |
+| `feature-to-icons` | 0.1.0 | Animated SVG family, previews, playable HTML, manifest |
+| `product-to-mascot` | 0.1.0 | Character bible, five reference PNGs, contact sheet, manifest |
+
+Toolkit releases, contribution rules, and private vulnerability reporting are
+documented in the [changelog](CHANGELOG.md), [contributing guide](CONTRIBUTING.md),
+and [security policy](SECURITY.md).
 
 ## License
 

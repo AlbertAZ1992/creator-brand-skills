@@ -1,12 +1,28 @@
 # Image to Sticker examples
 
 <p align="center">
-  <img src="generated/open-source-tech/source-to-sticker.png" alt="Six source logos shown beside six verified transparent sticker outputs" width="900">
+  <img src="generated/albertaz-brand/source-to-sticker.png" alt="One ALBERTAZ wordmark shown beside four verified transparent sticker finishes" width="1000">
 </p>
 
-The current gallery keeps the original artwork visible beside the generated
-result. All six `sticker.png` files are independent 1024 px RGBA deliveries,
+The featured gallery keeps one locked ALBERTAZ wordmark beside four generated
+finishes. All four `sticker.png` files are independent 1024 px RGBA deliveries,
 not crops from the presentation board.
+
+| Finish | Demonstrated controls | Delivery directory |
+| --- | --- | --- |
+| Classic | Original material, white contour, −3° tilt | [`classic/`](generated/albertaz-brand/classic/) |
+| Holographic | Holographic material, pale contour, +4° tilt | [`holographic/`](generated/albertaz-brand/holographic/) |
+| Glitter | Original face, coral colour contour, −2° tilt | [`glitter/`](generated/albertaz-brand/glitter/) |
+| Reflective | Reflective material, violet contour, +3° tilt | [`reflective/`](generated/albertaz-brand/reflective/) |
+
+## Additional source tests
+
+The open-source-tech set verifies that the same renderer also handles symbols,
+mixed shapes, colour contours, and borderless delivery.
+
+<p align="center">
+  <img src="generated/open-source-tech/source-to-sticker.png" alt="Six open-source technology logos shown beside six verified transparent sticker outputs" width="900">
+</p>
 
 | Source | Demonstrated controls | Delivery directory |
 | --- | --- | --- |
@@ -30,5 +46,6 @@ npm run examples
 npm run verify:examples
 ```
 
-The command sends all six source SVGs through the real renderer and rebuilds
-the source-to-output board from those accepted transparent assets.
+The command sends the ALBERTAZ source and all six attributed technology sources
+through the real renderer, then rebuilds both boards from accepted transparent
+assets.
