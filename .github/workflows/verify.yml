@@ -10,6 +10,21 @@ permissions:
   contents: read
 
 jobs:
+  repository:
+    name: repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install repository tools
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install --yes shellcheck shfmt zip
+      - run: ./scripts/verify-repository.sh
+
   verify:
     name: ${{ matrix.skill }}
     runs-on: ubuntu-latest

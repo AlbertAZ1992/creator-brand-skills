@@ -14,4 +14,15 @@ for slug in vite-bolt react typescript astro vue deno; do
 done
 
 node "$root_dir/examples/build-showcase.mjs"
-printf 'Regenerated six source-to-sticker style examples.\n'
+
+albertaz_dir="$root_dir/examples/generated/albertaz-brand"
+for slug in classic holographic glitter reflective; do
+	output_dir="$albertaz_dir/$slug"
+	bash "$root_dir/scripts/render-sticker.sh" \
+		"$albertaz_dir/sources/albertaz-wordmark.svg" \
+		"$output_dir/source-card.input.json" \
+		"$output_dir" >/dev/null
+done
+
+node "$root_dir/examples/build-albertaz-showcase.mjs"
+printf 'Regenerated ALBERTAZ and open-source-tech sticker examples.\n'

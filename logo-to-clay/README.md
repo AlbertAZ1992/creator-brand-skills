@@ -7,17 +7,18 @@ a deterministic geometry route for production-ready brand assets.
 The callable Codex Skill name is `logo-to-clay`.
 
 <p align="center">
-  <img src="examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="900">
+  <img src="examples/generated/albertaz-wordmark/source-to-clay.png" alt="ALBERTAZ wordmark transformed into a clay campaign render and verified OBJ mesh" width="1000">
 </p>
 
 The board shows both delivery routes against the same locked source: an
 expressive campaign render and a procedural OBJ/MTL mesh with a verified
-preview. The Vite object contains 5,388 vertices and 1,796 faces; the
-JavaScript example also includes a separate 2 mm relief.
+preview. The ALBERTAZ object contains 15,402 vertices, 5,134 faces, and three
+preserved through-cavities. Vite and JavaScript runs remain below as independent
+shape and relief tests.
 
-| **Vite bolt · image route** | **Vite bolt · verified mesh route** |
+| **ALBERTAZ · image route** | **ALBERTAZ · verified mesh route** |
 | :---: | :---: |
-| Recognisable silhouette, visible sidewalls, campaign-ready composition | 5,388 vertices, 1,796 faces, OBJ, MTL, bump map, preview, and passing manifest |
+| Complete wordmark, visible sidewalls, campaign-ready composition | 15,402 vertices, 5,134 faces, three cavities, OBJ, MTL, bump map, preview, and passing manifest |
 
 ## At a glance
 
@@ -54,16 +55,16 @@ before it adds style. The default campaign composition places the mark at
 shadow. Neutral catalogue framing is allowed only when requested; the default
 must not be a generic object floating on beige.
 
-The image route and mesh route prove different things. The Vite bolt hero above
-shows art direction; `examples/generated/vite-bolt/` also contains the matching
-verified standalone OBJ/MTL delivery. The second approved JavaScript run contains
-both standalone and relief geometry. A beautiful raster is never presented as
-evidence that geometry was exported successfully.
+The image route and mesh route prove different things. The ALBERTAZ hero above
+shows art direction beside independently verified standalone geometry. The Vite
+run tests a multi-colour symbol, while JavaScript tests both standalone and
+relief geometry. A beautiful raster is never presented as evidence that
+geometry was exported successfully.
 
-| **Vite bolt** | **JavaScript** |
-| :---: | :---: |
-| <img src="examples/generated/vite-bolt/clay-render.png" alt="Vite bolt clay campaign render" width="420"> | <img src="examples/generated/javascript/clay-render.png" alt="JavaScript clay campaign render" width="420"> |
-| Campaign render + standalone object | Campaign render + standalone object + relief |
+| **ALBERTAZ wordmark** | **Vite bolt** | **JavaScript** |
+| :---: | :---: | :---: |
+| <img src="examples/generated/albertaz-wordmark/clay-render.png" alt="ALBERTAZ wordmark clay campaign render" width="300"> | <img src="examples/generated/vite-bolt/clay-render.png" alt="Vite bolt clay campaign render" width="300"> | <img src="examples/generated/javascript/clay-render.png" alt="JavaScript clay campaign render" width="300"> |
+| Campaign render + standalone object | Campaign render + standalone object | Campaign render + standalone object + relief |
 
 ## Deliverables (not clay styles)
 

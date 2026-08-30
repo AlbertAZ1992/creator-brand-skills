@@ -36,12 +36,13 @@ export const doodleInput: FeatureIconInput = {
   strokeWidth: 2.6,
   cornerRadius: "round",
   visualWeight: "regular",
-  productContext: "A playful independent creator toolkit with a sketchbook personality",
+  productContext:
+    "ALBERTAZ is an independent creator brand for shipping code, ideas, and visual work",
 };
 
 export const doodleRequest =
-  "Create one hand-drawn animated icon set for 20 creator features. Use loose black ink, " +
-  "small coral, blue, and yellow accents, and a subtle Saturday-morning-cartoon wiggle.";
+  "Create one hand-drawn animated ALBERTAZ icon set for 20 creator features. Use loose " +
+  "black ink, small coral, blue, and yellow accents, and a subtle cartoon wiggle.";
 
 const iconBodies: Record<string, string> = {
   "Capture Idea": paths(

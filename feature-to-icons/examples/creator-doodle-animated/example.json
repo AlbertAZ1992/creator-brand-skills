@@ -1,7 +1,7 @@
 {
-  "title": "Creator Doodles · animated hand-drawn icon set",
-  "summary": "Twenty original feature icons with editable paths and embedded wiggle motion.",
-  "request": "Create one hand-drawn animated icon set for 20 creator features. Use loose black ink, small coral, blue, and yellow accents, and a subtle Saturday-morning-cartoon wiggle.",
+  "title": "ALBERTAZ Creator Doodles · animated hand-drawn icon set",
+  "summary": "Twenty original brand icons with editable paths and embedded wiggle motion.",
+  "request": "Create one hand-drawn animated ALBERTAZ icon set for 20 creator features. Use loose black ink, small coral, blue, and yellow accents, and a subtle cartoon wiggle.",
   "input": {
     "features": [
       "Capture Idea",
@@ -36,6 +36,6 @@
     "strokeWidth": 2.6,
     "cornerRadius": "round",
     "visualWeight": "regular",
-    "productContext": "A playful independent creator toolkit with a sketchbook personality"
+    "productContext": "ALBERTAZ is an independent creator brand for shipping code, ideas, and visual work"
   }
 }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Explore, animate, copy, and download 20 editable ALBERTAZ hand-drawn SVG icons."
+    >
+    <title>ALBERTAZ Doodle Icons</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">ALBERTAZ Doodle Icons</a>
+      <nav aria-label="Project links">
+        <a href="https://github.com/AlbertAZ1992/creator-brand-skills">GitHub</a>
+        <a href="https://github.com/AlbertAZ1992/creator-brand-skills/tree/main/feature-to-icons">
+          Skill README
+        </a>
+        <a class="button button-primary" href="icons/albertaz-doodle-icons.zip" download>
+          Download set
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">20 hand-drawn icons. Every one moves.</h1>
+        <p>Editable SVGs with built-in wiggle motion and a reduced-motion fallback.</p>
+      </section>
+
+      <section class="controls" aria-label="Animation controls">
+        <div class="control-group playback">
+          <button class="control-button is-active" type="button" data-playback="running">
+            <span aria-hidden="true">▶</span> Play
+          </button>
+          <button class="control-button" type="button" data-playback="paused">
+            <span aria-hidden="true">Ⅱ</span> Pause
+          </button>
+        </div>
+
+        <fieldset class="control-group">
+          <legend>Amplitude</legend>
+          <button type="button" data-amplitude="0.55">Low</button>
+          <button class="is-active" type="button" data-amplitude="1">Med</button>
+          <button type="button" data-amplitude="1.6">High</button>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Speed</legend>
+          <button type="button" data-speed="4.2s">Slow</button>
+          <button class="is-active" type="button" data-speed="2.8s">Normal</button>
+          <button type="button" data-speed="1.5s">Fast</button>
+        </fieldset>
+
+        <fieldset class="control-group palette-control">
+          <legend>Color</legend>
+          <button class="swatch is-active" type="button" data-color="original" aria-label="Original palette"></button>
+          <button class="swatch swatch-coral" type="button" data-color="#FF765F" aria-label="Coral accents"></button>
+          <button class="swatch swatch-cyan" type="button" data-color="#20A7C9" aria-label="Cyan accents"></button>
+          <button class="swatch swatch-yellow" type="button" data-color="#F7BD24" aria-label="Yellow accents"></button>
+        </fieldset>
+      </section>
+
+      <section class="workspace" aria-label="Icon playground">
+        <div class="icon-grid" id="icon-grid" aria-live="polite"></div>
+
+        <aside class="inspector" aria-labelledby="inspector-title">
+          <div class="inspector-heading">
+            <h2 id="inspector-title">Capture Idea</h2>
+            <span>48 × 48 SVG</span>
+          </div>
+          <div class="inspector-preview" id="inspector-preview" aria-hidden="true"></div>
+          <label for="svg-code">SVG code</label>
+          <textarea id="svg-code" readonly spellcheck="false"></textarea>
+          <div class="inspector-actions">
+            <button class="button" id="copy-svg" type="button">Copy SVG</button>
+            <button class="button button-primary" id="download-svg" type="button">
+              Download SVG
+            </button>
+          </div>
+          <p>Includes built-in wiggle animation and respects reduced-motion preferences.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      Built with the
+      <a href="https://github.com/AlbertAZ1992/creator-brand-skills/tree/main/feature-to-icons">
+        feature-to-icons Skill
+      </a>
+      · MIT licensed
+    </footer>
+  </body>
+</html>

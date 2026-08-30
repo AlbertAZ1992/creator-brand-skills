@@ -2,6 +2,20 @@
   "name": "@creator-brand-skills/logo-to-clay",
   "version": "0.4.0",
   "description": "Transform a logo into a claymation-style 3D render with procedural mesh generation",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "logo-to-3d",
+    "clay-render",
+    "obj-mesh",
+    "blender"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertAZ1992/creator-brand-skills.git",
+    "directory": "logo-to-clay"
+  },
+  "homepage": "https://github.com/AlbertAZ1992/creator-brand-skills/tree/main/logo-to-clay",
   "license": "MIT",
   "files": [
     "THIRD_PARTY_NOTICES.md",

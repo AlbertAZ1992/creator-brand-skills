@@ -28,8 +28,8 @@ async function generateFamily(): Promise<void> {
     join(outputDir, "example.json"),
     `${JSON.stringify(
       {
-        title: "Creator Doodles · animated hand-drawn icon set",
-        summary: "Twenty original feature icons with editable paths and embedded wiggle motion.",
+        title: "ALBERTAZ Creator Doodles · animated hand-drawn icon set",
+        summary: "Twenty original brand icons with editable paths and embedded wiggle motion.",
         request: doodleRequest,
         input: validation.data,
       },
@@ -42,15 +42,25 @@ async function generateFamily(): Promise<void> {
 }
 
 async function writeShowcase(iconPaths: string[], features: string[]): Promise<void> {
-  const icons = await buildIconCards(iconPaths, features);
+  const icons = await buildIconCards(iconPaths, features, false);
+  const animatedIcons = await buildIconCards(iconPaths, features, true);
   const brief = buildBrief(features);
   const svg = buildShowcaseSvg(brief, icons);
   await writeFile(join(outputDir, "showcase-preview.svg"), svg, "utf8");
+  await writeFile(
+    join(outputDir, "showcase-animated.svg"),
+    buildShowcaseSvg(brief, animatedIcons),
+    "utf8",
+  );
   const png = new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng();
   await writeFile(join(outputDir, "showcase-preview.png"), png);
 }
 
-async function buildIconCards(iconPaths: string[], features: string[]): Promise<string[]> {
+async function buildIconCards(
+  iconPaths: string[],
+  features: string[],
+  animated: boolean,
+): Promise<string[]> {
   return Promise.all(
     iconPaths.map(async (iconPath, index) => {
       const feature = features[index];
@@ -58,7 +68,7 @@ async function buildIconCards(iconPaths: string[], features: string[]): Promise<
       const x = 382 + (index % 5) * 194;
       const y = 92 + Math.floor(index / 5) * 190;
       const source = await readFile(iconPath, "utf8");
-      const icon = positionSvg(source, x + 48, y + 28);
+      const icon = positionSvg(source, x + 48, y + 28, animated);
       return [
         `<rect x="${x}" y="${y}" width="166" height="162" rx="25" fill="#FFFDF8"`,
         ' stroke="#DED5C8"/>',
@@ -73,17 +83,18 @@ async function buildIconCards(iconPaths: string[], features: string[]): Promise<
   );
 }
 
-function positionSvg(source: string, x: number, y: number): string {
-  return source
-    .replace(/<style>[\s\S]*?<\/style>/i, "")
-    .replace(/\sdata-icon-motion=["'][^"']*["']/i, "")
-    .replace(/\sclass=["']wiggle["']/i, "")
-    .replace(/\sstyle=["']animation-delay:[^"']*["']/i, "")
-    .trim()
-    .replace(/<svg\b([^>]*)>/i, (_match, attributes: string) => {
-      const clean = attributes.replace(/\s(?:x|y|width|height)=["'][^"']*["']/gi, "");
-      return `<svg${clean} x="${x}" y="${y}" width="70" height="70">`;
-    });
+function positionSvg(source: string, x: number, y: number, animated: boolean): string {
+  const prepared = animated
+    ? source
+    : source
+        .replace(/<style>[\s\S]*?<\/style>/i, "")
+        .replace(/\sdata-icon-motion=["'][^"']*["']/i, "")
+        .replace(/\sclass=["']wiggle["']/i, "")
+        .replace(/\sstyle=["']animation-delay:[^"']*["']/i, "");
+  return prepared.trim().replace(/<svg\b([^>]*)>/i, (_match, attributes: string) => {
+    const clean = attributes.replace(/\s(?:x|y|width|height)=["'][^"']*["']/gi, "");
+    return `<svg${clean} x="${x}" y="${y}" width="70" height="70">`;
+  });
 }
 
 function buildBrief(features: string[]): string[] {
@@ -106,10 +117,10 @@ function buildShowcaseSvg(brief: string[], icons: string[]): string {
     '<path d="M0 0h18v880H0z" fill="#29262E"/>',
     '<text x="52" y="70" font-family="Arial, sans-serif" font-size="12" font-weight="700"',
     ' letter-spacing="2.2" fill="#7A727F">INPUT FEATURE BRIEF</text>',
-    '<text x="52" y="136" font-family="Arial, sans-serif" font-size="53" font-weight="800"',
-    ' letter-spacing="-3" fill="#29262E">DOODLE</text>',
-    '<text x="52" y="190" font-family="Arial, sans-serif" font-size="53" font-weight="800"',
-    ' letter-spacing="-3" fill="#29262E">THE IDEAS.</text>',
+    '<text x="52" y="136" font-family="Arial, sans-serif" font-size="45" font-weight="800"',
+    ' letter-spacing="-2" fill="#29262E">ALBERTAZ</text>',
+    '<text x="52" y="190" font-family="Arial, sans-serif" font-size="45" font-weight="800"',
+    ' letter-spacing="-2" fill="#29262E">CREATOR TOOLS.</text>',
     '<path d="M54 215q82 13 168-2" fill="none" stroke="#FF765F" stroke-width="5"',
     ' stroke-linecap="round"/>',
     '<text x="52" y="270" font-family="Arial, sans-serif" font-size="16"',

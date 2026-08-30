@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible Skill, renderer, verifier, or example problem.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Affected Skill
+      options:
+        - logo-to-clay
+        - image-to-sticker
+        - feature-to-icons
+        - product-to-mascot
+        - repository or playground
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Include the requested output route and formats.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Attach the source input, output, manifest, and error text when possible.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Codex version, OS, Node version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true

@@ -7,12 +7,12 @@ Codex generate and review a primary reference plus four consistent poses.
 The callable Codex Skill name is `product-to-mascot`.
 
 <p align="center">
-  <img src="examples/generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch product facts transformed into the five-pose Pip mascot system" width="900">
+  <img src="examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ product facts transformed into the five-pose Azi mascot system" width="1000">
 </p>
 
 | **Locked product facts** | **Generated mascot system** |
 | :---: | :---: |
-| <img src="examples/generated/openpatch-pip/source-brief.svg" alt="OpenPatch product facts locked before mascot generation" width="420"> | <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose mascot system" width="420"> |
+| <img src="examples/generated/albertaz-azi/source-brief.svg" alt="ALBERTAZ product facts locked before mascot generation" width="420"> | <img src="examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose mascot system" width="420"> |
 
 The source brief is generated from the checked-in V2 character bible, so the
 product connection, personality, silhouette rules, and brand essence remain
@@ -51,16 +51,16 @@ a visually attractive reference still fails when one of those anchors changes.
 The Skill does not invent fragile exact counts for tiny repeated decorations;
 it prioritizes silhouette, proportions, face, palette, and product-linked form.
 
-The featured character Pip is a patch fox for OpenPatch. An oversized mint
-hook-tail, one yellow repair patch, and coral stitches turn maintenance into a
-recognisable silhouette instead of a pasted logo. Every pose keeps the same
-head-to-body ratio, face, tail construction, palette, and matte soft-vinyl
+The featured character Azi is a folded-paper swift built from ALBERTAZ product
+facts. Its A-shaped wing opening, Z-fold tail, and page-turn wing tip encode
+software, visual work, and writing without pasting on a logo. Every pose keeps
+the same silhouette, face, fold construction, palette, and tactile paper-clay
 medium.
 
-| **OpenPatch → Pip** | **ALBERTAZ → Azi** |
+| **ALBERTAZ → Azi** | **OpenPatch → Pip** |
 | :---: | :---: |
-| <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose mascot contact sheet" width="440"> | <img src="examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose mascot contact sheet" width="440"> |
-| Friendly maintenance · matte soft vinyl | Engineering + visual craft · folded paper |
+| <img src="examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose mascot contact sheet" width="440"> | <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose mascot contact sheet" width="440"> |
+| Engineering + visual craft · folded paper | Friendly maintenance · matte soft vinyl |
 
 The [example gallery](examples/) also keeps Mori, a paper-moth archivist for a
 fictional research workspace, as a third verified semantic direction.
@@ -93,10 +93,9 @@ npx skills add AlbertAZ1992/creator-brand-skills \
 ## Use it
 
 ```text
-Use $product-to-mascot for Mora, a calm research workspace that gathers
-scattered sources and turns them into connected briefs. Create a tiny paper-moth
-archivist with open-book wings and a bookmark ribbon. Generate the verified
-reference set.
+Use $product-to-mascot for ALBERTAZ, an independent creator brand for shipping
+code, ideas, and visual work. Create a friendly folded-paper swift whose wing
+opening suggests A and tail fold suggests Z. Generate the verified reference set.
 ```
 
 Expected result: a `character-bible.json`, primary reference image, four named

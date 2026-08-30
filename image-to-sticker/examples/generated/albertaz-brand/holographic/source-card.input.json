@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "albertaz-wordmark.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 20,
+  "outlineColor": "#F8F4FF",
+  "material": "holographic",
+  "tilt": 4,
+  "size": 1024
+}

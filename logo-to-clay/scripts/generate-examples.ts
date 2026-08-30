@@ -18,9 +18,19 @@ interface MeshExample {
   shape: "object" | "relief";
   depth: number;
   color: string;
+  sourceReference?: string;
 }
 
 const examples: MeshExample[] = [
+  {
+    label: "ALBERTAZ wordmark object",
+    source: "albertaz-wordmark.svg",
+    output: "albertaz-wordmark/object",
+    shape: "object",
+    depth: 4,
+    color: "#5B4BDB",
+    sourceReference: "../source.svg",
+  },
   {
     label: "Vite bolt object",
     source: "vite-bolt.png",
@@ -48,6 +58,7 @@ const examples: MeshExample[] = [
 ];
 
 async function main(): Promise<void> {
+  await requireApprovedRender("albertaz-wordmark/clay-render.png");
   await requireApprovedRender("vite-bolt/clay-render.png");
   await requireApprovedRender("javascript/clay-render.png");
   await syncSource("vite-bolt.png", "vite-bolt/source.png");
@@ -62,8 +73,55 @@ async function main(): Promise<void> {
         .toFile(join(generatedRoot, "javascript", "mesh-preview.png"));
     }
   }
+  await buildAlbertazShowcase();
   await buildShowcase();
-  process.stdout.write("Regenerated the approved Vite bolt and JavaScript examples.\n");
+  process.stdout.write("Regenerated the approved ALBERTAZ, Vite, and JavaScript examples.\n");
+}
+
+async function buildAlbertazShowcase(): Promise<void> {
+  const background = Buffer.from(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="640">
+      <rect width="1600" height="640" fill="#F2EFE8"/>
+      <text x="48" y="68" font-family="Arial, sans-serif" font-size="38"
+        font-weight="800" fill="#17142C">ONE WORDMARK. TWO CLAY ROUTES.</text>
+      <text x="48" y="108" font-family="Arial, sans-serif" font-size="20"
+        fill="#676170">The campaign render and verified OBJ preserve one ALBERTAZ source.</text>
+      <rect x="40" y="146" width="1520" height="430" rx="30"
+        fill="#FFFEFB" stroke="#DDD6CB" stroke-width="2"/>
+      <text x="260" y="532" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="18" font-weight="800" fill="#817A88">LOCKED SOURCE</text>
+      <text x="800" y="532" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="18" font-weight="800" fill="#817A88">CLAY RENDER</text>
+      <text x="1330" y="532" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="18" font-weight="800" fill="#817A88">VERIFIED OBJ</text>
+      <text x="505" y="362" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="34" fill="#A39DAC">→</text>
+      <text x="1088" y="362" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="34" fill="#A39DAC">→</text>
+    </svg>`);
+  const layers = [
+    { input: await showcaseImage("albertaz-wordmark/source.png", 390, 180), left: 65, top: 260 },
+    {
+      input: await showcaseImage("albertaz-wordmark/clay-render.png", 500, 290),
+      left: 550,
+      top: 210,
+    },
+    {
+      input: await sharp(
+        join(generatedRoot, "albertaz-wordmark/object/albertaz-wordmark-clay-preview.png"),
+      )
+        .extract({ left: 100, top: 320, width: 824, height: 380 })
+        .resize({ width: 380, height: 260, fit: "inside" })
+        .png()
+        .toBuffer(),
+      left: 1140,
+      top: 220,
+    },
+  ];
+  await sharp(background)
+    .composite(layers)
+    .png()
+    .toFile(join(generatedRoot, "albertaz-wordmark", "source-to-clay.png"));
 }
 
 async function buildShowcase(): Promise<void> {
@@ -149,6 +207,16 @@ async function syncSource(sourceName: string, destination: string): Promise<void
   await writeFile(target, await readFile(source));
 }
 
+async function renderSourcePng(
+  sourceName: string,
+  destination: string,
+  width: number,
+): Promise<void> {
+  const target = join(generatedRoot, destination);
+  await mkdir(dirname(target), { recursive: true });
+  await sharp(join(sourcesRoot, sourceName)).resize({ width }).png().toFile(target);
+}
+
 async function buildExample(example: MeshExample): Promise<string> {
   const outputDir = join(generatedRoot, example.output);
   await mkdir(outputDir, { recursive: true });
@@ -168,17 +236,17 @@ async function buildExample(example: MeshExample): Promise<string> {
   if (!result.validation?.passed || !result.imagePath || !result.manifestPath) {
     throw new Error(`${example.label}: mesh delivery did not pass`);
   }
-  await makeManifestPortable(result.manifestPath);
+  await makeManifestPortable(result.manifestPath, example.sourceReference ?? "../source.png");
   process.stdout.write(`PASS ${example.label}\n`);
   return result.imagePath;
 }
 
-async function makeManifestPortable(manifestPath: string): Promise<void> {
+async function makeManifestPortable(manifestPath: string, sourceReference: string): Promise<void> {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as {
     source: { logoPath: string };
     artifacts: Record<string, string>;
   };
-  manifest.source.logoPath = "../source.png";
+  manifest.source.logoPath = sourceReference;
   for (const [key, value] of Object.entries(manifest.artifacts)) {
     manifest.artifacts[key] = basename(value);
   }
@@ -189,3 +257,5 @@ main().catch((error: unknown) => {
   process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`);
   process.exitCode = 1;
 });
+await syncSource("albertaz-wordmark.svg", "albertaz-wordmark/source.svg");
+await renderSourcePng("albertaz-wordmark.svg", "albertaz-wordmark/source.png", 1260);

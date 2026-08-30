@@ -2,6 +2,20 @@
   "name": "@creator-brand-skills/image-to-sticker",
   "version": "0.4.0",
   "description": "Turn flat artwork into one source-faithful sticker with optional finishes",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "image-to-sticker",
+    "transparent-png",
+    "die-cut-sticker",
+    "image-processing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertAZ1992/creator-brand-skills.git",
+    "directory": "image-to-sticker"
+  },
+  "homepage": "https://github.com/AlbertAZ1992/creator-brand-skills/tree/main/image-to-sticker",
   "type": "module",
   "license": "MIT",
   "engines": {

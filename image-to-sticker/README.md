@@ -8,16 +8,18 @@ contour, and can apply a deterministic front finish in Codex.
 The callable Codex Skill name is `image-to-sticker`.
 
 <p align="center">
-  <img src="examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into classic, holographic, reflective, glitter, colour-contour, and borderless stickers" width="900">
+  <img src="examples/generated/albertaz-brand/source-to-sticker.png" alt="One ALBERTAZ wordmark transformed into four transparent sticker finishes" width="1000">
 </p>
 
-The featured board shows every input beside its actual `sticker.png`. Vite,
-React, TypeScript, Astro, Vue, and Deno exercise classic contour,
-holographic, reflective, glitter, colour-contour, and borderless controls.
-Each 1024 px RGBA sticker has its own alpha proof, source card, source hash,
-and passing manifest under `examples/generated/open-source-tech/`. Names and
-marks belong to their respective owners and are used only as attributed
-transformation fixtures.
+The featured board keeps one locked ALBERTAZ source beside four actual
+`sticker.png` deliveries: classic, holographic, glitter, and reflective. Each
+1024 px RGBA output has its own alpha proof, reproducible source card, source
+hash, and passing manifest under `examples/generated/albertaz-brand/`.
+
+Vite, React, TypeScript, Astro, Vue, and Deno remain in the secondary gallery
+to exercise colour-contour and borderless controls as well as different source
+geometries. Their names and marks belong to their respective owners and are
+used only as attributed transformation fixtures.
 
 ## At a glance
 
