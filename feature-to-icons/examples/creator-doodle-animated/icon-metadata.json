@@ -1,0 +1,224 @@
+{
+  "icons": [
+    {
+      "feature": "Capture Idea",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Capture Idea\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Sketch Fast",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Sketch Fast\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Build Palette",
+      "semanticConcept": "Hammer or box",
+      "visualDescription": "A hammer or a box with a wrench, representing build",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Shape Story",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Shape Story\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Record Moment",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Record Moment\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Collect Notes",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Collect Notes\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Save Favorite",
+      "semanticConcept": "Floppy disk",
+      "visualDescription": "A floppy disk representing save",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Share Draft",
+      "semanticConcept": "Connected nodes",
+      "visualDescription": "Three connected dots with lines, representing sharing",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Team Chat",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Team Chat\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Pin Reference",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Pin Reference\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Plan Drop",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Plan Drop\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Upload Asset",
+      "semanticConcept": "Up arrow with tray",
+      "visualDescription": "An upward arrow emerging from a tray, representing upload",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Download Kit",
+      "semanticConcept": "Down arrow with tray",
+      "visualDescription": "A downward arrow entering a tray, representing download",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Launch Project",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Launch Project\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Publish Worldwide",
+      "semanticConcept": "Globe",
+      "visualDescription": "A globe with meridians",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Protect Work",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Protect Work\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Add Magic",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Add Magic\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Score Sound",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Score Sound\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Reward Fans",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Reward Fans\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    },
+    {
+      "feature": "Take a Break",
+      "semanticConcept": "Custom/Abstract",
+      "visualDescription": "An abstract icon representing \"Take a Break\" — the AI should determine the best visual metaphor",
+      "source": {
+        "type": "custom",
+        "license": "user-provided",
+        "geometryModified": false,
+        "presentationModified": false
+      }
+    }
+  ]
+}

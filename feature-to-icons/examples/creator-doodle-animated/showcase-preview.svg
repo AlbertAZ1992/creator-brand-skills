@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880">
+<rect width="1400" height="880" rx="42" fill="#F3EFE7"/>
+<path d="M0 0h18v880H0z" fill="#29262E"/>
+<text x="52" y="70" font-family="Arial, sans-serif" font-size="12" font-weight="700"
+ letter-spacing="2.2" fill="#7A727F">INPUT FEATURE BRIEF</text>
+<text x="52" y="136" font-family="Arial, sans-serif" font-size="53" font-weight="800"
+ letter-spacing="-3" fill="#29262E">DOODLE</text>
+<text x="52" y="190" font-family="Arial, sans-serif" font-size="53" font-weight="800"
+ letter-spacing="-3" fill="#29262E">THE IDEAS.</text>
+<path d="M54 215q82 13 168-2" fill="none" stroke="#FF765F" stroke-width="5"
+ stroke-linecap="round"/>
+<text x="52" y="270" font-family="Arial, sans-serif" font-size="16"
+ fill="#625B68">20 creator features → one hand-drawn set</text>
+<text x="52" y="301" font-family="Arial, sans-serif" font-size="16"
+ fill="#625B68">Editable SVG · embedded wiggle motion</text>
+<circle cx="57" cy="391" r="4.5" fill="#FF765F"/><text x="69" y="396" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Capture Idea</text>
+<circle cx="204" cy="391" r="4.5" fill="#20A7C9"/><text x="216" y="396" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Sketch Fast</text>
+<circle cx="57" cy="431" r="4.5" fill="#F7BD24"/><text x="69" y="436" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Build Palette</text>
+<circle cx="204" cy="431" r="4.5" fill="#FF765F"/><text x="216" y="436" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Shape Story</text>
+<circle cx="57" cy="471" r="4.5" fill="#20A7C9"/><text x="69" y="476" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Record Moment</text>
+<circle cx="204" cy="471" r="4.5" fill="#F7BD24"/><text x="216" y="476" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Collect Notes</text>
+<circle cx="57" cy="511" r="4.5" fill="#FF765F"/><text x="69" y="516" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Save Favorite</text>
+<circle cx="204" cy="511" r="4.5" fill="#20A7C9"/><text x="216" y="516" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Share Draft</text>
+<circle cx="57" cy="551" r="4.5" fill="#F7BD24"/><text x="69" y="556" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Team Chat</text>
+<circle cx="204" cy="551" r="4.5" fill="#FF765F"/><text x="216" y="556" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#625B68">Pin Reference</text>
+<rect x="52" y="642" width="264" height="96" rx="23" fill="#FFFDF8" stroke="#DED5C8"/>
+<circle cx="82" cy="674" r="8" fill="#FF765F"/>
+<circle cx="105" cy="674" r="8" fill="#20A7C9"/>
+<circle cx="128" cy="674" r="8" fill="#F7BD24"/>
+<text x="76" y="713" font-family="Arial, sans-serif" font-size="12" font-weight="700"
+ letter-spacing="1.3" fill="#625B68">ACTUAL VERIFIED SVGs →</text>
+<text x="382" y="54" font-family="Arial, sans-serif" font-size="12" font-weight="700"
+ letter-spacing="2.2" fill="#7A727F">HAND-DRAWN ANIMATED ICON SET · 01—20</text>
+<rect x="382" y="92" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="430" y="120" width="70" height="70"><g><path d="M18 29c-3.2-2.9-5-6.1-4.3-10.1C14.6 13.4 19 10 24.4 10c5.7 0 9.9 3.8 10.2 9.1.2 4-2 7-5.1 9.9l-.5 4.3-10 .2z" fill="#F7BD24"/><path d="M20 38c2.7.8 5.8.7 8.2-.2M20.5 33.7c2.7.5 5.8.5 8.5-.2"/></g></svg>
+<text x="465" y="225" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Capture Idea</text>
+<path d="M447 237q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="576" y="92" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="624" y="120" width="70" height="70"><g><path d="M12 36c8.8-2.4 18.4-11.7 23.2-21l-3.7-3.1C25.2 19 17.3 28 12 36Z" fill="#FF765F"/><path d="m31.5 11.9 4.2-1.1 1.2 4-1.7.2M11.8 36.1l6-1.8-4.1-3.6z"/></g></svg>
+<text x="659" y="225" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Sketch Fast</text>
+<path d="M641 237q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="770" y="92" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="818" y="120" width="70" height="70"><g><path d="M24 9.5c-8.8.2-15.6 6.5-15.3 14.5.3 8.5 7.7 14.6 16.8 14.4 4.1-.1 6-2.4 4.1-5.7-1.2-2.1.4-4.5 3.2-4.6 5.3-.1 7-3.7 5.5-7.9C36.2 14 30.9 9.4 24 9.5Z"/><circle cx="17" cy="20" r="2.4" fill="#FF765F"/><circle cx="25" cy="16" r="2.4" fill="#F7BD24"/><circle cx="32" cy="21" r="2.4" fill="#20A7C9"/></g></svg>
+<text x="853" y="225" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Build Palette</text>
+<path d="M835 237q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="964" y="92" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1012" y="120" width="70" height="70"><g><path d="m11 18 11-8 9 6-10.4 8.1z" fill="#20A7C9"/><path d="m17 27 12-8 8 6-11 8.5z" fill="#FF765F"/><path d="m11 18 9.6 6.1L31 16M17 27l9 6.5L37 25M11 18v7.5l9 6.1 3.6-2.7"/></g></svg>
+<text x="1047" y="225" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Shape Story</text>
+<path d="M1029 237q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="1158" y="92" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1206" y="120" width="70" height="70"><g><path d="M10 18.5c.2-2 1.5-3.2 3.6-3.1l5 .1 2.2-3.8 8.4.2 1.8 3.9 4.3.2c2.1.1 3.3 1.4 3.2 3.5l-.7 14.7c-.1 2.2-1.6 3.4-3.7 3.3l-20.8-.9c-2.1-.1-3.3-1.5-3.2-3.7z"/><path d="M30 26.5c-.2 3.7-2.9 6.4-6.4 6.2-3.4-.2-5.9-3.1-5.7-6.5.2-3.6 3-6.1 6.5-6 3.4.2 5.8 2.9 5.6 6.3Z" fill="#F7BD24"/></g></svg>
+<text x="1241" y="225" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Record Moment</text>
+<path d="M1223 237q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="382" y="282" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="430" y="310" width="70" height="70"><g><path d="m13 12 22-1.2 1.2 27-22.1.8z" fill="#FFFDF8"/><path d="M18 18.5c3.9-.7 7.9-.8 12-.7M18.3 25c4.4-.6 8.6-.8 12.6-.5M18.6 31.6c3-.4 5.8-.5 8.6-.4"/><path d="M11 15.5 10 10l6.1-.3" stroke="#FF765F"/></g></svg>
+<text x="465" y="415" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Collect Notes</text>
+<path d="M447 427q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="576" y="282" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="624" y="310" width="70" height="70"><g><path d="M24 38S9.8 30.4 10.3 20.2c.3-5.4 7.2-8.1 11.1-3.3 4.9-5.5 11.9-2.4 12.3 3.2.7 9.6-9.7 17.9-9.7 17.9Z" fill="#FF765F"/><path d="M15.6 19c1.6-2.4 3.7-2.4 5.2-.6" stroke="#FFFDF8"/></g></svg>
+<text x="659" y="415" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Save Favorite</text>
+<path d="M641 427q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="770" y="282" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="818" y="310" width="70" height="70"><g><path d="M17 25.5c4.2-6.8 9.2-10.2 16.1-10.8M32.8 14.7l-2.1 7.4M32.8 14.7l-7.3-1.2"/><circle cx="13" cy="28" r="4.3" fill="#20A7C9"/><circle cx="35" cy="12" r="4" fill="#F7BD24"/><circle cx="35" cy="34.5" r="4.3" fill="#FF765F"/><path d="M16.7 30.2c5.7 2.5 10.4 3.6 14.2 3.9"/></g></svg>
+<text x="853" y="415" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Share Draft</text>
+<path d="M835 427q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="964" y="282" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1012" y="310" width="70" height="70"><g><path d="M10.5 13.5c.2-2.2 1.8-3.5 4-3.3l20.1 1.6c2.2.2 3.4 1.8 3.2 4l-1.2 13.7c-.2 2.2-1.8 3.4-4 3.2l-9.1-.7-7.8 5.4.5-6.1-3-.3c-2.2-.2-3.4-1.8-3.2-4z" fill="#FFFDF8"/><path d="M17 21c4.3-.4 8.7-.1 13 .9M17 26.6c3.2-.2 6.5 0 9.8.7" stroke="#20A7C9"/></g></svg>
+<text x="1047" y="415" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Team Chat</text>
+<path d="M1029 427q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="1158" y="282" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1206" y="310" width="70" height="70"><g><path d="M24.2 39.5S12.8 28.7 13.1 20c.2-6.4 5-10.6 11.6-10.4 6.3.2 10.6 4.8 10.3 11.1-.3 8.3-10.8 18.8-10.8 18.8Z" fill="#FF765F"/><path d="M29 20.5c-.1 2.7-2.2 4.8-4.9 4.7-2.8-.1-4.8-2.3-4.7-5 .1-2.7 2.2-4.6 4.9-4.5 2.8.1 4.8 2.1 4.7 4.8Z" fill="#FFFDF8"/></g></svg>
+<text x="1241" y="415" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Pin Reference</text>
+<path d="M1223 427q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="382" y="472" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="430" y="500" width="70" height="70"><g><path d="M11 14.5c.1-2 1.5-3.2 3.5-3.1l20.2.8c2 .1 3.2 1.5 3.1 3.5L37 35c-.1 2-1.5 3.2-3.5 3.1l-20.1-.8c-2.1-.1-3.2-1.5-3.1-3.5z"/><path d="M16 9.5v7M31.5 10v7M11 20.4l26.4 1M17 27h4M27 27.5h4M17 33h4"/><circle cx="29" cy="33" r="2.2" fill="#F7BD24"/></g></svg>
+<text x="465" y="605" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Plan Drop</text>
+<path d="M447 617q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="576" y="472" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="624" y="500" width="70" height="70"><g><path d="M24 32V11M16.5 18.5 24 11l7.5 7.5M10 29.5l.3 6.5c.1 1.6 1.3 2.5 2.8 2.5l21-.1c1.7 0 2.7-1 2.8-2.7l.2-6.1"/><path d="M19 24.8c3.2-1.2 6.6-1.2 10-.1" stroke="#20A7C9"/></g></svg>
+<text x="659" y="605" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Upload Asset</text>
+<path d="M641 617q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="770" y="472" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="818" y="500" width="70" height="70"><g><path d="M24 10.5v21M16.5 24 24 31.5l7.5-7.5M10.2 30.5l.2 5.7c.1 1.6 1.3 2.5 2.8 2.5l21-.1c1.7 0 2.7-1 2.8-2.7l.1-5.4"/><path d="M18.5 14c3.8 1.1 7.7 1.1 11.5-.1" stroke="#FF765F"/></g></svg>
+<text x="853" y="605" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Download Kit</text>
+<path d="M835 617q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="964" y="472" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1012" y="500" width="70" height="70"><g><path d="M20.5 31.5c-2.8-6.8.1-15.8 11.4-21.4 3.5 10.7.6 19.2-6 23.1z" fill="#20A7C9"/><path d="M20.3 26.5 14 28l-4 7 11.2-.3M27.4 31.7l1.7 6.8 7.3-3.7-.9-10.1"/><path d="M19.8 36c-2.5 2.9-5 3.5-8.4 2.8 1.3-3.3 3-5.1 6.3-5.8" stroke="#FF765F"/></g></svg>
+<text x="1047" y="605" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Launch Project</text>
+<path d="M1029 617q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="1158" y="472" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1206" y="500" width="70" height="70"><g><path d="M38.2 24c0 8-6.2 14.1-14.3 14.1S9.7 31.9 9.8 23.8C9.9 16 16 9.9 24.1 10c8 .1 14.2 6.1 14.1 14Z"/><path d="M10.2 24.2c8.5 2.1 18.4 2.1 27.6-.1M24.3 10c-4.2 4.5-5.2 9.3-5 14.4.1 5 1.4 9.5 4.5 13.7M24.3 10c4 4.4 5 9.2 4.8 14.2-.2 5-1.4 9.5-5.3 13.9"/><path d="M32 14.2c2.5 1.8 4.2 4.1 5.2 7" stroke="#F7BD24"/></g></svg>
+<text x="1241" y="605" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Publish Worldwide</text>
+<path d="M1223 617q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="382" y="662" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="430" y="690" width="70" height="70"><g><path d="m24 9.5 12 4.7-.8 10.4C34.6 31.7 30.3 36 24 39c-6.7-3-10.5-7.8-11.1-14.6l-.8-10.2z" fill="#FFFDF8"/><path d="m18.3 24.1 4.1 4.3 8-9" stroke="#20A7C9"/></g></svg>
+<text x="465" y="795" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Protect Work</text>
+<path d="M447 807q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="576" y="662" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="624" y="690" width="70" height="70"><g><path d="m13 36 20.5-21.5M29.5 12.5l5.8 5.8"/><path d="m14 12 1.5 4.2 4.1 1.5-4.1 1.4-1.6 4.1-1.4-4.1-4.2-1.5 4.2-1.4zm20 15 1.2 3.2 3.3 1.2-3.3 1.2-1.3 3.3-1.2-3.3-3.3-1.2 3.3-1.2z" fill="#F7BD24"/><circle cx="25" cy="24" r="3.2" fill="#FF765F"/></g></svg>
+<text x="659" y="795" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Add Magic</text>
+<path d="M641 807q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="770" y="662" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="818" y="690" width="70" height="70"><g><path d="M20 13.5c5.3.1 10.1-1.2 14-3l-.4 18.6"/><path d="M20 13.5l-.3 19"/><path d="M19.8 29.5c-5.1-1.2-9.3.7-9.4 4.2-.1 3.1 3.5 4.9 7 3.8 2-.6 2.5-2 2.4-4.9ZM33.7 26c-5.1-1.1-9.3.8-9.3 4.3 0 3.1 3.6 4.8 7.1 3.7 1.9-.6 2.4-2 2.2-4.9Z" fill="#FF765F"/></g></svg>
+<text x="853" y="795" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Score Sound</text>
+<path d="M835 807q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="964" y="662" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1012" y="690" width="70" height="70"><g><path d="M11 19c0-2 1.2-3.2 3.2-3.2h19.5c2 0 3.3 1.2 3.3 3.2v17H11z" fill="#FFFDF8"/><path d="M9 15.8h30v7H9zM24 16v20M17 15.8c-4-2.8-3.4-7.1-.1-7.1 3.1 0 5 3.8 7.1 7.1M31 15.8c3.9-2.8 3.4-7.1.1-7.1-3 0-5 3.8-7.1 7.1"/><path d="M24 16h13v7H24z" fill="#F7BD24"/></g></svg>
+<text x="1047" y="795" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Reward Fans</text>
+<path d="M1029 807q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<rect x="1158" y="662" width="166" height="162" rx="25" fill="#FFFDF8"
+ stroke="#DED5C8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#29262E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" data-icon-treatment="hand-drawn" x="1206" y="690" width="70" height="70"><g><path d="M13 17h21l-1.2 11c-.7 6.1-4.2 9.5-9.6 9.5-5.2 0-8.8-3.4-9.2-9.5z" fill="#FFFDF8"/><path d="M34 20.5c5-1 7.3 1.2 7 4.5-.3 3.5-3.2 5.1-7.8 4.5M10 41h27"/><path d="M19 12.5c-1-2 .8-3.5 0-5M26 12.5c-1-2 .8-3.5 0-5" stroke="#FF765F"/></g></svg>
+<text x="1241" y="795" text-anchor="middle"
+ font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#342F39">
+Take a Break</text>
+<path d="M1223 807q18 4 36 0" stroke="#FF765F"
+ stroke-width="2.4" stroke-linecap="round" fill="none"/>
+</svg>

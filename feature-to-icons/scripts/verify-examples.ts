@@ -7,11 +7,7 @@ import type { IconDesignSystem, IconSource } from "../src/types.js";
 
 const PACKAGE_ROOT = fileURLToPath(new URL("..", import.meta.url));
 const EXAMPLES_ROOT = join(PACKAGE_ROOT, "examples");
-const EXPECTED = [
-  { slug: "release-workflow-duotone", count: 6, source: "custom" },
-  { slug: "creator-studio-duotone", count: 6, source: "custom" },
-  { slug: "developer-platform-outline", count: 6, source: "library-first" },
-] as const;
+const EXPECTED = [{ slug: "creator-doodle-animated", count: 20, source: "custom" }] as const;
 
 interface ExampleFile {
   title: string;
@@ -27,6 +23,7 @@ interface ManifestFile {
     icons: string[];
     previewPng: string;
     previewSvg: string;
+    previewHtml: string;
     spec: string;
     metadata: string;
   };
@@ -93,15 +90,28 @@ async function verifyExample(
     }
   }
   await verifyPng(directory, manifest.files.previewPng, expectedCount);
+  await verifyAnimatedPreview(directory, manifest.files.previewHtml, expectedCount);
   await verifyShowcase(directory);
+}
+
+async function verifyAnimatedPreview(
+  directory: string,
+  fileName: string,
+  expectedCount: number,
+): Promise<void> {
+  const html = await readFile(join(directory, fileName), "utf8");
+  const svgCount = html.match(/<svg\b/g)?.length ?? 0;
+  if (svgCount !== expectedCount || !html.includes("icon-wiggle")) {
+    throw new Error(`${directory}/${fileName}: animated preview is incomplete`);
+  }
 }
 
 async function verifyShowcase(directory: string): Promise<void> {
   const png = await readFile(join(directory, "showcase-preview.png"));
   if (
     png.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a" ||
-    png.readUInt32BE(16) !== 1200 ||
-    png.readUInt32BE(20) !== 720
+    png.readUInt32BE(16) !== 1400 ||
+    png.readUInt32BE(20) !== 880
   ) {
     throw new Error(`${directory}: source-to-output showcase is invalid`);
   }
@@ -121,6 +131,12 @@ function verifyManifest(
   }
   if (manifest.source.strategy !== expectedSource) {
     throw new Error(`${slug}: manifest source must be ${expectedSource}`);
+  }
+  if (
+    manifest.designSystem.treatment !== "hand-drawn" ||
+    manifest.designSystem.motion !== "wiggle"
+  ) {
+    throw new Error(`${slug}: public example must be an animated hand-drawn family`);
   }
   if (expectedSource === "custom" && manifest.source.license !== "user-provided") {
     throw new Error(`${slug}: custom example must record user-provided geometry`);
@@ -153,6 +169,7 @@ async function verifyListedFiles(directory: string, manifest: ManifestFile): Pro
     manifest.files.metadata,
     manifest.files.previewSvg,
     manifest.files.previewPng,
+    manifest.files.previewHtml,
     ...manifest.files.icons,
   ];
   for (const file of files) {

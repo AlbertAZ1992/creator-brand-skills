@@ -1,5 +1,6 @@
 export type IconStyle = "outline" | "filled" | "duotone";
 export type IconPurpose = "brand" | "system";
+export type IconMotion = "none" | "wiggle";
 export type PhosphorWeight = "light" | "regular" | "bold" | "fill" | "duotone";
 
 export interface FeatureIconInput {
@@ -9,6 +10,8 @@ export interface FeatureIconInput {
   style?: IconStyle;
   /** Brand feature art or compact system/UI glyphs */
   purpose?: IconPurpose;
+  /** Self-contained SVG motion. Hand-drawn brand families default to wiggle. */
+  motion?: IconMotion;
   /** Color palette: hex colors for the icon set */
   colors?: { primary: string; secondary?: string };
   /** Icon grid size in pixels (square) */
@@ -57,6 +60,8 @@ export interface IconArtifact extends IconMetadata {
 
 export interface IconDesignSystem {
   purpose: IconPurpose;
+  treatment: "hand-drawn" | "system-native";
+  motion: IconMotion;
   style: IconStyle;
   gridSize: number;
   strokeWidth: number;
@@ -96,6 +101,7 @@ export interface IconFamilyManifest {
     metadata: string;
     previewSvg: string;
     previewPng: string;
+    previewHtml: string;
     icons: string[];
   };
   validation: {
@@ -110,6 +116,7 @@ export interface DeliveredIconFamily {
   outputDir: string;
   manifestPath: string;
   previewPath: string;
+  animatedPreviewPath: string;
   iconPaths: string[];
 }
 

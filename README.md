@@ -26,7 +26,7 @@ icon families · reusable product mascots
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creator-studio-duotone/showcase-preview.png" alt="Creator Studio feature brief transformed into six original SVG icons" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
+| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
 | Feature brief → six original SVGs + optical proof | OpenPatch facts → Pip character bible → five locked poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
@@ -62,7 +62,7 @@ documents.
 | --- | --- | --- | --- |
 | [`logo-to-clay`](logo-to-clay/) | One simple SVG/PNG logo, plus optional form, colour, depth, and background choices | Source-locked campaign render with visible clay depth; standalone object or relief mesh preview | Final image prompt/render; OBJ, MTL, bump PNG, 1024 px preview, geometry manifest |
 | [`image-to-sticker`](image-to-sticker/) | One transparent or flat-background logo, icon, wordmark, badge, or flat illustration | Complete source as a transparent die-cut sticker; optional contour colour, tilt, and four deterministic finishes | RGBA `sticker.png`, alpha proof, reproducible source card, topology/provenance manifest |
-| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names, product context, optional palette and style; source overrides for system glyphs | System glyphs stay native; brand benefits audition three original custom systems before expanding one | One editable SVG per feature, spec/provenance JSON, SVG/PNG preview, optical manifest |
+| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names, product context, optional palette, motion, and style | Original hand-drawn feature icons by default; compact native system glyphs only when explicitly requested | One editable animated SVG per feature, playable HTML, SVG/PNG previews, spec, metadata, optical manifest |
 | [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, medium, palette, or existing logo | Three genuinely different silhouettes, then one selected identity shown in five recognisable usage poses | V2 character bible, five full-size PNGs, 64 px contact-sheet review, verification manifest |
 
 ## Why the outputs hold up
@@ -90,7 +90,7 @@ contract is locked.
 | --- | --- | --- |
 | Logo to Clay | [Vite bolt and JavaScript clay renders with verified 3D assets](logo-to-clay/examples/) | OBJ faces, material linkage, 1024 px preview, passing manifest |
 | Image to Sticker | [Six source-to-sticker styles: classic, holographic, reflective, glitter, colour contour, and borderless](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
-| Feature to Icons | [Two original brand families plus one native developer-platform system family](feature-to-icons/examples/) | One SVG per feature, source boundary, optical metrics, zero hidden fallback |
+| Feature to Icons | [Twenty-icon animated hand-drawn creator set](feature-to-icons/examples/) | Input brief plus actual SVGs, built-in wiggle motion, reduced-motion fallback, optical metrics |
 | Product to Mascot | [Pip, Azi, and Mori verified five-pose systems](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
 
 ## Install

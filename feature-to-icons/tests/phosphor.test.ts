@@ -14,6 +14,7 @@ import {
 
 function validInput(overrides: Record<string, unknown> = {}) {
   const result = validate({
+    purpose: "system",
     features: ["Search", "Team Sharing", "Cloud Sync"],
     ...overrides,
   });
@@ -122,7 +123,10 @@ describe("Phosphor library resolution", () => {
   });
 
   it("rejects duplicate source icons and unsupported sharp geometry", async () => {
-    const duplicateInput = validate({ features: ["Search", "Find", "Filters"] });
+    const duplicateInput = validate({
+      purpose: "system",
+      features: ["Search", "Find", "Filters"],
+    });
     expect(duplicateInput.data).toBeDefined();
     await expect(
       buildPhosphorIconFamily(duplicateInput.data!, {

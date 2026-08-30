@@ -1,6 +1,7 @@
 import type {
   FeatureIconInput,
   FeatureIconOutput,
+  IconMotion,
   IconPurpose,
   IconMetadata,
   ValidationError,
@@ -18,48 +19,19 @@ import type {
 const HEX_COLOR_RE = /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
 const VALID_STYLES: IconStyle[] = ["outline", "filled", "duotone"];
 const VALID_PURPOSES: IconPurpose[] = ["brand", "system"];
+const VALID_MOTIONS: IconMotion[] = ["none", "wiggle"];
 const VALID_GRID_SIZES = [24, 32, 48] as const;
 const VALID_CORNER_RADII = ["sharp", "rounded", "round"] as const;
 const VALID_WEIGHTS = ["light", "regular", "bold"] as const;
 const MIN_FEATURES = 3;
 const MAX_FEATURES = 20;
-const SYSTEM_FEATURES = new Set([
-  "alerts",
-  "analytics",
-  "api",
-  "billing",
-  "calendar",
-  "cloud sync",
-  "dashboard",
-  "errors",
-  "file sharing",
-  "filters",
-  "home",
-  "integrations",
-  "invoice",
-  "lock",
-  "notifications",
-  "profile",
-  "reports",
-  "search",
-  "security",
-  "settings",
-  "shield",
-  "task board",
-  "team chat",
-  "team sharing",
-  "teams",
-  "users",
-  "video calls",
-  "warnings",
-]);
-
 const DEFAULTS = {
   purpose: "brand" as IconPurpose,
   style: "outline" as IconStyle,
-  gridSize: 24 as const,
-  strokeWidth: 2,
-  cornerRadius: "rounded" as const,
+  motion: "wiggle" as IconMotion,
+  gridSize: 48 as const,
+  strokeWidth: 2.6,
+  cornerRadius: "round" as const,
   visualWeight: "regular" as const,
 } as const;
 
@@ -111,7 +83,7 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
   }
 
   // purpose
-  let purpose: IconPurpose = inferPurpose(obj["features"]);
+  let purpose: IconPurpose = DEFAULTS.purpose;
   if (obj["purpose"] !== undefined) {
     if (
       typeof obj["purpose"] !== "string" ||
@@ -124,6 +96,28 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
     } else {
       purpose = obj["purpose"] as IconPurpose;
     }
+  }
+
+  // motion
+  let motion: IconMotion = purpose === "brand" ? DEFAULTS.motion : "none";
+  if (obj["motion"] !== undefined) {
+    if (
+      typeof obj["motion"] !== "string" ||
+      !(VALID_MOTIONS as readonly string[]).includes(obj["motion"])
+    ) {
+      errors.push({
+        field: "motion",
+        message: `motion must be one of: ${VALID_MOTIONS.join(", ")}`,
+      });
+    } else {
+      motion = obj["motion"] as IconMotion;
+    }
+  }
+  if (purpose === "system" && motion !== "none") {
+    errors.push({
+      field: "motion",
+      message: "system icon families use motion=none; use purpose=brand for animated doodles",
+    });
   }
 
   // style
@@ -174,7 +168,7 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
   }
 
   // gridSize
-  let gridSize: 24 | 32 | 48 = DEFAULTS.gridSize;
+  let gridSize: 24 | 32 | 48 = purpose === "brand" ? DEFAULTS.gridSize : 24;
   if (obj["gridSize"] !== undefined) {
     if (
       typeof obj["gridSize"] !== "number" ||
@@ -190,7 +184,7 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
   }
 
   // strokeWidth
-  let strokeWidth: number = DEFAULTS.strokeWidth;
+  let strokeWidth: number = purpose === "brand" ? DEFAULTS.strokeWidth : 2;
   if (obj["strokeWidth"] !== undefined) {
     if (
       typeof obj["strokeWidth"] !== "number" ||
@@ -204,7 +198,8 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
   }
 
   // cornerRadius
-  let cornerRadius: "sharp" | "rounded" | "round" = DEFAULTS.cornerRadius;
+  let cornerRadius: "sharp" | "rounded" | "round" =
+    purpose === "brand" ? DEFAULTS.cornerRadius : "rounded";
   if (obj["cornerRadius"] !== undefined) {
     if (
       typeof obj["cornerRadius"] !== "string" ||
@@ -247,13 +242,14 @@ export function validate(raw: unknown): { data?: FeatureIconInput; errors?: Vali
   const features = (obj["features"] as string[]).map((f: string) => f.trim());
 
   if (!colors && purpose === "brand") {
-    colors = { primary: "#6C4CF6", secondary: "#F7DF1E" };
+    colors = { primary: "#25232B", secondary: "#FF735C" };
   }
 
   return {
     data: {
       features,
       purpose,
+      motion,
       style,
       ...(colors !== undefined ? { colors } : {}),
       gridSize,
@@ -675,6 +671,7 @@ function analyzeFeatureSemantics(feature: string): IconMetadata {
 
 function buildDesignSystemSection(input: FeatureIconInput): string {
   const purpose = input.purpose ?? DEFAULTS.purpose;
+  const motion = input.motion ?? (purpose === "brand" ? DEFAULTS.motion : "none");
   const strokeNote = input.style === "filled" ? "" : `- Stroke width: ${input.strokeWidth}px`;
   const secondaryColor =
     input.colors?.secondary ?? input.colors?.primary ?? "a slightly muted shade";
@@ -701,12 +698,16 @@ function buildDesignSystemSection(input: FeatureIconInput): string {
   const purposeRules =
     purpose === "brand"
       ? [
-          "- Purpose: branded product-feature art, not generic navigation glyphs",
+          "- Purpose: a hand-drawn product-feature icon set, not generic navigation glyphs",
           "- Draw original geometry for the complete family; do not use an icon library",
-          "- Build each icon from one product-specific metaphor and 2–4 large shapes",
-          "- Share material, stroke, corner, layer, and accent behavior across the family",
+          "- Use visibly human, gently imperfect curves instead of ruler-perfect geometry",
+          "- Build each icon from one product-specific metaphor and 2–5 confident strokes",
+          "- Share stroke rhythm, round caps, wobble amplitude, and accent behavior",
           "- Give every feature a distinct silhouette instead of repeating one container",
           "- No stock glyph plus decoration, repeated badge, repeated circle, or generic app tile",
+          motion === "wiggle"
+            ? "- Animate one grouped drawing with the shared self-contained wiggle motion"
+            : "- Keep the SVG static while preserving the hand-drawn construction",
         ]
       : [
           "- Purpose: compact system/UI glyphs",
@@ -723,11 +724,12 @@ function buildDesignSystemSection(input: FeatureIconInput): string {
     `- Corner radius: ${borderMap[input.cornerRadius ?? "rounded"]}`,
     `- Visual weight: ${input.visualWeight} (${weightDescription})`,
     `- Style: ${input.style}`,
+    `- Motion: ${motion}`,
     fillNote,
     ...purposeRules,
     "- Consistent detail level across all icons",
     "- No icon should look more complex or simpler than others in the set",
-    "- Each icon should use roughly the same number of path elements",
+    "- Allow small asymmetries, but keep optical volume comparable across the family",
     "- Icons must be recognizable at 16x16px when scaled down",
     "- No text, letters, or numerals inside any icon",
     "- Every icon must have a distinct, unique silhouette",
@@ -759,13 +761,14 @@ export function buildBrandAuditionPrompt(input: FeatureIconInput): string {
   );
   const uniqueRepresentatives = [...new Set(representatives)];
   return [
-    "Create a custom brand-feature-art audition before drawing the full family.",
+    "Create a hand-drawn animated feature-icon audition before drawing the full family.",
     input.productContext ? `Product context: ${input.productContext}` : "",
     `Representative features: ${uniqueRepresentatives.join(", ")}.`,
     "Create three genuinely different custom visual systems for these same features.",
     "Keep the semantic metaphors constant so construction, material, and gesture can be compared.",
-    "Each system must use original SVG geometry, 2–4 large shapes per icon, and distinct silhouettes.",
-    "Share a stroke, corner logic, layer count, palette, and one restrained accent behavior.",
+    "Each system must use original SVG geometry, 2–5 confident strokes, and distinct silhouettes.",
+    "Share a hand-drawn stroke rhythm, palette, and restrained accent behavior.",
+    "When motion=wiggle, use one subtle grouped animation and respect prefers-reduced-motion.",
     "Reject stock glyphs, repeated circles, repeated cards, app tiles, and decorative wrappers.",
     "Return three labeled SVG contact sheets at full size and 24 px; stop before the full family.",
   ]
@@ -777,6 +780,8 @@ export function buildBrandAuditionPrompt(input: FeatureIconInput): string {
 export function buildPrompt(input: FeatureIconInput): string {
   const designSystem = buildDesignSystemSection(input);
   const colors = buildColorsSection(input);
+  const purpose = input.purpose ?? DEFAULTS.purpose;
+  const motion = input.motion ?? (purpose === "brand" ? DEFAULTS.motion : "none");
 
   const icons = input.features.map(analyzeFeatureSemantics);
 
@@ -795,8 +800,8 @@ export function buildPrompt(input: FeatureIconInput): string {
     : "";
 
   return [
-    (input.purpose ?? DEFAULTS.purpose) === "brand"
-      ? "# Task: Generate a Branded Product Feature Icon Family"
+    purpose === "brand"
+      ? "# Task: Generate a Hand-drawn Animated Feature Icon Family"
       : "# Task: Generate a System Icon Family",
     "",
     `Generate ${input.features.length} SVG icons as a single cohesive icon set.`,
@@ -825,6 +830,12 @@ export function buildPrompt(input: FeatureIconInput): string {
     "- Use XML namespace http://www.w3.org/2000/svg",
     "- Be self-contained (no external references)",
     "- Apply the design system parameters exactly as specified",
+    motion === "wiggle"
+      ? '- Include data-icon-treatment="hand-drawn" and data-icon-motion="wiggle"'
+      : "",
+    motion === "wiggle"
+      ? "- Include an internal @keyframes icon-wiggle animation and prefers-reduced-motion fallback"
+      : "",
     "",
     "## Critical Quality Requirements",
     "",
@@ -834,8 +845,8 @@ export function buildPrompt(input: FeatureIconInput): string {
     "3. If any icon is unrecognizable at 16x16px, the output is FAILED.",
     "4. All icons must feel like they belong to the same family — " +
       "consistent personality and construction.",
-    (input.purpose ?? DEFAULTS.purpose) === "brand"
-      ? "5. A set of unrelated stock glyphs without a shared branded construction is FAILED."
+    purpose === "brand"
+      ? "5. Perfect geometric library-like paths or unrelated stock glyphs are FAILED."
       : "",
   ].join("\n");
 }
@@ -922,26 +933,18 @@ export async function deliverPhosphorIconFamily(
 }
 
 function getDesignSystem(input?: FeatureIconInput): IconDesignSystem {
-  const purpose = input?.purpose ?? DEFAULTS.purpose;
+  const purpose = input ? (input.purpose ?? DEFAULTS.purpose) : "system";
   return {
     purpose,
+    treatment: purpose === "brand" ? "hand-drawn" : "system-native",
+    motion: input?.motion ?? (purpose === "brand" ? DEFAULTS.motion : "none"),
     style: input?.style ?? DEFAULTS.style,
-    gridSize: input?.gridSize ?? DEFAULTS.gridSize,
-    strokeWidth: input?.strokeWidth ?? DEFAULTS.strokeWidth,
-    cornerRadius: input?.cornerRadius ?? DEFAULTS.cornerRadius,
+    gridSize: input?.gridSize ?? (purpose === "brand" ? DEFAULTS.gridSize : 24),
+    strokeWidth: input?.strokeWidth ?? (purpose === "brand" ? DEFAULTS.strokeWidth : 2),
+    cornerRadius: input?.cornerRadius ?? (purpose === "brand" ? DEFAULTS.cornerRadius : "rounded"),
     visualWeight: input?.visualWeight ?? DEFAULTS.visualWeight,
     geometryPolicy: "custom-exact",
   };
-}
-
-function inferPurpose(rawFeatures: unknown): IconPurpose {
-  if (!Array.isArray(rawFeatures) || rawFeatures.length === 0) return DEFAULTS.purpose;
-  const features = rawFeatures.filter((feature): feature is string => typeof feature === "string");
-  if (features.length === 0) return DEFAULTS.purpose;
-  const matches = features.filter((feature) =>
-    SYSTEM_FEATURES.has(feature.trim().toLocaleLowerCase()),
-  ).length;
-  return matches / features.length >= 0.5 ? "system" : "brand";
 }
 
 function buildArtifacts(
@@ -998,6 +1001,7 @@ export type {
   IconDesignSystem,
   IconFamilyManifest,
   IconMetadata,
+  IconMotion,
   IconCandidate,
   IconOpticalMetrics,
   IconOverrides,

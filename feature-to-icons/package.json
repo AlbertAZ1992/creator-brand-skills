@@ -1,7 +1,7 @@
 {
   "name": "@creator-brand-skills/feature-to-icons",
   "version": "0.1.0",
-  "description": "Create verified custom brand art or native system SVG icon families",
+  "description": "Create verified hand-drawn animated SVG icon families",
   "license": "MIT",
   "files": [
     "dist",

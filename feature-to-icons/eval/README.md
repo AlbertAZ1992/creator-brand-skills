@@ -8,11 +8,11 @@ model.
 
 | Case | Input route | Must express | Boundary covered |
 | --- | --- | --- | --- |
-| Minimal outline | Three features | 24 px outline system and all names | Minimum accepted count |
-| SaaS context | Ten features + product context | Domain context and 32 px family | Larger product family |
+| Minimal outline | Three features | Default hand-drawn route, wiggle contract, and all names | Minimum accepted count |
+| SaaS context | Ten features + product context | Domain context and 32 px doodle family | Larger product family |
 | Duotone | Two colors | Primary/secondary hierarchy and 2.5 px strokes | Color contract |
-| Bold | Bold + sharp | Thick strokes and sharp corners | Weight contract |
-| Sharp corners | Security concepts | Zero-radius geometry | Corner contract |
+| Bold system | Explicit system + bold + sharp | Static thick native geometry | Weight contract |
+| Sharp system | Explicit system security concepts | Static zero-radius geometry | Corner contract |
 | Minimum | Three features | Exactly three icon slots | Lower boundary |
 | Maximum | Twenty features | Exactly twenty icon slots | Upper boundary |
 | Filled SaaS | Filled + brand color | Solid shapes and product context | Filled route |
@@ -36,9 +36,10 @@ then checks prompt structure and SVG parameter encoding.
 npm run verify:deliverables
 ```
 
-This delivers three real SVG files, an editable family preview, a rasterized
-PNG preview, metadata, spec, and manifest. It verifies exact feature coverage,
-file safety, the shared viewBox/stroke contract, and non-empty outputs.
+This delivers three real SVG files, a playable HTML gallery, editable SVG and
+rasterized PNG previews, metadata, spec, and manifest. It verifies exact
+feature coverage, file safety, the shared viewBox/stroke contract, and
+non-empty outputs.
 
-Run `npm run verify` for lint, formatting, types, 54 unit tests, nine request
-evals, and the real delivery eval together.
+Run `npm run verify` for lint, formatting, types, 64 unit tests, nine request
+evals, the real delivery eval, and the committed 20-icon doodle family.

@@ -1,0 +1,41 @@
+{
+  "title": "Creator Doodles · animated hand-drawn icon set",
+  "summary": "Twenty original feature icons with editable paths and embedded wiggle motion.",
+  "request": "Create one hand-drawn animated icon set for 20 creator features. Use loose black ink, small coral, blue, and yellow accents, and a subtle Saturday-morning-cartoon wiggle.",
+  "input": {
+    "features": [
+      "Capture Idea",
+      "Sketch Fast",
+      "Build Palette",
+      "Shape Story",
+      "Record Moment",
+      "Collect Notes",
+      "Save Favorite",
+      "Share Draft",
+      "Team Chat",
+      "Pin Reference",
+      "Plan Drop",
+      "Upload Asset",
+      "Download Kit",
+      "Launch Project",
+      "Publish Worldwide",
+      "Protect Work",
+      "Add Magic",
+      "Score Sound",
+      "Reward Fans",
+      "Take a Break"
+    ],
+    "purpose": "brand",
+    "motion": "wiggle",
+    "style": "duotone",
+    "colors": {
+      "primary": "#29262E",
+      "secondary": "#FF765F"
+    },
+    "gridSize": 48,
+    "strokeWidth": 2.6,
+    "cornerRadius": "round",
+    "visualWeight": "regular",
+    "productContext": "A playful independent creator toolkit with a sketchbook personality"
+  }
+}

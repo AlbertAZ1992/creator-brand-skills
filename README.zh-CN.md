@@ -26,7 +26,7 @@
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creator-studio-duotone/showcase-preview.png" alt="Creator Studio 功能 brief 转成六枚原创 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="OpenPatch 补丁小狐狸 Pip 的五个锁定姿势" width="560"> |
+| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="二十个创作者功能转成一套原创手绘动画 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="OpenPatch 补丁小狐狸 Pip 的五个锁定姿势" width="560"> |
 | 功能 brief → 六枚原创 SVG + 光学校验 | OpenPatch 事实 → Pip 角色圣经 → 五个锁定姿势 |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
@@ -60,7 +60,7 @@ Skill 所描述的真实生产链路产物组成。
 | --- | --- | --- | --- |
 | [`logo-to-clay`](logo-to-clay/) | 一张简单 SVG/PNG Logo，以及可选形态、颜色、深度与背景 | 锁定源轮廓且有明显侧壁的黏土主视觉；独立物体或浮雕 Mesh 预览 | 最终图片 Prompt/渲染；OBJ、MTL、凹凸 PNG、1024 px 预览、几何 manifest |
 | [`image-to-sticker`](image-to-sticker/) | 一张透明或纯色背景 Logo、图标、字标、徽章或扁平插画 | 完整源图变成透明刀模贴纸；可选轮廓色、旋转与四种确定性材质 | RGBA `sticker.png`、alpha proof、可复现 source card、拓扑/来源 manifest |
-| [`feature-to-icons`](feature-to-icons/) | 3–20 个功能名、产品语境，以及可选颜色与样式；系统图标可提供来源 override | 系统图标保持原生；品牌收益先比较三套原创定制系统，再扩展其中一套 | 每功能独立 SVG、规格/来源 JSON、SVG/PNG 预览、光学校验 manifest |
+| [`feature-to-icons`](feature-to-icons/) | 3–20 个功能名、产品语境，以及可选颜色、动画与样式 | 默认生成原创手绘功能图标；只有明确要求系统控件时才使用原生图标库 | 每功能独立动画 SVG、可播放 HTML、SVG/PNG 预览、规格、元数据与光学校验 manifest |
 | [`product-to-mascot`](product-to-mascot/) | 产品事实，以及可选受众、性格、角色类型、视觉媒介、品牌色或现有 Logo | 三个真正不同的外轮廓，然后把选中身份扩展为五个可识别使用姿势 | V2 角色圣经、五张全尺寸 PNG、64 px 联系表检查、校验 manifest |
 
 ## 为什么这些产物经得住继续使用
@@ -85,7 +85,7 @@ Mascot 会先比较三个方向，再锁定 V2 角色身份并生成不同姿势
 | --- | --- | --- |
 | Logo to Clay | [Vite 闪电、JavaScript 黏土主视觉与验证过的 3D 资产](logo-to-clay/examples/) | OBJ 面、材质链接、1024 px 预览、通过的 manifest |
 | Image to Sticker | [经典、全息、反光、闪粉、彩色轮廓和无边框六种原图到贴纸案例](image-to-sticker/examples/) | 透明资源、灰度 alpha 证明、拓扑与来源 manifest |
-| Feature to Icons | [两组原创品牌图标与一组开发者平台系统图标](feature-to-icons/examples/) | 每功能独立 SVG、来源边界、光学指标、无隐藏 fallback |
+| Feature to Icons | [二十枚动画手绘创作者图标](feature-to-icons/examples/) | 输入 brief 与真实 SVG、内置轻微抖动、减少动态降级、光学指标 |
 | Product to Mascot | [Pip、Azi 与 Mori 三套验证过的五姿势角色](product-to-mascot/examples/) | 角色圣经、五张全尺寸参考图、contact sheet、通过的 manifest |
 
 ## 安装
