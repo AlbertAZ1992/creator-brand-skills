@@ -7,7 +7,7 @@ Codex generate and review a primary reference plus four consistent poses.
 The callable Codex Skill name is `product-to-mascot`.
 
 <p align="center">
-  <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="900">
+  <img src="examples/generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch product facts transformed into the five-pose Pip mascot system" width="900">
 </p>
 
 | **Locked product facts** | **Generated mascot system** |

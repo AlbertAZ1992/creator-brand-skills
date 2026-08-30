@@ -20,27 +20,20 @@
 
 | **01 · Logo to Clay · 黏土渲染 + 3D Mesh** | **02 · Image to Sticker · 透明 PNG** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite 与 JavaScript 原图转成黏土主视觉和验证过的 OBJ 预览" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="六张原图转成六种透明贴纸效果" width="560"> |
+| <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite 与 JavaScript 原图转成黏土主视觉和验证过的 OBJ 预览" width="560"><br><br><img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript 字母标志转成有明显厚度的黄色黏土" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="六张原图转成六种透明贴纸效果" width="560"> |
 | Vite + JavaScript 平面 Logo → 黏土渲染 + 真实验证 OBJ | 六张平面 Logo → 六种透明贴纸 + alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons · 动画 SVG 图标组** | **04 · Product to Mascot · 角色系统** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="二十个创作者功能转成一套原创手绘动画 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="OpenPatch 补丁小狐狸 Pip 的五个锁定姿势" width="560"> |
-| 20 条功能名称 → 20 枚手绘动画 SVG + 光学校验 | OpenPatch 产品事实 → Pip 角色圣经 → 五个锁定姿势 |
+| <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="二十个创作者功能转成一套原创手绘动画 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/source-to-mascot.png" alt="OpenPatch 产品事实转成补丁小狐狸 Pip 的五姿势角色系统" width="560"><br><br><img src="product-to-mascot/examples/generated/albertaz-azi/source-to-mascot.png" alt="ALBERTAZ 产品事实转成折纸燕 Azi 的五姿势角色系统" width="560"> |
+| 20 条功能名称 → 20 枚手绘动画 SVG + 光学校验 | OpenPatch 与 ALBERTAZ 产品事实 → 锁定角色系统 → 每个角色五个姿势 |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
 这些当前图片都同时交代输入和真实生产链路结果，不是互不相关的单张美图。
 Pip 与 Azi 都是本仓库原创概念；
 第三方技术标志仅作为有明确来源的转换测试素材，相关名称与标志归各自权利人
 所有，本项目不暗示任何合作或背书。
-
-### 更多已确认案例
-
-| **JavaScript · Logo to Clay** | **ALBERTAZ · Product to Mascot** |
-| :---: | :---: |
-| <img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript 字母标志转成有明显厚度的黄色黏土" width="560"> | <img src="product-to-mascot/examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="ALBERTAZ 折纸燕 Azi 的五个锁定姿势" width="560"> |
-| 黄色主视觉 + 独立物体 + 浮雕 | 折纸燕 + 锁定身份的五姿势角色系统 |
 
 用于展示的能力板仍与干净交付物、机器校验证据彼此分离；每块能力板都由对应
 Skill 所描述的真实生产链路产物组成。
