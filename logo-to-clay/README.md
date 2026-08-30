@@ -8,8 +8,8 @@ The callable Codex Skill name is `logo-to-clay`.
 
 | **Image route** | **Mesh route** |
 | :---: | :---: |
-| <img src="examples/generated/clay-render.png" alt="Generated clay Threads wordmark" width="560"> | <img src="examples/generated/mesh-forms.png" alt="Verified standalone and relief mesh previews" width="560"> |
-| Fast, model-generated visual | Real OBJ, MTL, bump map, preview, and manifest |
+| <img src="examples/generated/clay-render.png" alt="Original Orbit Bloom mark as a cobalt clay sculpture" width="560"> | <img src="examples/generated/mesh-forms.png" alt="Verified Orbit Bloom standalone and relief mesh previews" width="560"> |
+| Campaign-ready image with deliberate art direction | Real OBJ, MTL, bump map, preview, and manifest |
 
 ## At a glance
 
@@ -35,6 +35,19 @@ Clay Asset:  logo geometry → contour extraction → extrusion → OBJ/MTL
 
 Use the render route for a fast visual. Use the mesh route when the user needs
 real geometry for Blender, Three.js, Unity, or another 3D workflow.
+
+## Visual quality bar
+
+A good render preserves the source mark before it adds style. It should use one
+clear clay colour, a supporting scene colour, readable side light, and enough
+value contrast to work at thumbnail size. Neutral catalogue framing is allowed,
+but the default campaign result should have a deliberate composition rather
+than a generic object centred on beige.
+
+The image route and mesh route prove different things. The styled image above
+shows art direction; the split mesh card is generated from the checked-in OBJ
+pipeline. A beautiful raster is never presented as evidence that geometry was
+exported successfully.
 
 ## Deliverables (not clay styles)
 

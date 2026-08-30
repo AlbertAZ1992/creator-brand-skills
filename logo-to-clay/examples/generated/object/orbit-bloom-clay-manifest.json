@@ -1,13 +1,13 @@
 {
   "contractVersion": "1.0",
   "source": {
-    "logoPath": "../../assets/threads-wordmark.png"
+    "logoPath": "../../assets/orbit-bloom.png"
   },
   "spec": {
     "output": "mesh",
     "shape": "object",
     "depth": 5,
-    "clayColor": "#C98E68",
+    "clayColor": "#5B4BDB",
     "background": "studio"
   },
   "backing": {
@@ -17,7 +17,7 @@
   "cavities": {
     "mode": "through",
     "depth": 5,
-    "count": 4
+    "count": 1
   },
   "rounding": {
     "bevelThickness": 1.2,
@@ -26,10 +26,10 @@
     "bevelSegments": 14
   },
   "artifacts": {
-    "meshPath": "threads-wordmark-clay-mesh.obj",
-    "materialPath": "threads-wordmark-clay-clay.mtl",
-    "bumpPath": "threads-wordmark-clay-bump.png",
-    "previewPath": "threads-wordmark-clay-preview.png"
+    "meshPath": "orbit-bloom-clay-mesh.obj",
+    "materialPath": "orbit-bloom-clay-clay.mtl",
+    "bumpPath": "orbit-bloom-clay-bump.png",
+    "previewPath": "orbit-bloom-clay-preview.png"
   },
   "validation": {
     "passed": true,
@@ -40,8 +40,8 @@
       "manifest artifact paths"
     ],
     "geometry": {
-      "vertices": 31452,
-      "faces": 10484
+      "vertices": 6300,
+      "faces": 2100
     },
     "preview": {
       "width": 1024,

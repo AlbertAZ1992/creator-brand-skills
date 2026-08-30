@@ -9,8 +9,8 @@ The callable Codex Skill name is `image-to-sticker`.
 
 | **Balanced result** | **Supported style system** |
 | :---: | :---: |
-| <img src="examples/generated/recommended-preview.png" alt="Balanced Threads contour sticker" width="560"> | <img src="examples/generated/style-overview.png" alt="Threads sticker style system" width="560"> |
-| Source-faithful transparent output | Contours and deterministic front materials |
+| <img src="examples/generated/recommended-preview.png" alt="Peach Planet contour sticker on a portfolio card" width="560"> | <img src="examples/generated/style-overview.png" alt="Peach Planet sticker style system" width="560"> |
+| Styled preview of the clean transparent output | Contours and deterministic front materials |
 
 ## At a glance
 
@@ -36,6 +36,18 @@ The callable Codex Skill name is `image-to-sticker`.
 It is intentionally for simple, already-composed artwork. It does not choose a
 subject from a busy photograph, reconstruct missing pixels, retype a wordmark,
 or generate a 3D peel scene.
+
+## Visual quality bar
+
+The output asset and presentation preview are separate files. `sticker.png`
+stays transparent and contains only the complete supplied composition, contour,
+material, and tilt. A README or portfolio card may add contrast, shadow, or
+decorative colour around that accepted asset, but those effects are never baked
+into the deliverable.
+
+Review at full size and 64 px. Use the thinnest contour that keeps the artwork
+readable without swallowing counters or small gaps. Material effects should
+remain subordinate to the illustration instead of turning it muddy.
 
 ## Requirements
 
@@ -158,7 +170,7 @@ npm run examples
 npm run verify
 ```
 
-`npm run verify` runs formatting, lint, type checking, build, 19 unit tests, 5
+`npm run verify` runs formatting, lint, type checking, build, unit tests,
 behavior evals, and a real raster deliverable evaluation. The architecture and
 format contracts are documented in [`docs/architecture.md`](docs/architecture.md)
 and [`schemas/`](schemas/).

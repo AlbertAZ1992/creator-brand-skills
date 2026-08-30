@@ -8,17 +8,18 @@ Supported personality presets are `friendly`, `professional`, `playful`,
 `technical`, and `approachable`; the visual medium itself may be specified in
 natural language and is then locked across all five reference images.
 
-The checked-in gallery demonstrates a five-pose contact sheet derived from the
-Threads product identity. Use product facts and brand assets you are authorized
-to transform for your own forward tests.
+The checked-in gallery demonstrates Mori, an original paper-moth archivist for
+the fictional Mora research workspace. Open-book wings and a bookmark ribbon
+encode the product connection without relying on surrounding text.
 
 ## 1. Verified reference set
 
 ```text
-Use $product-to-mascot for Threads, a text-first social product built around
-public conversation. Create one friendly loop-shaped character in soft felt,
-with a small coral thread tail as its signature feature. Generate the verified
-five-pose reference set under /absolute/path/to/brand-tests/mascot-reference.
+Use $product-to-mascot for Mora, a calm research workspace that gathers
+scattered sources and turns them into connected briefs. Create one approachable
+paper-moth archivist with open-book wings and a lime bookmark ribbon. Generate
+the verified five-pose reference set under
+/absolute/path/to/brand-tests/mascot-reference.
 ```
 
 Expected: a locked character bible, one primary reference, four named poses, a

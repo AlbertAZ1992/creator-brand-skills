@@ -1,6 +1,8 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { Resvg } from "@resvg/resvg-js";
 
 import { deliverPhosphorIconFamily, validate } from "../src/index.js";
 import type { FeatureIconInput, IconOverrides } from "../src/types.js";
@@ -15,6 +17,39 @@ interface ExampleFamily {
 }
 
 const families: ExampleFamily[] = [
+  {
+    slug: "creative-workflow-duotone",
+    title: "Creative workflow · Duotone",
+    summary: "A vivid launch-ready family for an independent creator workspace.",
+    request:
+      "Duotone icons for Capture Ideas, Shape Story, Build Palette, Brand Library, " +
+      "Publish Kit, and Measure Reach. Use #5B4BDB primary and #FF7665 secondary.",
+    input: {
+      features: [
+        "Capture Ideas",
+        "Shape Story",
+        "Build Palette",
+        "Brand Library",
+        "Publish Kit",
+        "Measure Reach",
+      ],
+      style: "duotone",
+      colors: { primary: "#5B4BDB", secondary: "#FF7665" },
+      gridSize: 32,
+      strokeWidth: 2,
+      cornerRadius: "round",
+      visualWeight: "regular",
+      productContext: "A creator workspace for turning ideas into launch-ready brand kits",
+    },
+    overrides: {
+      "Capture Ideas": "lightbulb",
+      "Shape Story": "pencil-ruler",
+      "Build Palette": "palette",
+      "Brand Library": "stack",
+      "Publish Kit": "paper-plane-tilt",
+      "Measure Reach": "chart-line-up",
+    },
+  },
   {
     slug: "social-publishing-outline",
     title: "Social publishing · Outline",
@@ -192,6 +227,9 @@ async function main(): Promise<void> {
     const outputDir = join(examplesRoot, family.slug);
     await rm(outputDir, { recursive: true, force: true });
     const delivery = await deliverPhosphorIconFamily(validation.data, outputDir, family.overrides);
+    if (family.slug === "creative-workflow-duotone") {
+      await writeShowcasePreview(outputDir, delivery.iconPaths);
+    }
     await writeFile(
       join(outputDir, "example.json"),
       `${JSON.stringify(
@@ -210,6 +248,42 @@ async function main(): Promise<void> {
     console.log(`PASS ${family.slug}: ${delivery.iconPaths.length} Phosphor icons`);
   }
   console.log(`Generated ${families.length} library-backed icon families.`);
+}
+
+async function writeShowcasePreview(outputDir: string, iconPaths: string[]): Promise<void> {
+  const cards = await Promise.all(
+    iconPaths.map(async (iconPath, index) => {
+      const column = index % 3;
+      const row = Math.floor(index / 3);
+      const x = 178 + column * 300;
+      const y = 105 + row * 278;
+      const source = await readFile(iconPath, "utf8");
+      const icon = source.trim().replace(/<svg\b([^>]*)>/i, (_match, attributes: string) => {
+        const clean = attributes.replace(/\s(?:x|y|width|height)=["'][^"']*["']/gi, "");
+        return `<svg${clean} x="${x + 55}" y="${y + 38}" width="112" height="112">`;
+      });
+      return [
+        `<rect x="${x}" y="${y}" width="222" height="218" rx="34" fill="#fffaf4"/>`,
+        `<circle cx="${x + 190}" cy="${y + 30}" r="8" fill="#ffd166"/>`,
+        icon,
+      ].join("\n");
+    }),
+  );
+  const svg = [
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">',
+    '<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">',
+    '<stop stop-color="#17142c"/><stop offset="1" stop-color="#403370"/>',
+    "</linearGradient></defs>",
+    '<rect width="1200" height="720" rx="48" fill="url(#bg)"/>',
+    '<circle cx="1080" cy="80" r="150" fill="#ff7665" opacity=".9"/>',
+    '<circle cx="80" cy="670" r="120" fill="#ffd166" opacity=".9"/>',
+    ...cards,
+    "</svg>",
+    "",
+  ].join("\n");
+  await writeFile(join(outputDir, "showcase-preview.svg"), svg, "utf8");
+  const png = new Resvg(svg, { font: { loadSystemFonts: false } }).render().asPng();
+  await writeFile(join(outputDir, "showcase-preview.png"), png);
 }
 
 main().catch((error: unknown) => {

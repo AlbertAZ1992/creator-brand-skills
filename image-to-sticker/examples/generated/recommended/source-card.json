@@ -1,10 +1,10 @@
 {
   "version": 4,
-  "sourceImage": "examples/assets/threads-wordmark.png",
+  "sourceImage": "examples/assets/peach-planet.svg",
   "backgroundMode": "alpha",
-  "outlineWidth": 4,
+  "outlineWidth": 8,
   "outlineColor": "#ffffff",
   "material": "original",
-  "tilt": -3,
+  "tilt": -6,
   "size": 1024
 }

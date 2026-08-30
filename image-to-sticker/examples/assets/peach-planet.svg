@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img"
+  aria-label="Original Peach Planet demonstration artwork">
+  <g stroke="#17132f" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#ff7a66" d="M512 208c84-76 224-12 264 111 45 136-28 340-264 478-236-138-309-342-264-478 40-123 180-187 264-111z"/>
+    <path fill="#ffd166" d="M268 504c-94 44-143 96-125 139 29 68 214 46 413-49 199-95 337-226 308-294-16-38-80-47-166-30l40 69c35-4 57 1 61 11 10 24-89 110-245 184-156 75-286 105-296 81-5-11 14-34 50-59z"/>
+    <path fill="#79d48b" d="M487 206c-29-83 7-150 92-169 25 86-11 151-92 169z"/>
+    <path fill="none" d="M424 468c0 18-13 32-29 32s-29-14-29-32M658 468c0 18-13 32-29 32s-29-14-29-32M424 592c48 45 128 45 176 0"/>
+  </g>
+  <g fill="#6c63ff" stroke="#17132f" stroke-width="18" stroke-linejoin="round">
+    <path d="m164 256 20 54 55 19-55 20-20 54-19-54-55-20 55-19z"/>
+    <path d="m842 672 16 43 43 16-43 16-16 43-16-43-43-16 43-16z"/>
+  </g>
+</svg>

@@ -152,6 +152,7 @@ describe("buildPrompt", () => {
     expect(prompt).toContain("refined studio clay sculpture");
     expect(prompt).toContain("smooth continuous matte surface");
     expect(prompt).toContain("no cartoon exaggeration");
+    expect(prompt).toContain("no extra symbols");
   });
 
   it("includes shape description for object", () => {
@@ -162,7 +163,8 @@ describe("buildPrompt", () => {
 
   it("includes background preference for studio", () => {
     const prompt = buildPrompt({ ...defaultOpts, background: "studio" });
-    expect(prompt).toContain("soft studio background");
+    expect(prompt).toContain("purposeful editorial studio scene");
+    expect(prompt).toContain("readable at thumbnail size");
   });
 
   it("includes background preference for transparent", () => {

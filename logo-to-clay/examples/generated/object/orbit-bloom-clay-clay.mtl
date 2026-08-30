@@ -1,0 +1,9 @@
+# Clay material
+
+newmtl clay
+Kd 0.3568627450980392 0.29411764705882354 0.8588235294117647
+Ks 0.05 0.05 0.05
+Ns 10
+d 1.0
+illum 2
+map_Bump -bm 0.1 orbit-bloom-clay-bump.png

@@ -1,17 +1,28 @@
 # Product to Mascot example
 
+Mora is a fictional calm research workspace that gathers scattered sources and
+turns them into connected briefs. Its original mascot Mori is a tiny paper-moth
+archivist: open-book wings express research and a lime bookmark ribbon remains
+visible in every pose.
+
 <p align="center">
-  <img src="generated/threads-mascot-contact-sheet.png" alt="Five-pose mascot contact sheet" width="900">
+  <img src="generated/mori-mascot-preview.png" alt="Mori primary and working mascot poses" width="900">
 </p>
 
 ```text
-Use $product-to-mascot for Threads, a text-first social product built around
-public conversation. Create one friendly loop-shaped character in soft felt,
-with a small coral thread tail as its signature feature. Generate the verified
-five-pose reference set.
+Use $product-to-mascot for Mora, a calm research workspace that gathers
+scattered sources and turns them into connected briefs. Create a tiny
+paper-moth archivist with open-book wings and a lime bookmark ribbon. Generate
+the verified five-pose reference set.
 ```
 
-The accepted output directory contains:
+## Verified reference set
+
+<p align="center">
+  <img src="generated/mora-mori/mascot-contact-sheet.png" alt="Mori five-pose contact sheet" width="900">
+</p>
+
+[`generated/mora-mori/`](generated/mora-mori/) contains the complete delivery:
 
 ```text
 character-bible.json
@@ -21,9 +32,11 @@ mascot-contact-sheet.png
 mascot-manifest.json
 ```
 
-Run `npm run verify:deliverables` to exercise the deterministic reference-set
-validator.
+The character bible locks the round indigo body, open-book wing construction,
+face rule, coral antenna tips, lime bookmark ribbon, and tactile cut-paper
+medium. The five poses cover neutral, welcome, focused work, thinking/help, and
+celebration rather than five cosmetic arm variations.
 
-Threads is a trademark of Meta Platforms, Inc. This unofficial transformation
-example is not affiliated with or endorsed by Meta. See
-[`THIRD_PARTY_NOTICES.md`](../THIRD_PARTY_NOTICES.md).
+Run `npm run verify:deliverables` to exercise the deterministic validator or
+`scripts/verify-mascot-reference-set.sh examples/generated/mora-mori` to
+rebuild and verify this checked-in contact sheet.

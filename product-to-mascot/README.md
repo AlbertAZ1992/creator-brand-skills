@@ -7,7 +7,7 @@ Codex generate and review a primary reference plus four consistent poses.
 The callable Codex Skill name is `product-to-mascot`.
 
 <p align="center">
-  <img src="examples/generated/threads-mascot-contact-sheet.png" alt="Five-pose mascot contact sheet" width="900">
+  <img src="examples/generated/mori-mascot-preview.png" alt="Mori paper-moth mascot in primary and working poses" width="900">
 </p>
 
 ## At a glance
@@ -30,6 +30,22 @@ Product facts → character bible → primary reference → four pose references
 
 The primary reference and every pose must retain the same silhouette, face rule,
 palette, signature feature, and illustration medium.
+
+## Visual quality bar
+
+A product mascot needs a semantic reason to exist. The product connection must
+appear in the silhouette, signature feature, prop system, or material—not only
+through a recoloured generic creature or a pasted-on logo. Every pose should
+serve a distinct usage story while remaining recognisable at 64 px.
+
+The example character Mori uses open-book paper wings and a bookmark ribbon to
+connect to Mora, a calm research workspace. The full five-pose contact sheet is
+shown below; all references keep the same body ratio, wing construction, face,
+palette, and cut-paper medium.
+
+<p align="center">
+  <img src="examples/generated/mora-mori/mascot-contact-sheet.png" alt="Mori five-pose mascot contact sheet" width="900">
+</p>
 
 ## Inputs and style controls
 
@@ -58,9 +74,10 @@ npx skills add AlbertAZ1992/creator-brand-skills \
 ## Use it
 
 ```text
-Use $product-to-mascot for Threads, a text-first social product built around
-public conversation. Create a friendly loop-shaped mascot in soft felt with a
-small coral thread tail. Generate the verified reference set.
+Use $product-to-mascot for Mora, a calm research workspace that gathers
+scattered sources and turns them into connected briefs. Create a tiny paper-moth
+archivist with open-book wings and a bookmark ribbon. Generate the verified
+reference set.
 ```
 
 Expected result: a `character-bible.json`, primary reference image, four named
@@ -116,7 +133,5 @@ identity drift, unwanted text, and subjective visual quality.
 Use this skill when a product needs a consistent long-lived character. Use a
 general image-generation request for an isolated character illustration.
 
-The README contact sheet is an unofficial transformation example inspired by
-the Threads product identity. Threads is a trademark of Meta Platforms, Inc.;
-this project is not affiliated with or endorsed by Meta. See
-[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+The checked-in Mora and Mori identity is original demonstration material made
+for this repository.

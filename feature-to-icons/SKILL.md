@@ -97,3 +97,10 @@ per-icon visible bounds, center offset, ink ratio, optical volume, and warnings.
 Judge the family, not only each file. At 16–24 px, icons must have comparable
 visual volume and density, distinct silhouettes, recognizable metaphors, and a
 stable apparent center. Passing XML or raster checks alone is not sufficient.
+
+Prefer a product-specific feature set over a generic collection of common UI
+actions when context is available. Across the family, avoid near-duplicate
+silhouettes and choose metaphors that tell a coherent product story without
+requiring labels. The clean SVG and generated family preview remain the proof;
+an optional marketing card may arrange those same verified SVGs on a styled
+background, but must not replace or redraw the deliverables.

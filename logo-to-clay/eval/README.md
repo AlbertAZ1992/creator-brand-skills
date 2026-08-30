@@ -12,7 +12,7 @@ prompt. It runs offline and does not call an image model.
 | `object-shape` | Object | Slim standalone form | Relief language |
 | `relief-shape` | Relief | Raised logo and backing surface | Standalone-object language |
 | `transparent-background` | Transparent render | Alpha and isolated object | Studio background |
-| `studio-background` | Studio render | Warm neutral product-photo setting | Alpha background |
+| `studio-background` | Studio render | Deliberate editorial composition and thumbnail contrast | Alpha background |
 | `all-params` | Relief + color + depth + background | Every supplied choice | Removed modes |
 
 ## Run
