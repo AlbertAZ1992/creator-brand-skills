@@ -1,28 +1,30 @@
 # Logo to Clay examples
 
-These examples use the same supplied Threads wordmark across both supported
-routes. The mesh previews come from the real local pipeline, not a hand-drawn
-mockup. Every output folder contains an OBJ, MTL, bump map, 1024 px preview,
-and passing manifest.
+The gallery uses the original Orbit Bloom mark across both production routes.
+The generated campaign image demonstrates art direction; the mesh previews and
+files come from the real local OBJ pipeline.
 
-Regenerate them with:
+| **Generated image route** | **Verified mesh route** |
+| :---: | :---: |
+| <img src="generated/clay-render.png" alt="Orbit Bloom cobalt clay campaign render" width="560"> | <img src="generated/mesh-forms.png" alt="Orbit Bloom standalone and relief mesh previews" width="560"> |
+| Cobalt matte clay, coral plinth, apricot studio light | Violet 5 mm object and coral 2 mm relief |
+
+## What is real in each view
+
+- `generated/clay-render.png` was made from
+  [`assets/orbit-bloom.png`](assets/orbit-bloom.png) with a
+  reference-image-capable generator. It proves the image route and remains a
+  subjective visual result.
+- `generated/object/` and `generated/relief/` each contain an OBJ, linked MTL,
+  bump map, 1024 px preview, and passing manifest created by the deterministic
+  mesh route.
+- The central counter remains open in both procedural meshes.
+
+Regenerate the source preview and both mesh packages from this directory:
 
 ```bash
 npm run examples
 ```
 
-## Image and mesh routes
-
-| **Generated image route** | **Verified mesh route** |
-| :---: | :---: |
-| <img src="generated/clay-render.png" alt="Generated clay Threads wordmark" width="560"> | <img src="generated/mesh-forms.png" alt="Standalone and relief mesh previews" width="560"> |
-| Dark charcoal clay on a warm studio background | Standalone 5 mm object and 2 mm relief |
-
-The image route is subjective and is not evidence for OBJ geometry. The mesh
-route is deterministic; complete deliverables are in
-[`generated/object/`](generated/object/) and
-[`generated/relief/`](generated/relief/).
-
-Threads and its logo are trademarks of Meta Platforms, Inc. This repository is
-not affiliated with or endorsed by Meta. See
-[`THIRD_PARTY_NOTICES.md`](../THIRD_PARTY_NOTICES.md).
+The original SVG source is also checked in at
+[`assets/orbit-bloom.svg`](assets/orbit-bloom.svg).

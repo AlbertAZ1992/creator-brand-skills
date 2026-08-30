@@ -94,6 +94,13 @@ The prompt covers one refined clay material, form description, background
 preference, and constraints against chunky, cartoon, fingerprinted, or
 low-poly results.
 
+Before invoking the image model, add a deliberate art direction that fits the
+source: one dominant clay colour, one supporting background or plinth colour,
+one clear light direction, and a composition that remains legible at README
+thumbnail size. Preserve the supplied silhouette and counters exactly. Do not
+fall back to a centred object on an empty beige background unless the user asks
+for a neutral catalogue render.
+
 ## Clay Asset Mode (mesh)
 
 Procedural 3D pipeline — no AI image model required:
@@ -133,3 +140,9 @@ Outputs to `outputs/` directory:
   is smooth, matte clay with restrained micro-variation.
 - `object` and `relief` are the only 3D forms. `image`, `mesh`, and `both`
   choose deliverables, not visual styles.
+- Keep portfolio presentation separate from proof. The generated clay image may
+  use a styled campaign scene; OBJ preview, geometry checks, and manifest must
+  still come from the procedural mesh route.
+- Review the image at full size and thumbnail size. Reject source-geometry
+  drift, accidental extra symbols, cropped silhouettes, muddy value contrast,
+  generic plastic lighting, or a composition with no visual hierarchy.

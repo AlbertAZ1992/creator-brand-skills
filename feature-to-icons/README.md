@@ -7,7 +7,7 @@ catalog instead of asking a model to draw unrelated SVG paths from scratch.
 The callable Codex Skill name is `feature-to-icons`.
 
 <p align="center">
-  <img src="examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="760">
+  <img src="examples/creative-workflow-duotone/showcase-preview.png" alt="Creative workflow duotone icon family" width="760">
 </p>
 
 ## At a glance
@@ -32,6 +32,14 @@ feature names → semantic search in pinned Phosphor catalog
 This library-first approach preserves geometry reviewed by an established icon
 community. The Skill uses custom generation only when the catalog has no
 credible metaphor and the user accepts that fallback.
+
+## Visual quality bar
+
+The family must tell one product story, not merely collect individually valid
+symbols. Prefer context-specific features, distinct silhouettes, comparable
+visual volume, and metaphors that remain legible without labels. The styled
+hero above arranges the same six verified SVGs used in the clean deliverable
+preview; it does not redraw them.
 
 ## Requirements
 
@@ -117,33 +125,22 @@ One output family never mixes source libraries or weights. Colors and the
 export viewBox may change; source paths are not stretched, centered, or redrawn
 individually.
 
-## Example gallery
+## Curated example gallery
 
-All examples below are generated from pinned Phosphor 2.1.1 assets by the same
-delivery path used by the Skill.
+All examples use pinned Phosphor 2.1.1 geometry and the same delivery path as
+the Skill. The README keeps only three visually distinct families up front;
+the [example index](examples/README.md) contains all nine requests, exact
+overrides, source metadata, and manifests.
 
-| **Social publishing · outline** | **Product essentials · outline** |
+| **Creative workflow · duotone** |
+| :---: |
+| <img src="examples/creative-workflow-duotone/showcase-preview.png" alt="Six creative workflow duotone icons" width="760"> |
+| Capture Ideas, Shape Story, Build Palette, Brand Library, Publish Kit, Measure Reach |
+
+| **Commerce · duotone** | **Collaboration · filled** |
 | :---: | :---: |
-| <img src="examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline family" width="420"> | <img src="examples/product-essentials-outline/icon-family-preview.png" alt="Product essentials outline family" width="420"> |
-| Home Feed, Search, Create Post, Activity, Profile | Search, Filters, Team Sharing, Cloud Sync |
-
-| **Analytics · light outline** | **Collaboration · filled** |
-| :---: | :---: |
-| <img src="examples/analytics-light-outline/icon-family-preview.png" alt="Analytics light outline family" width="420"> | <img src="examples/collaboration-filled/icon-family-preview.png" alt="Collaboration filled family" width="420"> |
-| Dashboard, Analytics, Reports, Trends, Export Data | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
-
-| **Commerce · duotone** | **Security · bold outline** |
-| :---: | :---: |
-| <img src="examples/commerce-duotone/icon-family-preview.png" alt="Commerce duotone family" width="420"> | <img src="examples/security-bold-outline/icon-family-preview.png" alt="Security bold outline family" width="420"> |
-| Shopping Cart, Wishlist, Orders, Payment, Delivery | Authentication, Encryption, Access Control, Audit Log, Alerts |
-
-| **Creator Brand · duotone** | **AI workspace · 48 px outline** |
-| :---: | :---: |
-| <img src="examples/creator-brand-duotone/icon-family-preview.png" alt="Creator Brand duotone family" width="420"> | <img src="examples/ai-workspace-outline-48/icon-family-preview.png" alt="AI workspace outline family" width="420"> |
-| Image Generation, Background Removal, Brand Kit, Export Assets, Templates | AI Copilot, Knowledge Search, Automation, Version History |
-
-See the [example index](examples/README.md) for exact requests, icon overrides,
-source metadata, and regeneration instructions.
+| <img src="examples/commerce-duotone/icon-family-preview.png" alt="Commerce duotone family" width="420"> | <img src="examples/collaboration-filled/icon-family-preview.png" alt="Collaboration filled family" width="420"> |
+| Shopping Cart, Wishlist, Orders, Payment, Delivery | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
 
 ## Options
 
@@ -209,9 +206,9 @@ fallbacks and applies the same safety, raster, and optical delivery gates.
 ./scripts/verify.sh feature-to-icons
 ```
 
-The verification runs lint, formatting, type checking, build, 54 unit tests,
-nine prompt/input evals, a real deliverable test, and all 38 committed example
-SVGs. It also verifies package provenance and optical metrics.
+The verification runs lint, formatting, type checking, build, unit tests,
+prompt/input evals, a real deliverable test, and all 44 committed example SVGs.
+It also verifies package provenance and optical metrics.
 
 Regenerate the gallery from pinned library assets:
 

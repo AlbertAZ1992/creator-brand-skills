@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "characterBible": "character-bible.json",
+  "references": [
+    "mascot-primary.png",
+    "mascot-welcome.png",
+    "mascot-working.png",
+    "mascot-thinking.png",
+    "mascot-celebrate.png"
+  ],
+  "contactSheet": "mascot-contact-sheet.png",
+  "passed": true
+}

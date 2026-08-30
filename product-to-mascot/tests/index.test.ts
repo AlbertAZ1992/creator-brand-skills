@@ -288,6 +288,14 @@ describe("buildPrompt", () => {
     expect(prompt).toContain("COLOR PALETTE");
   });
 
+  it("requires a product-specific, reusable visual identity", () => {
+    const prompt = buildPrompt(defaultInput);
+
+    expect(prompt).toContain("product connection must be visible");
+    expect(prompt).toContain("readable at 64 px");
+    expect(prompt).toContain("Generate every pose individually");
+  });
+
   it("includes target audience when provided", () => {
     const prompt = buildPrompt({
       ...defaultInput,

@@ -15,6 +15,7 @@ const QUALITY_CONSTRAINTS = [
   "no fingerprints, tool marks, dents, or hand-pressed ridges",
   "no faceted low-poly edges or lumpy lettering",
   "no glossy plastic, metallic highlights, or rubber appearance",
+  "no extra symbols, text, faces, or invented geometry",
 ] as const;
 
 const SHAPE_GUIDANCE: Record<string, string> = {
@@ -26,8 +27,13 @@ const SHAPE_GUIDANCE: Record<string, string> = {
 
 const BACKGROUND_GUIDANCE: Record<string, string> = {
   transparent: "transparent background, alpha channel, isolated object",
-  studio: "soft studio background, warm neutral tone, product photography style",
+  studio:
+    "purposeful editorial studio scene, supporting colour chosen to complement the clay, premium product photography",
 };
+
+const STUDIO_COMPOSITION =
+  "one clear directional soft light, strong object/background separation, " +
+  "refined asymmetry, generous negative space, readable at thumbnail size";
 
 /**
  * Build a clean, concise clay-render prompt from options.
@@ -68,6 +74,11 @@ export function buildPrompt(options: ClayOptions): string {
 
   parts.push("");
   parts.push(`BACKGROUND: ${BACKGROUND_GUIDANCE[background] ?? BACKGROUND_GUIDANCE["studio"]}`);
+
+  if (background === "studio") {
+    parts.push("");
+    parts.push(`COMPOSITION: ${STUDIO_COMPOSITION}`);
+  }
 
   parts.push("");
   parts.push("QUALITY CONSTRAINTS:");

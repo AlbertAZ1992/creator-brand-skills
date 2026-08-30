@@ -4,9 +4,9 @@ Use simple, already-composed artwork: a logo, icon, badge, or flat illustration.
 Save outputs outside the repository, for example under
 `/absolute/path/to/brand-tests/sticker-*`.
 
-The checked-in gallery uses the same Threads wordmark as the clay example and
-presents human-facing previews on warm neutral cards. Alpha proofs remain in
-the generated artifact folders for delivery review.
+The checked-in gallery uses the original Peach Planet flat illustration and
+presents its transparent result on a separate portfolio card. Alpha proofs and
+clean RGBA files remain in the generated artifact folders for delivery review.
 
 The skill does not select subjects from busy photos or invent enamel, patch,
 ceramic, magnet, or scene-crop styles. Those are separate generation tasks.

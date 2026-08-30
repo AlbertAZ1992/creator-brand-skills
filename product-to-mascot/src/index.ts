@@ -571,6 +571,10 @@ Create a concise character design brief covering:
 - Color palette (3-5 specific colors with hex codes when possible)
 - Overall mood and personality
 
+The product connection must be visible in the silhouette, signature feature,
+prop system, or rendering material. Reject a generic round creature that only
+uses the brand colours or wears a pasted-on logo.
+
 ### Step 5 -- Primary Mascot Prompt
 
 Write a detailed AI image generation prompt for the primary mascot. This should be ready to paste into Midjourney, DALL-E, or Stable Diffusion. Include:
@@ -578,8 +582,10 @@ Write a detailed AI image generation prompt for the primary mascot. This should 
 - Character description (type, pose, expression)
 - Artistic style and rendering technique
 - Color palette and lighting
-- Composition and framing
+- Full-body neutral reference composition with the complete silhouette visible
 - Any important details or props
+- Exactly one character on a simple opaque background, with no text, logo, or UI
+- Clear shape hierarchy and enough contrast to remain readable at 64 px
 
 Format the prompt as clear, comma-separated descriptive phrases.
 
@@ -590,7 +596,10 @@ Create ${variationCount} variation prompts showing the mascot in different:
 - Expressions (happy, focused, determined, surprised, content)
 - Scenarios (using the product, helping users, celebrating success)
 
-Each variation should maintain the mascot's core identity while showing range.
+Generate every pose individually from the accepted primary reference, never as
+one multi-character sheet. Each variation must repeat the locked silhouette,
+face rule, palette, signature feature, proportions, and rendering medium while
+showing a distinct usage story.
 
 ### Step 7 -- Mascot Name
 
@@ -662,6 +671,8 @@ export function buildCharacterBiblePrompt(input: MascotInput): string {
     `Personality visual language: ${visual.visualLanguage}.`,
     `Mascot guidance: ${guidance.designDirection}`,
     input.visualStyle ? `Requested visual style: ${input.visualStyle}.` : "",
+    "The product connection must appear in the silhouette, signature feature, prop system,",
+    "or rendering material; reject a generic creature that only borrows brand colours.",
     "Return JSON only with mascotName, brandEssence, silhouette, faceRule, palette,",
     "signatureFeature, renderingRule, and avoids. palette must contain 3-5 hex colours;",
     "avoids must contain exactly three visual prohibitions. Do not invent product facts.",

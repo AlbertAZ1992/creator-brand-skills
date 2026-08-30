@@ -54,9 +54,13 @@ export const cases: EvalCase[] = [
   },
   {
     name: "studio-background",
-    description: "Studio background uses warm neutral product photography.",
+    description: "Studio background uses deliberate editorial art direction.",
     input: { logoPath: "./logo.png", background: "studio" },
-    expectedPromptContains: ["soft studio background", "warm neutral", "product photography"],
+    expectedPromptContains: [
+      "purposeful editorial studio scene",
+      "supporting colour",
+      "readable at thumbnail size",
+    ],
     expectedPromptNotContains: ["transparent background", "alpha channel"],
   },
   {

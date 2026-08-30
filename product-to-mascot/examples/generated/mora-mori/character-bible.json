@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "productName": "Mora",
+  "mascotName": "Mori",
+  "brandEssence": [
+    "calm research",
+    "connected knowledge",
+    "clear synthesis",
+    "thoughtful craft"
+  ],
+  "personality": "approachable",
+  "mascotType": "animal",
+  "silhouette": "One round indigo body with stubby limbs and two broad ivory wings shaped like open book pages; the wing span is about 1.6 times the body width.",
+  "faceRule": "Two small black oval eyes, one tiny curved mouth, and two coral cheek dots on the upper half of the round body.",
+  "palette": [
+    "#173F73",
+    "#FFF5DE",
+    "#1765C1",
+    "#FF6F5E",
+    "#91B936"
+  ],
+  "signatureFeature": "Two coral-tipped antennae and one lime bookmark ribbon visible behind the lower body in every pose.",
+  "renderingRule": "Premium tactile 3D cut-paper craft on a warm ivory background, with visible paper fibres, folded wing creases, layered cobalt edges, soft editorial light, and restrained shadows.",
+  "avoids": [
+    "No plush, clay, glossy plastic, or photoreal insect rendering.",
+    "No text, logo, UI, or invented product claims inside the image.",
+    "No changes to body ratio, wing shape, face rule, antenna tips, or bookmark ribbon."
+  ]
+}

@@ -1,6 +1,6 @@
 # Feature to Icons forward tests
 
-For committed SVG and PNG outputs across eight visual systems, see the
+For committed SVG and PNG outputs across nine visual systems, see the
 [`feature-to-icons/examples/`](../feature-to-icons/examples/) gallery.
 
 No source file is required. Save outputs outside the repository.
@@ -8,17 +8,18 @@ No source file is required. Save outputs outside the repository.
 ## 1. Default route
 
 ```text
-Use $feature-to-icons to make icons for Home Feed, Search, Create Post,
-Activity, and Profile. Save the family under
+Use $feature-to-icons to make duotone icons for Capture Ideas, Shape Story,
+Build Palette, Brand Library, Publish Kit, and Measure Reach. Use #5B4BDB and
+#FF7665. Save the family under
 /absolute/path/to/brand-tests/icons-default.
 ```
 
-Expected: five distinct Phosphor regular icons using one shared 24 px viewBox
-and `currentColor`.
+Expected: six distinct Phosphor duotone icons using one shared 32 px viewBox and
+the supplied colour hierarchy.
 
 Accept when:
 
-- all five feature names appear exactly once in metadata;
+- all six feature names appear exactly once in metadata;
 - every SVG shares the same design contract;
 - metadata identifies Phosphor 2.1.1, MIT, and one native weight;
 - the SVG and PNG family previews exist; and

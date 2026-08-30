@@ -5,7 +5,7 @@ import sharp from "sharp";
 import { buildMesh, validate } from "../src/index.js";
 
 const projectDir = dirname(dirname(fileURLToPath(import.meta.url)));
-const sourcePath = join(projectDir, "examples", "assets", "threads-wordmark.png");
+const sourcePath = join(projectDir, "examples", "assets", "orbit-bloom.png");
 const generatedDir = join(projectDir, "examples", "generated");
 
 async function makeManifestPortable(manifestPath: string): Promise<void> {
@@ -13,7 +13,7 @@ async function makeManifestPortable(manifestPath: string): Promise<void> {
     source: { logoPath: string };
     artifacts: Record<string, string | null>;
   };
-  manifest.source.logoPath = "../../assets/threads-wordmark.png";
+  manifest.source.logoPath = "../../assets/orbit-bloom.png";
   for (const [key, value] of Object.entries(manifest.artifacts)) {
     manifest.artifacts[key] = value === null ? null : basename(value);
   }
@@ -43,34 +43,32 @@ async function buildExample(shape: "object" | "relief", color: string): Promise<
   return result.imagePath;
 }
 
-function labelSvg(label: string): Buffer {
-  return Buffer.from(
-    `<svg width="960" height="80"><text x="480" y="54" text-anchor="middle" ` +
-      `font-family="Arial,sans-serif" font-size="34" font-weight="700" ` +
-      `fill="#29251f">${label}</text></svg>`,
-  );
-}
-
 async function main(): Promise<void> {
   await mkdir(generatedDir, { recursive: true });
-  const objectPreview = await buildExample("object", "#C98E68");
-  const reliefPreview = await buildExample("relief", "#7B68A6");
+  const objectPreview = await buildExample("object", "#5B4BDB");
+  const reliefPreview = await buildExample("relief", "#FF7665");
   const sourcePreview = join(generatedDir, "source.png");
   await sharp(sourcePath)
     .resize({ width: 1200, height: 400, fit: "contain", background: "transparent" })
     .png()
     .toFile(sourcePreview);
 
-  const objectCell = await sharp(objectPreview).resize(960, 960).toBuffer();
-  const reliefCell = await sharp(reliefPreview).resize(960, 960).toBuffer();
+  const objectCell = await sharp(objectPreview).resize(720, 720).toBuffer();
+  const reliefCell = await sharp(reliefPreview).resize(720, 720).toBuffer();
+  const cardBackgrounds = Buffer.from(
+    '<svg width="1664" height="800" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect width="1664" height="800" rx="48" fill="#17142c"/>' +
+      '<rect x="48" y="40" width="760" height="720" rx="36" fill="#f8eee2"/>' +
+      '<rect x="856" y="40" width="760" height="720" rx="36" fill="#eee9ff"/>' +
+      "</svg>",
+  );
   await sharp({
-    create: { width: 2048, height: 1120, channels: 4, background: "#eee9e1" },
+    create: { width: 1664, height: 800, channels: 4, background: "#17142c" },
   })
     .composite([
-      { input: objectCell, left: 48, top: 48 },
-      { input: reliefCell, left: 1040, top: 48 },
-      { input: labelSvg("Standalone object · 5 mm"), left: 48, top: 1020 },
-      { input: labelSvg("Relief · 2 mm"), left: 1040, top: 1020 },
+      { input: cardBackgrounds, left: 0, top: 0 },
+      { input: objectCell, left: 68, top: 40 },
+      { input: reliefCell, left: 876, top: 40 },
     ])
     .png()
     .toFile(join(generatedDir, "mesh-forms.png"));

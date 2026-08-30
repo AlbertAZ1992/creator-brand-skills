@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img"
+  aria-label="Original Orbit Bloom demonstration mark">
+  <path fill="#111827" fill-rule="evenodd" d="
+    M512 72 616 300 848 176 724 408 952 512 724 616 848 848
+    616 724 512 952 408 724 176 848 300 616 72 512 300 408
+    176 176 408 300Z
+    M512 382a130 130 0 1 0 0 260 130 130 0 1 0 0-260Z"/>
+</svg>

@@ -44,6 +44,12 @@ example, but it must not alternate between unrelated cartoon, 3D, anime, and
 flat-vector identities. The bible becomes the source of truth for every pose in
 this reference set.
 
+The character must encode the product connection in its silhouette, signature
+feature, prop system, or material—not only in its colour palette. Reject a
+generic round creature with a logo pasted onto it. At least one locked visual
+rule should still communicate the product role when the mascot is shown without
+text or surrounding UI.
+
 ### 3. Generate a reference set
 
 Generate a primary full-body reference image first. It must show the complete
@@ -73,6 +79,10 @@ sheet at 64 px and reject any pose that no longer reads as the same character.
   user supplies the exact copy.
 - Do not claim that a mascot is locked until the bible and all five accepted
   reference images agree.
+- Review the primary and contact sheet at full size and 64 px. Reject identity
+  drift, prop substitution, inconsistent rendering medium, unreadable gestures,
+  or five poses that differ only by arm position without telling distinct usage
+  stories.
 
 ## Deliverables
 

@@ -73,6 +73,11 @@ Read `examples/README.md` only when comparing visible control choices or
 reviewing edge clarity. Treat its preview backgrounds as presentation aids;
 the generated sticker assets remain transparent.
 
+The clean `sticker.png` is always the product. If a user also needs a portfolio
+or README preview, create it as a separate file by placing the accepted sticker
+on a purposeful contrasting card. Never bake a checkerboard, label, caption,
+shadow, or decorative background into `sticker.png`.
+
 ## Review and deliver
 
 Review the full-size result and a 64 px reduction. Confirm the complete source
@@ -80,6 +85,9 @@ composition and existing text remain, intended internal holes are visible at
 the selected outline width, background-matted edges have no gray or colored
 fringe, the selected material does not change alpha, and the requested tilt is
 applied. Review transparent assets over a medium checkerboard, never white only.
+Prefer the thinnest outline that keeps the complete composition readable and
+preserves important internal gaps. A passing alpha check does not excuse a
+muddy material, weak contrast, or a contour that overwhelms the artwork.
 
 Deliver:
 

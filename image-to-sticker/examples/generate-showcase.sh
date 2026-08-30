@@ -2,7 +2,7 @@
 set -euo pipefail
 
 root_dir=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
-source_path="$root_dir/examples/assets/threads-wordmark.png"
+source_path="$root_dir/examples/assets/peach-planet.svg"
 generated_dir="$root_dir/examples/generated"
 work_dir=$(mktemp -d "${TMPDIR:-/tmp}/image-to-sticker-showcase.XXXXXX")
 font_path=${STICKER_SHOWCASE_FONT:-}
@@ -79,8 +79,8 @@ make_cell() {
 	local label=$2
 	local output=$3
 	magick "$work_dir/cell-background.png" \
-		\( "$source" -trim +repage -resize '400x150>' \) \
-		-gravity north -geometry +0+42 -composite \
+		\( "$source" -trim +repage -resize '220x220>' \) \
+		-gravity north -geometry +0+22 -composite \
 		-gravity south -font "$font_path" -fill '#24211d' -pointsize 22 \
 		-annotate +0+16 "$label" "$output"
 }
@@ -90,10 +90,23 @@ make_alpha_cell() {
 	local label=$2
 	local output=$3
 	magick -size 480x300 xc:'#101114' \
-		\( "$source" -trim +repage -resize '420x180>' \) \
-		-gravity north -geometry +0+35 -composite \
+		\( "$source" -trim +repage -resize '220x220>' \) \
+		-gravity north -geometry +0+20 -composite \
 		-gravity south -font "$font_path" -fill '#ffffff' -pointsize 24 \
 		-annotate +0+10 "$label" "$output"
+}
+
+make_hero_preview() {
+	local source=$1
+	local output=$2
+	magick -size 1200x720 gradient:'#17142c-#413579' \
+		-fill '#ff806e' -draw 'circle 1100,80 1280,80' \
+		-fill '#ffd166' -draw 'circle 90,660 235,660' \
+		\( "$source" -trim +repage -resize '600x600>' \
+		-background '#00000055' -shadow 32x18+0+26 \) \
+		-gravity center -geometry +0+0 -composite \
+		\( "$source" -trim +repage -resize '600x600>' \) \
+		-gravity center -geometry +0-10 -composite "$output"
 }
 
 magick -size 480x300 gradient:'#f7f3ec-#e9e2d8' \
@@ -185,15 +198,15 @@ magick montage \
 	-tile 4x2 -geometry +16+16 -background '#ded7cc' \
 	"$generated_dir/style-overview.png"
 
-render_variant recommended 4 '#ffffff' -3
+render_variant recommended 8 '#ffffff' -6
 cp "$work_dir/recommended/sticker.png" "$generated_dir/recommended/sticker.png"
 cp "$work_dir/recommended/sticker-alpha-proof.png" \
 	"$generated_dir/recommended/sticker-alpha-proof.png"
 cp "$work_dir/recommended/source-card.json" "$generated_dir/recommended/source-card.json"
 cp "$work_dir/recommended/sticker-manifest.json" \
 	"$generated_dir/recommended/sticker-manifest.json"
-make_cell "$work_dir/recommended/sticker.png" \
-	'classic white contour · -3 degrees' "$generated_dir/recommended-preview.png"
+make_hero_preview "$work_dir/recommended/sticker.png" \
+	"$generated_dir/recommended-preview.png"
 
 mkdir -p "$generated_dir/source-types"
 render_asset_variant transparent-symbol \

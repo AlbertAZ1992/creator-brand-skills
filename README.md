@@ -2,43 +2,80 @@
 
 # Creator Brand Skills
 
-### Open-source Agent Skills for AI brand design with Codex.
+### Four open-source Agent Skills for turning product inputs into finished brand assets.
 
-Turn one logo, image, feature list, or product idea into clay logo renders and
-OBJ meshes, transparent PNG stickers, editable SVG icon families, or reusable
-product mascots.
+Clay logo renders and OBJ meshes · transparent PNG stickers · editable SVG
+icon families · reusable product mascots
+
+[![Verify](https://github.com/AlbertAZ1992/creator-brand-skills/actions/workflows/verify.yml/badge.svg)](https://github.com/AlbertAZ1992/creator-brand-skills/actions/workflows/verify.yml)
+[![MIT License](https://img.shields.io/badge/license-MIT-17142c.svg)](LICENSE)
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-4-5b4bdb.svg)](#four-skills-one-production-toolkit)
 
 **English** · [简体中文](README.zh-CN.md) · [Install](#install) ·
-[Verify](#verify-locally)
+[Outputs](#what-you-actually-get) · [Verify](#verify-locally)
 
 </div>
 
-## Four Agent Skills, one brand design toolkit
+## Four Skills, one production toolkit
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/clay-render.png" alt="Threads wordmark transformed into dark clay" width="560"> | <img src="image-to-sticker/examples/generated/recommended-preview.png" alt="Threads wordmark transformed into a transparent contour sticker" width="560"> |
-| Logo or icon → clay render or real OBJ mesh | Flat image → transparent, source-faithful sticker |
+| <img src="logo-to-clay/examples/generated/clay-render.png" alt="Original sunburst mark rendered as a cobalt clay sculpture" width="560"> | <img src="image-to-sticker/examples/generated/recommended-preview.png" alt="Original Peach Planet artwork rendered as a transparent contour sticker" width="560"> |
+| Logo geometry → campaign render + optional OBJ mesh | Flat artwork → source-faithful transparent PNG |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="560"> | <img src="product-to-mascot/examples/generated/threads-mascot-preview.png" alt="Two poses from a five-pose brand mascot system" width="560"> |
-| 3–20 features → one consistent, editable SVG family | Product facts → character bible and five reference poses |
+| <img src="feature-to-icons/examples/creative-workflow-duotone/showcase-preview.png" alt="Six duotone icons for a creative workflow" width="560"> | <img src="product-to-mascot/examples/generated/mori-mascot-preview.png" alt="Mori paper-moth mascot in primary and working poses" width="560"> |
+| 3–20 product features → one verified SVG family | Product truth → character bible + five locked poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-The gallery uses one recognizable input to make each transformation easy to
-judge. Threads is a trademark of Meta Platforms, Inc.; these are unofficial
-demonstrations and this project is not affiliated with or endorsed by Meta.
+Every hero above comes from the same route the Skill documents. Marketing
+previews are separate from the clean deliverables and machine-checkable proof.
+All demonstration identities and artwork are original to this repository.
 
-## Try a Skill
+## Start with one sentence
 
-| Goal | Copy this into Codex |
+| Goal | Paste into Codex |
 | --- | --- |
-| Make a clay logo | `Use $logo-to-clay to turn this logo into a polished clay render.` |
-| Make a sticker | `Use $image-to-sticker to turn this image into a transparent contour sticker.` |
+| Make a clay logo | `Use $logo-to-clay to turn this logo into a refined clay render and OBJ mesh.` |
+| Make a sticker | `Use $image-to-sticker to turn this artwork into a transparent contour sticker.` |
 | Build an icon family | `Use $feature-to-icons to make consistent SVG icons for these product features.` |
-| Design a mascot | `Use $product-to-mascot to turn these product facts into a reusable brand mascot.` |
+| Design a mascot | `Use $product-to-mascot to turn these product facts into a reusable mascot system.` |
+
+## What you actually get
+
+| Skill | Inputs and visual controls | Production files |
+| --- | --- | --- |
+| [`logo-to-clay`](logo-to-clay/) | Simple SVG/PNG logo; image, mesh, or both; standalone object or relief; clay colour, depth, studio or transparent background | Generated raster + final prompt; OBJ, MTL, bump PNG, 1024 px preview, manifest JSON |
+| [`image-to-sticker`](image-to-sticker/) | Transparent or flat-background logo, icon, badge, wordmark, or flat illustration; 0–44 px contour, custom colour, four deterministic finishes, ±12° tilt, 512/1024 px | Transparent RGBA PNG, alpha-proof PNG, reproducible source-card JSON, manifest JSON |
+| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names plus product context; outline light/regular/bold, filled, or duotone; custom colours; 24/32/48 px grid | Editable SVG per feature, spec and provenance JSON, SVG/PNG family preview, optical-check manifest JSON |
+| [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, visual medium, palette, or brand reference | Character-bible JSON, five full-size reference PNGs, contact sheet, verification manifest JSON |
+
+## Why the outputs hold up
+
+| **Source-locked** | **Production-ready** | **Verified** |
+| :---: | :---: | :---: |
+| Locks the supplied logo, artwork, feature meaning, or product facts before creative work starts | Returns real RGBA, SVG, OBJ/MTL, PNG, and JSON assets—not only a prompt or mockup | Runs alpha, geometry, provenance, optical, or identity checks and records the result |
+
+```text
+source truth → task spec → controlled generation
+             → deterministic finishing → hard checks → proof → manifest
+```
+
+This boundary matters. The generated clay image can be expressive while the
+OBJ route remains deterministic. Sticker materials can look different while
+alpha geometry stays unchanged. Icon semantics stay traceable to one pinned
+library family. Mascot poses vary only after the character identity is locked.
+
+## See the breadth, then inspect the proof
+
+| Skill | Portfolio view | Verification view |
+| --- | --- | --- |
+| Logo to Clay | [Clay campaign render and two 3D forms](logo-to-clay/examples/) | OBJ faces, material linkage, holes, 1024 px preview, passing manifest |
+| Image to Sticker | [Contours, colours, tilt, and four front finishes](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
+| Feature to Icons | [Nine product families across style and weight](feature-to-icons/examples/) | One SVG per feature, pinned Phosphor source, optical metrics, zero hidden fallback |
+| Product to Mascot | [Mori master reference and five-pose set](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
 
 ## Install
 
@@ -49,56 +86,26 @@ npx skills add AlbertAZ1992/creator-brand-skills
 ```
 
 The interactive flow lets you choose one or more Skills, supported agents, and
-installation scope. After installation, start a new Codex task and use one of
-the requests above.
+installation scope. Start a new Codex task after installation.
 
 <details>
 <summary><strong>Install all four, install one, or use a Skill once</strong></summary>
 
-Install all four globally for Codex:
-
 ```bash
+# Install all four globally for Codex
 npx skills add AlbertAZ1992/creator-brand-skills \
   --skill '*' --global --agent codex --yes
-```
 
-List the available Skills or install only one:
-
-```bash
+# List or install one Skill
 npx skills add AlbertAZ1992/creator-brand-skills --list
 npx skills add AlbertAZ1992/creator-brand-skills \
   --skill image-to-sticker --global --agent codex
-```
 
-Run one Skill without keeping it installed:
-
-```bash
+# Run once without keeping it installed
 npx skills use AlbertAZ1992/creator-brand-skills@logo-to-clay --agent codex
 ```
 
 </details>
-
-## Production outputs, clearly specified
-
-| Skill | Supported input | Styles and controls | Files you receive |
-| --- | --- | --- | --- |
-| [`logo-to-clay`](logo-to-clay/) | Simple SVG or PNG logo | Image, mesh, or both; standalone object or relief; studio or transparent background; color and depth | Generated raster + prompt; OBJ, MTL, bump PNG, 1024 px preview, manifest JSON |
-| [`image-to-sticker`](image-to-sticker/) | Transparent or flat-background logo, wordmark, icon, badge, or flat illustration | Borderless or 0–44 px contour; custom color; original, holographic, glitter, or reflective finish; ±12° tilt; 512/1024 px | Transparent RGBA PNG, alpha-proof PNG, reproducible source-card JSON, manifest JSON |
-| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names plus optional product context, including non-Latin labels | Outline light/regular/bold, filled, or duotone; custom colors; 24/32/48 px grid | One editable SVG per feature, spec and provenance JSON, SVG/PNG family preview, optical-check manifest JSON |
-| [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, visual medium, and palette | One locked character system; primary, welcome, working, thinking, and celebration poses | Character-bible JSON, five reference PNGs, contact-sheet PNG, verification manifest JSON |
-
-## Why this toolkit is different
-
-| **Source-faithful** | **Production-ready** | **Verified** |
-| :---: | :---: | :---: |
-| Locks logo geometry, artwork, feature meaning, or character identity before transformation | Returns real RGBA, SVG, OBJ/MTL, PNG, and JSON assets—not just a prompt or mockup | Runs task-specific alpha, geometry, provenance, optical, or identity checks and records the result in a manifest |
-
-The shared delivery pattern is:
-
-```text
-source truth → task spec → controlled generation
-             → deterministic finishing → hard checks → proof → manifest
-```
 
 ## Verify locally
 
@@ -106,41 +113,16 @@ source truth → task spec → controlled generation
 ./scripts/verify.sh
 ```
 
-This runs lint, formatting, strict TypeScript checks, unit tests, behavior
-evals, and real deliverable validation for all four Skills. GitHub Actions runs
-the same package-level checks on every push and pull request.
+This runs lint, formatting, strict TypeScript checks, unit tests, behaviour
+evals, committed-example checks, and real deliverable validation for all four
+Skills. GitHub Actions runs the same package-level verification.
 
-<details>
-<summary><strong>Requirements and repository structure</strong></summary>
-
-Requirements:
-
-- Codex or another compatible Skill runtime
-- Node.js 22 and npm
-- ImageMagick and `jq` when regenerating every visual example
-
-```bash
-brew install imagemagick jq
-```
-
-```text
-creator-brand-skills/
-├── scripts/verify.sh
-├── examples/
-├── .github/workflows/
-├── feature-to-icons/
-├── image-to-sticker/
-├── logo-to-clay/
-└── product-to-mascot/
-```
-
-Every Skill folder owns its `SKILL.md`, UI metadata, implementation, evals,
-schemas, examples, and package lock. There is no shared root Node package, so
-the four Skills remain independently installable and testable.
-
-</details>
+Requirements: Node.js 22 and npm. Regenerating every visual example also needs
+ImageMagick and `jq` (`brew install imagemagick jq`). Each Skill folder owns its
+`SKILL.md`, UI metadata, implementation, schemas, evals, and examples, so the
+four packages remain independently installable.
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE). Third-party demonstration assets are documented
-in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+MIT. See [`LICENSE`](LICENSE). Package-specific third-party code notices are in
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

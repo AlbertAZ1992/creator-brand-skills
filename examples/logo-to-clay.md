@@ -4,9 +4,9 @@ Attach a simple SVG or PNG logo for every test. Both routes approximate the
 visible silhouette; SVG is rasterized at a higher tracing resolution.
 Save outputs outside the repository.
 
-The checked-in visual gallery uses one Threads wordmark across the image and
-mesh routes so their output quality can be compared directly. Use artwork you
-are authorized to transform for your own forward tests.
+The checked-in gallery uses the original Orbit Bloom mark across image and mesh
+routes so source fidelity can be compared directly. The campaign render and
+procedural OBJ preview remain separate evidence.
 
 ## 1. Default route
 
