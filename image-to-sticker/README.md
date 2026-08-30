@@ -1,11 +1,11 @@
 # Image to Sticker
 
-Turn a simple logo, icon, badge, or flat illustration into one production-ready
-transparent sticker. The skill keeps the supplied artwork intact, removes a
-transparent or flat background, adds a contour, and can apply a deterministic
-front finish.
+Turn a simple logo, wordmark, icon, badge, or flat illustration into one
+production-ready transparent PNG sticker. This open-source Agent Skill keeps
+the supplied artwork intact, removes a transparent or flat background, adds a
+contour, and can apply a deterministic front finish in Codex.
 
-The callable Skill name is `image-to-sticker`.
+The callable Codex Skill name is `image-to-sticker`.
 
 | **Balanced result** | **Supported style system** |
 | :---: | :---: |

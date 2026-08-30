@@ -1,10 +1,10 @@
 # Product to Mascot
 
-Turn product semantics into a reusable brand character. The skill first locks a
-character bible, then generates and reviews a primary reference plus four
-consistent poses.
+Turn product semantics into a reusable product mascot and brand character
+system. This open-source Agent Skill first locks a character bible, then helps
+Codex generate and review a primary reference plus four consistent poses.
 
-The callable Skill name is `product-to-mascot`.
+The callable Codex Skill name is `product-to-mascot`.
 
 <p align="center">
   <img src="examples/generated/threads-mascot-contact-sheet.png" alt="Five-pose mascot contact sheet" width="900">

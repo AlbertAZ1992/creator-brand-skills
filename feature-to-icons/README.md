@@ -1,10 +1,10 @@
 # Feature to Icons
 
-Turn 3–20 product features into one consistent, validated SVG icon family.
-The default path retrieves every icon from one pinned Phosphor family instead
-of asking a model to draw unrelated SVG paths from scratch.
+Turn 3–20 product features into one consistent, editable, and validated SVG
+icon family. This open-source Agent Skill gives Codex a pinned Phosphor icon
+catalog instead of asking a model to draw unrelated SVG paths from scratch.
 
-The callable Skill name is `feature-to-icons`.
+The callable Codex Skill name is `feature-to-icons`.
 
 <p align="center">
   <img src="examples/social-publishing-outline/icon-family-preview.png" alt="Social publishing outline icon family" width="760">

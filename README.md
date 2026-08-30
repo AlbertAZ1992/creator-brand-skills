@@ -2,17 +2,18 @@
 
 # Creator Brand Skills
 
-### One brand input. Four reusable visual systems.
+### Open-source Agent Skills for AI brand design with Codex.
 
-Turn a logo, image, feature list, or product idea into production-ready visual
-assets with Codex.
+Turn one logo, image, feature list, or product idea into clay logo renders and
+OBJ meshes, transparent PNG stickers, editable SVG icon families, or reusable
+product mascots.
 
 **English** · [简体中文](README.zh-CN.md) · [Install](#install) ·
 [Verify](#verify-locally)
 
 </div>
 
-## Four skills, one toolkit
+## Four Agent Skills, one brand design toolkit
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
@@ -124,13 +125,21 @@ brew install imagemagick jq
 
 ```text
 creator-brand-skills/
-├── scripts/verify.sh
+├── scripts/
+│   ├── render-social-preview.sh
+│   └── verify.sh
 ├── examples/
 ├── .github/workflows/
 ├── feature-to-icons/
 ├── image-to-sticker/
 ├── logo-to-clay/
 └── product-to-mascot/
+```
+
+The GitHub social preview is built from the same four real gallery outputs:
+
+```bash
+./scripts/render-social-preview.sh
 ```
 
 Every Skill folder owns its `SKILL.md`, UI metadata, implementation, evals,
