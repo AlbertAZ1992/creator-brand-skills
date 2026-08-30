@@ -96,6 +96,18 @@ make_alpha_cell() {
 		-annotate +0+10 "$label" "$output"
 }
 
+make_showcase_cell() {
+	local source=$1
+	local label=$2
+	local output=$3
+	magick -size 260x280 xc:none \
+		-fill '#fffaf4' -draw 'roundrectangle 0,0 259,279 28,28' \
+		\( "$source" -trim +repage -resize '190x190>' \) \
+		-gravity north -geometry +0+20 -composite \
+		-gravity south -font "$font_path" -fill '#242038' -pointsize 18 \
+		-annotate +0+18 "$label" "$output"
+}
+
 make_hero_preview() {
 	local source=$1
 	local output=$2
@@ -175,28 +187,44 @@ magick montage \
 render_variant style-borderless 0 '#ffffff' 0 original
 make_cell "$work_dir/style-borderless/sticker.png" 'borderless' \
 	"$work_dir/style-borderless-cell.png"
+make_showcase_cell "$work_dir/style-borderless/sticker.png" 'borderless' \
+	"$work_dir/style-borderless-showcase.png"
 render_variant style-thin 1 '#ffffff' 0 original
 make_cell "$work_dir/style-thin/sticker.png" 'thin contour' \
 	"$work_dir/style-thin-cell.png"
+make_showcase_cell "$work_dir/style-thin/sticker.png" 'thin contour' \
+	"$work_dir/style-thin-showcase.png"
 render_variant style-classic 18 '#ffffff' 0 original
 make_cell "$work_dir/style-classic/sticker.png" 'classic contour' \
 	"$work_dir/style-classic-cell.png"
+make_showcase_cell "$work_dir/style-classic/sticker.png" 'classic contour' \
+	"$work_dir/style-classic-showcase.png"
 render_variant style-color 8 '#ff4db8' 0 original
 make_cell "$work_dir/style-color/sticker.png" 'color contour' \
 	"$work_dir/style-color-cell.png"
+make_showcase_cell "$work_dir/style-color/sticker.png" 'color contour' \
+	"$work_dir/style-color-showcase.png"
+for material in original holographic glitter reflective; do
+	make_showcase_cell "$work_dir/material-$material/sticker.png" "$material" \
+		"$work_dir/material-$material-showcase.png"
+done
 magick montage \
 	-font "$font_path" \
 	+label \
-	"$work_dir/style-borderless-cell.png" \
-	"$work_dir/style-thin-cell.png" \
-	"$work_dir/style-classic-cell.png" \
-	"$work_dir/style-color-cell.png" \
-	"$work_dir/material-original-cell.png" \
-	"$work_dir/material-holographic-cell.png" \
-	"$work_dir/material-glitter-cell.png" \
-	"$work_dir/material-reflective-cell.png" \
-	-tile 4x2 -geometry +16+16 -background '#ded7cc' \
-	"$generated_dir/style-overview.png"
+	"$work_dir/style-borderless-showcase.png" \
+	"$work_dir/style-thin-showcase.png" \
+	"$work_dir/style-classic-showcase.png" \
+	"$work_dir/style-color-showcase.png" \
+	"$work_dir/material-original-showcase.png" \
+	"$work_dir/material-holographic-showcase.png" \
+	"$work_dir/material-glitter-showcase.png" \
+	"$work_dir/material-reflective-showcase.png" \
+	-tile 4x2 -geometry +8+8 -background none "$work_dir/style-grid.png"
+magick -size 1200x720 gradient:'#12102b-#372f70' \
+	-fill '#ff7665' -draw 'circle 1130,70 1260,70' \
+	-fill '#ffd166' -draw 'circle 70,680 170,680' \
+	\( "$work_dir/style-grid.png" -resize '1120x640>' \) \
+	-gravity center -composite "$generated_dir/style-overview.png"
 
 render_variant recommended 8 '#ffffff' -6
 cp "$work_dir/recommended/sticker.png" "$generated_dir/recommended/sticker.png"

@@ -6,7 +6,7 @@ archivist: open-book wings express research and a lime bookmark ribbon remains
 visible in every pose.
 
 <p align="center">
-  <img src="generated/mori-mascot-preview.png" alt="Mori primary and working mascot poses" width="900">
+  <img src="generated/mori-mascot-showcase.png" alt="Mori primary, welcome, working, thinking, and celebration poses" width="900">
 </p>
 
 ```text

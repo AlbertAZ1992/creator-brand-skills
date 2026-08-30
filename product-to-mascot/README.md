@@ -7,7 +7,7 @@ Codex generate and review a primary reference plus four consistent poses.
 The callable Codex Skill name is `product-to-mascot`.
 
 <p align="center">
-  <img src="examples/generated/mori-mascot-preview.png" alt="Mori paper-moth mascot in primary and working poses" width="900">
+  <img src="examples/generated/mori-mascot-showcase.png" alt="Mori paper-moth mascot compared across five locked poses" width="900">
 </p>
 
 ## At a glance

@@ -1,8 +1,12 @@
 # Logo to Clay examples
 
 The gallery uses the original Orbit Bloom mark across both production routes.
-The generated campaign image demonstrates art direction; the mesh previews and
-files come from the real local OBJ pipeline.
+The overview keeps the input, generated campaign image, and two verified mesh
+forms visible together so the range is inspectable at a glance.
+
+<p align="center">
+  <img src="generated/capability-overview.png" alt="Orbit Bloom source, clay render, standalone object, and relief" width="900">
+</p>
 
 | **Generated image route** | **Verified mesh route** |
 | :---: | :---: |
