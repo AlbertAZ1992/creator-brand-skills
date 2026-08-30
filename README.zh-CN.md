@@ -18,16 +18,16 @@
 
 ## 四个 Skill，一套生产工具组
 
-| **01 · Logo to Clay** | **02 · Image to Sticker** |
+| **01 · Logo to Clay · 黏土渲染 + 3D Mesh** | **02 · Image to Sticker · 透明 PNG** |
 | :---: | :---: |
 | <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite 与 JavaScript 原图转成黏土主视觉和验证过的 OBJ 预览" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="六张原图转成六种透明贴纸效果" width="560"> |
-| 两张锁定原图 → 黏土主视觉 + 真实验证 OBJ | 六张原图 → 六种透明 PNG 贴纸 + alpha proof |
+| Vite + JavaScript 平面 Logo → 黏土渲染 + 真实验证 OBJ | 六张平面 Logo → 六种透明贴纸 + alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
-| **03 · Feature to Icons** | **04 · Product to Mascot** |
+| **03 · Feature to Icons · 动画 SVG 图标组** | **04 · Product to Mascot · 角色系统** |
 | :---: | :---: |
 | <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="二十个创作者功能转成一套原创手绘动画 SVG 图标" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="OpenPatch 补丁小狐狸 Pip 的五个锁定姿势" width="560"> |
-| 功能 brief → 六枚原创 SVG + 光学校验 | OpenPatch 事实 → Pip 角色圣经 → 五个锁定姿势 |
+| 20 条功能名称 → 20 枚手绘动画 SVG + 光学校验 | OpenPatch 产品事实 → Pip 角色圣经 → 五个锁定姿势 |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
 这些当前图片都同时交代输入和真实生产链路结果，不是互不相关的单张美图。

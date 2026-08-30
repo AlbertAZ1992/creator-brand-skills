@@ -12,12 +12,12 @@ user can test one route at a time.
 4. Copy one request from the relevant guide.
 5. Save test output outside the repository until it has been reviewed.
 
-| Skill | First test | Full guide |
+| Skill | Public source → output proof | Full guide |
 | --- | --- | --- |
-| `feature-to-icons` | No source file required | [`feature-to-icons.md`](feature-to-icons.md) |
-| `logo-to-clay` | Attach an SVG or PNG logo | [`logo-to-clay.md`](logo-to-clay.md) |
-| `image-to-sticker` | Attach simple flat artwork | [`image-to-sticker.md`](image-to-sticker.md) |
-| `product-to-mascot` | Describe a product | [`product-to-mascot.md`](product-to-mascot.md) |
+| `logo-to-clay` | [Flat Vite/JS logos → clay renders + verified OBJ previews](../logo-to-clay/examples/generated/source-to-clay.png) | [`logo-to-clay.md`](logo-to-clay.md) |
+| `image-to-sticker` | [Six flat logos → six transparent PNG sticker treatments](../image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png) | [`image-to-sticker.md`](image-to-sticker.md) |
+| `feature-to-icons` | [20 feature names → 20 hand-drawn animated SVGs](../feature-to-icons/examples/creator-doodle-animated/showcase-preview.png) | [`feature-to-icons.md`](feature-to-icons.md) |
+| `product-to-mascot` | [OpenPatch product facts → five-pose Pip system](../product-to-mascot/examples/generated/openpatch-pip/source-brief.svg) | [`product-to-mascot.md`](product-to-mascot.md) |
 
 These guides complement the embedded, checked-in visual galleries owned by
 each Skill package.

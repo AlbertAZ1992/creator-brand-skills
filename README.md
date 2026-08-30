@@ -18,16 +18,16 @@ icon families · reusable product mascots
 
 ## Four Skills, one production toolkit
 
-| **01 · Logo to Clay** | **02 · Image to Sticker** |
+| **01 · Logo to Clay · clay render + 3D mesh** | **02 · Image to Sticker · transparent PNG** |
 | :---: | :---: |
 | <img src="logo-to-clay/examples/generated/source-to-clay.png" alt="Vite and JavaScript sources transformed into clay renders and verified OBJ previews" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into six transparent sticker styles" width="560"> |
-| Two locked sources → clay renders + real verified OBJ meshes | Six sources → six styles of transparent PNG sticker + alpha proof |
+| Vite + JavaScript flat logos → clay renders + real verified OBJ meshes | Six flat logos → six transparent sticker styles + alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
-| **03 · Feature to Icons** | **04 · Product to Mascot** |
+| **03 · Feature to Icons · animated SVG set** | **04 · Product to Mascot · character system** |
 | :---: | :---: |
 | <img src="feature-to-icons/examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="560"> | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
-| Feature brief → six original SVGs + optical proof | OpenPatch facts → Pip character bible → five locked poses |
+| 20 feature names → 20 hand-drawn animated SVGs + optical proof | OpenPatch product facts → Pip character bible → five locked poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
 These current images show the input and the production-route result rather than
