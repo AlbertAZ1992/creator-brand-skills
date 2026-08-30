@@ -122,21 +122,13 @@ brew install imagemagick jq
 
 ```text
 creator-brand-skills/
-├── scripts/
-│   ├── render-social-preview.sh
-│   └── verify.sh
+├── scripts/verify.sh
 ├── examples/
 ├── .github/workflows/
 ├── feature-to-icons/
 ├── image-to-sticker/
 ├── logo-to-clay/
 └── product-to-mascot/
-```
-
-GitHub Social Preview 直接使用作品表格中的四个真实产物构建：
-
-```bash
-./scripts/render-social-preview.sh
 ```
 
 每个 Skill 自己维护 `SKILL.md`、UI metadata、实现、eval、schema、示例和 package

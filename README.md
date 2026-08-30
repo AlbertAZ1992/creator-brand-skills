@@ -125,21 +125,13 @@ brew install imagemagick jq
 
 ```text
 creator-brand-skills/
-├── scripts/
-│   ├── render-social-preview.sh
-│   └── verify.sh
+├── scripts/verify.sh
 ├── examples/
 ├── .github/workflows/
 ├── feature-to-icons/
 ├── image-to-sticker/
 ├── logo-to-clay/
 └── product-to-mascot/
-```
-
-The GitHub social preview is built from the same four real gallery outputs:
-
-```bash
-./scripts/render-social-preview.sh
 ```
 
 Every Skill folder owns its `SKILL.md`, UI metadata, implementation, evals,
