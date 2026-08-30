@@ -20,19 +20,24 @@ icon families · reusable product mascots
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/clay-render.png" alt="Original sunburst mark rendered as a cobalt clay sculpture" width="560"> | <img src="image-to-sticker/examples/generated/recommended-preview.png" alt="Original Peach Planet artwork rendered as a transparent contour sticker" width="560"> |
-| Logo geometry → campaign render + optional OBJ mesh | Flat artwork → source-faithful transparent PNG |
+| <img src="logo-to-clay/examples/generated/capability-overview.png" alt="One original mark shown as source artwork, a clay render, a standalone object, and a relief" width="560"> | <img src="image-to-sticker/examples/generated/style-overview.png" alt="One original Peach Planet artwork compared across eight sticker styles" width="560"> |
+| One mark → clay render + standalone OBJ + relief | One artwork → eight inspectable contour and material results |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creative-workflow-duotone/showcase-preview.png" alt="Six duotone icons for a creative workflow" width="560"> | <img src="product-to-mascot/examples/generated/mori-mascot-preview.png" alt="Mori paper-moth mascot in primary and working poses" width="560"> |
-| 3–20 product features → one verified SVG family | Product truth → character bible + five locked poses |
+| <img src="feature-to-icons/examples/creative-workflow-duotone/showcase-preview.png" alt="Six duotone icons for one creative workflow" width="560"> | <img src="product-to-mascot/examples/generated/mori-mascot-showcase.png" alt="One original paper-moth mascot compared across five locked poses" width="560"> |
+| One product story → 3–20 verified SVG icons | One character bible → five recognisable working poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-Every hero above comes from the same route the Skill documents. Marketing
-previews are separate from the clean deliverables and machine-checkable proof.
-All demonstration identities and artwork are original to this repository.
+These are comparison boards, not isolated beauty shots: each one makes the
+range, consistency, and production route visible before installation. Every
+source logo, illustration, product identity, and mascot is original to this
+repository—no third-party brand or trademark is needed for the demos.
+
+Marketing boards remain separate from clean deliverables and machine-checkable
+proof. Every board is built from outputs produced by the route its Skill
+documents.
 
 ## Start with one sentence
 

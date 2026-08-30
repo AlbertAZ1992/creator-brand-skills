@@ -7,10 +7,14 @@ contour, and can apply a deterministic front finish in Codex.
 
 The callable Codex Skill name is `image-to-sticker`.
 
-| **Balanced result** | **Supported style system** |
-| :---: | :---: |
-| <img src="examples/generated/recommended-preview.png" alt="Peach Planet contour sticker on a portfolio card" width="560"> | <img src="examples/generated/style-overview.png" alt="Peach Planet sticker style system" width="560"> |
-| Styled preview of the clean transparent output | Contours and deterministic front materials |
+<p align="center">
+  <img src="examples/generated/style-overview.png" alt="One original Peach Planet artwork compared across eight sticker styles" width="900">
+</p>
+
+The board holds one original source composition constant while making eight
+supported results directly comparable. The clean transparent PNG is still the
+deliverable; the board is only a portfolio view of its contour and material
+controls.
 
 ## At a glance
 

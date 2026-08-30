@@ -228,7 +228,7 @@ async function main(): Promise<void> {
     await rm(outputDir, { recursive: true, force: true });
     const delivery = await deliverPhosphorIconFamily(validation.data, outputDir, family.overrides);
     if (family.slug === "creative-workflow-duotone") {
-      await writeShowcasePreview(outputDir, delivery.iconPaths);
+      await writeShowcasePreview(outputDir, delivery.iconPaths, validation.data.features);
     }
     await writeFile(
       join(outputDir, "example.json"),
@@ -250,9 +250,17 @@ async function main(): Promise<void> {
   console.log(`Generated ${families.length} library-backed icon families.`);
 }
 
-async function writeShowcasePreview(outputDir: string, iconPaths: string[]): Promise<void> {
+async function writeShowcasePreview(
+  outputDir: string,
+  iconPaths: string[],
+  features: string[],
+): Promise<void> {
   const cards = await Promise.all(
     iconPaths.map(async (iconPath, index) => {
+      const feature = features[index];
+      if (!feature) {
+        throw new Error(`Missing feature label for showcase icon ${index + 1}`);
+      }
       const column = index % 3;
       const row = Math.floor(index / 3);
       const x = 178 + column * 300;
@@ -266,6 +274,9 @@ async function writeShowcasePreview(outputDir: string, iconPaths: string[]): Pro
         `<rect x="${x}" y="${y}" width="222" height="218" rx="34" fill="#fffaf4"/>`,
         `<circle cx="${x + 190}" cy="${y + 30}" r="8" fill="#ffd166"/>`,
         icon,
+        `<text x="${x + 111}" y="${y + 190}" text-anchor="middle" ` +
+          `font-family="Arial, sans-serif" font-size="15" font-weight="600" ` +
+          `fill="#242038">${feature}</text>`,
       ].join("\n");
     }),
   );
@@ -282,7 +293,7 @@ async function writeShowcasePreview(outputDir: string, iconPaths: string[]): Pro
     "",
   ].join("\n");
   await writeFile(join(outputDir, "showcase-preview.svg"), svg, "utf8");
-  const png = new Resvg(svg, { font: { loadSystemFonts: false } }).render().asPng();
+  const png = new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng();
   await writeFile(join(outputDir, "showcase-preview.png"), png);
 }
 

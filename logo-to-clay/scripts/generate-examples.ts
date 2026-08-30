@@ -43,6 +43,45 @@ async function buildExample(shape: "object" | "relief", color: string): Promise<
   return result.imagePath;
 }
 
+async function writeCapabilityOverview(
+  clayRenderPath: string,
+  objectPreviewPath: string,
+  reliefPreviewPath: string,
+): Promise<void> {
+  const clayRender = await sharp(clayRenderPath)
+    .resize(700, 640, { fit: "cover", position: "centre" })
+    .toBuffer();
+  const sourceMark = await sharp(sourcePath).resize(128, 128, { fit: "contain" }).toBuffer();
+  const objectPreview = await sharp(objectPreviewPath).resize(220, 220).toBuffer();
+  const reliefPreview = await sharp(reliefPreviewPath).resize(220, 220).toBuffer();
+  const frame = Buffer.from(`
+    <svg width="1200" height="720" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="720" rx="48" fill="#17142c"/>
+      <rect x="32" y="32" width="716" height="656" rx="36" fill="#f8eee2"/>
+      <rect x="772" y="32" width="396" height="152" rx="32" fill="#fffaf4"/>
+      <rect x="772" y="208" width="396" height="224" rx="32" fill="#eee9ff"/>
+      <rect x="772" y="456" width="396" height="232" rx="32" fill="#ffe7de"/>
+      <g font-family="Arial, sans-serif" font-weight="700" fill="#242038">
+        <text x="802" y="68" font-size="16" letter-spacing="2">SOURCE</text>
+        <text x="802" y="248" font-size="16" letter-spacing="2">OBJECT · 5 MM</text>
+        <text x="802" y="496" font-size="16" letter-spacing="2">RELIEF · 2 MM</text>
+      </g>
+    </svg>
+  `);
+  await sharp({
+    create: { width: 1200, height: 720, channels: 4, background: "#17142c" },
+  })
+    .composite([
+      { input: frame, left: 0, top: 0 },
+      { input: clayRender, left: 40, top: 40 },
+      { input: sourceMark, left: 1008, top: 44 },
+      { input: objectPreview, left: 950, top: 208 },
+      { input: reliefPreview, left: 950, top: 460 },
+    ])
+    .png()
+    .toFile(join(generatedDir, "capability-overview.png"));
+}
+
 async function main(): Promise<void> {
   await mkdir(generatedDir, { recursive: true });
   const objectPreview = await buildExample("object", "#5B4BDB");
@@ -72,6 +111,9 @@ async function main(): Promise<void> {
     ])
     .png()
     .toFile(join(generatedDir, "mesh-forms.png"));
+
+  const clayRenderPath = join(generatedDir, "clay-render.png");
+  await writeCapabilityOverview(clayRenderPath, objectPreview, reliefPreview);
 
   process.stdout.write(`Generated Logo to Clay examples in ${generatedDir}\n`);
 }

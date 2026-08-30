@@ -5,21 +5,22 @@ contains fine gaps, separate sparkles, and an orbit crossing the central shape,
 so it exposes contour and material problems more clearly than a plain wordmark.
 
 <p align="center">
-  <img src="generated/recommended-preview.png" alt="Peach Planet sticker portfolio preview" width="760">
+  <img src="generated/style-overview.png" alt="Peach Planet sticker style overview" width="900">
 </p>
 
-The preview above is presentation only. The actual transparent PNG, alpha
+The board holds source geometry constant while comparing borderless, thin,
+classic, and colour contours plus original, holographic, glitter, and reflective
+front materials. It uses repository-owned artwork rather than a third-party
+wordmark or trademark.
+
+## Clean deliverable
+
+The portfolio board is presentation only. The actual transparent PNG, alpha
 proof, source card, and passing manifest are in
 [`generated/recommended/`](generated/recommended/).
 
-## Style system
-
-The complete grid holds source geometry constant while comparing borderless,
-thin, classic, and colour contours plus original, holographic, glitter, and
-reflective front materials.
-
 <p align="center">
-  <img src="generated/style-overview.png" alt="Peach Planet sticker style overview" width="900">
+  <img src="generated/recommended-preview.png" alt="Peach Planet sticker portfolio preview" width="760">
 </p>
 
 | Control | Visual proof |

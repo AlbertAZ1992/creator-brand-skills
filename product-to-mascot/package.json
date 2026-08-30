@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "examples": "bash examples/generate-showcase.sh",
     "prepack": "npm run build",
     "eval": "tsx eval/run.ts",
     "format:check": "oxfmt --check src tests",

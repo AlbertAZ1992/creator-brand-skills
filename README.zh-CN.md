@@ -20,18 +20,22 @@
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/clay-render.png" alt="原创放射形标志制作成钴蓝色黏土雕塑" width="560"> | <img src="image-to-sticker/examples/generated/recommended-preview.png" alt="原创 Peach Planet 插画制作成透明轮廓贴纸" width="560"> |
-| Logo 几何 → 宣传渲染图 + 可选 OBJ Mesh | 平面图 → 忠于源图的透明 PNG |
+| <img src="logo-to-clay/examples/generated/capability-overview.png" alt="同一个原创标志的源图、黏土渲染、独立物体和浮雕对比" width="560"> | <img src="image-to-sticker/examples/generated/style-overview.png" alt="同一张原创 Peach Planet 图形的八种贴纸效果对比" width="560"> |
+| 一个标志 → 黏土渲染 + 独立 OBJ + 浮雕 | 一张图 → 八种可比较的轮廓与材质结果 |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creative-workflow-duotone/showcase-preview.png" alt="为创作工作流制作的六枚双色图标" width="560"> | <img src="product-to-mascot/examples/generated/mori-mascot-preview.png" alt="纸艺飞蛾 Mori 的主参考和工作姿势" width="560"> |
-| 3–20 个产品功能 → 一套经过校验的 SVG 图标 | 产品事实 → 角色圣经 + 五个锁定姿势 |
+| <img src="feature-to-icons/examples/creative-workflow-duotone/showcase-preview.png" alt="同一创作工作流的六枚双色图标" width="560"> | <img src="product-to-mascot/examples/generated/mori-mascot-showcase.png" alt="同一个原创纸艺飞蛾角色的五个锁定姿势对比" width="560"> |
+| 一条产品故事 → 3–20 个经过校验的 SVG 图标 | 一本角色圣经 → 五个可识别的工作姿势 |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-上面每张 Hero 都来自 Skill 自己描述的真实生产链路。用于吸引人的作品预览与
-干净交付物、机器校验证据彼此分离；全部演示身份和图形均为本仓库原创。
+这些不是互不相关的单张美图，而是可以停下来比较的能力板：安装之前就能看到
+每个 Skill 的变化范围、一致性和生产路径。所有源 Logo、插画、产品身份与
+Mascot 都是本仓库原创，演示不需要借用任何第三方品牌或商标。
+
+用于展示的能力板仍与干净交付物、机器校验证据彼此分离；每块能力板都由对应
+Skill 所描述的真实生产链路产物组成。
 
 ## 一句话就能开始
 

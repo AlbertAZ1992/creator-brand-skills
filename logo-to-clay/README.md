@@ -6,10 +6,13 @@ a deterministic geometry route for production-ready brand assets.
 
 The callable Codex Skill name is `logo-to-clay`.
 
-| **Image route** | **Mesh route** |
+<p align="center">
+  <img src="examples/generated/capability-overview.png" alt="Orbit Bloom source mark compared with its clay render, standalone object, and relief" width="900">
+</p>
+
+| **Source-locked image route** | **Verified mesh route** |
 | :---: | :---: |
-| <img src="examples/generated/clay-render.png" alt="Original Orbit Bloom mark as a cobalt clay sculpture" width="560"> | <img src="examples/generated/mesh-forms.png" alt="Verified Orbit Bloom standalone and relief mesh previews" width="560"> |
-| Campaign-ready image with deliberate art direction | Real OBJ, MTL, bump map, preview, and manifest |
+| Campaign-ready clay render with deliberate art direction | Standalone object or relief with real OBJ, MTL, bump map, preview, and manifest |
 
 ## At a glance
 
