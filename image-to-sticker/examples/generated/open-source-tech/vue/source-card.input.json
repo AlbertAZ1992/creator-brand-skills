@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "vue.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 16,
+  "outlineColor": "#ffffff",
+  "material": "original",
+  "tilt": 4,
+  "size": 1024
+}

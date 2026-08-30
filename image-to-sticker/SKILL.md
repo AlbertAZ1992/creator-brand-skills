@@ -17,8 +17,11 @@ background. Reject complex photographic backgrounds instead of improvising
 segmentation.
 
 Prefer SVG or a raster whose long edge is at least the requested output size.
-When only a smaller source exists, preserve its antialiasing and report the
-enlargement limit; do not invent detail or apply aggressive sharpening.
+The renderer probes SVG metadata and raises rasterization density so a tiny
+`24 × 24` viewBox is decoded near the working delivery resolution rather than
+blurred and enlarged afterward. When only a smaller raster source exists,
+preserve its antialiasing and report the enlargement limit; do not invent detail
+or apply aggressive sharpening.
 
 - outline width: `18`, configurable from `0` to `44`;
 - outline color: `#ffffff`;
@@ -88,6 +91,10 @@ applied. Review transparent assets over a medium checkerboard, never white only.
 Prefer the thinnest outline that keeps the complete composition readable and
 preserves important internal gaps. A passing alpha check does not excuse a
 muddy material, weak contrast, or a contour that overwhelms the artwork.
+
+Reject softened SVG edges, stair-stepped diagonals, or a small-viewBox source
+that looks blurrier than the same SVG in a browser. These are renderer failures,
+not acceptable source limitations.
 
 Deliver:
 

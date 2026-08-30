@@ -4,9 +4,8 @@ Attach a simple SVG or PNG logo for every test. Both routes approximate the
 visible silhouette; SVG is rasterized at a higher tracing resolution.
 Save outputs outside the repository.
 
-The checked-in gallery uses the original Orbit Bloom mark across image and mesh
-routes so source fidelity can be compared directly. The campaign render and
-procedural OBJ preview remain separate evidence.
+The checked-in gallery uses the approved Vite bolt and JavaScript runs. Their
+campaign renders and procedural OBJ previews remain separate evidence.
 
 ## 1. Default route
 

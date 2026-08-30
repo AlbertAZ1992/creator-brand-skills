@@ -1,121 +1,124 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import sharp from "sharp";
+
 import { buildMesh, validate } from "../src/index.js";
 
-const projectDir = dirname(dirname(fileURLToPath(import.meta.url)));
-const sourcePath = join(projectDir, "examples", "assets", "orbit-bloom.png");
-const generatedDir = join(projectDir, "examples", "generated");
+const packageRoot = dirname(dirname(fileURLToPath(import.meta.url)));
+const examplesRoot = join(packageRoot, "examples");
+const sourcesRoot = join(examplesRoot, "sources");
+const generatedRoot = join(examplesRoot, "generated");
 
-async function makeManifestPortable(manifestPath: string): Promise<void> {
-  const manifest = JSON.parse(await readFile(manifestPath, "utf-8")) as {
-    source: { logoPath: string };
-    artifacts: Record<string, string | null>;
-  };
-  manifest.source.logoPath = "../../assets/orbit-bloom.png";
-  for (const [key, value] of Object.entries(manifest.artifacts)) {
-    manifest.artifacts[key] = value === null ? null : basename(value);
-  }
-  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+interface MeshExample {
+  label: string;
+  source: string;
+  output: string;
+  shape: "object" | "relief";
+  depth: number;
+  color: string;
 }
 
-async function buildExample(shape: "object" | "relief", color: string): Promise<string> {
-  const outputDir = join(generatedDir, shape);
+const examples: MeshExample[] = [
+  {
+    label: "Vite bolt object",
+    source: "vite-bolt.png",
+    output: "vite-bolt/object",
+    shape: "object",
+    depth: 6,
+    color: "#8255F4",
+  },
+  {
+    label: "JavaScript object",
+    source: "js-community-logo.png",
+    output: "javascript/object",
+    shape: "object",
+    depth: 5,
+    color: "#F7DF1E",
+  },
+  {
+    label: "JavaScript relief",
+    source: "js-community-logo.png",
+    output: "javascript/relief",
+    shape: "relief",
+    depth: 2,
+    color: "#F7DF1E",
+  },
+];
+
+async function main(): Promise<void> {
+  await requireApprovedRender("vite-bolt/clay-render.png");
+  await requireApprovedRender("javascript/clay-render.png");
+  await syncSource("vite-bolt.png", "vite-bolt/source.png");
+  await syncSource("vite-bolt.svg", "vite-bolt/source.svg");
+  await syncSource("js-community-logo.png", "javascript/source.png");
+
+  for (const example of examples) {
+    const preview = await buildExample(example);
+    if (example.output === "javascript/object") {
+      await sharp(preview)
+        .png()
+        .toFile(join(generatedRoot, "javascript", "mesh-preview.png"));
+    }
+  }
+  process.stdout.write("Regenerated the approved Vite bolt and JavaScript examples.\n");
+}
+
+async function requireApprovedRender(relativePath: string): Promise<void> {
+  const file = join(generatedRoot, relativePath);
+  if ((await stat(file)).size === 0) throw new Error(`${relativePath}: approved render is empty`);
+  const metadata = await sharp(file).metadata();
+  if ((metadata.width ?? 0) < 1024 || (metadata.height ?? 0) < 800) {
+    throw new Error(`${relativePath}: approved render is too small`);
+  }
+}
+
+async function syncSource(sourceName: string, destination: string): Promise<void> {
+  const source = join(sourcesRoot, sourceName);
+  const target = join(generatedRoot, destination);
+  await mkdir(dirname(target), { recursive: true });
+  if (source.endsWith(".png")) {
+    await sharp(source).png().toFile(target);
+    return;
+  }
+  await writeFile(target, await readFile(source));
+}
+
+async function buildExample(example: MeshExample): Promise<string> {
+  const outputDir = join(generatedRoot, example.output);
   await mkdir(outputDir, { recursive: true });
   const validation = validate({
-    logoPath: sourcePath,
+    logoPath: join(sourcesRoot, example.source),
     output: "mesh",
     outputDir,
-    shape,
-    depth: shape === "object" ? 5 : 2,
-    clayColor: color,
+    shape: example.shape,
+    depth: example.depth,
+    clayColor: example.color,
     background: "studio",
   });
   if (validation.errors.length > 0) {
-    throw new Error(`Example input failed validation: ${JSON.stringify(validation.errors)}`);
+    throw new Error(`${example.label}: ${JSON.stringify(validation.errors)}`);
   }
   const result = await buildMesh(validation.options);
-  if (!result.validation?.passed || !result.imagePath) {
-    throw new Error(`${shape} example did not pass delivery validation`);
+  if (!result.validation?.passed || !result.imagePath || !result.manifestPath) {
+    throw new Error(`${example.label}: mesh delivery did not pass`);
   }
-  await makeManifestPortable(result.manifestPath!);
+  await makeManifestPortable(result.manifestPath);
+  process.stdout.write(`PASS ${example.label}\n`);
   return result.imagePath;
 }
 
-async function writeCapabilityOverview(
-  clayRenderPath: string,
-  objectPreviewPath: string,
-  reliefPreviewPath: string,
-): Promise<void> {
-  const clayRender = await sharp(clayRenderPath)
-    .resize(700, 640, { fit: "cover", position: "centre" })
-    .toBuffer();
-  const sourceMark = await sharp(sourcePath).resize(128, 128, { fit: "contain" }).toBuffer();
-  const objectPreview = await sharp(objectPreviewPath).resize(220, 220).toBuffer();
-  const reliefPreview = await sharp(reliefPreviewPath).resize(220, 220).toBuffer();
-  const frame = Buffer.from(`
-    <svg width="1200" height="720" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1200" height="720" rx="48" fill="#17142c"/>
-      <rect x="32" y="32" width="716" height="656" rx="36" fill="#f8eee2"/>
-      <rect x="772" y="32" width="396" height="152" rx="32" fill="#fffaf4"/>
-      <rect x="772" y="208" width="396" height="224" rx="32" fill="#eee9ff"/>
-      <rect x="772" y="456" width="396" height="232" rx="32" fill="#ffe7de"/>
-      <g font-family="Arial, sans-serif" font-weight="700" fill="#242038">
-        <text x="802" y="68" font-size="16" letter-spacing="2">SOURCE</text>
-        <text x="802" y="248" font-size="16" letter-spacing="2">OBJECT · 5 MM</text>
-        <text x="802" y="496" font-size="16" letter-spacing="2">RELIEF · 2 MM</text>
-      </g>
-    </svg>
-  `);
-  await sharp({
-    create: { width: 1200, height: 720, channels: 4, background: "#17142c" },
-  })
-    .composite([
-      { input: frame, left: 0, top: 0 },
-      { input: clayRender, left: 40, top: 40 },
-      { input: sourceMark, left: 1008, top: 44 },
-      { input: objectPreview, left: 950, top: 208 },
-      { input: reliefPreview, left: 950, top: 460 },
-    ])
-    .png()
-    .toFile(join(generatedDir, "capability-overview.png"));
-}
-
-async function main(): Promise<void> {
-  await mkdir(generatedDir, { recursive: true });
-  const objectPreview = await buildExample("object", "#5B4BDB");
-  const reliefPreview = await buildExample("relief", "#FF7665");
-  const sourcePreview = join(generatedDir, "source.png");
-  await sharp(sourcePath)
-    .resize({ width: 1200, height: 400, fit: "contain", background: "transparent" })
-    .png()
-    .toFile(sourcePreview);
-
-  const objectCell = await sharp(objectPreview).resize(720, 720).toBuffer();
-  const reliefCell = await sharp(reliefPreview).resize(720, 720).toBuffer();
-  const cardBackgrounds = Buffer.from(
-    '<svg width="1664" height="800" xmlns="http://www.w3.org/2000/svg">' +
-      '<rect width="1664" height="800" rx="48" fill="#17142c"/>' +
-      '<rect x="48" y="40" width="760" height="720" rx="36" fill="#f8eee2"/>' +
-      '<rect x="856" y="40" width="760" height="720" rx="36" fill="#eee9ff"/>' +
-      "</svg>",
-  );
-  await sharp({
-    create: { width: 1664, height: 800, channels: 4, background: "#17142c" },
-  })
-    .composite([
-      { input: cardBackgrounds, left: 0, top: 0 },
-      { input: objectCell, left: 68, top: 40 },
-      { input: reliefCell, left: 876, top: 40 },
-    ])
-    .png()
-    .toFile(join(generatedDir, "mesh-forms.png"));
-
-  const clayRenderPath = join(generatedDir, "clay-render.png");
-  await writeCapabilityOverview(clayRenderPath, objectPreview, reliefPreview);
-
-  process.stdout.write(`Generated Logo to Clay examples in ${generatedDir}\n`);
+async function makeManifestPortable(manifestPath: string): Promise<void> {
+  const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as {
+    source: { logoPath: string };
+    artifacts: Record<string, string>;
+  };
+  manifest.source.logoPath = "../source.png";
+  for (const [key, value] of Object.entries(manifest.artifacts)) {
+    manifest.artifacts[key] = basename(value);
+  }
+  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 }
 
 main().catch((error: unknown) => {

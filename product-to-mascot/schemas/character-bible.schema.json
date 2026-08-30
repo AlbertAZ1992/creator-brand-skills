@@ -4,24 +4,30 @@
   "type": "object",
   "required": [
     "version", "productName", "mascotName", "brandEssence", "personality",
-    "mascotType", "silhouette", "faceRule", "palette", "signatureFeature",
-    "renderingRule", "avoids"
+    "mascotType", "productConnection", "silhouette", "proportions", "faceRule",
+    "palette", "signatureFeature", "appealHook", "renderingRule", "minimumSize",
+    "clearSpace", "avoids"
   ],
   "properties": {
-    "version": { "const": 1 },
+    "version": { "const": 2 },
     "productName": { "type": "string", "minLength": 1 },
     "mascotName": { "type": "string", "minLength": 1 },
     "brandEssence": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "type": "string" } },
     "personality": { "enum": ["friendly", "professional", "playful", "technical", "approachable"] },
     "mascotType": { "enum": ["animal", "character", "abstract", "robot"] },
+    "productConnection": { "type": "string", "minLength": 1 },
     "silhouette": { "type": "string", "minLength": 1 },
+    "proportions": { "type": "string", "minLength": 1 },
     "faceRule": { "type": "string", "minLength": 1 },
     "palette": {
       "type": "array", "minItems": 3, "maxItems": 5,
       "items": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
     },
     "signatureFeature": { "type": "string", "minLength": 1 },
+    "appealHook": { "type": "string", "minLength": 1 },
     "renderingRule": { "type": "string", "minLength": 1 },
+    "minimumSize": { "type": "integer", "minimum": 24, "maximum": 128 },
+    "clearSpace": { "type": "string", "minLength": 1 },
     "avoids": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } }
   },
   "additionalProperties": false

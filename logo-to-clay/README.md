@@ -7,12 +7,12 @@ a deterministic geometry route for production-ready brand assets.
 The callable Codex Skill name is `logo-to-clay`.
 
 <p align="center">
-  <img src="examples/generated/capability-overview.png" alt="Orbit Bloom source mark compared with its clay render, standalone object, and relief" width="900">
+  <img src="examples/generated/vite-bolt/clay-render.png" alt="Vite bolt rendered as a dimensional purple and blue clay campaign object" width="900">
 </p>
 
-| **Source-locked image route** | **Verified mesh route** |
+| **Vite bolt · image route** | **Vite bolt · verified mesh route** |
 | :---: | :---: |
-| Campaign-ready clay render with deliberate art direction | Standalone object or relief with real OBJ, MTL, bump map, preview, and manifest |
+| Recognisable silhouette, visible sidewalls, campaign-ready composition | 5,388 vertices, 1,796 faces, OBJ, MTL, bump map, preview, and passing manifest |
 
 ## At a glance
 
@@ -24,7 +24,7 @@ The callable Codex Skill name is `logo-to-clay`.
 | **3D forms** | Standalone `object` or backed `relief`; both use the same refined matte clay material |
 | **Controls** | Extrusion depth, clay color, and studio or transparent render background |
 | **Output formats** | Generated raster + final prompt; OBJ, MTL, bump PNG, 1024 px preview PNG, and verification manifest JSON |
-| **Core guarantee** | Mesh mode traces the supplied visible silhouette, preserves enclosed holes, and validates real geometry and material linkage |
+| **Core guarantee** | Image mode locks source contour and negative space before styling; mesh mode preserves enclosed holes and validates real geometry and material linkage |
 
 ## What it does
 
@@ -41,16 +41,24 @@ real geometry for Blender, Three.js, Unity, or another 3D workflow.
 
 ## Visual quality bar
 
-A good render preserves the source mark before it adds style. It should use one
-clear clay colour, a supporting scene colour, readable side light, and enough
-value contrast to work at thumbnail size. Neutral catalogue framing is allowed,
-but the default campaign result should have a deliberate composition rather
-than a generic object centred on beige.
+A good render preserves the exact outer contour, relative proportions,
+counters, openings, component spacing, baseline, overlap, and reading order
+before it adds style. The default campaign composition places the mark at
+55–75% of the frame, uses 20–30° of camera yaw and 8–14° of elevation, keeps a
+12–20% sidewall visible, and grounds it with one low plinth and decisive contact
+shadow. Neutral catalogue framing is allowed only when requested; the default
+must not be a generic object floating on beige.
 
-The image route and mesh route prove different things. The styled image above
-shows art direction; the split mesh card is generated from the checked-in OBJ
-pipeline. A beautiful raster is never presented as evidence that geometry was
-exported successfully.
+The image route and mesh route prove different things. The Vite bolt hero above
+shows art direction; `examples/generated/vite-bolt/` also contains the matching
+verified standalone OBJ/MTL delivery. The second approved JavaScript run contains
+both standalone and relief geometry. A beautiful raster is never presented as
+evidence that geometry was exported successfully.
+
+| **Vite bolt** | **JavaScript** |
+| :---: | :---: |
+| <img src="examples/generated/vite-bolt/clay-render.png" alt="Vite bolt clay campaign render" width="420"> | <img src="examples/generated/javascript/clay-render.png" alt="JavaScript clay campaign render" width="420"> |
+| Campaign render + standalone object | Campaign render + standalone object + relief |
 
 ## Deliverables (not clay styles)
 

@@ -12,7 +12,7 @@ icon families · reusable product mascots
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-4-5b4bdb.svg)](#four-skills-one-production-toolkit)
 
 **English** · [简体中文](README.zh-CN.md) · [Install](#install) ·
-[Outputs](#what-you-actually-get) · [Verify](#verify-locally)
+[Outputs](#input--result--production-files) · [Verify](#verify-locally)
 
 </div>
 
@@ -20,20 +20,29 @@ icon families · reusable product mascots
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
-| <img src="logo-to-clay/examples/generated/capability-overview.png" alt="One original mark shown as source artwork, a clay render, a standalone object, and a relief" width="560"> | <img src="image-to-sticker/examples/generated/style-overview.png" alt="One original Peach Planet artwork compared across eight sticker styles" width="560"> |
-| One mark → clay render + standalone OBJ + relief | One artwork → eight inspectable contour and material results |
+| <img src="logo-to-clay/examples/generated/vite-bolt/clay-render.png" alt="Vite bolt rendered as a dimensional purple and blue clay campaign object" width="560"> | <img src="image-to-sticker/examples/generated/open-source-tech/sticker-wall.png" alt="Open-source technology marks rendered as a varied transparent sticker wall" width="560"> |
+| Vite bolt → campaign render + verified 5,388-vertex OBJ | 11 varied sources → crisp transparent PNG stickers with alpha proof |
 | [`$logo-to-clay`](logo-to-clay/) | [`$image-to-sticker`](image-to-sticker/) |
 
 | **03 · Feature to Icons** | **04 · Product to Mascot** |
 | :---: | :---: |
-| <img src="feature-to-icons/examples/creative-workflow-duotone/showcase-preview.png" alt="Six duotone icons for one creative workflow" width="560"> | <img src="product-to-mascot/examples/generated/mori-mascot-showcase.png" alt="One original paper-moth mascot compared across five locked poses" width="560"> |
-| One product story → 3–20 verified SVG icons | One character bible → five recognisable working poses |
+| **Visual candidate stays in local review until approved.**<br><br>Brand benefits → original custom SVGs<br>System controls → native Phosphor | <img src="product-to-mascot/examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="560"> |
+| No previous Orbit / Signal / Die-cut result is promoted here | OpenPatch facts → three directions → Pip character bible → five locked poses |
 | [`$feature-to-icons`](feature-to-icons/) | [`$product-to-mascot`](product-to-mascot/) |
 
-These are comparison boards, not isolated beauty shots: each one makes the
-range, consistency, and production route visible before installation. Every
-source logo, illustration, product identity, and mascot is original to this
-repository—no third-party brand or trademark is needed for the demos.
+These approved images are production-route evidence, not isolated beauty
+shots; the Feature to Icons position remains intentionally unfilled until its
+new visual candidate is approved. Pip and Azi are repository-owned concepts.
+Third-party technology marks appear only as clearly attributed transformation
+fixtures; their names and marks remain the property of their respective owners,
+with no affiliation implied.
+
+### More approved runs
+
+| **JavaScript · Logo to Clay** | **ALBERTAZ · Product to Mascot** |
+| :---: | :---: |
+| <img src="logo-to-clay/examples/generated/javascript/clay-render.png" alt="JavaScript letter mark rendered as thick yellow clay" width="560"> | <img src="product-to-mascot/examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi, the ALBERTAZ folded swift mascot, across five locked poses" width="560"> |
+| Yellow campaign render + standalone object + relief | Folded-paper swift + locked five-pose identity system |
 
 Marketing boards remain separate from clean deliverables and machine-checkable
 proof. Every board is built from outputs produced by the route its Skill
@@ -48,14 +57,14 @@ documents.
 | Build an icon family | `Use $feature-to-icons to make consistent SVG icons for these product features.` |
 | Design a mascot | `Use $product-to-mascot to turn these product facts into a reusable mascot system.` |
 
-## What you actually get
+## Input → result → production files
 
-| Skill | Inputs and visual controls | Production files |
-| --- | --- | --- |
-| [`logo-to-clay`](logo-to-clay/) | Simple SVG/PNG logo; image, mesh, or both; standalone object or relief; clay colour, depth, studio or transparent background | Generated raster + final prompt; OBJ, MTL, bump PNG, 1024 px preview, manifest JSON |
-| [`image-to-sticker`](image-to-sticker/) | Transparent or flat-background logo, icon, badge, wordmark, or flat illustration; 0–44 px contour, custom colour, four deterministic finishes, ±12° tilt, 512/1024 px | Transparent RGBA PNG, alpha-proof PNG, reproducible source-card JSON, manifest JSON |
-| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names plus product context; outline light/regular/bold, filled, or duotone; custom colours; 24/32/48 px grid | Editable SVG per feature, spec and provenance JSON, SVG/PNG family preview, optical-check manifest JSON |
-| [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, visual medium, palette, or brand reference | Character-bible JSON, five full-size reference PNGs, contact sheet, verification manifest JSON |
+| Skill | Give it | Review this result | Keep these files and proof |
+| --- | --- | --- | --- |
+| [`logo-to-clay`](logo-to-clay/) | One simple SVG/PNG logo, plus optional form, colour, depth, and background choices | Source-locked campaign render with visible clay depth; standalone object or relief mesh preview | Final image prompt/render; OBJ, MTL, bump PNG, 1024 px preview, geometry manifest |
+| [`image-to-sticker`](image-to-sticker/) | One transparent or flat-background logo, icon, wordmark, badge, or flat illustration | Complete source as a transparent die-cut sticker; optional contour colour, tilt, and four deterministic finishes | RGBA `sticker.png`, alpha proof, reproducible source card, topology/provenance manifest |
+| [`feature-to-icons`](feature-to-icons/) | 3–20 feature names, product context, optional palette and style; source overrides for system glyphs | System glyphs stay native; brand benefits audition three original custom systems before expanding one | One editable SVG per feature, spec/provenance JSON, SVG/PNG preview, optical manifest |
+| [`product-to-mascot`](product-to-mascot/) | Product facts plus optional audience, personality, mascot type, medium, palette, or existing logo | Three genuinely different silhouettes, then one selected identity shown in five recognisable usage poses | V2 character bible, five full-size PNGs, 64 px contact-sheet review, verification manifest |
 
 ## Why the outputs hold up
 
@@ -70,17 +79,20 @@ source truth → task spec → controlled generation
 
 This boundary matters. The generated clay image can be expressive while the
 OBJ route remains deterministic. Sticker materials can look different while
-alpha geometry stays unchanged. Icon semantics stay traceable to one pinned
-library family. Mascot poses vary only after the character identity is locked.
+alpha geometry stays unchanged and small-viewBox SVGs stay crisp. Icons keep
+system controls undecorated on one pinned library while brand benefits require
+original custom geometry and distinct silhouettes. Mascot
+poses vary only after three directions are compared and the V2 identity
+contract is locked.
 
 ## See the breadth, then inspect the proof
 
 | Skill | Portfolio view | Verification view |
 | --- | --- | --- |
-| Logo to Clay | [Clay campaign render and two 3D forms](logo-to-clay/examples/) | OBJ faces, material linkage, holes, 1024 px preview, passing manifest |
-| Image to Sticker | [Contours, colours, tilt, and four front finishes](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
-| Feature to Icons | [Nine product families across style and weight](feature-to-icons/examples/) | One SVG per feature, pinned Phosphor source, optical metrics, zero hidden fallback |
-| Product to Mascot | [Mori master reference and five-pose set](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
+| Logo to Clay | [Vite bolt and JavaScript clay renders with verified 3D assets](logo-to-clay/examples/) | OBJ faces, material linkage, 1024 px preview, passing manifest |
+| Image to Sticker | [Open-source technology wall and focused Vite + React pair](image-to-sticker/examples/) | Transparent asset, grayscale alpha proof, topology and provenance manifest |
+| Feature to Icons | [Technical contract fixtures; marketing visual pending approval](feature-to-icons/examples/) | One SVG per feature, source boundary, optical metrics, zero hidden fallback |
+| Product to Mascot | [Pip, Azi, and Mori verified five-pose systems](product-to-mascot/examples/) | Character bible, five full-size references, contact sheet, passing manifest |
 
 ## Install
 

@@ -1,45 +1,33 @@
 # Image to Sticker visual examples
 
-The main showcase uses the original Peach Planet illustration. It is colourful,
-contains fine gaps, separate sparkles, and an orbit crossing the central shape,
-so it exposes contour and material problems more clearly than a plain wordmark.
+## Featured: open-source technology sticker wall
 
 <p align="center">
-  <img src="generated/style-overview.png" alt="Peach Planet sticker style overview" width="900">
+  <img src="generated/open-source-tech/sticker-wall.png" alt="Open-source technology transparent die-cut sticker wall" width="900">
 </p>
 
-The board holds source geometry constant while comparing borderless, thin,
-classic, and colour contours plus original, holographic, glitter, and reflective
-front materials. It uses repository-owned artwork rather than a third-party
-wordmark or trademark.
+[`generated/open-source-tech/`](generated/open-source-tech/) contains 11
+independent 1024 px RGBA deliveries, not one composited mockup: each source has
+its own clean sticker, alpha proof, source card, and passing manifest. The
+source registry records exact URLs and SHA-256 hashes; `Ship it` and `Merge
+ready` are repository-owned demonstration artwork.
 
-## Clean deliverable
-
-The portfolio board is presentation only. The actual transparent PNG, alpha
-proof, source card, and passing manifest are in
-[`generated/recommended/`](generated/recommended/).
+## Focused pair: Vite + React
 
 <p align="center">
-  <img src="generated/recommended-preview.png" alt="Peach Planet sticker portfolio preview" width="760">
+  <img src="generated/vite-react/sticker-wall.png" alt="Vite and React transparent die-cut sticker wall" width="900">
 </p>
 
-| Control | Visual proof |
-| --- | --- |
-| Outline width and topology | <img src="generated/outline-widths.png" alt="Four outline widths" width="720"> |
-| Alpha expansion | <img src="generated/outline-alpha.png" alt="Four grayscale alpha proofs" width="720"> |
-| Whole-sticker tilt | <img src="generated/tilts.png" alt="Three sticker tilt values" width="720"> |
-| Contour colour | <img src="generated/colors.png" alt="Four contour colours" width="720"> |
-| Front material | <img src="generated/materials.png" alt="Four deterministic front materials" width="720"> |
+[`generated/vite-react/`](generated/vite-react/) contains both source SVGs and
+two independent 1024 px RGBA deliveries, each with its own alpha proof, source
+card, and passing manifest. The internal React gaps and Vite diagonals remain
+crisp because small-viewBox SVGs are decoded near delivery density.
 
-## Source boundary
+All third-party names and marks belong to their respective owners. They are used
+only as attributed transformation fixtures; no affiliation is implied.
 
-Transparent artwork and one removable flat background are both supported. The
-two contract fixtures and their complete deliverables live under
-[`generated/source-types/`](generated/source-types/).
+## Regenerate the approved examples
 
-<p align="center">
-  <img src="generated/source-types.png" alt="Transparent and flat-background source fixtures" width="760">
-</p>
-
-Regenerate everything with `npm run examples`. The script uses the actual
-renderer for every result; it does not redraw the illustration for the README.
+Run `npm run examples` to send all 11 checked source SVGs through the actual
+renderer again and rebuild the sticker wall from those transparent outputs.
+The script does not contain or regenerate any retired fixture.

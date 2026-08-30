@@ -1,0 +1,16 @@
+# Clay material
+
+newmtl clay
+Kd 0.9686274509803922 0.8745098039215686 0.11764705882352941
+Ks 0.05 0.05 0.05
+Ns 10
+d 1.0
+illum 2
+map_Bump -bm 0.1 js-community-logo-clay-bump.png
+
+newmtl backing
+Kd 0.663 0.612 0.565
+Ks 0.03 0.03 0.03
+Ns 8
+d 1.0
+illum 2

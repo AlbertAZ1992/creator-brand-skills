@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "git.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 16,
+  "outlineColor": "#ffffff",
+  "material": "original",
+  "tilt": 5,
+  "size": 1024
+}

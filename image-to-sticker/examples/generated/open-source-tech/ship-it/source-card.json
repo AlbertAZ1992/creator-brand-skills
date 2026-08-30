@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "ship-it.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 16,
+  "outlineColor": "#ffffff",
+  "material": "original",
+  "tilt": -7,
+  "size": 1024
+}

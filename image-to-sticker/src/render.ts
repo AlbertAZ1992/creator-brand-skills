@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import sharp from "sharp";
+import sharp, { type Sharp } from "sharp";
 import { createExteriorAlphaMask } from "./alpha.js";
 import { applyMaterial } from "./material.js";
 import { composeOutline, removeFlatBackground, resolveOutlineRadius } from "./raster.js";
@@ -32,12 +32,25 @@ export interface RenderManifest {
   verification: Record<string, unknown>;
 }
 
-async function loadImage(inputPath: string): Promise<PixelImage> {
-  const result = await sharp(inputPath)
-    .rotate()
-    .ensureAlpha()
-    .raw()
-    .toBuffer({ resolveWithObject: true });
+export function resolveSvgDensity(width: number, height: number, targetSize: number): number {
+  const longestSide = Math.max(width, height, 1);
+  return Math.max(72, Math.min(10000, Math.ceil((72 * targetSize) / longestSide)));
+}
+
+async function openImage(inputPath: string, targetSize: number): Promise<Sharp> {
+  if (!inputPath.toLowerCase().endsWith(".svg")) return sharp(inputPath);
+  const metadata = await sharp(inputPath).metadata();
+  const density = resolveSvgDensity(
+    metadata.width ?? targetSize,
+    metadata.height ?? targetSize,
+    targetSize,
+  );
+  return sharp(inputPath, { density });
+}
+
+async function loadImage(inputPath: string, targetSize: number): Promise<PixelImage> {
+  const input = await openImage(inputPath, targetSize);
+  const result = await input.rotate().ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   if (result.info.channels !== 4) throw new Error("Source image could not be decoded as RGBA");
   return {
     data: new Uint8ClampedArray(result.data),
@@ -268,7 +281,7 @@ export async function renderSticker(
   outputDirectory: string,
   spec: ResolvedStickerSpec,
 ): Promise<RenderManifest> {
-  const source = await loadImage(inputPath);
+  const source = await loadImage(inputPath, spec.size * 2);
   const originalAlpha = sourceAlpha(source);
   const backgroundMode = resolveBackgroundMode(
     spec.backgroundMode,

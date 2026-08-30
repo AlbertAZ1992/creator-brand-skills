@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "astro.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 16,
+  "outlineColor": "#ffffff",
+  "material": "original",
+  "tilt": -8,
+  "size": 1024
+}

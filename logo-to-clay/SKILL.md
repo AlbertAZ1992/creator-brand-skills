@@ -89,17 +89,18 @@ Summarize what was generated and where files are saved.
 
 ## Clay Render Mode (image)
 
-Generates a ~600-character prompt. Send it to an image model with the logo as reference.
-The prompt covers one refined clay material, form description, background
-preference, and constraints against chunky, cartoon, fingerprinted, or
-low-poly results.
+Builds a source-locked prompt. Send it to an image model with the logo attached
+as the geometry reference. The prompt preserves the exact outer contour,
+relative proportions, counters, openings, component spacing, baseline, overlap,
+and reading order before it adds depth or material.
 
-Before invoking the image model, add a deliberate art direction that fits the
-source: one dominant clay colour, one supporting background or plinth colour,
-one clear light direction, and a composition that remains legible at README
-thumbnail size. Preserve the supplied silhouette and counters exactly. Do not
-fall back to a centred object on an empty beige background unless the user asks
-for a neutral catalogue render.
+The default studio route is a campaign hero: the mark occupies 55–75% of the
+frame, its front plane remains readable at 20–30 degrees of camera yaw and
+8–14 degrees of elevation, and the visible sidewall occupies roughly 12–20%
+of the front-face width. One low plinth or grounding surface creates a decisive
+contact shadow. Use one dominant clay colour, one supporting background or
+plinth colour, and one light direction. Reject a centred object floating on
+empty beige unless the user asks for a neutral catalogue render.
 
 ## Clay Asset Mode (mesh)
 
@@ -135,6 +136,8 @@ Outputs to `outputs/` directory:
 - Never report mesh mode complete unless `result.validation.passed` is true.
 - Image mode returns a constrained reference-image prompt; the calling agent
   still owns image-model invocation and must return the generated image.
+- Reject an image that restyles the source into a puffy approximation even if
+  it looks polished. Source contour and counters outrank scene styling.
 - Never make the output look glossy, metallic, or CGI-perfect.
 - Never add a fingerprint or tool-mark treatment. The single shared material
   is smooth, matte clay with restrained micro-variation.

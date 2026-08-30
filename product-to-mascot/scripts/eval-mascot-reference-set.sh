@@ -12,11 +12,15 @@ cleanup() {
 trap cleanup EXIT HUP INT TERM
 
 printf '%s\n' \
-	'{"version":1,"productName":"Seedling","mascotName":"Sprig",' \
+	'{"version":2,"productName":"Seedling","mascotName":"Sprig",' \
 	'"brandEssence":["growth","care","clarity"],"personality":"friendly",' \
-	'"mascotType":"character","silhouette":"round sprout","faceRule":"dewdrop eyes",' \
+	'"mascotType":"animal","productConnection":"sprout growth mirrors plant care",' \
+	'"silhouette":"round sprout","proportions":"60% head, tiny body and short limbs",' \
+	'"faceRule":"dewdrop eyes and two cheek dots",' \
 	'"palette":["#7CB342","#FFD54F","#FFF8E1"],"signatureFeature":"watering can",' \
-	'"renderingRule":"flat vector","avoids":["text","gradients","realism"]}' \
+	'"appealHook":"one leaf always leans toward the viewer","renderingRule":"flat vector",' \
+	'"minimumSize":32,"clearSpace":"one eye width",' \
+	'"avoids":["text","gradients","realism"]}' \
 	>"$work_dir/character-bible.json"
 
 for name in $names; do
@@ -30,7 +34,7 @@ done
 test -f "$work_dir/mascot-contact-sheet.png"
 test "$(magick identify -format '%wx%h' "$work_dir/mascot-contact-sheet.png")" = '1280x256'
 jq -e '
-  .version == 1 and
+  .version == 2 and
   .characterBible == "character-bible.json" and
   (.references | length == 5) and
   .contactSheet == "mascot-contact-sheet.png" and

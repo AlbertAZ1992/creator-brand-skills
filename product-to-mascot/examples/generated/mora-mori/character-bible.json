@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "productName": "Mora",
   "mascotName": "Mori",
   "brandEssence": [
@@ -10,7 +10,9 @@
   ],
   "personality": "approachable",
   "mascotType": "animal",
+  "productConnection": "A tiny paper-moth archivist whose open-book wings gather scattered sources and whose bookmark ribbon carries them into a connected brief.",
   "silhouette": "One round indigo body with stubby limbs and two broad ivory wings shaped like open book pages; the wing span is about 1.6 times the body width.",
+  "proportions": "The round body is one head-and-body mass, the open-book wing span is 1.6 times the body width, limbs stay stubby, and both antennae remain shorter than one wing page.",
   "faceRule": "Two small black oval eyes, one tiny curved mouth, and two coral cheek dots on the upper half of the round body.",
   "palette": [
     "#173F73",
@@ -20,7 +22,10 @@
     "#91B936"
   ],
   "signatureFeature": "Two coral-tipped antennae and one lime bookmark ribbon visible behind the lower body in every pose.",
+  "appealHook": "The open-book wings make every greeting feel like a tiny research note unfolding for the user.",
   "renderingRule": "Premium tactile 3D cut-paper craft on a warm ivory background, with visible paper fibres, folded wing creases, layered cobalt edges, soft editorial light, and restrained shadows.",
+  "minimumSize": 48,
+  "clearSpace": "Keep clear space equal to half the round body width around the full wings, antennae, and bookmark ribbon.",
   "avoids": [
     "No plush, clay, glossy plastic, or photoreal insect rendering.",
     "No text, logo, UI, or invented product claims inside the image.",
