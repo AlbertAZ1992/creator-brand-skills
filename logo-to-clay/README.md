@@ -1,9 +1,10 @@
 # Logo to Clay
 
-Turn a flat SVG or PNG logo into a refined clay-style image, a verified OBJ 3D
-asset, or both.
+Turn a flat SVG or PNG logo into a refined clay logo render, a verified OBJ 3D
+mesh, or both. This open-source Agent Skill gives Codex a fast image route and
+a deterministic geometry route for production-ready brand assets.
 
-The callable Skill name is `logo-to-clay`.
+The callable Codex Skill name is `logo-to-clay`.
 
 | **Image route** | **Mesh route** |
 | :---: | :---: |

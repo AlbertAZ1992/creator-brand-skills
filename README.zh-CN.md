@@ -2,15 +2,16 @@
 
 # Creator Brand Skills
 
-### 一个品牌输入，四套可复用的视觉系统。
+### 面向 Codex 的开源 AI 品牌设计 Agent Skills。
 
-用 Codex 把 Logo、图片、产品功能或产品想法变成可直接交付的视觉资产。
+把一个 Logo、图片、功能列表或产品想法变成黏土 Logo 渲染与 OBJ Mesh、透明
+PNG 贴纸、可编辑 SVG 图标族，或可复用的产品 Mascot。
 
 [English](README.md) · **简体中文** · [安装](#安装) · [本地验证](#本地验证)
 
 </div>
 
-## 四个 Skill，一套品牌工具组
+## 四个 Agent Skill，一套 AI 品牌设计工具组
 
 | **01 · Logo to Clay** | **02 · Image to Sticker** |
 | :---: | :---: |
@@ -121,13 +122,21 @@ brew install imagemagick jq
 
 ```text
 creator-brand-skills/
-├── scripts/verify.sh
+├── scripts/
+│   ├── render-social-preview.sh
+│   └── verify.sh
 ├── examples/
 ├── .github/workflows/
 ├── feature-to-icons/
 ├── image-to-sticker/
 ├── logo-to-clay/
 └── product-to-mascot/
+```
+
+GitHub Social Preview 直接使用作品表格中的四个真实产物构建：
+
+```bash
+./scripts/render-social-preview.sh
 ```
 
 每个 Skill 自己维护 `SKILL.md`、UI metadata、实现、eval、schema、示例和 package
