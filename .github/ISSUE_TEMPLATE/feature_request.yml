@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a concrete input, control, output, or verification improvement.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Skill or surface
+      options:
+        - logo-to-clay
+        - image-to-sticker
+        - feature-to-icons
+        - product-to-mascot
+        - repository or playground
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: User need
+      description: Describe the real task that is hard or impossible today.
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Proposed input and output contract
+      description: Name the input, controls, files, and proof you expect.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: References or example inputs
