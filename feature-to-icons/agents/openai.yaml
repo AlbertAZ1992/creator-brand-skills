@@ -1,4 +1,4 @@
 interface:
   display_name: "Feature to Icons"
-  short_description: "Match features to one verified open-source icon family"
-  default_prompt: "Use $feature-to-icons to create a consistent, library-backed SVG family for these product features."
+  short_description: "Turn product features into hand-drawn animated SVG icons"
+  default_prompt: "Use $feature-to-icons to create one original hand-drawn animated SVG icon set for these product features."

@@ -1,8 +1,10 @@
 import type {
   BrandPersonality,
   CharacterBible,
+  MascotDirection,
   MascotInput,
   MascotOutput,
+  MascotPose,
   MascotType,
   PersonalityAnalysis,
   ValidationError,
@@ -62,20 +64,23 @@ const PERSONALITY_VISUAL_MAP: Record<
   },
   professional: {
     visualLanguage:
-      "Confident posture; clean geometric lines; composed expression; authoritative silhouette; balanced proportions",
+      "Confident compact posture; clean rounded geometry; composed but warm expression; " +
+      "simple authoritative silhouette; premium toy-like proportions",
     colorDirection: "Deep navy, charcoal gray, crisp white, gold accents, burgundy, royal blue",
     characterArchetype: "The Ruler -- commanding, premium, trustworthy, exudes quiet confidence",
   },
   playful: {
     visualLanguage:
-      "Exaggerated features; dynamic energetic pose; bold outlines; whimsical proportions; bouncy posture",
+      "One exaggerated identifying feature; dynamic pose; bold simple forms; oversized face; " +
+      "short limbs; bouncy compact posture",
     colorDirection:
       "Bright primaries, neon accents, vivid orange, electric purple, lime green, hot pink",
     characterArchetype: "The Jester -- energetic, funny, irreverent, brings joy and surprise",
   },
   technical: {
     visualLanguage:
-      "Geometric precision; sleek smooth surfaces; futuristic details; minimalist forms; sharp angles; glowing elements",
+      "Compact geometric masses with softened corners; one crisp technical motif; warm readable eyes; " +
+      "precise but friendly construction; matte surfaces; no dense machinery",
     colorDirection: "Cool metal tones, electric blue, silver, dark slate, cyan neon, matte black",
     characterArchetype: "The Sage -- wise, knowledgeable, precise, sees patterns others miss",
   },
@@ -102,27 +107,52 @@ const MASCOT_TYPE_GUIDANCE: Record<
 > = {
   animal: {
     designDirection:
-      "Design an animal character whose natural traits metaphorically match the product. Consider the animal's real-world behavior, habitat, and cultural associations. The animal should feel like a natural ambassador -- a fox for clever tech, an owl for knowledge platforms, a bee for productivity tools.",
+      "Design an animal whose real trait maps to the product. Use one species-defining feature, " +
+      "one product-defining feature, and a compact silhouette built from a few large masses. " +
+      "Integrate the product cue into an ear, wing, tail, shell, pouch, or carried prop rather " +
+      "than pasting a logo onto the body.",
     bestFor:
       "Products with natural metaphors, environmental themes, or instinct-based user experiences",
   },
   character: {
     designDirection:
-      "Design a human-like character with a distinctive costume, prop, or tool that directly connects to the product. The character should have a clear role (guide, helper, expert) and a memorable silhouette. Include clothing details, accessories, and a signature item that reinforces the brand.",
+      "Design a compact helper character with toy-like proportions and one product-linked prop " +
+      "or costume mass. Do not default to an adult human silhouette, realistic anatomy, a black " +
+      "body suit, or many small accessories. The role must read from one memorable outer contour.",
     bestFor:
       "Consumer apps, service platforms, community products, or anything needing a relatable human touch",
   },
   abstract: {
     designDirection:
-      "Design an abstract shape or form that expresses personality purely through motion, color, and proportion. No literal face needed -- convey emotion through shape language (round = friendly, angular = edgy), rhythm, and color energy. Think of it as a living logo.",
+      "Design one living symbol from four to seven large rounded masses. Convey emotion through " +
+      "proportion, lean, and one small face region. Preserve a simple outer contour at 32 px and " +
+      "avoid turning the result into a generic blob with a logo attached.",
     bestFor:
       "Developer tools, infrastructure products, API platforms, or brands wanting a minimalist identity",
   },
   robot: {
     designDirection:
-      "Design a mechanical or robotic character with product-themed features. Integrate UI elements, data visualizations, or functional components into the design. The robot should feel like it belongs to the product's universe -- helpful automation bot, data companion, or tech assistant.",
+      "Design a friendly compact machine with one head or face panel, short limbs, and one " +
+      "product-themed mechanism. Avoid featureless humanoid silhouettes, tactical armour, dense " +
+      "greebles, exposed wiring, and more than one glowing display.",
     bestFor: "AI/ML products, automation tools, developer platforms, or tech-heavy brands",
   },
+};
+
+const APPEAL_RULES = [
+  "one dominant continuous outer silhouette built from roughly 4-7 large masses",
+  "one species or form cue plus one product cue; delete decorative parts that carry neither",
+  "a face region large enough to read at 32 px, with no more than three facial marks",
+  "compact proportions with short limbs; no adult human anatomy unless explicitly requested",
+  "two character base colours plus one accent colour by default, before the background",
+  "no invented exact counts for tiny repeated decorations; lock large identity anchors instead",
+] as const;
+
+const POSE_STORIES: Record<MascotPose, string> = {
+  welcome: "open welcoming gesture, friendly eye contact, complete silhouette unobstructed",
+  working: "focused use of the locked product feature or prop, calm concentration, no new tools",
+  thinking: "clear thinking or help gesture, curious expression, signature feature still visible",
+  celebrate: "joyful upward action, energetic but readable silhouette, restrained accent confetti",
 };
 
 /**
@@ -408,7 +438,7 @@ export function validate(
     productName: productName!,
     productDescription: productDescription!,
     personality: personality ?? "friendly",
-    mascotType: mascotType ?? "character",
+    mascotType: mascotType ?? "animal",
     variationCount: variationCount ?? DEFAULT_VARIATIONS,
   };
   if (targetAudience !== undefined) {
@@ -518,7 +548,8 @@ export function buildPrompt(input: MascotInput): string {
   const essenceKeywords = extractBrandEssence(productName, productDescription);
   const styleLine = visualStyle
     ? `Visual style reference: ${visualStyle}.`
-    : "Visual style: clean, modern illustration suitable for digital products.";
+    : "Visual style: choose one ownable production medium, then keep it unchanged across the set.";
+  const appealBudget = APPEAL_RULES.map((rule) => `- ${rule}`).join("\n");
 
   return `You are an expert brand mascot designer. Your task is to create a memorable mascot concept for the following product.
 
@@ -559,6 +590,14 @@ ${mascotGuidance.designDirection}
 
 This type works best for: ${mascotGuidance.bestFor}
 
+### Step 3.5 -- Appeal and Complexity Budget
+
+${appealBudget}
+
+The mascot must feel appealing and ownable rather than merely correct. Prefer
+one memorable proportion and one lovable imperfection over a generic humanoid,
+stock robot, or detailed character illustration.
+
 ---
 
 ## Phase 2: Generate the Mascot Concept
@@ -580,12 +619,14 @@ uses the brand colours or wears a pasted-on logo.
 Write a detailed AI image generation prompt for the primary mascot. This should be ready to paste into Midjourney, DALL-E, or Stable Diffusion. Include:
 
 - Character description (type, pose, expression)
+- Exact proportions, including head-to-body relationship and limb length
 - Artistic style and rendering technique
 - Color palette and lighting
 - Full-body neutral reference composition with the complete silhouette visible
 - Any important details or props
 - Exactly one character on a simple opaque background, with no text, logo, or UI
 - Clear shape hierarchy and enough contrast to remain readable at 64 px
+- Four to seven large silhouette masses, with tiny decorative details removed
 
 Format the prompt as clear, comma-separated descriptive phrases.
 
@@ -654,28 +695,57 @@ Structure your response with these exact section headers:
 Now, create the mascot concept for **${productName}**.`;
 }
 
-/**
- * Ask the planning model for a machine-readable character bible before image
- * generation. The accepted bible is the source of truth for later poses and
- * sticker generation.
- */
-export function buildCharacterBiblePrompt(input: MascotInput): string {
+/** Ask for three meaningfully different, low-complexity directions before locking one. */
+export function buildMascotDirectionPrompt(input: MascotInput): string {
   const visual = PERSONALITY_VISUAL_MAP[input.personality ?? "friendly"];
-  const guidance = MASCOT_TYPE_GUIDANCE[input.mascotType ?? "character"];
+  const guidance = MASCOT_TYPE_GUIDANCE[input.mascotType ?? "animal"];
+  const appealBudget = APPEAL_RULES.map((rule) => `- ${rule}`).join("\n");
 
   return [
-    "Create a character bible for a reusable brand mascot.",
+    "Propose exactly three distinct mascot directions for this product.",
     `Product: ${input.productName}.`,
     `Product facts: ${input.productDescription}`,
     input.targetAudience ? `Audience: ${input.targetAudience}.` : "",
     `Personality visual language: ${visual.visualLanguage}.`,
     `Mascot guidance: ${guidance.designDirection}`,
     input.visualStyle ? `Requested visual style: ${input.visualStyle}.` : "",
+    "Each direction must connect to a different product truth and use a genuinely different",
+    "outer silhouette. Do not return three recolours of the same subject.",
+    "Use this appeal and complexity budget:",
+    appealBudget,
+    "Return JSON only: an array of three objects with name, productConnection, silhouette,",
+    "signatureFeature, and appealHook. Keep every field concise and do not invent capabilities.",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+/** Ask for the V2 identity contract after one direction is accepted. */
+export function buildCharacterBiblePrompt(input: MascotInput, direction?: MascotDirection): string {
+  const visual = PERSONALITY_VISUAL_MAP[input.personality ?? "friendly"];
+  const guidance = MASCOT_TYPE_GUIDANCE[input.mascotType ?? "animal"];
+
+  return [
+    "Create a V2 character bible for one reusable, visually appealing brand mascot.",
+    `Product: ${input.productName}.`,
+    `Product facts: ${input.productDescription}`,
+    input.targetAudience ? `Audience: ${input.targetAudience}.` : "",
+    `Personality visual language: ${visual.visualLanguage}.`,
+    `Mascot guidance: ${guidance.designDirection}`,
+    input.visualStyle ? `Requested visual style: ${input.visualStyle}.` : "",
+    direction ? `Accepted direction: ${JSON.stringify(direction)}.` : "",
     "The product connection must appear in the silhouette, signature feature, prop system,",
     "or rendering material; reject a generic creature that only borrows brand colours.",
-    "Return JSON only with mascotName, brandEssence, silhouette, faceRule, palette,",
-    "signatureFeature, renderingRule, and avoids. palette must contain 3-5 hex colours;",
-    "avoids must contain exactly three visual prohibitions. Do not invent product facts.",
+    "Use four to seven large silhouette masses and explicitly lock the head-to-body ratio,",
+    "limb length, face marks, and one memorable appeal hook.",
+    "Do not invent exact counts for tiny repeated marks such as stitches, dots, scales, or screws;",
+    "those are fragile generation anchors. Preserve an exact micro-count only when the user or",
+    "supplied brand asset explicitly requires it.",
+    "Return JSON only with mascotName, brandEssence, productConnection, silhouette,",
+    "proportions, faceRule, palette, signatureFeature, appealHook, renderingRule,",
+    "minimumSize, clearSpace, and avoids. palette must contain 3-5 hex colours;",
+    "minimumSize is an integer from 24 to 128; avoids contains exactly three visual prohibitions.",
+    "Do not invent product facts.",
   ]
     .filter(Boolean)
     .join("\n");
@@ -688,11 +758,58 @@ export function createCharacterBible(
 ): CharacterBible {
   return {
     ...raw,
-    version: 1,
+    version: 2,
     productName: input.productName,
     personality: input.personality ?? "friendly",
-    mascotType: input.mascotType ?? "character",
+    mascotType: input.mascotType ?? "animal",
   };
+}
+
+/** Build the canonical primary-reference prompt from a locked V2 bible. */
+export function buildPrimaryImagePrompt(bible: CharacterBible): string {
+  return [
+    `Create one full-body primary reference for ${bible.mascotName}, the mascot for ${bible.productName}.`,
+    labeledRule("Product connection", bible.productConnection),
+    labeledRule("Silhouette", bible.silhouette),
+    labeledRule("Exact proportions", bible.proportions),
+    labeledRule("Face rule", bible.faceRule),
+    labeledRule("Signature feature", bible.signatureFeature),
+    labeledRule("Appeal hook", bible.appealHook),
+    `Palette only: ${bible.palette.join(", ")}.`,
+    labeledRule("Rendering rule", bible.renderingRule),
+    "One character only, neutral three-quarter pose, complete silhouette visible, simple opaque",
+    "background, large readable face, short uncluttered limbs, no text, logo, UI, contact sheet,",
+    "extra props, costume changes, or anatomy not specified by the bible.",
+    labeledRule("Avoid", bible.avoids.map(stripEndPunctuation).join("; ")),
+    "Hard identity audit: inspect every named count, side, direction, colour, and shape before",
+    "delivery. Any mismatch is a failed reference and must be regenerated, not rationalized.",
+    `The character must remain recognizable at ${bible.minimumSize}px.`,
+  ].join("\n");
+}
+
+function labeledRule(label: string, value: string): string {
+  return `${label}: ${stripEndPunctuation(value)}.`;
+}
+
+function stripEndPunctuation(value: string): string {
+  return value.trim().replace(/[.!?]+$/u, "");
+}
+
+/** Build one pose prompt that repeats every identity anchor from the accepted primary. */
+export function buildPoseImagePrompt(bible: CharacterBible, pose: MascotPose): string {
+  return [
+    `Edit the accepted primary reference of ${bible.mascotName} into one ${pose} pose.`,
+    `Pose story: ${POSE_STORIES[pose]}.`,
+    `Preserve exactly: ${bible.silhouette}; ${bible.proportions}; ${bible.faceRule};`,
+    `${bible.signatureFeature}; ${bible.appealHook}; palette ${bible.palette.join(", ")};`,
+    `and the same ${bible.renderingRule}.`,
+    "Use the primary reference as the identity source. Change only the gesture and expression.",
+    "One character, complete silhouette, simple opaque background, no text, logo, UI, new prop,",
+    "new costume, extra character, contact sheet, or medium change.",
+    labeledRule("Avoid", bible.avoids.map(stripEndPunctuation).join("; ")),
+    "Hard identity audit: reject the pose if any named count, side, direction, colour, or shape",
+    "differs from the accepted primary.",
+  ].join("\n");
 }
 
 // --- Output Parsing ---

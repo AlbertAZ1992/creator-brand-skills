@@ -1,5 +1,5 @@
-import { cases } from './cases.js';
-import { buildPrompt, validate } from '../src/index.js';
+import { cases } from "./cases.js";
+import { buildPrompt, validate } from "../src/index.js";
 
 interface EvalResult {
   name: string;
@@ -16,9 +16,7 @@ function runEval(): { results: EvalResult[]; passed: number; failed: number } {
     // Step 1: Validate
     const validation = validate(c.input);
     if (validation.ok !== c.expectValid) {
-      failures.push(
-        `expected validation ok=${c.expectValid}, got ok=${validation.ok}`,
-      );
+      failures.push(`expected validation ok=${c.expectValid}, got ok=${validation.ok}`);
     }
 
     // Step 2: If valid, build prompt and check assertions
@@ -27,17 +25,13 @@ function runEval(): { results: EvalResult[]; passed: number; failed: number } {
 
       for (const keyword of c.expectedPromptContains) {
         if (!prompt.includes(keyword.toLowerCase())) {
-          failures.push(
-            `expected prompt to contain "${keyword}", but it was not found`,
-          );
+          failures.push(`expected prompt to contain "${keyword}", but it was not found`);
         }
       }
 
       for (const keyword of c.expectedPromptNotContains) {
         if (prompt.includes(keyword.toLowerCase())) {
-          failures.push(
-            `expected prompt to NOT contain "${keyword}", but it was found`,
-          );
+          failures.push(`expected prompt to NOT contain "${keyword}", but it was found`);
         }
       }
     }
@@ -60,7 +54,7 @@ function runEval(): { results: EvalResult[]; passed: number; failed: number } {
 const { results, passed, failed } = runEval();
 
 for (const r of results) {
-  const icon = r.passed ? 'PASS' : 'FAIL';
+  const icon = r.passed ? "PASS" : "FAIL";
   console.log(`${icon}  ${r.name}`);
   for (const f of r.failures) {
     console.log(`     -> ${f}`);

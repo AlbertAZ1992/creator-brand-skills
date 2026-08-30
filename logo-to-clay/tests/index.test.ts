@@ -155,6 +155,16 @@ describe("buildPrompt", () => {
     expect(prompt).toContain("no extra symbols");
   });
 
+  it("locks the supplied logo geometry before styling it", () => {
+    const prompt = buildPrompt(defaultOpts);
+
+    expect(prompt).toContain("use the attached logo as the only geometry reference");
+    expect(prompt).toContain("preserve the exact outer contour");
+    expect(prompt).toContain("negative-space counters");
+    expect(prompt).toContain("spacing, baseline, overlap, and reading order");
+    expect(prompt).toContain("add depth behind it instead of redrawing it");
+  });
+
   it("includes shape description for object", () => {
     const prompt = buildPrompt({ ...defaultOpts, shape: "object" });
     expect(prompt).toContain("standalone clay object");
@@ -165,6 +175,11 @@ describe("buildPrompt", () => {
     const prompt = buildPrompt({ ...defaultOpts, background: "studio" });
     expect(prompt).toContain("purposeful editorial studio scene");
     expect(prompt).toContain("readable at thumbnail size");
+    expect(prompt).toContain("logo occupies 55-75% of the frame");
+    expect(prompt).toContain("camera yaw 20-30 degrees");
+    expect(prompt).toContain("sidewall measuring roughly 12-20%");
+    expect(prompt).toContain("one low plinth or grounding surface");
+    expect(prompt).toContain("do not default to a centred object floating on empty beige");
   });
 
   it("includes background preference for transparent", () => {
@@ -188,9 +203,9 @@ describe("buildPrompt", () => {
     expect(prompt).toContain("match the logo's primary color");
   });
 
-  it("is concise (under 1500 characters)", () => {
+  it("is concise enough for an image-generation handoff", () => {
     const prompt = buildPrompt(defaultOpts);
-    expect(prompt.length).toBeLessThan(1500);
+    expect(prompt.length).toBeLessThan(2200);
   });
 
   it("mentions roughness and metalness", () => {

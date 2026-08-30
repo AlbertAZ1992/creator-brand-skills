@@ -52,15 +52,18 @@ remain opaque. If corners are inconsistent, `auto` rejects the image as complex.
 
 ## Rendering order
 
-1. Decode complete source RGBA and hash decoded RGB.
-2. Preserve source alpha or remove one uniform background color.
-3. Crop visible alpha bounds and fit the complete artwork with safe margin.
-4. For zero outline, preserve source RGBA without compositing it over itself.
-5. Otherwise expand alpha by the configured radius and tint it.
-6. Composite source over outline.
-7. Apply the selected deterministic front material.
-8. Rotate the complete sticker by the configured tilt.
-9. Write RGBA PNG, grayscale alpha proof, V4 source card, and V4 manifest.
+1. Probe source metadata. SVGs are decoded at adaptive density so their longest
+   intrinsic side approaches the 2× working delivery size instead of enlarging
+   a low-resolution rasterization.
+2. Decode complete source RGBA and hash decoded RGB.
+3. Preserve source alpha or remove one uniform background color.
+4. Crop visible alpha bounds and fit the complete artwork with safe margin.
+5. For zero outline, preserve source RGBA without compositing it over itself.
+6. Otherwise expand alpha by the configured radius and tint it.
+7. Composite source over outline.
+8. Apply the selected deterministic front material.
+9. Rotate the complete sticker by the configured tilt.
+10. Write RGBA PNG, grayscale alpha proof, V4 source card, and V4 manifest.
 
 ## Gates
 

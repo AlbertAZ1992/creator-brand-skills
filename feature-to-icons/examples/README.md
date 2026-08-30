@@ -1,43 +1,32 @@
 # Feature to Icons examples
 
-Nine generated families exercise product context, native style, weight, colour,
-and grid size. Every icon comes from pinned Phosphor 2.1.1 geometry and passes
-the same provenance, raster, safety, and optical checks as a user delivery.
+The public gallery contains one current, complete hand-drawn family. The board
+places the input feature brief beside the actual verified SVG outputs.
 
-## Featured family
-
-<p align="center">
-  <img src="creative-workflow-duotone/showcase-preview.png" alt="Creative workflow duotone icon showcase" width="760">
-</p>
-
-The styled card above contains the same six verified SVGs as the clean family
-preview below. It is an optional presentation asset, not a replacement for the
-deliverables.
+## Creator Doodles · 20 animated SVG icons
 
 <p align="center">
-  <img src="creative-workflow-duotone/icon-family-preview.png" alt="Clean creative workflow icon family preview" width="560">
+  <img src="creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into a hand-drawn animated SVG icon set" width="1000">
 </p>
 
-## Complete generated set
+| Artifact | Purpose |
+| --- | --- |
+| [`example.json`](creator-doodle-animated/example.json) | Original request and normalized 20-feature input |
+| [`showcase-preview.png`](creator-doodle-animated/showcase-preview.png) | Static source-to-output proof for README display |
+| [`icon-family-preview.html`](creator-doodle-animated/icon-family-preview.html) | Playable gallery using the actual individual animated SVGs |
+| [`icon-family-preview.svg`](creator-doodle-animated/icon-family-preview.svg) | Editable static family contact sheet |
+| [`icon-family-manifest.json`](creator-doodle-animated/icon-family-manifest.json) | Feature coverage, treatment, motion, source, optical metrics, and checks |
+| `*.svg` | Twenty self-contained editable feature icons |
 
-| Family | Native system | Features |
-| --- | --- | --- |
-| [Creative workflow](creative-workflow-duotone/) | Phosphor duotone · 32 px | Capture Ideas, Shape Story, Build Palette, Brand Library, Publish Kit, Measure Reach |
-| [Social publishing](social-publishing-outline/) | Phosphor regular · 32 px | Home Feed, Search, Create Post, Activity, Profile |
-| [Product essentials](product-essentials-outline/) | Phosphor regular · 24 px | Search, Filters, Team Sharing, Cloud Sync |
-| [Analytics](analytics-light-outline/) | Phosphor light · 24 px | Dashboard, Analytics, Reports, Trends, Export Data |
-| [Collaboration](collaboration-filled/) | Phosphor fill · 32 px | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
-| [Commerce](commerce-duotone/) | Phosphor duotone · 24 px | Shopping Cart, Wishlist, Orders, Payment, Delivery |
-| [Security](security-bold-outline/) | Phosphor bold · 32 px | Authentication, Encryption, Access Control, Audit Log, Alerts |
-| [Creator Brand](creator-brand-duotone/) | Phosphor duotone · 32 px | Image Generation, Background Removal, Brand Kit, Export Assets, Templates |
-| [AI workspace](ai-workspace-outline-48/) | Phosphor regular · 48 px | AI Copilot, Knowledge Search, Automation, Version History |
-
-Every directory contains the request, normalized input, icon SVGs, spec,
-provenance metadata, SVG/PNG clean previews, and a passing manifest.
+Every icon declares the hand-drawn treatment, includes the same restrained
+`icon-wiggle` animation, and disables motion when the viewer prefers reduced
+motion. The static first frames pass SVG safety, visible-pixel, bounds, center,
+ink-density, and optical-volume checks with no warnings.
 
 ```bash
 npm run examples
 npm run verify:examples
 ```
 
-These commands regenerate and verify exactly nine families and 44 SVG icons.
+Regeneration removes retired example directories and rebuilds exactly this
+20-icon family from the checked source brief and original SVG geometry.

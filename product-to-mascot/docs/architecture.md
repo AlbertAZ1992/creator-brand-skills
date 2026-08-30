@@ -3,14 +3,17 @@
 ## Scale contract
 
 ```text
-Product facts → character bible → primary reference → 4 locked poses
+Product facts → 3 direction audition → V2 character bible → primary reference
+              → 4 locked poses
               → contact-sheet review → manifest → reusable mascot set
 ```
 
-The planning model may propose the character bible, but it must be accepted
-before any pose generation. Each later image uses that accepted bible and the
-primary reference. This prevents each generation from independently inventing a
-new mascot.
+The planning model first proposes three product-specific silhouettes. One is
+selected before the V2 bible locks product connection, exact proportions,
+appeal hook, face, palette, signature feature, medium, minimum size, and clear
+space. The planner does not invent exact counts for tiny repeated marks because
+those are fragile generation anchors; user-supplied counts remain hard checks.
+Each later image uses the accepted primary as a reference.
 
 ## Repository structure
 
@@ -33,7 +36,8 @@ tests/                                 Unit tests
 | Gate | Evidence | Failure action |
 | --- | --- | --- |
 | Product truth | stated facts separated from creative choices | remove unsupported claims |
-| Character lock | complete bible with palette and three avoids | refine bible before images |
+| Direction audition | three distinct silhouettes and product connections | reject recolours or generic subjects |
+| Character lock | complete V2 bible with proportions, appeal hook, palette, three avoids, and no invented micro-counts | refine bible before images |
 | Primary reference | full silhouette and signature feature match bible | targeted primary retry |
 | Pose consistency | each of four named poses matches primary identity | retry only the drifting pose |
 | Delivery | five PNGs are at least 512 px and contact sheet exists | reject incomplete set |

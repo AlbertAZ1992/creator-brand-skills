@@ -1,0 +1,57 @@
+{
+  "contractVersion": "1.0",
+  "source": {
+    "logoPath": "../source.png"
+  },
+  "spec": {
+    "output": "mesh",
+    "shape": "object",
+    "depth": 6,
+    "clayColor": "#8255F4",
+    "background": "studio"
+  },
+  "backing": {
+    "enabled": false,
+    "depth": 0
+  },
+  "cavities": {
+    "mode": "through",
+    "depth": 6,
+    "count": 0
+  },
+  "rounding": {
+    "bevelThickness": 1.44,
+    "bevelSize": 1.2,
+    "bevelOffset": 0,
+    "bevelSegments": 14
+  },
+  "artifacts": {
+    "meshPath": "vite-bolt-clay-mesh.obj",
+    "materialPath": "vite-bolt-clay-clay.mtl",
+    "bumpPath": "vite-bolt-clay-bump.png",
+    "previewPath": "vite-bolt-clay-preview.png"
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "OBJ geometry and material link",
+      "MTL clay material and bump texture",
+      "1024px PNG preview",
+      "manifest artifact paths"
+    ],
+    "geometry": {
+      "vertices": 5388,
+      "faces": 1796
+    },
+    "preview": {
+      "width": 1024,
+      "height": 1024,
+      "format": "png"
+    },
+    "materialTexture": {
+      "width": 512,
+      "height": 512,
+      "format": "png"
+    }
+  }
+}

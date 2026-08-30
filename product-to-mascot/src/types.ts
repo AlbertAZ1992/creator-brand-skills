@@ -7,6 +7,16 @@ export type BrandPersonality =
 
 export type MascotType = "animal" | "character" | "abstract" | "robot";
 
+export type MascotPose = "welcome" | "working" | "thinking" | "celebrate";
+
+export interface MascotDirection {
+  name: string;
+  productConnection: string;
+  silhouette: string;
+  signatureFeature: string;
+  appealHook: string;
+}
+
 export interface MascotInput {
   /** Product or company name */
   productName: string;
@@ -56,17 +66,22 @@ export interface MascotOutput {
 
 /** Stable visual contract passed to later mascot poses and sticker generation. */
 export interface CharacterBible {
-  version: 1;
+  version: 2;
   productName: string;
   mascotName: string;
   brandEssence: string[];
   personality: BrandPersonality;
   mascotType: MascotType;
+  productConnection: string;
   silhouette: string;
+  proportions: string;
   faceRule: string;
   palette: string[];
   signatureFeature: string;
+  appealHook: string;
   renderingRule: string;
+  minimumSize: number;
+  clearSpace: string;
   avoids: string[];
 }
 

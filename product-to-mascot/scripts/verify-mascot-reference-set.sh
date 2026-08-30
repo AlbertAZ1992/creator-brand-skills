@@ -30,15 +30,24 @@ if ! command -v jq >/dev/null 2>&1; then
 fi
 
 if ! jq -e '
-  .version == 1 and
+  .version == 2 and
   (.productName | type == "string" and length > 0) and
   (.mascotName | type == "string" and length > 0) and
   (.brandEssence | type == "array" and length >= 3 and length <= 5) and
+  (.productConnection | type == "string" and length > 0) and
+  (.silhouette | type == "string" and length > 0) and
+  (.proportions | type == "string" and length > 0) and
+  (.faceRule | type == "string" and length > 0) and
   (.palette | type == "array" and length >= 3 and length <= 5) and
+  (.signatureFeature | type == "string" and length > 0) and
+  (.appealHook | type == "string" and length > 0) and
+  (.renderingRule | type == "string" and length > 0) and
+  (.minimumSize | type == "number" and . >= 24 and . <= 128) and
+  (.clearSpace | type == "string" and length > 0) and
   (.avoids | type == "array" and length == 3)
 ' \
 	"$reference_dir/character-bible.json" >/dev/null; then
-	echo "Error: character-bible.json is not a valid V1 character bible." >&2
+	echo "Error: character-bible.json is not a valid V2 character bible." >&2
 	exit 1
 fi
 
@@ -74,7 +83,7 @@ magick \
 
 printf '%s\n' \
 	'{' \
-	'  "version": 1,' \
+	'  "version": 2,' \
 	'  "characterBible": "character-bible.json",' \
 	'  "references": [' \
 	'    "mascot-primary.png",' \

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Folded Swift",
+    "productConnection": "A quick paper swift carries an idea from sketch to shipped web product, joining Albert's design and engineering practice.",
+    "silhouette": "A wide A-like folded wing span, rounded triangular head, compact body, tiny feet, and one broad Z-notched tail plane.",
+    "signatureFeature": "One wing fold creates an open A-shaped negative space while the tail turns through a single Z-shaped zigzag.",
+    "appealHook": "The right wing tip curls upward like the corner of a page that is ready to be turned."
+  },
+  {
+    "name": "Type Sprout",
+    "productConnection": "A living ink sprout represents ideas growing through writing, typography, and code.",
+    "silhouette": "A low rounded ink seed with two oversized paper leaves and two short feet.",
+    "signatureFeature": "The two leaves meet as an A-shaped opening and a single stem bends like the diagonal of a Z.",
+    "appealHook": "One leaf is always slightly too large, giving the tiny character a curious lean."
+  },
+  {
+    "name": "Orbit Beetle",
+    "productConnection": "A compact maker beetle collects small observations and turns them into connected experiments.",
+    "silhouette": "A domed oval shell, tiny rounded head, four short leg masses, and a clean split wing case.",
+    "signatureFeature": "The shell opens into an A-shaped seam with one broad Z-shaped path crossing the wing cases.",
+    "appealHook": "Its shell tilts forward when it concentrates, like a designer leaning over a sketchbook."
+  }
+]

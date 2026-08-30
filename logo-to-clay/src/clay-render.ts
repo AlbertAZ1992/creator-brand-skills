@@ -11,11 +11,18 @@ const CLAY_STYLE_TOKENS = [
 ] as const;
 
 const QUALITY_CONSTRAINTS = [
-  "no cartoon exaggeration or chunky proportions",
+  "no cartoon exaggeration, inflated strokes, or chunky pillow-like proportions",
   "no fingerprints, tool marks, dents, or hand-pressed ridges",
   "no faceted low-poly edges or lumpy lettering",
   "no glossy plastic, metallic highlights, or rubber appearance",
   "no extra symbols, text, faces, or invented geometry",
+] as const;
+
+const SOURCE_LOCK = [
+  "use the attached logo as the only geometry reference",
+  "preserve the exact outer contour, relative proportions, negative-space counters, and openings",
+  "preserve every component's spacing, baseline, overlap, and reading order as one locked composition",
+  "keep the front plane immediately recognisable; add depth behind it instead of redrawing it",
 ] as const;
 
 const SHAPE_GUIDANCE: Record<string, string> = {
@@ -32,14 +39,21 @@ const BACKGROUND_GUIDANCE: Record<string, string> = {
 };
 
 const STUDIO_COMPOSITION =
-  "one clear directional soft light, strong object/background separation, " +
-  "refined asymmetry, generous negative space, readable at thumbnail size";
+  "campaign hero composition, logo occupies 55-75% of the frame, three-quarter view with the " +
+  "front plane still readable, camera yaw 20-30 degrees with 8-14 degrees of elevation, a " +
+  "clearly visible sidewall measuring roughly 12-20% of the front-face width, one low plinth or " +
+  "grounding surface, one clear directional soft light, decisive contact shadow, refined " +
+  "asymmetry, and readable at thumbnail size";
+
+const STUDIO_AVOIDS =
+  "do not default to a centred object floating on empty beige; choose one purposeful supporting " +
+  "background or plinth colour derived from the logo without adding decorative symbols";
 
 /**
  * Build a clean, concise clay-render prompt from options.
  *
- * The prompt focuses on a refined clay aesthetic without pixel-faithful
- * geometry locking or over-engineered guidance.
+ * The prompt combines a refined clay aesthetic with source-geometry locking
+ * and a deliberate hero composition.
  */
 export function buildPrompt(options: ClayOptions): string {
   const shape = options.shape ?? "object";
@@ -50,6 +64,12 @@ export function buildPrompt(options: ClayOptions): string {
   const parts: string[] = [];
 
   parts.push("Create a refined clay-style 3D render of this logo.");
+
+  parts.push("");
+  parts.push("SOURCE LOCK:");
+  for (const rule of SOURCE_LOCK) {
+    parts.push(`- ${rule}`);
+  }
 
   parts.push("");
   parts.push("STYLE:");
@@ -78,6 +98,7 @@ export function buildPrompt(options: ClayOptions): string {
   if (background === "studio") {
     parts.push("");
     parts.push(`COMPOSITION: ${STUDIO_COMPOSITION}`);
+    parts.push(`ART-DIRECTION FAILURE: ${STUDIO_AVOIDS}`);
   }
 
   parts.push("");

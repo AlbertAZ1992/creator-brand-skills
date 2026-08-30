@@ -41,8 +41,11 @@ runtime failures because they require reading the supplied logo.
 
 ## Image mode
 
-`buildPrompt()` describes clay material, shape, depth, lighting,
-background, and identity-preservation constraints. The calling agent must send
+`buildPrompt()` first locks outer contour, relative proportions, counters, and
+openings, then describes clay material, shape, depth, lighting, and campaign
+composition. The studio route specifies a 55–75% hero scale, 20–30 degrees of
+yaw, 8–14 degrees of elevation, a 12–20% visible sidewall, low plinth, and
+decisive contact shadow. The calling agent must send
 the supplied logo as a reference image to its image-generation tool. This mode
 does not claim that prompt construction alone produced an image.
 

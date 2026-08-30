@@ -1,0 +1,21 @@
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="800" height="480">
+      <rect width="800" height="480" rx="30" fill="#F3EFE7"/>
+      <path d="M0 0h18v480H0z" fill="#5B4BDB"/>
+      <circle cx="724" cy="74" r="34" fill="#FF7165"/>
+      <text x="52" y="66" font-family="Arial, sans-serif" font-size="14"
+        font-weight="700" letter-spacing="2" fill="#5B4BDB">SOURCE PRODUCT FACTS</text>
+      <text x="52" y="132" font-family="Arial, sans-serif" font-size="48"
+        font-weight="800" fill="#17142C">OpenPatch</text>
+      <text x="52" y="177" font-family="Arial, sans-serif" font-size="22"
+        font-weight="700" fill="#17142C">animal · friendly</text>
+      <text x="52" y="222" font-family="Arial, sans-serif" font-size="16"
+        font-weight="700" letter-spacing="1.4" fill="#81798A">BRAND ESSENCE</text>
+      <text x="52" y="250" font-family="Arial, sans-serif" font-size="18"
+        fill="#5F5967">friendly maintenance · careful collaboration · release confidence · open craft</text>
+      <text x="52" y="284" font-family="Arial, sans-serif" font-size="20" fill="#5F5967">Pip is a tiny patch fox with an oversized mint hook-tail; a</text>
+<text x="52" y="314" font-family="Arial, sans-serif" font-size="20" fill="#5F5967">visible stitched repair makes maintenance part of the silhouette</text>
+<text x="52" y="344" font-family="Arial, sans-serif" font-size="20" fill="#5F5967">instead of a pasted logo.</text>
+      <text x="52" y="438" font-family="Arial, sans-serif" font-size="14"
+        font-weight="700" letter-spacing="1.2" fill="#81798A">LOCKED BEFORE IMAGE GENERATION →</text>
+    </svg>

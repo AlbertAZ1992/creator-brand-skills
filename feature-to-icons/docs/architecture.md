@@ -1,105 +1,88 @@
 # Feature to Icons Architecture
 
-Feature to Icons uses a library-first resolver. Semantic choice remains a
-reasoning task; source geometry, provenance, optical measurement, rendering,
-and delivery are deterministic.
+Feature to Icons defaults to original hand-drawn feature art with optional
+self-contained SVG motion. A separate explicit system route preserves pinned
+Phosphor geometry for conventional UI controls. Safety, provenance, rendering,
+optical measurement, and delivery are deterministic for both routes.
 
 ```text
-feature names + options
-          |
-       validate()
-          |
-  search pinned Phosphor catalog
-          |
- one native source weight for the family
-          |
- uniform color/viewBox adaptation
-          |
- SVG safety + provenance + optical gates
-          |
- SVGs + metadata + previews + manifest
+feature names + product context
+            |
+         validate()
+            |
+     explicit purpose choice
+            |
+  +---------+--------------------------+
+  |                                    |
+brand default: hand-drawn          explicit system
+original custom geometry           pinned Phosphor 2.1.1
+optional embedded wiggle           native static weight
+  +----------------+-------------------+
+                   |
+  SVG safety + treatment + motion + optical gates
+                   |
+ SVGs + playable HTML + contact sheets + manifest
 ```
 
-## Why library first
+## Hand-drawn default
 
-A shared viewBox and stroke declaration do not guarantee visual consistency.
-Independent drawings can still have different apparent centers, occupied
-areas, curve logic, and detail density. Pinned community-reviewed geometry
-removes most of that variance before validation starts.
+An unqualified request is `purpose=brand`. Validation applies a 48 px grid,
+round 2.6 px strokes, charcoal plus one accent, and `motion=wiggle`. The prompt
+compiler asks for gently imperfect custom curves, concrete product metaphors,
+distinct silhouettes, and comparable optical volume.
 
-`@phosphor-icons/core@2.1.1` is the only default source. It provides raw SVGs,
-catalog names, tags, categories, and native light, regular, bold, fill, and
-duotone weights under MIT.
+Animated SVGs declare their treatment and motion, embed `icon-wiggle`
+keyframes, and include a `prefers-reduced-motion` fallback. The transform is
+applied to one grouped drawing. Paths remain unchanged and editable.
 
-## Resolution
+Delivery rejects hand-drawn output that looks valid structurally but omits any
+of these machine-readable markers. The static SVG/PNG previews render the first
+frame; the HTML preview embeds the actual individual SVGs and proves motion.
 
-`searchPhosphorIcons()` uses curated product-language mappings first, then a
-deterministic score over icon names, tags, and categories. Low-confidence
-queries are not silently accepted. They require an explicit feature-to-icon
-override or the custom fallback.
+## Explicit system route
 
-`buildPhosphorIconFamily()` selects one native weight for the whole family,
-loads the exported SVG asset, preserves its path geometry, and applies only:
+System mode is never inferred from ordinary feature names. The caller sets
+`purpose=system` and `motion=none`. `searchPhosphorIcons()` uses curated product
+language mappings, then deterministic scoring over names, tags, and categories.
+Low-confidence matches require an explicit override.
 
-- uniform 256-to-requested-viewBox scaling;
-- primary presentation color;
-- optional secondary color on the native duotone background layer;
-- source-identifying data attributes.
+`buildPhosphorIconFamily()` selects one native weight, preserves path geometry,
+and applies only uniform viewBox scaling and requested presentation colors. It
+rejects brand mode and never adds doodle treatment, animation, or decoration.
 
-## Provenance
+## Safety and source boundaries
 
-Every library-backed icon records:
-
-- source library and npm package;
-- exact package version;
-- source icon name and native weight;
-- MIT license;
-- geometry and presentation modification flags.
-
-The family manifest repeats the shared source contract. A source/attribute
-mismatch is a hard failure.
+Custom and library-backed geometry cannot mix inside one family. SVG validation
+rejects scripts, event handlers, text, raster content, external URLs,
+stylesheets, and document types. Library artifacts must carry matching package,
+version, icon name, weight, license, and embedded provenance attributes.
 
 ## Optical measurement
 
 Each SVG is rasterized to a deterministic 256 px analysis surface. Alpha pixels
-produce:
-
-- visible bounding box;
-- alpha-weighted center offset from the grid center;
-- ink ratio;
-- occupied bounding-box area ratio.
-
-Hard gates reject excessive horizontal or vertical center offset, undersized
-shapes, and insufficient padding. Family-relative ink and optical-volume
-outliers are recorded as warnings because asymmetric metaphors can be valid.
-
-These metrics catch gross positioning mistakes but do not replace contact-sheet
-inspection. The generated PNG remains the final human-readable proof.
-
-## Custom fallback
-
-`deliverIconFamily()` retains the earlier JSON/SVG path for user-approved
-custom work. It applies the same output, safety, raster, and optical gates, plus
-exact stroke-width checks for outline and duotone SVGs. Custom artifacts are
-marked `user-provided`; they are never presented as Phosphor assets.
+produce a visible bounding box, alpha-weighted center offset, ink ratio, and
+occupied area ratio. Hard gates reject invisible, undersized, overflowing, or
+severely off-center shapes. Family-relative density and volume outliers become
+warnings and must be reviewed in the contact sheet.
 
 ## Output
 
 ```text
 <feature>.svg
-icon-spec.json
-icon-metadata.json
+icon-family-preview.html
 icon-family-preview.svg
 icon-family-preview.png
+icon-spec.json
+icon-metadata.json
 icon-family-manifest.json
 ```
 
-The manifest is the machine-readable delivery contract. It records exact file
-coverage, source family, validation checks, optical metrics, and non-blocking
-warnings.
+The manifest records exact file coverage, design treatment, motion, source
+strategy, validation checks, optical metrics, and warnings.
 
 ## Verification
 
-`npm run verify` runs static checks, build, unit tests, input/prompt evals, a
-real custom deliverable, and the committed Phosphor gallery. Example validation
-rechecks provenance, SVG rules, PNG dimensions, and one optical metric per icon.
+`npm run verify` runs lint, formatting, types, build, unit tests, prompt evals,
+a real deliverable, and the committed 20-icon hand-drawn family. Example
+validation rechecks every animated SVG, the playable HTML gallery, PNG/SVG
+previews, manifest coverage, and zero optical warnings.

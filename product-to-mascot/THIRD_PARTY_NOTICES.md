@@ -1,4 +1,5 @@
 # Third-party notices
 
-The Mora identity, Mori character bible, and mascot showcase images are
-original demonstration material created for this repository.
+The OpenPatch/Pip, ALBERTAZ/Azi, and Mora/Mori identities, character bibles, and
+mascot showcase images are original demonstration material created for this
+repository.

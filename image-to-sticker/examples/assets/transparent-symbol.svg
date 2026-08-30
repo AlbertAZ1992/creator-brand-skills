@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <path
-    fill="#6c4cff"
-    fill-rule="evenodd"
-    d="M256 38 313 151 438 169 347 257 369 381 256 323 143 381 165 257 74 169 199 151ZM256 134 226 194 160 204 208 251 197 316 256 285 315 316 304 251 352 204 286 194Z"
-  />
-  <circle cx="385" cy="354" r="68" fill="#ff6b45" />
-  <circle cx="385" cy="354" r="25" fill="none" stroke="#fff" stroke-width="18" />
-</svg>

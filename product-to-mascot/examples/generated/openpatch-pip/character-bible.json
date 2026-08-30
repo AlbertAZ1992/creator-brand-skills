@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "productName": "OpenPatch",
+  "mascotName": "Pip",
+  "productConnection": "Pip is a tiny patch fox with an oversized mint hook-tail; a visible stitched repair makes maintenance part of the silhouette instead of a pasted logo.",
+  "brandEssence": [
+    "friendly maintenance",
+    "careful collaboration",
+    "release confidence",
+    "open craft"
+  ],
+  "personality": "friendly",
+  "mascotType": "animal",
+  "silhouette": "An oversized rounded fox head taking about 62 percent of total height, two compact pointed ears, a tiny pear-shaped body, four very short limbs, and one large mint tail curling into a soft hook silhouette.",
+  "proportions": "Head is 1.55 times the body width; hands and feet are tiny rounded nubs; tail is almost as tall as the body but never hides the face.",
+  "faceRule": "Two large dark navy oval eyes with one small ivory catchlight each, a tiny charcoal button nose, a short w-shaped mouth, and two restrained coral cheek dots.",
+  "palette": [
+    "#243B64",
+    "#FFF4DE",
+    "#F7DF1E",
+    "#59D6B4",
+    "#FF7165"
+  ],
+  "signatureFeature": "The large mint hook-tail always carries one small yellow repair patch with a compact row of coral stitches.",
+  "appealHook": "The oversized head, tiny paws, and one visibly repaired tail make Pip feel helpful and slightly imperfect.",
+  "renderingRule": "Premium matte soft-vinyl designer toy with subtle microtexture, clean rounded seams, warm ivory studio background, soft diffused product lighting, gentle contact shadow, no fur strands.",
+  "minimumSize": 64,
+  "clearSpace": "Keep empty space equal to one ear height around the full silhouette.",
+  "avoids": [
+    "No insect body, bracket panels around the face, oversized machinery, or bulky torso.",
+    "No text, letters, framework logos, UI panels, computers, or invented claims.",
+    "No realistic animal anatomy, fur strands, plush fabric, glossy plastic, anime styling, or identity drift."
+  ]
+}

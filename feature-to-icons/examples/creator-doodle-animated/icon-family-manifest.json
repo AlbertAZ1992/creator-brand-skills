@@ -1,0 +1,363 @@
+{
+  "contractVersion": "1.0",
+  "featureCount": 20,
+  "designSystem": {
+    "purpose": "brand",
+    "treatment": "hand-drawn",
+    "motion": "wiggle",
+    "style": "duotone",
+    "gridSize": 48,
+    "strokeWidth": 2.6,
+    "cornerRadius": "round",
+    "visualWeight": "regular",
+    "geometryPolicy": "custom-exact"
+  },
+  "source": {
+    "strategy": "custom",
+    "license": "user-provided"
+  },
+  "files": {
+    "spec": "icon-spec.json",
+    "metadata": "icon-metadata.json",
+    "previewSvg": "icon-family-preview.svg",
+    "previewPng": "icon-family-preview.png",
+    "previewHtml": "icon-family-preview.html",
+    "icons": [
+      "capture-idea.svg",
+      "sketch-fast.svg",
+      "build-palette.svg",
+      "shape-story.svg",
+      "record-moment.svg",
+      "collect-notes.svg",
+      "save-favorite.svg",
+      "share-draft.svg",
+      "team-chat.svg",
+      "pin-reference.svg",
+      "plan-drop.svg",
+      "upload-asset.svg",
+      "download-kit.svg",
+      "launch-project.svg",
+      "publish-worldwide.svg",
+      "protect-work.svg",
+      "add-magic.svg",
+      "score-sound.svg",
+      "reward-fans.svg",
+      "take-a-break.svg"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "exact feature coverage",
+      "safe self-contained SVG",
+      "shared viewBox and stroke width",
+      "hand-drawn treatment and embedded motion contract",
+      "no text or embedded raster content",
+      "preview dimensions and visible icon pixels verified",
+      "optical center and occupied bounds verified"
+    ],
+    "opticalMetrics": [
+      {
+        "feature": "Capture Idea",
+        "bounds": {
+          "x": 12.188,
+          "y": 8.625,
+          "width": 23.813,
+          "height": 31.313
+        },
+        "centerOffset": {
+          "x": 0.061,
+          "y": -1.614
+        },
+        "inkRatio": 0.22,
+        "occupiedAreaRatio": 0.324
+      },
+      {
+        "feature": "Sketch Fast",
+        "bounds": {
+          "x": 10.5,
+          "y": 9.375,
+          "width": 27.75,
+          "height": 28.125
+        },
+        "centerOffset": {
+          "x": 0.938,
+          "y": -0.52
+        },
+        "inkRatio": 0.117,
+        "occupiedAreaRatio": 0.339
+      },
+      {
+        "feature": "Build Palette",
+        "bounds": {
+          "x": 7.313,
+          "y": 8.063,
+          "width": 32.813,
+          "height": 31.688
+        },
+        "centerOffset": {
+          "x": -0.09,
+          "y": -1.883
+        },
+        "inkRatio": 0.163,
+        "occupiedAreaRatio": 0.451
+      },
+      {
+        "feature": "Shape Story",
+        "bounds": {
+          "x": 9.563,
+          "y": 8.625,
+          "width": 28.875,
+          "height": 26.25
+        },
+        "centerOffset": {
+          "x": -0.87,
+          "y": -1.873
+        },
+        "inkRatio": 0.192,
+        "occupiedAreaRatio": 0.329
+      },
+      {
+        "feature": "Record Moment",
+        "bounds": {
+          "x": 8.625,
+          "y": 10.313,
+          "width": 31.313,
+          "height": 28.5
+        },
+        "centerOffset": {
+          "x": 0.107,
+          "y": 1.752
+        },
+        "inkRatio": 0.187,
+        "occupiedAreaRatio": 0.387
+      },
+      {
+        "feature": "Collect Notes",
+        "bounds": {
+          "x": 8.625,
+          "y": 8.25,
+          "width": 28.875,
+          "height": 31.688
+        },
+        "centerOffset": {
+          "x": 0.071,
+          "y": 0.241
+        },
+        "inkRatio": 0.328,
+        "occupiedAreaRatio": 0.397
+      },
+      {
+        "feature": "Save Favorite",
+        "bounds": {
+          "x": 9,
+          "y": 12.563,
+          "width": 26.063,
+          "height": 26.813
+        },
+        "centerOffset": {
+          "x": -1.687,
+          "y": 0.248
+        },
+        "inkRatio": 0.218,
+        "occupiedAreaRatio": 0.303
+      },
+      {
+        "feature": "Share Draft",
+        "bounds": {
+          "x": 7.313,
+          "y": 6.563,
+          "width": 33.375,
+          "height": 33.563
+        },
+        "centerOffset": {
+          "x": 2.802,
+          "y": 0.58
+        },
+        "inkRatio": 0.169,
+        "occupiedAreaRatio": 0.486
+      },
+      {
+        "feature": "Team Chat",
+        "bounds": {
+          "x": 8.625,
+          "y": 8.813,
+          "width": 30.563,
+          "height": 30
+        },
+        "centerOffset": {
+          "x": -0.523,
+          "y": -1.983
+        },
+        "inkRatio": 0.309,
+        "occupiedAreaRatio": 0.398
+      },
+      {
+        "feature": "Pin Reference",
+        "bounds": {
+          "x": 11.813,
+          "y": 8.25,
+          "width": 24.563,
+          "height": 32.625
+        },
+        "centerOffset": {
+          "x": 0.08,
+          "y": -1.386
+        },
+        "inkRatio": 0.245,
+        "occupiedAreaRatio": 0.348
+      },
+      {
+        "feature": "Plan Drop",
+        "bounds": {
+          "x": 9,
+          "y": 8.063,
+          "width": 30.188,
+          "height": 31.5
+        },
+        "centerOffset": {
+          "x": 0.276,
+          "y": 0.561
+        },
+        "inkRatio": 0.192,
+        "occupiedAreaRatio": 0.413
+      },
+      {
+        "feature": "Upload Asset",
+        "bounds": {
+          "x": 8.625,
+          "y": 9.563,
+          "width": 29.813,
+          "height": 30.375
+        },
+        "centerOffset": {
+          "x": -0.22,
+          "y": 3.359
+        },
+        "inkRatio": 0.109,
+        "occupiedAreaRatio": 0.393
+      },
+      {
+        "feature": "Download Kit",
+        "bounds": {
+          "x": 8.813,
+          "y": 9.188,
+          "width": 29.625,
+          "height": 30.938
+        },
+        "centerOffset": {
+          "x": -0.115,
+          "y": 4.349
+        },
+        "inkRatio": 0.109,
+        "occupiedAreaRatio": 0.398
+      },
+      {
+        "feature": "Launch Project",
+        "bounds": {
+          "x": 8.625,
+          "y": 8.813,
+          "width": 29.063,
+          "height": 31.688
+        },
+        "centerOffset": {
+          "x": 1.144,
+          "y": 2.4
+        },
+        "inkRatio": 0.201,
+        "occupiedAreaRatio": 0.4
+      },
+      {
+        "feature": "Publish Worldwide",
+        "bounds": {
+          "x": 8.438,
+          "y": 8.625,
+          "width": 31.125,
+          "height": 30.938
+        },
+        "centerOffset": {
+          "x": 0.324,
+          "y": -0.016
+        },
+        "inkRatio": 0.19,
+        "occupiedAreaRatio": 0.418
+      },
+      {
+        "feature": "Protect Work",
+        "bounds": {
+          "x": 10.688,
+          "y": 8.063,
+          "width": 26.625,
+          "height": 32.25
+        },
+        "centerOffset": {
+          "x": 0.041,
+          "y": -0.729
+        },
+        "inkRatio": 0.276,
+        "occupiedAreaRatio": 0.373
+      },
+      {
+        "feature": "Add Magic",
+        "bounds": {
+          "x": 6.938,
+          "y": 10.688,
+          "width": 33,
+          "height": 26.625
+        },
+        "centerOffset": {
+          "x": -0.217,
+          "y": -0.432
+        },
+        "inkRatio": 0.126,
+        "occupiedAreaRatio": 0.381
+      },
+      {
+        "feature": "Score Sound",
+        "bounds": {
+          "x": 9,
+          "y": 9.188,
+          "width": 26.438,
+          "height": 30
+        },
+        "centerOffset": {
+          "x": -0.123,
+          "y": 2.82
+        },
+        "inkRatio": 0.146,
+        "occupiedAreaRatio": 0.344
+      },
+      {
+        "feature": "Reward Fans",
+        "bounds": {
+          "x": 7.688,
+          "y": 7.313,
+          "width": 32.625,
+          "height": 30
+        },
+        "centerOffset": {
+          "x": -0.002,
+          "y": -0.075
+        },
+        "inkRatio": 0.336,
+        "occupiedAreaRatio": 0.425
+      },
+      {
+        "feature": "Take a Break",
+        "bounds": {
+          "x": 8.625,
+          "y": 6.188,
+          "width": 33.75,
+          "height": 36.188
+        },
+        "centerOffset": {
+          "x": 0.549,
+          "y": 2.836
+        },
+        "inkRatio": 0.269,
+        "occupiedAreaRatio": 0.53
+      }
+    ],
+    "warnings": []
+  }
+}

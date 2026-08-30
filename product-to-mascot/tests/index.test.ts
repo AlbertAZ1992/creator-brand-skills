@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   buildCharacterBiblePrompt,
+  buildMascotDirectionPrompt,
+  buildPoseImagePrompt,
+  buildPrimaryImagePrompt,
   buildPrompt,
   createCharacterBible,
   parseOutput,
@@ -24,7 +27,7 @@ describe("validate", () => {
       "A plant care app that helps people keep houseplants alive.",
     );
     expect(result.value.personality).toBe("friendly");
-    expect(result.value.mascotType).toBe("character");
+    expect(result.value.mascotType).toBe("animal");
     expect(result.value.variationCount).toBe(4);
     expect(result.value.targetAudience).toBeUndefined();
     expect(result.value.visualStyle).toBeUndefined();
@@ -263,8 +266,8 @@ describe("buildPrompt", () => {
   it("includes mascot type guidance", () => {
     const prompt = buildPrompt({ ...defaultInput, mascotType: "robot" });
 
-    expect(prompt.toLowerCase()).toContain("mechanical");
-    expect(prompt.toLowerCase()).toContain("robotic");
+    expect(prompt.toLowerCase()).toContain("friendly compact machine");
+    expect(prompt.toLowerCase()).toContain("avoid featureless humanoid silhouettes");
   });
 
   it("includes usage guide section", () => {
@@ -440,25 +443,71 @@ describe("character bible handoff", () => {
     const prompt = buildCharacterBiblePrompt(input);
 
     expect(prompt).toContain("silhouette");
+    expect(prompt).toContain("proportions");
+    expect(prompt).toContain("appealHook");
     expect(prompt).toContain("palette");
     expect(prompt).toContain("exactly three visual prohibitions");
+    expect(prompt).toContain("Do not invent exact counts for tiny repeated marks");
+  });
+
+  it("requires three product-specific directions before locking a mascot", () => {
+    const prompt = buildMascotDirectionPrompt(input);
+
+    expect(prompt).toContain("exactly three distinct mascot directions");
+    expect(prompt).toContain("4-7 large masses");
+    expect(prompt).toContain("appealHook");
+    expect(prompt).toContain("Do not return three recolours");
   });
 
   it("adds product identity to an accepted character bible", () => {
     const bible = createCharacterBible(input, {
       mascotName: "Sprig",
-      brandEssence: ["growth", "care"],
+      brandEssence: ["growth", "care", "clarity"],
+      productConnection: "A sprout that visibly perks up when care tasks are complete",
       silhouette: "Round sprout with two leaves",
+      proportions: "Head is 60% of height, tiny body, short rounded limbs",
       faceRule: "Dewdrop eyes and a small smile",
       palette: ["#7CB342", "#FFD54F", "#FFF8E1"],
       signatureFeature: "Tiny watering can",
+      appealHook: "One leaf always leans toward the viewer",
       renderingRule: "Flat vector with rounded outlines",
+      minimumSize: 32,
+      clearSpace: "One eye width around the silhouette",
       avoids: ["realistic anatomy", "extra text", "gradients"],
     });
 
-    expect(bible.version).toBe(1);
+    expect(bible.version).toBe(2);
     expect(bible.productName).toBe("Seedling");
     expect(bible.mascotName).toBe("Sprig");
     expect(bible.personality).toBe("friendly");
+  });
+
+  it("builds image prompts from every locked identity anchor", () => {
+    const bible = createCharacterBible(input, {
+      mascotName: "Sprig",
+      brandEssence: ["growth", "care", "clarity"],
+      productConnection: "A sprout that perks up when plant-care tasks are complete",
+      silhouette: "Round sprout with two broad leaves",
+      proportions: "Head is 60% of height, tiny body, short rounded limbs",
+      faceRule: "Two dewdrop eyes, one small smile, two cheek dots",
+      palette: ["#7CB342", "#FFD54F", "#FFF8E1"],
+      signatureFeature: "One leaf shaped like a watering spout",
+      appealHook: "The smaller leaf always leans toward the viewer",
+      renderingRule: "Matte soft-vinyl toy with broad smooth surfaces",
+      minimumSize: 32,
+      clearSpace: "One eye width around the silhouette",
+      avoids: ["adult anatomy", "extra text", "new props"],
+    });
+
+    const primary = buildPrimaryImagePrompt(bible);
+    const working = buildPoseImagePrompt(bible, "working");
+    expect(primary).toContain(bible.proportions);
+    expect(primary).toContain(bible.appealHook);
+    expect(primary).toContain("no text, logo, UI, contact sheet");
+    expect(primary).toContain("Any mismatch is a failed reference");
+    expect(working).toContain("Use the primary reference as the identity source");
+    expect(working).toContain(bible.signatureFeature);
+    expect(working).toContain("no new tools");
+    expect(working).toContain("reject the pose if any named count");
   });
 });

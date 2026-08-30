@@ -1,0 +1,19 @@
+{
+  "retrieved": "2026-08-30",
+  "name": "Vite bolt",
+  "source": "https://cdn.simpleicons.org/vite/646CFF",
+  "officialProject": "https://github.com/vitejs/vite",
+  "files": [
+    {
+      "file": "source.svg",
+      "localTreatment": "Original silhouette with a local gradient",
+      "sha256": "f15ff49072972ee52978785effa57c268e9bdd99c920ee910770b5dd31c4a22e"
+    },
+    {
+      "file": "source.png",
+      "purpose": "Raster source supplied to the verified mesh route",
+      "sha256": "8a0db8573e7efa413af0462791054156193c6ea89cebdde190696ff4f4033e4a"
+    }
+  ],
+  "notice": "The Vite name and mark belong to their respective owner; no affiliation or endorsement is implied."
+}

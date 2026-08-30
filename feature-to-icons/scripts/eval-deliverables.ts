@@ -20,6 +20,7 @@ const rawResponse = JSON.stringify({
 
 async function main(): Promise<void> {
   const validation = validate({
+    purpose: "system",
     features: ["Search", "Filter", "Share"],
     style: "outline",
     colors: { primary: "#6366F1" },

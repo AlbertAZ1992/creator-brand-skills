@@ -1,0 +1,56 @@
+{
+  "retrieved": "2026-08-30",
+  "purpose": "Attributed transformation fixtures for Image to Sticker examples",
+  "assets": [
+    {
+      "name": "Vite bolt",
+      "slug": "vite-bolt",
+      "file": "sources/vite-bolt.svg",
+      "source": "https://cdn.simpleicons.org/vite/646CFF",
+      "officialProject": "https://github.com/vitejs/vite",
+      "localTreatment": "Original silhouette with a local gradient",
+      "sha256": "f15ff49072972ee52978785effa57c268e9bdd99c920ee910770b5dd31c4a22e"
+    },
+    {
+      "name": "Vue",
+      "slug": "vue",
+      "file": "sources/vue.svg",
+      "source": "https://github.com/vuejs/art/blob/master/logo.svg",
+      "officialProject": "https://github.com/vuejs/core",
+      "sha256": "2367ae20c4a1fe95fea9b03def3b11097bcebaf60ebb744eb96667990599153a"
+    },
+    {
+      "name": "React",
+      "slug": "react",
+      "file": "sources/react.svg",
+      "source": "https://cdn.simpleicons.org/react/61DAFB",
+      "officialProject": "https://github.com/facebook/react",
+      "sha256": "37c8c23bc6ea999ad58b7f3883fc08b7e22128ec25adcca60ae1046ff878bcc3"
+    },
+    {
+      "name": "TypeScript",
+      "slug": "typescript",
+      "file": "sources/typescript.svg",
+      "source": "https://cdn.simpleicons.org/typescript/3178C6",
+      "officialProject": "https://github.com/microsoft/TypeScript",
+      "sha256": "662b9b049a06df067089cacc32c8a40e14b08e13b5874f397ccf3e70ef15872c"
+    },
+    {
+      "name": "Astro",
+      "slug": "astro",
+      "file": "sources/astro.svg",
+      "source": "https://cdn.simpleicons.org/astro/BC52EE",
+      "officialProject": "https://github.com/withastro/astro",
+      "sha256": "38502102492c2b4a0cb93227c51f12150fe8b695aca236d66a29302166b2b4c2"
+    },
+    {
+      "name": "Deno",
+      "slug": "deno",
+      "file": "sources/deno.svg",
+      "source": "https://cdn.simpleicons.org/deno/000000",
+      "officialProject": "https://github.com/denoland/deno",
+      "sha256": "c7ea60906f1e7edabd34ca7a2fb0887419ea52691c036f145a36bceeeaace30a"
+    }
+  ],
+  "notice": "Names and marks belong to their respective owners; no affiliation or endorsement is implied."
+}

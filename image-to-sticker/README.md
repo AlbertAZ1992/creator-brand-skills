@@ -8,13 +8,16 @@ contour, and can apply a deterministic front finish in Codex.
 The callable Codex Skill name is `image-to-sticker`.
 
 <p align="center">
-  <img src="examples/generated/style-overview.png" alt="One original Peach Planet artwork compared across eight sticker styles" width="900">
+  <img src="examples/generated/open-source-tech/source-to-sticker.png" alt="Six source logos transformed into classic, holographic, reflective, glitter, colour-contour, and borderless stickers" width="900">
 </p>
 
-The board holds one original source composition constant while making eight
-supported results directly comparable. The clean transparent PNG is still the
-deliverable; the board is only a portfolio view of its contour and material
-controls.
+The featured board shows every input beside its actual `sticker.png`. Vite,
+React, TypeScript, Astro, Vue, and Deno exercise classic contour,
+holographic, reflective, glitter, colour-contour, and borderless controls.
+Each 1024 px RGBA sticker has its own alpha proof, source card, source hash,
+and passing manifest under `examples/generated/open-source-tech/`. Names and
+marks belong to their respective owners and are used only as attributed
+transformation fixtures.
 
 ## At a glance
 
@@ -25,11 +28,13 @@ controls.
 | **Styles** | Borderless or contoured; original, holographic, glitter, or reflective front finish |
 | **Controls** | 0–44 contour width, custom contour color, −12° to 12° whole-sticker tilt, 512 or 1024 px output |
 | **Output formats** | Transparent RGBA PNG, grayscale alpha-proof PNG, reproducible source-card JSON, and verification manifest JSON |
-| **Core guarantee** | The renderer preserves the complete source composition and applies every finish without changing alpha geometry |
+| **Core guarantee** | The renderer preserves the complete source composition, rasterizes small-viewBox SVGs at delivery density, and applies every finish without changing alpha geometry |
 
 ## What it does
 
 - Preserves the source composition instead of redrawing it.
+- Probes SVG dimensions and rasterizes tiny intrinsic viewBoxes near the
+  working delivery resolution instead of enlarging a blurry decode.
 - Accepts transparent artwork or artwork on one uniform background color.
 - Builds a true transparent PNG with an adjustable contour.
 - Supports original, holographic, glitter, and reflective front materials.
@@ -49,7 +54,8 @@ material, and tilt. A README or portfolio card may add contrast, shadow, or
 decorative colour around that accepted asset, but those effects are never baked
 into the deliverable.
 
-Review at full size and 64 px. Use the thinnest contour that keeps the artwork
+Review at full size and 64 px. SVG diagonals and curves must remain as crisp as
+the same source viewed in a browser. Use the thinnest contour that keeps the artwork
 readable without swallowing counters or small gaps. Material effects should
 remain subordinate to the illustration instead of turning it muddy.
 
@@ -113,15 +119,6 @@ The Euclidean outline expansion is `outlineWidth × 2.35`, matching Sticker
 Forge. Flat-background removal also handles enclosed background regions and
 unmattes antialiased edges, which avoids a pale fringe around the result.
 
-<details>
-<summary><strong>Transparent and flat-background input comparison</strong></summary>
-
-<p align="center">
-  <img src="examples/generated/source-types.png" alt="Transparent and flat-background inputs" width="760">
-</p>
-
-</details>
-
 ## Direct renderer usage
 
 Create a source card describing the operation:
@@ -166,8 +163,8 @@ visible RGB, but never the alpha geometry.
 
 ## Examples and verification
 
-See [`examples/README.md`](examples/README.md) for directly embedded comparisons
-of outline widths, alpha, tilt, colors, materials, and source types.
+See [`examples/README.md`](examples/README.md) for the six source-to-output
+styles and every clean delivery file.
 
 ```bash
 npm run examples
@@ -182,7 +179,8 @@ and [`schemas/`](schemas/).
 ## Limitations
 
 - Busy photographic backgrounds require a dedicated subject-isolation step.
-- Very small inputs cannot gain real detail by exporting at 1024 px.
+- Very small raster inputs cannot gain real detail by exporting at 1024 px;
+  resolution-independent SVG inputs are rasterized at adaptive density.
 - A wide contour can intentionally close small holes; use a thinner contour
   when counters and gaps matter.
 - SVG text depends on fonts available to the rasterizer. Convert important type

@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "vite-bolt.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 20,
+  "outlineColor": "#ffffff",
+  "material": "original",
+  "tilt": -6,
+  "size": 1024
+}

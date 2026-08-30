@@ -22,6 +22,8 @@ const EVENT_HANDLER_RE = /\son[a-z]+\s*=/i;
 const EXTERNAL_REFERENCE_RE = /\b(?:href|xlink:href)\s*=\s*["'](?:https?:|\/\/)/i;
 const EXTERNAL_STYLE_RE = /(?:@import|url\(\s*["']?(?:https?:|\/\/))/i;
 const FORBIDDEN_XML_RE = /<!DOCTYPE|<\?xml-stylesheet/i;
+const WIGGLE_KEYFRAMES_RE = /@keyframes\s+icon-wiggle\b/i;
+const REDUCED_MOTION_RE = /prefers-reduced-motion\s*:\s*reduce/i;
 
 export function validateSvgArtifact(
   svg: string,
@@ -59,7 +61,35 @@ export function validateSvgArtifact(
       errors.push(`every stroke-width must equal "${design.strokeWidth}"`);
     }
   }
+  validateTreatment(svg, design, source, errors);
   return errors;
+}
+
+function validateTreatment(
+  svg: string,
+  design: IconDesignSystem,
+  source: IconSource | undefined,
+  errors: string[],
+): void {
+  if (design.treatment === "hand-drawn") {
+    if (source?.type === "library") errors.push("hand-drawn families require custom geometry");
+    if (!svg.includes('data-icon-treatment="hand-drawn"')) {
+      errors.push('hand-drawn SVG must declare data-icon-treatment="hand-drawn"');
+    }
+    if (!/stroke-linecap=["']round["']/i.test(svg)) {
+      errors.push("hand-drawn SVG must use round line caps");
+    }
+  }
+  if (design.motion === "wiggle") {
+    if (!svg.includes('data-icon-motion="wiggle"')) {
+      errors.push('animated SVG must declare data-icon-motion="wiggle"');
+    }
+    if (!WIGGLE_KEYFRAMES_RE.test(svg) || !REDUCED_MOTION_RE.test(svg)) {
+      errors.push("animated SVG must include icon-wiggle keyframes and reduced-motion fallback");
+    }
+  } else if (svg.includes('data-icon-motion="wiggle"') || WIGGLE_KEYFRAMES_RE.test(svg)) {
+    errors.push("motion=none must not include wiggle animation markers");
+  }
 }
 
 export async function writeIconFamily(
@@ -82,6 +112,7 @@ export async function writeIconFamily(
   const metadataPath = join(outputDir, "icon-metadata.json");
   const previewSvgPath = join(outputDir, "icon-family-preview.svg");
   const previewPngPath = join(outputDir, "icon-family-preview.png");
+  const previewHtmlPath = join(outputDir, "icon-family-preview.html");
   const manifestPath = join(outputDir, "icon-family-manifest.json");
 
   await writeJson(specPath, {
@@ -93,9 +124,16 @@ export async function writeIconFamily(
   const previewSvg = buildPreviewSvg(output);
   await writeFile(previewSvgPath, previewSvg, "utf8");
   await renderPreview(previewSvg, previewPngPath, output);
+  await writeFile(previewHtmlPath, buildPreviewHtml(output), "utf8");
   await writeJson(manifestPath, buildManifest(output, metrics, opticalValidation.warnings));
 
-  return { outputDir, manifestPath, previewPath: previewPngPath, iconPaths };
+  return {
+    outputDir,
+    manifestPath,
+    previewPath: previewPngPath,
+    animatedPreviewPath: previewHtmlPath,
+    iconPaths,
+  };
 }
 
 async function writeIcons(output: FeatureIconOutput, outputDir: string): Promise<string[]> {
@@ -130,6 +168,43 @@ function buildPreviewSvg(output: FeatureIconOutput): string {
     "</svg>",
     "",
   ].join("\n");
+}
+
+function buildPreviewHtml(output: FeatureIconOutput): string {
+  const cards = output.artifacts
+    .map((artifact) => {
+      const label = escapeHtml(artifact.feature);
+      return `<figure>${artifact.svg}<figcaption>${label}</figcaption></figure>`;
+    })
+    .join("\n");
+  return [
+    "<!doctype html>",
+    '<html lang="en"><meta charset="utf-8">',
+    `<title>${escapeHtml(output.designSystem.treatment)} icon family preview</title>`,
+    "<style>",
+    "body{margin:0;background:#f5f1e8;color:#27242d;font-family:ui-rounded,system-ui,sans-serif}",
+    "main{max-width:1080px;margin:auto;padding:48px 28px}",
+    "h1{font-size:clamp(32px,5vw,64px);margin:0 0 8px;letter-spacing:-.04em}",
+    ".meta{color:#746d7a;margin:0 0 34px}",
+    ".grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}",
+    "figure{margin:0;background:#fffdf8;border:1px solid #ded5c8;border-radius:24px;padding:24px}",
+    "svg{display:block;width:100%;height:auto}",
+    "figcaption{text-align:center;margin-top:14px;font-weight:700}",
+    "</style><main>",
+    `<h1>${output.designSystem.treatment} icon set</h1>`,
+    `<p class="meta">${output.iconCount} editable SVGs · motion: ${output.designSystem.motion}</p>`,
+    `<section class="grid">${cards}</section>`,
+    "</main></html>",
+    "",
+  ].join("\n");
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
 }
 
 function positionSvg(svg: string, x: number, y: number): string {
@@ -208,6 +283,7 @@ function buildManifest(
       metadata: "icon-metadata.json",
       previewSvg: "icon-family-preview.svg",
       previewPng: "icon-family-preview.png",
+      previewHtml: "icon-family-preview.html",
       icons: output.artifacts.map((artifact) => artifact.fileName),
     },
     validation: {
@@ -216,6 +292,7 @@ function buildManifest(
         "exact feature coverage",
         "safe self-contained SVG",
         "shared viewBox and stroke width",
+        "hand-drawn treatment and embedded motion contract",
         "no text or embedded raster content",
         "preview dimensions and visible icon pixels verified",
         "optical center and occupied bounds verified",

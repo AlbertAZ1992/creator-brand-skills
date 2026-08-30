@@ -14,6 +14,7 @@ import {
 
 function validInput(overrides: Record<string, unknown> = {}) {
   const result = validate({
+    purpose: "system",
     features: ["Search", "Team Sharing", "Cloud Sync"],
     ...overrides,
   });
@@ -35,7 +36,10 @@ describe("Phosphor library resolution", () => {
 
   it("rejects unsupported non-Latin queries instead of choosing an alphabetical icon", async () => {
     expect(searchPhosphorIcons("团队协作")).toEqual([]);
-    const result = validate({ features: ["团队协作", "数据导出", "智能助手"] });
+    const result = validate({
+      purpose: "system",
+      features: ["团队协作", "数据导出", "智能助手"],
+    });
     expect(result.data).toBeDefined();
     await expect(buildPhosphorIconFamily(result.data!)).rejects.toThrow("Provide an override");
 
@@ -51,8 +55,8 @@ describe("Phosphor library resolution", () => {
     ]);
   });
 
-  it("builds one regular Phosphor artifact per feature", async () => {
-    const output = await buildPhosphorIconFamily(validInput());
+  it("builds one undecorated regular Phosphor artifact per system feature", async () => {
+    const output = await buildPhosphorIconFamily(validInput({ purpose: "system" }));
 
     expect(output.artifacts).toHaveLength(3);
     expect(output.artifacts.map((artifact) => artifact.source?.iconName)).toEqual([
@@ -70,6 +74,7 @@ describe("Phosphor library resolution", () => {
         geometryModified: false,
       });
       expect(validateSvgArtifact(artifact.svg, output.designSystem, artifact.source)).toEqual([]);
+      expect(artifact.svg).not.toContain("data-brand-treatment");
     }
     const first = output.artifacts[0]!;
     expect(
@@ -78,6 +83,20 @@ describe("Phosphor library resolution", () => {
         geometryModified: true,
       }),
     ).toContain("library-first geometry must remain unmodified");
+  });
+
+  it("rejects library-backed brand feature art", async () => {
+    await expect(buildPhosphorIconFamily(validInput({ purpose: "brand" }))).rejects.toThrow(
+      "brand feature art requires custom SVG",
+    );
+  });
+
+  it("keeps the system purpose as an undecorated native glyph", async () => {
+    const output = await buildPhosphorIconFamily(validInput({ purpose: "system" }));
+
+    expect(output.designSystem.purpose).toBe("system");
+    expect(output.artifacts[0]?.svg).not.toContain("data-brand-treatment");
+    expect(output.artifacts[0]?.svg).not.toContain("<rect");
   });
 
   it("maps filled and duotone styles to native Phosphor weights", async () => {
@@ -104,7 +123,10 @@ describe("Phosphor library resolution", () => {
   });
 
   it("rejects duplicate source icons and unsupported sharp geometry", async () => {
-    const duplicateInput = validate({ features: ["Search", "Find", "Filters"] });
+    const duplicateInput = validate({
+      purpose: "system",
+      features: ["Search", "Find", "Filters"],
+    });
     expect(duplicateInput.data).toBeDefined();
     await expect(
       buildPhosphorIconFamily(duplicateInput.data!, {

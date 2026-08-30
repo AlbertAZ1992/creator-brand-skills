@@ -97,6 +97,11 @@ export async function buildPhosphorIconFamily(
   designSystem: IconDesignSystem,
   overrides: IconOverrides = {},
 ): Promise<FeatureIconOutput> {
+  if (designSystem.purpose !== "system") {
+    throw new Error(
+      "Phosphor is only available for purpose=system; brand feature art requires custom SVG",
+    );
+  }
   if (input.cornerRadius === "sharp") {
     throw new Error(
       "Phosphor library mode does not provide a sharp-corner family; use the custom fallback",
@@ -141,7 +146,7 @@ async function buildArtifact(
   const candidate = resolveCandidate(feature, overrides[feature], input.productContext);
   const source = buildSource(candidate.iconName, weight);
   const rawSvg = await readPhosphorSvg(candidate.iconName, weight);
-  const svg = adaptSvg(rawSvg, candidate.iconName, weight, input, designSystem.gridSize);
+  const svg = adaptSvg(rawSvg, candidate.iconName, weight, input, designSystem);
   return {
     feature,
     semanticConcept: humanize(candidate.iconName),
@@ -200,13 +205,13 @@ function adaptSvg(
   iconName: string,
   weight: PhosphorWeight,
   input: FeatureIconInput,
-  gridSize: number,
+  designSystem: IconDesignSystem,
 ): string {
+  const gridSize = designSystem.gridSize;
   const bodyMatch = rawSvg.match(/<svg\b[^>]*>([\s\S]*?)<\/svg>/i);
   if (!bodyMatch?.[1]) throw new Error(`Phosphor asset "${iconName}" is not a complete SVG`);
   const primary = input.colors?.primary ?? "currentColor";
-  const secondary = input.colors?.secondary;
-  const body = applyDuotoneColor(bodyMatch[1], weight, secondary);
+  const body = applyDuotoneColor(bodyMatch[1], weight, input.colors?.secondary);
   const scale = gridSize / 256;
   return [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${gridSize} ${gridSize}"`,

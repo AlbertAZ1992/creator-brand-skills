@@ -4,9 +4,10 @@ Use simple, already-composed artwork: a logo, icon, badge, or flat illustration.
 Save outputs outside the repository, for example under
 `/absolute/path/to/brand-tests/sticker-*`.
 
-The checked-in gallery uses the original Peach Planet flat illustration and
-presents its transparent result on a separate portfolio card. Alpha proofs and
-clean RGBA files remain in the generated artifact folders for delivery review.
+The checked-in gallery shows six source SVGs beside six current outputs:
+classic contour, holographic, reflective, glitter, colour contour, and
+borderless. Each transparent result, alpha proof, source card, and manifest
+stays in its own artifact folder for delivery review.
 
 The skill does not select subjects from busy photos or invent enamel, patch,
 ceramic, magnet, or scene-crop styles. Those are separate generation tasks.
@@ -92,5 +93,5 @@ mismatch fails instead of creating misleading provenance.
   holes may close naturally.
 - Corrupt alpha or remove an artifact: deliverable verification must fail.
 
-The checked-in polished result and style matrices are embedded in
+The checked-in approved examples and their transparent deliverables are embedded in
 [`../image-to-sticker/README.md`](../image-to-sticker/README.md).

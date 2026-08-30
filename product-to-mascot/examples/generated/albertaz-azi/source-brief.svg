@@ -1,0 +1,20 @@
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="800" height="480">
+      <rect width="800" height="480" rx="30" fill="#F3EFE7"/>
+      <path d="M0 0h18v480H0z" fill="#5B4BDB"/>
+      <circle cx="724" cy="74" r="34" fill="#FF7165"/>
+      <text x="52" y="66" font-family="Arial, sans-serif" font-size="14"
+        font-weight="700" letter-spacing="2" fill="#5B4BDB">SOURCE PRODUCT FACTS</text>
+      <text x="52" y="132" font-family="Arial, sans-serif" font-size="48"
+        font-weight="800" fill="#17142C">ALBERTAZ</text>
+      <text x="52" y="177" font-family="Arial, sans-serif" font-size="22"
+        font-weight="700" fill="#17142C">animal · approachable</text>
+      <text x="52" y="222" font-family="Arial, sans-serif" font-size="16"
+        font-weight="700" letter-spacing="1.4" fill="#81798A">BRAND ESSENCE</text>
+      <text x="52" y="250" font-family="Arial, sans-serif" font-size="18"
+        fill="#5F5967">curious · crafted · independent · playful · technical</text>
+      <text x="52" y="284" font-family="Arial, sans-serif" font-size="20" fill="#5F5967">A tactile paper swift that carries ideas from AI, code, drawing,</text>
+<text x="52" y="314" font-family="Arial, sans-serif" font-size="20" fill="#5F5967">and writing into small products shipped on the web.</text>
+      <text x="52" y="438" font-family="Arial, sans-serif" font-size="14"
+        font-weight="700" letter-spacing="1.2" fill="#81798A">LOCKED BEFORE IMAGE GENERATION →</text>
+    </svg>

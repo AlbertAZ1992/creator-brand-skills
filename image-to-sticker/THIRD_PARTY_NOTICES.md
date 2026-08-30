@@ -1,7 +1,19 @@
 # Third-party notices
 
-The Peach Planet demonstration artwork and showcase images are original to this
-repository.
+## Open-source technology example marks
+
+The Vite, React, TypeScript, Astro, and Deno SVGs under
+`examples/generated/open-source-tech/sources/` were retrieved from the
+[Simple Icons](https://github.com/simple-icons/simple-icons) CDN. The Vue SVG
+comes from Vue's official artwork repository. They are used as attributed
+transformation fixtures. Exact URLs, local treatments, official projects, and
+SHA-256 hashes are recorded in
+`examples/generated/open-source-tech/asset-sources.json`.
+
+Simple Icons is distributed under CC0 1.0, but its disclaimer notes that this
+does not grant trademark rights in individual brand marks. All third-party
+names and marks remain the property of their respective owners. Their use here
+does not imply affiliation, sponsorship, or endorsement.
 
 ## Sticker Forge
 

@@ -1,45 +1,34 @@
-# Image to Sticker visual examples
-
-The main showcase uses the original Peach Planet illustration. It is colourful,
-contains fine gaps, separate sparkles, and an orbit crossing the central shape,
-so it exposes contour and material problems more clearly than a plain wordmark.
+# Image to Sticker examples
 
 <p align="center">
-  <img src="generated/style-overview.png" alt="Peach Planet sticker style overview" width="900">
+  <img src="generated/open-source-tech/source-to-sticker.png" alt="Six source logos shown beside six verified transparent sticker outputs" width="900">
 </p>
 
-The board holds source geometry constant while comparing borderless, thin,
-classic, and colour contours plus original, holographic, glitter, and reflective
-front materials. It uses repository-owned artwork rather than a third-party
-wordmark or trademark.
+The current gallery keeps the original artwork visible beside the generated
+result. All six `sticker.png` files are independent 1024 px RGBA deliveries,
+not crops from the presentation board.
 
-## Clean deliverable
+| Source | Demonstrated controls | Delivery directory |
+| --- | --- | --- |
+| Vite Bolt | Original material, classic white contour, −6° tilt | [`vite-bolt/`](generated/open-source-tech/vite-bolt/) |
+| React | Holographic material, pale-blue contour, +5° tilt | [`react/`](generated/open-source-tech/react/) |
+| TypeScript | Reflective material, cool contour, −5° tilt | [`typescript/`](generated/open-source-tech/typescript/) |
+| Astro | Glitter material, warm contour, +7° tilt | [`astro/`](generated/open-source-tech/astro/) |
+| Vue | Original material, orange colour contour, +3° tilt | [`vue/`](generated/open-source-tech/vue/) |
+| Deno | Original material, borderless, no tilt | [`deno/`](generated/open-source-tech/deno/) |
 
-The portfolio board is presentation only. The actual transparent PNG, alpha
-proof, source card, and passing manifest are in
-[`generated/recommended/`](generated/recommended/).
+Every directory contains the actual transparent `sticker.png`, grayscale
+`sticker-alpha-proof.png`, resolved `source-card.json`, and passing
+`sticker-manifest.json`. The source registry records exact URLs and SHA-256
+hashes. Third-party names and marks belong to their respective owners; no
+affiliation is implied.
 
-<p align="center">
-  <img src="generated/recommended-preview.png" alt="Peach Planet sticker portfolio preview" width="760">
-</p>
+## Regenerate the current examples
 
-| Control | Visual proof |
-| --- | --- |
-| Outline width and topology | <img src="generated/outline-widths.png" alt="Four outline widths" width="720"> |
-| Alpha expansion | <img src="generated/outline-alpha.png" alt="Four grayscale alpha proofs" width="720"> |
-| Whole-sticker tilt | <img src="generated/tilts.png" alt="Three sticker tilt values" width="720"> |
-| Contour colour | <img src="generated/colors.png" alt="Four contour colours" width="720"> |
-| Front material | <img src="generated/materials.png" alt="Four deterministic front materials" width="720"> |
+```bash
+npm run examples
+npm run verify:examples
+```
 
-## Source boundary
-
-Transparent artwork and one removable flat background are both supported. The
-two contract fixtures and their complete deliverables live under
-[`generated/source-types/`](generated/source-types/).
-
-<p align="center">
-  <img src="generated/source-types.png" alt="Transparent and flat-background source fixtures" width="760">
-</p>
-
-Regenerate everything with `npm run examples`. The script uses the actual
-renderer for every result; it does not redraw the illustration for the README.
+The command sends all six source SVGs through the real renderer and rebuilds
+the source-to-output board from those accepted transparent assets.

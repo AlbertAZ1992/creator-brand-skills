@@ -50,11 +50,14 @@ export const cases: EvalCase[] = [
       "Stroke width: 2px",
       "rounded",
       "regular",
+      "Color Palette",
+      "Motion: wiggle",
+      "prefers-reduced-motion",
       "Icon 1",
       "Icon 2",
       "Icon 3",
     ],
-    expectedPromptNotContains: ["Color Palette", "Product Context", "Icon 4"],
+    expectedPromptNotContains: ["Product Context", "Icon 4"],
     svgExpectations: {
       strokeWidth: 2,
       gridSize: 24,
@@ -95,8 +98,10 @@ export const cases: EvalCase[] = [
       "Product Context",
       "cloud-based SaaS",
       "Design System",
+      "Color Palette",
+      "hand-drawn",
     ],
-    expectedPromptNotContains: ["filled", "duotone", "Color Palette"],
+    expectedPromptNotContains: ["filled", "duotone"],
     svgExpectations: {
       gridSize: 32,
       viewBoxMatchesGrid: true,
@@ -138,6 +143,7 @@ export const cases: EvalCase[] = [
   {
     name: "Bold visual weight",
     input: {
+      purpose: "system",
       features: ["Notifications", "Alerts", "Warnings", "Errors"],
       style: "outline",
       gridSize: 24,
@@ -160,6 +166,7 @@ export const cases: EvalCase[] = [
   {
     name: "Sharp corner radius",
     input: {
+      purpose: "system",
       features: ["Security", "Lock", "Shield", "Key"],
       style: "outline",
       gridSize: 24,

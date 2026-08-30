@@ -1,58 +1,46 @@
 # Feature to Icons
 
-Turn 3–20 product features into one consistent, editable, and validated SVG
-icon family. This open-source Agent Skill gives Codex a pinned Phosphor icon
-catalog instead of asking a model to draw unrelated SVG paths from scratch.
+Turn 3–20 product features into one original hand-drawn icon set. Every icon is
+an editable, self-contained SVG with a subtle built-in wiggle animation and a
+reduced-motion fallback.
 
 The callable Codex Skill name is `feature-to-icons`.
 
 <p align="center">
-  <img src="examples/creative-workflow-duotone/showcase-preview.png" alt="Creative workflow duotone icon family" width="760">
+  <img src="examples/creator-doodle-animated/showcase-preview.png" alt="Twenty creator features transformed into one hand-drawn animated SVG icon set" width="1000">
 </p>
 
 ## At a glance
 
 | Capability | Contract |
 | --- | --- |
-| **Best for** | Product navigation, feature lists, settings, dashboards, and marketing pages that need one coherent icon family |
-| **Input** | 3–20 unique feature names, with optional product context and explicit icon overrides |
-| **Native styles** | Outline in light, regular, or bold weight; filled; duotone |
-| **Presentation controls** | Primary/secondary colors and a 24, 32, or 48 px grid |
-| **Output formats** | Editable SVG per feature, SVG/PNG family previews, normalized spec JSON, provenance JSON, and verification manifest JSON |
-| **Core guarantee** | One pinned Phosphor version and one native weight per family; ambiguous metaphors are surfaced instead of silently guessed |
+| **Best for** | Product features, creator tools, landing pages, docs, onboarding, and brand moments that need more personality than a stock icon library |
+| **Input** | 3–20 unique feature names plus optional product context and palette |
+| **Default look** | Original hand-drawn outline/duotone geometry on a 48 px grid, round ink strokes, restrained color accents |
+| **Motion** | Self-contained `icon-wiggle` CSS animation in every SVG; `prefers-reduced-motion` disables it |
+| **Static behavior** | The same SVG renders as a clean first frame when animation is unsupported |
+| **Outputs** | One animated SVG per feature, playable HTML gallery, SVG/PNG contact sheets, spec, metadata, and verification manifest |
+| **Optional system route** | Explicit `purpose: system` uses unmodified pinned Phosphor geometry with no motion or decoration |
 
-## What it does
+## Why this route
+
+Feature icons should feel like a set someone drew for the product. The default
+route therefore uses original geometry with gently imperfect curves, a shared
+stroke rhythm, a small accent palette, and one restrained motion language. It
+does not decorate stock glyphs and call them branded.
 
 ```text
-feature names → semantic search in pinned Phosphor catalog
-              → one shared native weight → color/grid adaptation
-              → SVG safety + optical checks → previews + provenance manifest
+feature brief
+  → hand-drawn metaphor and silhouette
+  → one shared stroke/accent/motion system
+  → safe standalone animated SVGs
+  → optical checks + static and playable previews
 ```
 
-This library-first approach preserves geometry reviewed by an established icon
-community. The Skill uses custom generation only when the catalog has no
-credible metaphor and the user accepts that fallback.
-
-## Visual quality bar
-
-The family must tell one product story, not merely collect individually valid
-symbols. Prefer context-specific features, distinct silhouettes, comparable
-visual volume, and metaphors that remain legible without labels. The styled
-hero above arranges the same six verified SVGs used in the clean deliverable
-preview; it does not redraw them.
-
-## Requirements
-
-- Codex or another compatible Skill runtime
-- Node.js 22 and npm
-- A request containing 3–20 unique feature names
-
-No image-generation model, browser request, or system SVG renderer is required.
-The pinned `@phosphor-icons/core` and resvg packages work offline after install.
+The system/UI route still exists for requests that explicitly need compact,
+conventional controls. It is not inferred from ordinary feature names.
 
 ## Installation
-
-Install the published Skill globally for Codex:
 
 ```bash
 npx skills add AlbertAZ1992/creator-brand-skills \
@@ -63,171 +51,142 @@ Start a new Codex task, or restart Codex if the Skill does not appear.
 
 ## Usage
 
-A short request is enough:
+Natural language is enough:
 
 ```text
-Use $feature-to-icons to make icons for Search, Filters, Team Sharing, and
-Cloud Sync.
+Use $feature-to-icons for Capture Idea, Sketch Fast, Build Palette, Share Draft,
+Team Chat, Launch Project, Protect Work, and Add Magic. Make it feel like a
+friendly independent creator toolkit.
 ```
 
-The default is a 24 px, regular, outline-style Phosphor family using
-`currentColor`. The user does not need to provide icon names or SVG syntax.
+Unless you explicitly request a system family, the Skill creates hand-drawn
+animated feature icons with original SVG geometry.
 
-### Add product context
+### Static hand-drawn icons
 
 ```text
-Use $feature-to-icons for Dashboard, Analytics, Reports, Users, Billing, and
-API. The product is a cloud analytics platform for enterprise data teams.
+Use $feature-to-icons for Draft, Review, Approve, Publish, and Archive.
+Keep the doodle style but set motion to none.
 ```
 
-Context helps choose among semantic candidates without changing the visual
-source family.
-
-### Make a filled family
+### Change the palette
 
 ```text
-Use $feature-to-icons for Team Chat, File Sharing, Video Calls, Task Board, and
-Calendar. Use filled icons, a 32 px grid, and #6366F1.
+Use $feature-to-icons for Listen, Remix, Queue, Share, and Download.
+Use charcoal ink with #36C5F0 and #FFB000 accents.
 ```
 
-### Make a duotone family
+### Explicit native system icons
 
 ```text
-Use $feature-to-icons for Shopping Cart, Wishlist, Orders, Profile, and
-Payment. Use duotone icons with #FF6B35 primary and #004E89 secondary.
+Use $feature-to-icons for Search, Settings, Notifications, Profile, and Help.
+These are compact 24 px system controls: purpose system, regular outline.
 ```
 
-### Resolve an ambiguous feature
-
-If the catalog match is uncertain, the Skill returns candidates instead of
-silently choosing an unrelated symbol. The user can answer naturally:
-
-```text
-Use the binoculars icon for Discovery and keep the rest of the family regular.
-```
-
-For Chinese or another non-Latin language, the Skill keeps the original feature
-labels, translates each concept for catalog search, and records the selected
-Phosphor icon as an explicit override. Unsupported terms fail with candidates
-instead of silently receiving an unrelated alphabetical icon.
-
-## Native style mapping
-
-| Request | Phosphor source weight | Geometry behavior |
-| --- | --- | --- |
-| Outline + light | `light` | Native Phosphor light geometry |
-| Outline + regular | `regular` | Native Phosphor regular geometry |
-| Outline + bold | `bold` | Native Phosphor bold geometry |
-| Filled | `fill` | Native Phosphor fill geometry |
-| Duotone | `duotone` | Native foreground/background geometry |
-
-One output family never mixes source libraries or weights. Colors and the
-export viewBox may change; source paths are not stretched, centered, or redrawn
-individually.
-
-## Curated example gallery
-
-All examples use pinned Phosphor 2.1.1 geometry and the same delivery path as
-the Skill. The README keeps only three visually distinct families up front;
-the [example index](examples/README.md) contains all nine requests, exact
-overrides, source metadata, and manifests.
-
-| **Creative workflow · duotone** |
-| :---: |
-| <img src="examples/creative-workflow-duotone/showcase-preview.png" alt="Six creative workflow duotone icons" width="760"> |
-| Capture Ideas, Shape Story, Build Palette, Brand Library, Publish Kit, Measure Reach |
-
-| **Commerce · duotone** | **Collaboration · filled** |
-| :---: | :---: |
-| <img src="examples/commerce-duotone/icon-family-preview.png" alt="Commerce duotone family" width="420"> | <img src="examples/collaboration-filled/icon-family-preview.png" alt="Collaboration filled family" width="420"> |
-| Shopping Cart, Wishlist, Orders, Payment, Delivery | Team Chat, File Sharing, Video Calls, Task Board, Calendar |
+This opt-in route uses one pinned `@phosphor-icons/core@2.1.1` weight. It does
+not add wiggles, badges, tiles, or marketing decoration.
 
 ## Options
 
-| Option | Values | Default | Library-first behavior |
-| --- | --- | --- | --- |
-| `features` | 3–20 unique names | Required | One SVG per feature |
-| `style` | `outline`, `filled`, `duotone` | `outline` | Selects a native Phosphor family |
-| `colors.primary` | Hex color | `currentColor` | Main presentation color |
-| `colors.secondary` | Hex color | Primary at low opacity | Duotone subordinate color |
-| `gridSize` | `24`, `32`, `48` | `24` | Output viewBox; source geometry scales uniformly |
-| `strokeWidth` | Positive number | `2` | Helps map outline requests to light/regular/bold |
-| `visualWeight` | `light`, `regular`, `bold` | `regular` | Selects the native outline weight |
-| `cornerRadius` | `rounded`, `round`, `sharp` | `rounded` | Native geometry is preserved; `sharp` requires custom fallback |
-| `productContext` | Product description | None | Improves semantic selection |
+| Option | Values | Default |
+| --- | --- | --- |
+| `features` | 3–20 unique names | Required |
+| `purpose` | `brand`, `system` | `brand` |
+| `motion` | `wiggle`, `none` | `wiggle` for brand; `none` for system |
+| `style` | `outline`, `filled`, `duotone` | `outline` |
+| `colors.primary` | Hex color | `#25232B` for brand; `currentColor` for system |
+| `colors.secondary` | Hex color | `#FF735C` for brand |
+| `gridSize` | `24`, `32`, `48` | `48` for brand; `24` for system |
+| `strokeWidth` | Positive number | `2.6` for brand; `2` for system |
+| `visualWeight` | `light`, `regular`, `bold` | `regular` |
+| `cornerRadius` | `rounded`, `round`, `sharp` | `round` for brand |
+| `productContext` | Product description | None |
 
-In library-first mode, stroke width and corner radius do not mutate individual
-paths. Exact bespoke geometry belongs to the custom fallback.
+## Animation contract
+
+An animated hand-drawn SVG contains:
+
+- `data-icon-treatment="hand-drawn"`;
+- `data-icon-motion="wiggle"`;
+- internal `@keyframes icon-wiggle` rules;
+- a `prefers-reduced-motion: reduce` fallback;
+- no script, event handler, raster content, external URL, font, or stylesheet.
+
+The animation transforms the grouped drawing only. It does not morph paths, so
+the artwork stays editable and the static silhouette remains the source of
+truth.
 
 ## Output
 
 ```text
 icon-output/
 ├── <feature>.svg
-├── icon-spec.json
-├── icon-metadata.json
+├── icon-family-preview.html
 ├── icon-family-preview.svg
 ├── icon-family-preview.png
+├── icon-spec.json
+├── icon-metadata.json
 └── icon-family-manifest.json
 ```
 
-- `icon-metadata.json` records the source icon, package version, weight,
-  license, and whether geometry or presentation changed.
-- The manifest records one source family for the set plus per-icon bounds,
-  alpha-weighted center offset, ink ratio, optical volume, and warnings.
-- Delivery rejects unsafe SVG, incorrect feature coverage, incompatible
-  provenance, invisible icons, excessive center offset, undersized shapes, and
-  insufficient padding.
+- Each feature SVG is the actual deliverable, not a screenshot extracted from
+  the showcase.
+- `icon-family-preview.html` plays every SVG together for motion review.
+- The PNG and SVG contact sheets prove the static first frame.
+- The manifest records exact feature coverage, treatment, motion, source
+  strategy, visible bounds, optical center, ink ratio, warnings, and checks.
+
+Delivery rejects missing features, mixed source families, unsafe markup,
+wrong grids or stroke widths, invisible icons, missing animation/reduced-motion
+markers, excessive center offsets, and insufficient padding.
+
+## Example
+
+The checked-in [Creator Doodles gallery](examples/) contains 20 actual animated
+SVGs, the original feature brief, a static source-to-output board, a playable
+HTML preview, and a passing manifest with no optical warnings.
 
 ## Developer API
 
 ```typescript
 import {
-  deliverPhosphorIconFamily,
-  searchPhosphorIcons,
+  buildPrompt,
+  deliverIconFamily,
   validate,
 } from "@creator-brand-skills/feature-to-icons";
 
-const result = validate({ features: ["Search", "Team Sharing", "Cloud Sync"] });
+const result = validate({
+  features: ["Capture Idea", "Share Draft", "Launch Project"],
+  productContext: "A playful creator toolkit",
+});
 if (!result.data) throw new Error(JSON.stringify(result.errors));
 
-await deliverPhosphorIconFamily(result.data, "/absolute/path/to/icon-output");
-
-// For an ambiguous feature:
-const candidates = searchPhosphorIcons("Discovery");
+const prompt = buildPrompt(result.data);
+const rawSvgJson = await runCapableModel(prompt);
+await deliverIconFamily(result.data, rawSvgJson, "/absolute/path/to/icon-output");
 ```
 
-`deliverIconFamily()` remains available for explicitly approved custom SVG
-fallbacks and applies the same safety, raster, and optical delivery gates.
+For the explicit system route, use `deliverPhosphorIconFamily()` after setting
+`purpose: "system"` and `motion: "none"`.
 
-## How to test
+## Verification
 
 ```bash
 ./scripts/verify.sh feature-to-icons
-```
 
-The verification runs lint, formatting, type checking, build, unit tests,
-prompt/input evals, a real deliverable test, and all 44 committed example SVGs.
-It also verifies package provenance and optical metrics.
-
-Regenerate the gallery from pinned library assets:
-
-```bash
 cd feature-to-icons
 npm run examples
 npm run verify:examples
 ```
 
-## Limitations
+The package verification covers input validation, prompt generation, SVG
+safety, hand-drawn and motion markers, reduced-motion behavior, rendering,
+optical balance, playable preview generation, provenance, and all committed
+example artifacts.
 
-- The Skill requires at least three features; it is not a single-icon exporter.
-- Semantic retrieval can be ambiguous for private product vocabulary; those
-  cases require a candidate choice or explicit override.
-- Exact sharp corners or novel branded metaphors require the custom fallback.
-- It produces static SVGs and does not install them into an application.
-
-Feature to Icons is MIT licensed. Library-backed artifacts use Phosphor Icons
-2.1.1 under MIT; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Feature to Icons is MIT licensed. The optional library-backed system route uses
+Phosphor Icons 2.1.1 under MIT; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Implementation details and the manifest contract are in
 [`docs/architecture.md`](docs/architecture.md) and [`schemas/`](schemas/).

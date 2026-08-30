@@ -7,8 +7,16 @@ Codex generate and review a primary reference plus four consistent poses.
 The callable Codex Skill name is `product-to-mascot`.
 
 <p align="center">
-  <img src="examples/generated/mori-mascot-showcase.png" alt="Mori paper-moth mascot compared across five locked poses" width="900">
+  <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip, the OpenPatch patch fox, across five locked poses" width="900">
 </p>
+
+| **Locked product facts** | **Generated mascot system** |
+| :---: | :---: |
+| <img src="examples/generated/openpatch-pip/source-brief.svg" alt="OpenPatch product facts locked before mascot generation" width="420"> | <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose mascot system" width="420"> |
+
+The source brief is generated from the checked-in V2 character bible, so the
+product connection, personality, silhouette rules, and brand essence remain
+visible beside the result.
 
 ## At a glance
 
@@ -19,33 +27,43 @@ The callable Codex Skill name is `product-to-mascot`.
 | **Optional direction** | Audience, personality, mascot type, visual medium, palette, and existing brand assets |
 | **Character types** | Animal, human-like character, abstract living form, or robot |
 | **Output formats** | Character-bible JSON, five full-size reference PNGs, contact-sheet PNG, and verification manifest JSON |
-| **Core guarantee** | Product facts are separated from creative choices, then silhouette, face, palette, signature feature, and medium are locked across every pose |
+| **Core guarantee** | Three product-specific directions are compared, then silhouette, proportions, face, palette, appeal hook, signature feature, and medium are locked across every pose |
 
 ## The contract
 
 ```text
-Product facts → character bible → primary reference → four pose references
+Product facts → three directions → V2 character bible → primary reference → four pose references
               → contact-sheet review → verified mascot reference set
 ```
 
-The primary reference and every pose must retain the same silhouette, face rule,
-palette, signature feature, and illustration medium.
+The primary reference and every pose must retain the same silhouette,
+proportions, face rule, palette, appeal hook, signature feature, and medium.
 
 ## Visual quality bar
 
-A product mascot needs a semantic reason to exist. The product connection must
+A product mascot needs a semantic reason and an appeal reason to exist. The product connection must
 appear in the silhouette, signature feature, prop system, or material—not only
-through a recoloured generic creature or a pasted-on logo. Every pose should
-serve a distinct usage story while remaining recognisable at 64 px.
+through a recoloured generic creature or a pasted-on logo. The default
+complexity budget is four to seven large masses, one product cue, one form cue,
+short limbs, and a face readable at 32 px. Every pose serves a distinct story.
+Named counts, sides, directions, colours, and shapes are hard acceptance checks;
+a visually attractive reference still fails when one of those anchors changes.
+The Skill does not invent fragile exact counts for tiny repeated decorations;
+it prioritizes silhouette, proportions, face, palette, and product-linked form.
 
-The example character Mori uses open-book paper wings and a bookmark ribbon to
-connect to Mora, a calm research workspace. The full five-pose contact sheet is
-shown below; all references keep the same body ratio, wing construction, face,
-palette, and cut-paper medium.
+The featured character Pip is a patch fox for OpenPatch. An oversized mint
+hook-tail, one yellow repair patch, and coral stitches turn maintenance into a
+recognisable silhouette instead of a pasted logo. Every pose keeps the same
+head-to-body ratio, face, tail construction, palette, and matte soft-vinyl
+medium.
 
-<p align="center">
-  <img src="examples/generated/mora-mori/mascot-contact-sheet.png" alt="Mori five-pose mascot contact sheet" width="900">
-</p>
+| **OpenPatch → Pip** | **ALBERTAZ → Azi** |
+| :---: | :---: |
+| <img src="examples/generated/openpatch-pip/mascot-contact-sheet.png" alt="Pip five-pose mascot contact sheet" width="440"> | <img src="examples/generated/albertaz-azi/mascot-contact-sheet.png" alt="Azi five-pose mascot contact sheet" width="440"> |
+| Friendly maintenance · matte soft vinyl | Engineering + visual craft · folded paper |
+
+The [example gallery](examples/) also keeps Mori, a paper-moth archivist for a
+fictional research workspace, as a third verified semantic direction.
 
 ## Inputs and style controls
 
@@ -58,9 +76,10 @@ palette, and cut-paper medium.
 | Reference poses | Primary, welcome, focused work, thinking/help, and celebration |
 
 Product name and factual description are required. Audience, personality,
-mascot type, visual style, and existing brand assets are optional. When a
-direction is omitted, the Skill proposes it from product semantics and records
-the accepted choice before generating the pose set.
+mascot type, visual style, and existing brand assets are optional. When the
+type is omitted, the Skill starts from an animal direction instead of a
+generic human-like character, compares three silhouettes, and records the
+accepted choice before generating the pose set.
 
 ## Install
 
@@ -124,8 +143,9 @@ and proves the validator rejects missing or undersized inputs before producing
 the contact sheet. The input, character-bible, and manifest contracts are in
 [`schemas/`](schemas/).
 
-The manifest only passes when all five PNG references exist, meet the minimum
-size contract, and produce the expected contact sheet. Human review still owns
+The V2 manifest only passes when the bible locks product connection,
+proportions, appeal hook, minimum size, and clear space, and all five PNGs meet
+the minimum-size contract. Human review still owns
 identity drift, unwanted text, and subjective visual quality.
 
 ## Scope
