@@ -115,6 +115,15 @@ async function verifyShowcase(directory: string): Promise<void> {
   ) {
     throw new Error(`${directory}: source-to-output showcase is invalid`);
   }
+  const animated = await readFile(join(directory, "showcase-animated.svg"), "utf8");
+  const iconCount = (animated.match(/data-icon-motion="wiggle"/g) ?? []).length;
+  if (
+    iconCount !== 20 ||
+    !animated.includes("@keyframes icon-wiggle") ||
+    !animated.includes("prefers-reduced-motion")
+  ) {
+    throw new Error(`${directory}: animated showcase is incomplete`);
+  }
 }
 
 function verifyManifest(

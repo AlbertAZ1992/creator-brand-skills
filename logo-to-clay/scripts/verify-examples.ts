@@ -22,6 +22,16 @@ interface SourceRecord {
 }
 
 async function main(): Promise<void> {
+  const albertazRoot = join(generatedRoot, "albertaz-wordmark");
+  await verifyImage(join(albertazRoot, "source-to-clay.png"), 1600, 640);
+  await verifyImage(join(albertazRoot, "clay-render.png"), 1600, 800);
+  await verifyImage(join(albertazRoot, "source.png"), 1200, 200);
+  await verifyMeshExample({
+    label: "ALBERTAZ wordmark clay object",
+    directory: join(albertazRoot, "object"),
+    prefix: "albertaz-wordmark-clay",
+    source: "../source.svg",
+  });
   await verifyImage(join(generatedRoot, "source-to-clay.png"), 1600, 1000);
   const javascriptRoot = join(generatedRoot, "javascript");
   await verifyImage(join(javascriptRoot, "clay-render.png"), 1024, 1024);
@@ -44,7 +54,7 @@ async function main(): Promise<void> {
     prefix: "vite-bolt-clay",
     source: "../source.png",
   });
-  console.log("Verified JavaScript and Vite bolt clay examples.");
+  console.log("Verified ALBERTAZ, JavaScript, and Vite bolt clay examples.");
 }
 
 async function verifySourceRecord(directory: string): Promise<void> {

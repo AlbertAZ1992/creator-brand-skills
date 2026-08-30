@@ -1,0 +1,57 @@
+{
+  "contractVersion": "1.0",
+  "source": {
+    "logoPath": "../source.svg"
+  },
+  "spec": {
+    "output": "mesh",
+    "shape": "object",
+    "depth": 4,
+    "clayColor": "#5B4BDB",
+    "background": "studio"
+  },
+  "backing": {
+    "enabled": false,
+    "depth": 0
+  },
+  "cavities": {
+    "mode": "through",
+    "depth": 4,
+    "count": 3
+  },
+  "rounding": {
+    "bevelThickness": 0.96,
+    "bevelSize": 0.8,
+    "bevelOffset": 0,
+    "bevelSegments": 14
+  },
+  "artifacts": {
+    "meshPath": "albertaz-wordmark-clay-mesh.obj",
+    "materialPath": "albertaz-wordmark-clay-clay.mtl",
+    "bumpPath": "albertaz-wordmark-clay-bump.png",
+    "previewPath": "albertaz-wordmark-clay-preview.png"
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "OBJ geometry and material link",
+      "MTL clay material and bump texture",
+      "1024px PNG preview",
+      "manifest artifact paths"
+    ],
+    "geometry": {
+      "vertices": 15402,
+      "faces": 5134
+    },
+    "preview": {
+      "width": 1024,
+      "height": 1024,
+      "format": "png"
+    },
+    "materialTexture": {
+      "width": 512,
+      "height": 512,
+      "format": "png"
+    }
+  }
+}

@@ -21,6 +21,7 @@ interface Manifest {
 }
 
 async function main(): Promise<void> {
+  await verifyCollection("albertaz-brand", "ALBERTAZ material", 1600, 800);
   await verifyCollection("open-source-tech", "source-to-sticker styles", 1600, 960);
 }
 

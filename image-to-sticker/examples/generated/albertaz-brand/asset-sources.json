@@ -1,0 +1,34 @@
+{
+  "retrieved": "2026-08-31",
+  "purpose": "Repository-owned ALBERTAZ transformation fixture",
+  "assets": [
+    {
+      "name": "ALBERTAZ Classic",
+      "slug": "classic",
+      "file": "sources/albertaz-wordmark.svg",
+      "source": "Repository owner supplied wordmark",
+      "sha256": "b2512e17aec92c35096a633ea44bde597bedb155d0e1a01ef51d08f620f48ccf"
+    },
+    {
+      "name": "ALBERTAZ Holographic",
+      "slug": "holographic",
+      "file": "sources/albertaz-wordmark.svg",
+      "source": "Repository owner supplied wordmark",
+      "sha256": "b2512e17aec92c35096a633ea44bde597bedb155d0e1a01ef51d08f620f48ccf"
+    },
+    {
+      "name": "ALBERTAZ Glitter",
+      "slug": "glitter",
+      "file": "sources/albertaz-wordmark.svg",
+      "source": "Repository owner supplied wordmark",
+      "sha256": "b2512e17aec92c35096a633ea44bde597bedb155d0e1a01ef51d08f620f48ccf"
+    },
+    {
+      "name": "ALBERTAZ Reflective",
+      "slug": "reflective",
+      "file": "sources/albertaz-wordmark.svg",
+      "source": "Repository owner supplied wordmark",
+      "sha256": "b2512e17aec92c35096a633ea44bde597bedb155d0e1a01ef51d08f620f48ccf"
+    }
+  ]
+}

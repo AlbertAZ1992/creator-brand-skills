@@ -1,0 +1,10 @@
+{
+  "version": 4,
+  "sourceImage": "albertaz-wordmark.svg",
+  "backgroundMode": "alpha",
+  "outlineWidth": 18,
+  "outlineColor": "#FF765F",
+  "material": "glitter",
+  "tilt": -2,
+  "size": 1024
+}
